@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_event"
+        android:icon="@drawable/ic_bottom_nav_article"
+        android:title="" />
+    <item
+        android:id="@+id/nav_response"
+        android:icon="@drawable/ic_bottom_nav_favorite"
+        android:title="" />
+
+    <item
+        android:id="@+id/nav_chat"
+        android:icon="@drawable/ic_bottom_nav_chat"
+        android:title="" />
+
+    <item
+        android:id="@+id/nav_account"
+        android:icon="@drawable/ic_bottom_nav_account"
+        android:title="" />
+</menu>

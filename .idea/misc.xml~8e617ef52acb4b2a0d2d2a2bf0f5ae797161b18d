@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/NewSoshicon/app/src/main/res/layout/activity_login.xml" value="0.36102564102564105" />
+        <entry key="..\:/NewSoshicon/app/src/main/res/layout/activity_registration_email.xml" value="0.36666666666666664" />
+        <entry key="..\:/NewSoshicon/app/src/main/res/layout/activity_registration_finish.xml" value="0.25416666666666665" />
+        <entry key="..\:/NewSoshicon/app/src/main/res/layout/activity_registration_name.xml" value="0.36666666666666664" />
+        <entry key="..\:/NewSoshicon/app/src/main/res/layout/activity_registration_password.xml" value="0.25416666666666665" />
+        <entry key="..\:/NewSoshicon/app/src/main/res/layout/fragment_account2.xml" value="0.36666666666666664" />
+        <entry key="..\:/NewSoshicon/app/src/main/res/layout/fragment_chat2.xml" value="0.36666666666666664" />
+        <entry key="..\:/NewSoshicon/app/src/main/res/layout/fragment_event2.xml" value="0.36666666666666664" />
+        <entry key="..\:/NewSoshicon/app/src/main/res/layout/fragment_response2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SoshiconJava/app/src/main/res/drawable/gradient_bg.xml" value="0.3828125" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SoshiconJava/app/src/main/res/drawable/radius_top.xml" value="0.3828125" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SoshiconJava/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SoshiconJava/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SoshiconJava/app/src/main/res/layout/activity_registration_email.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SoshiconJava/app/src/main/res/layout/activity_registration_finish.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SoshiconJava/app/src/main/res/layout/activity_registration_name.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SoshiconJava/app/src/main/res/layout/activity_registration_password.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SoshiconJava/app/src/main/res/layout/fragment_account2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SoshiconJava/app/src/main/res/layout/fragment_chat2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SoshiconJava/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SoshiconJava/app/src/main/res/menu/fragment_response2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/littl/Music/NewSoshicon/app/src/main/res/drawable/anim.xml" value="0.2796296296296296" />
+        <entry key="..\:/Users/littl/Music/NewSoshicon/app/src/main/res/drawable/edittext_changecolor.xml" value="0.15989583333333332" />
+        <entry key="..\:/Users/littl/Music/NewSoshicon/app/src/main/res/drawable/gradient.xml" value="0.15989583333333332" />
+        <entry key="..\:/Users/littl/Music/NewSoshicon/app/src/main/res/drawable/item_selector.xml" value="0.2796296296296296" />
+        <entry key="..\:/Users/littl/Music/NewSoshicon/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/littl/Music/NewSoshicon/app/src/main/res/layout/activity_main.xml" value="0.14375" />
+        <entry key="..\:/Users/littl/Music/NewSoshicon/app/src/main/res/layout/activity_registration_email.xml" value="0.275" />
+        <entry key="..\:/Users/littl/Music/NewSoshicon/app/src/main/res/layout/activity_registration_name.xml" value="0.275" />
+        <entry key="..\:/Users/littl/Music/NewSoshicon/app/src/main/res/layout/activity_registration_password.xml" value="0.275" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

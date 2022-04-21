@@ -1,0 +1,65 @@
+<resources>
+    //title
+    <string name="app_name">Soshicon</string>
+    <string name="title_home">Home</string>
+    <string name="proceed">Далее</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="email">email</string>
+
+    ////////////////////////////////////////////////РЕГИСТРАЦИЯ
+
+    //Проверка полей на символы на валидацию
+    <string name="Limitation_EditText">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._</string>
+    <string name="Limitation_EditText_email">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._@-</string>
+
+    //Name_Fragment
+    <string name="login_headline">Создание имени пользователя</string>
+    <string name="login_info">Выберите имя пользователя для своего нового аккаунта. Вы сможете изменить его позже.</string>
+
+    //Password_Fragment
+    <string name="password_headline">Придумайте пароль</string>
+    <string name="password_info">Мы можем запомнить пароль в ваш аккаунт Google.</string>
+    <string name="password_checkbox">Сохранить пароль</string>
+
+    //Email_Fragment
+    <string name="email_info">Soshicon может отправлять вам сообщения на почту. Вы можете отказаться от них в любой момент.</string>
+    <string name="email_headline">Добавить \nэлектронный адрес</string>
+
+    //Finish_Fragment
+    <string name="welcome">,добро \n пожаловать в Soshicon!</string>
+    <string name="сomplete">Завершить регистрацию</string>
+    <string name="btn_registration">Зарегистрироваться</string>
+    <string name="btn_enter">Войти</string>
+    <string name="et_password">Пароль</string>
+    <string name="ed_login">Логин</string>
+
+    ////////////////////////////////////////////////ПОСЛЕ РЕГИСТРАЦИИ
+
+    //Account_Fragment
+    <string name="account_edit">Edit</string>
+
+    //Add_Event_Fragment
+    <string-array name="recipient">
+        <item>Выберите получателя рассылки</item>
+        <item>Всем</item>
+        <item>Друзьям</item>
+    </string-array>
+
+    ////////////////////////////////////////////////ВСПЛЫВАЮЩИЕ СООБЩЕНИЯ
+
+    //Ошибки при регистрации имени
+    <string name="min_size_name_error">Имя должно содержать минимум 3 символа</string>
+    <string name="name_taken_1">имя пользователя </string>
+    <string name="name_taken_2"> уже занято </string>
+
+    //Ошибки при регистрации пароля
+    <string name="min_size_password">Пароль должен содержать минимум 8 символов</string>
+
+    //Ошибки при регистрации эл. почты
+    <string name="email_error">Введите действительную эл. почту. \nНапример: myemail@gmail.com</string>
+
+    //Ошибка при отсутствии интернета
+    <string name="not_internet_error">Отсутствует подключение к Интернету</string>
+
+</resources>
