@@ -14,9 +14,6 @@ public class Response extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
-        navBar.setVisibility(View.VISIBLE);
-
         return inflater.inflate(R.layout.fragment_response, container, false);
     }
 }

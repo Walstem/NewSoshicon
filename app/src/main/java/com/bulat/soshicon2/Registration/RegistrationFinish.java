@@ -28,6 +28,8 @@ import java.io.IOException;
 public class RegistrationFinish extends Fragment {
 
     private final String U_NICKNAME = "u_nickname";
+    private final String PASSWORD = "password";
+    private final String EMAIL = "email";
     final String ID = "ID";
 
     @Nullable
@@ -72,22 +74,24 @@ public class RegistrationFinish extends Fragment {
         if (NetCheck.StatusConnection(getContext())) {
             ViewToastMessage(view);
         } else {
-            //излекаем данные регистрации из файла
-            String[] DataArr = extraction();
+            //получаем данные введенные в процессе регистрации
+            SharedPreferences sp = getContext().getSharedPreferences("user_data", getContext().MODE_PRIVATE);
+            String name = sp.getString(U_NICKNAME, "");
+            String password = sp.getString(PASSWORD, "");
+            String email = sp.getString(EMAIL, "");
 
             //добавляем данные в бд
-            String UserData = new SQLUtils(DataArr).InsertRegData();
+            String UserData = new SQLUtils(name, password, email).InsertRegData();
             System.out.println(UserData);
-            new SendQuery("input_request_handler.php").execute(UserData);
+            new SendQuery("input_request_handler_soshicon.php").execute(UserData);
 
             try {
                 //получаем id пользователя
                 SendQuery request = new SendQuery("get_id.php");
-                request.execute("?name=" + DataArr[0]);
+                request.execute("?name=" + name);
                 String id = request.get();
 
                 //добавляем id пользователя в сохраненные настрйоки
-                SharedPreferences sp = getContext().getSharedPreferences("user_data", getContext().MODE_PRIVATE);
                 SharedPreferences.Editor ed = sp.edit();
                 ed.putString(ID, id);
                 ed.apply();

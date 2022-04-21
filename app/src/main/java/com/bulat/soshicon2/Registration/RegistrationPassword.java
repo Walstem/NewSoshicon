@@ -47,7 +47,7 @@ public class RegistrationPassword extends Fragment {
             public void onClick(View view) {
                 try {
                     onwards(root);
-                } catch (IOException e) {
+                } catch (IOException | NoSuchAlgorithmException e) {
                     e.printStackTrace();
                 }
             }
@@ -57,7 +57,7 @@ public class RegistrationPassword extends Fragment {
     }
 
     //when you click on the onwards button, we start the registrationActivityEmail activity
-    public void onwards(View view) throws IOException {
+    public void onwards(View view) throws IOException, NoSuchAlgorithmException {
         if (NetCheck.StatusConnection(getContext())) {
             ViewToastMessage(view);
         }
@@ -74,8 +74,8 @@ public class RegistrationPassword extends Fragment {
                 //Переход на фрагмент создания электронной почты
                 SharedPreferences sp = getContext().getSharedPreferences("user_data", getContext().MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
-
-                editor.putString(PASSWORD, password.getText().toString());
+                String hexPassword = toHexString(getSHA(password.getText().toString()));
+                editor.putString(PASSWORD, hexPassword);
                 editor.apply();
 
                 RegistrationEmail re = new RegistrationEmail();

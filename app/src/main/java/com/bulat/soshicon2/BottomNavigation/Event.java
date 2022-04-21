@@ -8,11 +8,13 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.bulat.soshicon2.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Event extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
+        navBar.setVisibility(View.VISIBLE);
         return inflater.inflate(R.layout.fragment_event, container, false);
     }
 }

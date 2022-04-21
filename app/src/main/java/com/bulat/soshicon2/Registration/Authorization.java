@@ -6,6 +6,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,6 +17,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.bulat.soshicon2.BottomNavigation.Event;
+import com.bulat.soshicon2.BottomNavigation.Response;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.SQLUtils.SQLUtils;
 import com.bulat.soshicon2.asynctasks.SendQuery;
@@ -32,17 +35,24 @@ public class Authorization extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_authorization, container, false);
+        View view = inflater.inflate(R.layout.fragment_authorization, container, false);
 
-        TextView tv_registration = (TextView) root.findViewById(R.id.tv_registration);
+        TextView tv_registration = (TextView) view.findViewById(R.id.tv_registration);
         tv_registration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 registration(view);
             }
         });
+        Button authorization_enter = view.findViewById(R.id.authorization_enter);
+        authorization_enter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Authorization(view);
+            }
+        });
 
-        return root;
+        return view;
     }
 
     public void Authorization(View view){
@@ -79,6 +89,12 @@ public class Authorization extends Fragment {
                     ed.apply();
                     String data_id = sPref.getString(ID, "");
                     System.out.println(data_id);
+
+                    Event event = new Event();
+                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                    transaction.add(this.getId(), event);
+                    transaction.addToBackStack(null);
+                    transaction.commit();
                 }
                 // если сообщения ложные выводим сообщение об ошибке
                 else {

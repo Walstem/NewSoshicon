@@ -1,6 +1,5 @@
-com/bulat/soshicon2/Registration/RegistrationFinish.java
- com.bulat.soshicon2.Registration.RegistrationFinish
- com.bulat.soshicon2.Registration.RegistrationFinish$1
+com/bulat/soshicon2/SQLUtils/SQLUtils.java
+ com.bulat.soshicon2.SQLUtils.SQLUtils
 com/bulat/soshicon2/FileHandler/AppSpecificFiles.java
  com.bulat.soshicon2.FileHandler.AppSpecificFiles
 com/bulat/soshicon2/asynctasks/SendQuery.java
@@ -13,23 +12,22 @@ com/bulat/soshicon2/databinding/FragmentChatBinding.java
  com.bulat.soshicon2.databinding.FragmentChatBinding
 com/bulat/soshicon2/databinding/FragmentRegistrationEmailBinding.java
  com.bulat.soshicon2.databinding.FragmentRegistrationEmailBinding
-com/bulat/soshicon2/BottomNavigation/Response.java
- com.bulat.soshicon2.BottomNavigation.Response
+com/bulat/soshicon2/SplashActivity.java
+ com.bulat.soshicon2.SplashActivity
 com/bulat/soshicon2/databinding/ToastSuccessBinding.java
  com.bulat.soshicon2.databinding.ToastSuccessBinding
-com/bulat/soshicon2/Registration/Authorization.java
- com.bulat.soshicon2.Registration.Authorization
- com.bulat.soshicon2.Registration.Authorization$1
+com/bulat/soshicon2/databinding/FragmentRegistrationPasswordBinding.java
+ com.bulat.soshicon2.databinding.FragmentRegistrationPasswordBinding
 com/bulat/soshicon2/checks/NetCheck.java
  com.bulat.soshicon2.checks.NetCheck
 com/bulat/soshicon2/databinding/ActivityMainBinding.java
  com.bulat.soshicon2.databinding.ActivityMainBinding
-com/bulat/soshicon2/databinding/FragmentRegistrationPasswordBinding.java
- com.bulat.soshicon2.databinding.FragmentRegistrationPasswordBinding
 com/bulat/soshicon2/BottomNavigation/Chat.java
  com.bulat.soshicon2.BottomNavigation.Chat
-com/bulat/soshicon2/BottomNavigation/Event.java
- com.bulat.soshicon2.BottomNavigation.Event
+com/bulat/soshicon2/checks/UniqueNameCheck.java
+ com.bulat.soshicon2.checks.UniqueNameCheck
+com/bulat/soshicon2/BuildConfig.java
+ com.bulat.soshicon2.BuildConfig
 com/bulat/soshicon2/databinding/FragmentResponseBinding.java
  com.bulat.soshicon2.databinding.FragmentResponseBinding
 com/bulat/soshicon2/databinding/FragmentAccountSettingBinding.java
@@ -58,16 +56,19 @@ com/bulat/soshicon2/BottomNavigation/Account.java
  com.bulat.soshicon2.BottomNavigation.Account$1
 com/bulat/soshicon2/databinding/ToastErrorSendMessageBinding.java
  com.bulat.soshicon2.databinding.ToastErrorSendMessageBinding
-com/bulat/soshicon2/databinding/FragmentAuthorizationBinding.java
- com.bulat.soshicon2.databinding.FragmentAuthorizationBinding
-com/bulat/soshicon2/BuildConfig.java
- com.bulat.soshicon2.BuildConfig
-com/bulat/soshicon2/SQLUtils/SQLUtils.java
- com.bulat.soshicon2.SQLUtils.SQLUtils
-com/bulat/soshicon2/checks/UniqueNameCheck.java
- com.bulat.soshicon2.checks.UniqueNameCheck
-com/bulat/soshicon2/SplashActivity.java
- com.bulat.soshicon2.SplashActivity
+com/bulat/soshicon2/BottomNavigation/Event.java
+ com.bulat.soshicon2.BottomNavigation.Event
+com/bulat/soshicon2/Registration/RegistrationFinish.java
+ com.bulat.soshicon2.Registration.RegistrationFinish
+ com.bulat.soshicon2.Registration.RegistrationFinish$1
+com/bulat/soshicon2/BottomNavigation/Response.java
+ com.bulat.soshicon2.BottomNavigation.Response
+com/bulat/soshicon2/Registration/Authorization.java
+ com.bulat.soshicon2.Registration.Authorization
+ com.bulat.soshicon2.Registration.Authorization$1
+ com.bulat.soshicon2.Registration.Authorization$2
 com/bulat/soshicon2/MainActivity.java
  com.bulat.soshicon2.MainActivity
  com.bulat.soshicon2.MainActivity$1
+com/bulat/soshicon2/databinding/FragmentAuthorizationBinding.java
+ com.bulat.soshicon2.databinding.FragmentAuthorizationBinding
