@@ -7,9 +7,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        configurations.all {
-            resolutionStrategy { force 'androidx.core:core:1.6.0' }
-        }
+
         applicationId "com.example.soshicon"
         minSdk 29
         targetSdk 31

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-gu\\values-gu.xml",
+            "outputFile": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-gu\\values-gu.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-3\\e6a6b98a5bf4cf452a4bc3a3002b3bc1\\transformed\\material-1.5.0\\res\\values-gu\\values-gu.xml",
+                    "source": "C:\\Users\\littl\\.gradle\\caches\\transforms-3\\e6a6b98a5bf4cf452a4bc3a3002b3bc1\\transformed\\material-1.5.0\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,24 +23,26 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-3\\66377c2fc5e5bb2fded9583c56a726a9\\transformed\\navigation-ui-2.4.2\\res\\values-gu\\values-gu.xml",
+                    "source": "C:\\Users\\littl\\.gradle\\caches\\transforms-3\\8f5140f2d880e3db488011b0dd37c457\\transformed\\jetified-imagepicker-2.1\\res\\values-gu\\values-gu.xml",
                     "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,165",
-                        "endColumns": "109,114",
-                        "endOffsets": "160,275"
+                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,104,184,275,363,465,540,616,793,841,906,955,999,1067,1120,1169,1216",
+                        "endLines": "2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19",
+                        "endColumns": "48,79,90,87,101,74,75,131,47,64,48,43,67,52,48,46,45",
+                        "endOffsets": "99,179,270,358,460,535,611,788,836,901,950,994,1062,1115,1164,1211,1257"
                     },
                     "to": {
-                        "startLines": "93,94",
-                        "startColumns": "4,4",
-                        "startOffsets": "7757,7867",
-                        "endColumns": "109,114",
-                        "endOffsets": "7862,7977"
+                        "startLines": "33,38,39,40,41,42,44,96,100,101,102,103,104,105,106,107,108",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2956,3390,3470,3561,3649,3751,3889,8060,8419,8467,8532,8581,8625,8693,8746,8795,8842",
+                        "endLines": "33,38,39,40,41,42,44,97,100,101,102,103,104,105,106,107,108",
+                        "endColumns": "48,79,90,87,101,74,75,131,47,64,48,43,67,52,48,46,45",
+                        "endOffsets": "3000,3465,3556,3644,3746,3821,3960,8232,8462,8527,8576,8620,8688,8741,8790,8837,8883"
                     }
                 },
                 {
-                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-3\\19075c4677e37e538c54d7f745fc8af4\\transformed\\appcompat-1.4.1\\res\\values-gu\\values-gu.xml",
+                    "source": "C:\\Users\\littl\\.gradle\\caches\\transforms-3\\19075c4677e37e538c54d7f745fc8af4\\transformed\\appcompat-1.4.1\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -57,7 +59,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-3\\08ea27e5f1de9e3aeff86134395e5672\\transformed\\core-1.6.0\\res\\values-gu\\values-gu.xml",
+                    "source": "C:\\Users\\littl\\.gradle\\caches\\transforms-3\\66377c2fc5e5bb2fded9583c56a726a9\\transformed\\navigation-ui-2.4.2\\res\\values-gu\\values-gu.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,165",
+                        "endColumns": "109,114",
+                        "endOffsets": "160,275"
+                    },
+                    "to": {
+                        "startLines": "93,94",
+                        "startColumns": "4,4",
+                        "startOffsets": "7757,7867",
+                        "endColumns": "109,114",
+                        "endOffsets": "7862,7977"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\littl\\.gradle\\caches\\transforms-3\\9339927e08badd09bc5459e4ba900d5f\\transformed\\core-1.7.0\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -71,25 +90,6 @@
                         "startOffsets": "8318",
                         "endColumns": "100",
                         "endOffsets": "8414"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-3\\8f5140f2d880e3db488011b0dd37c457\\transformed\\jetified-imagepicker-2.1\\res\\values-gu\\values-gu.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,104,184,275,363,465,540,616,793,841,906,955,999,1067,1120,1169,1216",
-                        "endLines": "2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19",
-                        "endColumns": "48,79,90,87,101,74,75,131,47,64,48,43,67,52,48,46,45",
-                        "endOffsets": "99,179,270,358,460,535,611,788,836,901,950,994,1062,1115,1164,1211,1257"
-                    },
-                    "to": {
-                        "startLines": "33,38,39,40,41,42,44,96,100,101,102,103,104,105,106,107,108",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "2956,3390,3470,3561,3649,3751,3889,8060,8419,8467,8532,8581,8625,8693,8746,8795,8842",
-                        "endLines": "33,38,39,40,41,42,44,97,100,101,102,103,104,105,106,107,108",
-                        "endColumns": "48,79,90,87,101,74,75,131,47,64,48,43,67,52,48,46,45",
-                        "endOffsets": "3000,3465,3556,3644,3746,3821,3960,8232,8462,8527,8576,8620,8688,8741,8790,8837,8883"
                     }
                 }
             ]

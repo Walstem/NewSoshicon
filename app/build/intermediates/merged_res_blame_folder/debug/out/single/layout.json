@@ -1,21 +1,48 @@
 [
     {
+<<<<<<< HEAD
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\registration_email.xml",
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\registration_email.xml"
+=======
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_internet_message.xml",
-        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_internet_message.xml"
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_registration_email.xml",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\fragment_registration_email.xml"
     },
     {
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_event.xml",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\fragment_event.xml"
+    },
+    {
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_add_error.xml",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_add_error.xml"
+>>>>>>> 5c9fd0bdc3d8df0f0b564c263e3219ce9143765e
+    },
+    {
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_account_setting.xml",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\fragment_account_setting.xml"
+    },
+    {
+<<<<<<< HEAD
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\row_card_event.xml",
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\row_card_event.xml"
+=======
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_account.xml",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\fragment_account.xml"
     },
     {
-        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_add_error.xml",
-        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_add_error.xml"
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_add_error_two.xml",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_add_error_two.xml"
+>>>>>>> 5c9fd0bdc3d8df0f0b564c263e3219ce9143765e
     },
     {
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_success.xml",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_success.xml"
+    },
+    {
+<<<<<<< HEAD
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\chat.xml",
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\chat.xml"
     },
@@ -50,12 +77,33 @@
     {
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\registration_password.xml",
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\registration_password.xml"
+=======
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_registration_password.xml",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\fragment_registration_password.xml"
     },
     {
-        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_error_send_message.xml",
-        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_error_send_message.xml"
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_chat.xml",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\fragment_chat.xml"
     },
     {
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_registration_finish.xml",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\fragment_registration_finish.xml"
+    },
+    {
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_response.xml",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\fragment_response.xml"
+    },
+    {
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_registration_name.xml",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\fragment_registration_name.xml"
+>>>>>>> 5c9fd0bdc3d8df0f0b564c263e3219ce9143765e
+    },
+    {
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_internet_message.xml",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_internet_message.xml"
+    },
+    {
+<<<<<<< HEAD
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\account_setting.xml",
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\account_setting.xml"
     },
@@ -66,9 +114,13 @@
     {
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_success.xml",
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_success.xml"
+=======
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_error_send_message.xml",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_error_send_message.xml"
+>>>>>>> 5c9fd0bdc3d8df0f0b564c263e3219ce9143765e
     },
     {
-        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_add_error_two.xml",
-        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_add_error_two.xml"
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_authorization.xml",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\fragment_authorization.xml"
     }
 ]
