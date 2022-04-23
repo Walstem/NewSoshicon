@@ -18,7 +18,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.BottomNavigation.Event;
-import com.bulat.soshicon2.BottomNavigation.Response;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.SQLUtils.SQLUtils;
 import com.bulat.soshicon2.asynctasks.SendQuery;
@@ -35,7 +34,7 @@ public class Authorization extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_authorization, container, false);
+        View view = inflater.inflate(R.layout.authorization, container, false);
 
         TextView tv_registration = (TextView) view.findViewById(R.id.tv_registration);
         tv_registration.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +85,7 @@ public class Authorization extends Fragment {
                     SharedPreferences sPref = getContext().getSharedPreferences("UserData", getContext().MODE_PRIVATE);
                     SharedPreferences.Editor ed = sPref.edit();
                     ed.putString(ID, id);
+                    ed.putString("U_NICKNAME", login);
                     ed.apply();
                     String data_id = sPref.getString(ID, "");
                     System.out.println(data_id);

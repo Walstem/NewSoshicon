@@ -36,7 +36,7 @@ public class RegistrationFinish extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_registration_finish, container, false);
+        View root = inflater.inflate(R.layout.registration_finish, container, false);
 
         Button finish = (Button) root.findViewById(R.id.finish);
         try {

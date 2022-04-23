@@ -35,7 +35,7 @@ public class RegistrationPassword extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_registration_password, container, false);
+        View root = inflater.inflate(R.layout.registration_password, container, false);
 
         EditText password = (EditText) root.findViewById(R.id.password);
         password.setTransformationMethod(PasswordTransformationMethod.getInstance());

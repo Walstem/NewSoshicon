@@ -1,5 +1,6 @@
 package com.bulat.soshicon2;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -19,9 +20,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_activity_main, new Authorization()).commit();
+        SharedPreferences sp = getSharedPreferences("UserData", MODE_PRIVATE);
+        String id = sp.getString("ID", "");
+
+
+        if (id.equals("0")){
+            getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_activity_main, new Authorization()).commit();
+        }
+        else{
+            getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_activity_main, new Event()).commit();
+        }
+
 
         BottomNavigationView navigationView = findViewById(R.id.bottom_navigation);
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -49,5 +60,9 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    public void setArguments(Bundle bundle) {
+
     }
 }

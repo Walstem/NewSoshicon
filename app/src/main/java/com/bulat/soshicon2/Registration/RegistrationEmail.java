@@ -31,7 +31,7 @@ public class RegistrationEmail extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_registration_email, container, false);
+        View root = inflater.inflate(R.layout.registration_email, container, false);
 
         Button onwards = (Button) root.findViewById(R.id.email_btn);
 

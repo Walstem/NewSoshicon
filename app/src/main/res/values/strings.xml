@@ -62,4 +62,7 @@
     //Ошибка при отсутствии интернета
     <string name="not_internet_error">Отсутствует подключение к Интернету</string>
 
+    //add event
+    <string name="Anything_new"><font size="24">Что у вас нового?</font></string>
+
 </resources>

@@ -27,4 +27,8 @@ public class SQLUtils {
         }
         return query.toString();
     }
+    public String input_distribution(){
+        String[] args = {"?user_id=", "&content=","&nickname="};
+        return createUrl(args);
+    }
 }

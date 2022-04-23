@@ -32,7 +32,7 @@ public class RegistrationName extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_registration_name, container, false);
+        View root = inflater.inflate(R.layout.registration_name, container, false);
 
         Button onwards = (Button) root.findViewById(R.id.login_btn);
 
