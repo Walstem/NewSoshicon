@@ -18,4 +18,18 @@
     <color name="bg_error_div">#22070B</color>
     <color name="oval_color">#565656</color>
     <color name="green">#3AAA35</color>
+
+
+    <!--НАСТРОЙКИ-->
+    <color name="night_mode">#38AAC8</color>
+    <color name="notifications">#FD3B31</color>
+
+    <color name="languages">#AF51DE</color>
+    <color name="text_size">#EDA230</color>
+
+    <color name="about_us">#38C554</color>
+    <color name="FAQ">#037BFF</color>
+
+    <color name="log_out">#DD6D6C</color>
+
 </resources>

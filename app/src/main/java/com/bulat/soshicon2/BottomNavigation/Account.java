@@ -7,14 +7,26 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.bulat.soshicon2.R;
+import com.bulat.soshicon2.account.Setting;
+import com.bulat.soshicon2.event.Fragment_Add;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+
+import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -28,10 +40,21 @@ public class Account extends Fragment {
 
         SharedPreferences sp = getActivity().getSharedPreferences("UserData", getContext().MODE_PRIVATE);
         TextView name = RootView.findViewById(R.id.username_bottom_avatar);
+        BottomSheetDialogFragment BottomSheet = new Setting();
+        ImageView account_setting = RootView.findViewById(R.id.account_edit);
+
         name.setText(sp.getString("U_NICKNAME", ""));
 
         BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
         navBar.setVisibility(View.VISIBLE);
+
+        account_setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BottomSheet.show(getFragmentManager().beginTransaction(), "BottomSheetDialog");
+            }
+        });
+
 
         profile = (CircleImageView) RootView.findViewById(R.id.profile_avatar);
 

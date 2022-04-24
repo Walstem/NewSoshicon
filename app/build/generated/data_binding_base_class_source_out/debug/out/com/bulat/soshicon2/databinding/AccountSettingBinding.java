@@ -4,20 +4,133 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.bulat.soshicon2.R;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class AccountSettingBinding implements ViewBinding {
   @NonNull
   private final ConstraintLayout rootView;
 
-  private AccountSettingBinding(@NonNull ConstraintLayout rootView) {
+  @NonNull
+  public final ConstraintLayout FAQ;
+
+  @NonNull
+  public final ImageView FAQImage;
+
+  @NonNull
+  public final ConstraintLayout aboutUs;
+
+  @NonNull
+  public final ImageView aboutUsImage;
+
+  @NonNull
+  public final Button button;
+
+  @NonNull
+  public final ImageView cancel;
+
+  @NonNull
+  public final ConstraintLayout constraintLayout;
+
+  @NonNull
+  public final ConstraintLayout constraintLayout4;
+
+  @NonNull
+  public final ConstraintLayout constraintLayout5;
+
+  @NonNull
+  public final ConstraintLayout constraintLayout6;
+
+  @NonNull
+  public final ConstraintLayout languages;
+
+  @NonNull
+  public final ImageView languagesImage;
+
+  @NonNull
+  public final ImageView logOut;
+
+  @NonNull
+  public final ConstraintLayout nightMode;
+
+  @NonNull
+  public final ImageView nightModeImage;
+
+  @NonNull
+  public final ConstraintLayout notification;
+
+  @NonNull
+  public final ImageView notificationImage;
+
+  @NonNull
+  public final CircleImageView profileAvatarSetting;
+
+  @NonNull
+  public final ConstraintLayout settingLogOut;
+
+  @NonNull
+  public final ConstraintLayout textSize;
+
+  @NonNull
+  public final ImageView textSizeImage;
+
+  @NonNull
+  public final TextView textView;
+
+  @NonNull
+  public final TextView username;
+
+  @NonNull
+  public final TextView usernameBottomAvatar;
+
+  private AccountSettingBinding(@NonNull ConstraintLayout rootView, @NonNull ConstraintLayout FAQ,
+      @NonNull ImageView FAQImage, @NonNull ConstraintLayout aboutUs,
+      @NonNull ImageView aboutUsImage, @NonNull Button button, @NonNull ImageView cancel,
+      @NonNull ConstraintLayout constraintLayout, @NonNull ConstraintLayout constraintLayout4,
+      @NonNull ConstraintLayout constraintLayout5, @NonNull ConstraintLayout constraintLayout6,
+      @NonNull ConstraintLayout languages, @NonNull ImageView languagesImage,
+      @NonNull ImageView logOut, @NonNull ConstraintLayout nightMode,
+      @NonNull ImageView nightModeImage, @NonNull ConstraintLayout notification,
+      @NonNull ImageView notificationImage, @NonNull CircleImageView profileAvatarSetting,
+      @NonNull ConstraintLayout settingLogOut, @NonNull ConstraintLayout textSize,
+      @NonNull ImageView textSizeImage, @NonNull TextView textView, @NonNull TextView username,
+      @NonNull TextView usernameBottomAvatar) {
     this.rootView = rootView;
+    this.FAQ = FAQ;
+    this.FAQImage = FAQImage;
+    this.aboutUs = aboutUs;
+    this.aboutUsImage = aboutUsImage;
+    this.button = button;
+    this.cancel = cancel;
+    this.constraintLayout = constraintLayout;
+    this.constraintLayout4 = constraintLayout4;
+    this.constraintLayout5 = constraintLayout5;
+    this.constraintLayout6 = constraintLayout6;
+    this.languages = languages;
+    this.languagesImage = languagesImage;
+    this.logOut = logOut;
+    this.nightMode = nightMode;
+    this.nightModeImage = nightModeImage;
+    this.notification = notification;
+    this.notificationImage = notificationImage;
+    this.profileAvatarSetting = profileAvatarSetting;
+    this.settingLogOut = settingLogOut;
+    this.textSize = textSize;
+    this.textSizeImage = textSizeImage;
+    this.textView = textView;
+    this.username = username;
+    this.usernameBottomAvatar = usernameBottomAvatar;
   }
 
   @Override
@@ -43,10 +156,161 @@ public final class AccountSettingBinding implements ViewBinding {
 
   @NonNull
   public static AccountSettingBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.FAQ;
+      ConstraintLayout FAQ = ViewBindings.findChildViewById(rootView, id);
+      if (FAQ == null) {
+        break missingId;
+      }
 
-    return new AccountSettingBinding((ConstraintLayout) rootView);
+      id = R.id.FAQ_image;
+      ImageView FAQImage = ViewBindings.findChildViewById(rootView, id);
+      if (FAQImage == null) {
+        break missingId;
+      }
+
+      id = R.id.aboutUs;
+      ConstraintLayout aboutUs = ViewBindings.findChildViewById(rootView, id);
+      if (aboutUs == null) {
+        break missingId;
+      }
+
+      id = R.id.aboutUs_image;
+      ImageView aboutUsImage = ViewBindings.findChildViewById(rootView, id);
+      if (aboutUsImage == null) {
+        break missingId;
+      }
+
+      id = R.id.button;
+      Button button = ViewBindings.findChildViewById(rootView, id);
+      if (button == null) {
+        break missingId;
+      }
+
+      id = R.id.cancel;
+      ImageView cancel = ViewBindings.findChildViewById(rootView, id);
+      if (cancel == null) {
+        break missingId;
+      }
+
+      id = R.id.constraintLayout;
+      ConstraintLayout constraintLayout = ViewBindings.findChildViewById(rootView, id);
+      if (constraintLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.constraintLayout4;
+      ConstraintLayout constraintLayout4 = ViewBindings.findChildViewById(rootView, id);
+      if (constraintLayout4 == null) {
+        break missingId;
+      }
+
+      id = R.id.constraintLayout5;
+      ConstraintLayout constraintLayout5 = ViewBindings.findChildViewById(rootView, id);
+      if (constraintLayout5 == null) {
+        break missingId;
+      }
+
+      id = R.id.constraintLayout6;
+      ConstraintLayout constraintLayout6 = ViewBindings.findChildViewById(rootView, id);
+      if (constraintLayout6 == null) {
+        break missingId;
+      }
+
+      id = R.id.languages;
+      ConstraintLayout languages = ViewBindings.findChildViewById(rootView, id);
+      if (languages == null) {
+        break missingId;
+      }
+
+      id = R.id.languages_image;
+      ImageView languagesImage = ViewBindings.findChildViewById(rootView, id);
+      if (languagesImage == null) {
+        break missingId;
+      }
+
+      id = R.id.log_out;
+      ImageView logOut = ViewBindings.findChildViewById(rootView, id);
+      if (logOut == null) {
+        break missingId;
+      }
+
+      id = R.id.nightMode;
+      ConstraintLayout nightMode = ViewBindings.findChildViewById(rootView, id);
+      if (nightMode == null) {
+        break missingId;
+      }
+
+      id = R.id.nightMode_image;
+      ImageView nightModeImage = ViewBindings.findChildViewById(rootView, id);
+      if (nightModeImage == null) {
+        break missingId;
+      }
+
+      id = R.id.notification;
+      ConstraintLayout notification = ViewBindings.findChildViewById(rootView, id);
+      if (notification == null) {
+        break missingId;
+      }
+
+      id = R.id.notification_image;
+      ImageView notificationImage = ViewBindings.findChildViewById(rootView, id);
+      if (notificationImage == null) {
+        break missingId;
+      }
+
+      id = R.id.profile_avatar_setting;
+      CircleImageView profileAvatarSetting = ViewBindings.findChildViewById(rootView, id);
+      if (profileAvatarSetting == null) {
+        break missingId;
+      }
+
+      id = R.id.setting_log_out;
+      ConstraintLayout settingLogOut = ViewBindings.findChildViewById(rootView, id);
+      if (settingLogOut == null) {
+        break missingId;
+      }
+
+      id = R.id.text_size;
+      ConstraintLayout textSize = ViewBindings.findChildViewById(rootView, id);
+      if (textSize == null) {
+        break missingId;
+      }
+
+      id = R.id.text_size_image;
+      ImageView textSizeImage = ViewBindings.findChildViewById(rootView, id);
+      if (textSizeImage == null) {
+        break missingId;
+      }
+
+      id = R.id.textView;
+      TextView textView = ViewBindings.findChildViewById(rootView, id);
+      if (textView == null) {
+        break missingId;
+      }
+
+      id = R.id.username;
+      TextView username = ViewBindings.findChildViewById(rootView, id);
+      if (username == null) {
+        break missingId;
+      }
+
+      id = R.id.username_bottom_avatar;
+      TextView usernameBottomAvatar = ViewBindings.findChildViewById(rootView, id);
+      if (usernameBottomAvatar == null) {
+        break missingId;
+      }
+
+      return new AccountSettingBinding((ConstraintLayout) rootView, FAQ, FAQImage, aboutUs,
+          aboutUsImage, button, cancel, constraintLayout, constraintLayout4, constraintLayout5,
+          constraintLayout6, languages, languagesImage, logOut, nightMode, nightModeImage,
+          notification, notificationImage, profileAvatarSetting, settingLogOut, textSize,
+          textSizeImage, textView, username, usernameBottomAvatar);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

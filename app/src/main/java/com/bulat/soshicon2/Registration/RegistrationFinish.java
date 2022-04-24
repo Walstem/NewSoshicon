@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.bulat.soshicon2.BottomNavigation.Response;
+import com.bulat.soshicon2.BottomNavigation.Event;
 import com.bulat.soshicon2.FileHandler.AppSpecificFiles;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.SQLUtils.SQLUtils;
@@ -100,9 +100,9 @@ public class RegistrationFinish extends Fragment {
             }
 
             //Окончание регистрации
-            Response r = new Response();
+            Event ev = new Event();
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            transaction.add(this.getId(), r);
+            transaction.add(this.getId(), ev);
             transaction.addToBackStack(null);
             transaction.commit();
         }

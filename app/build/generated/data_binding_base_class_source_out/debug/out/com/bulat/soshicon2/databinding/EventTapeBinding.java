@@ -4,9 +4,9 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toolbar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,7 +38,7 @@ public final class EventTapeBinding implements ViewBinding {
   public final CircleImageView avatar;
 
   @NonNull
-  public final EditText editText;
+  public final TextView editText;
 
   @NonNull
   public final ListView listView;
@@ -52,7 +52,7 @@ public final class EventTapeBinding implements ViewBinding {
   private EventTapeBinding(@NonNull ConstraintLayout rootView,
       @NonNull SwipeRefreshLayout SwipeRefreshLayout, @NonNull ImageView add,
       @NonNull AppBarLayout appBarLayout, @NonNull CircleImageView avatar,
-      @NonNull EditText editText, @NonNull ListView listView, @NonNull ImageView search,
+      @NonNull TextView editText, @NonNull ListView listView, @NonNull ImageView search,
       @NonNull Toolbar toolbar) {
     this.rootView = rootView;
     this.SwipeRefreshLayout = SwipeRefreshLayout;
@@ -117,7 +117,7 @@ public final class EventTapeBinding implements ViewBinding {
       }
 
       id = R.id.editText;
-      EditText editText = ViewBindings.findChildViewById(rootView, id);
+      TextView editText = ViewBindings.findChildViewById(rootView, id);
       if (editText == null) {
         break missingId;
       }
