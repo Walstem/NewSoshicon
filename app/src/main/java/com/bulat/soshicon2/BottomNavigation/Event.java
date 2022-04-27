@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -34,7 +35,9 @@ public class Event extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     private ArrayList<String> Title = new ArrayList<String>();
     private ArrayList<String> Discription = new ArrayList<String>();
+    private ArrayAdapter myAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private int lastFirstVisibleItem = 0;
     private int value = 0;
 
     @Override
@@ -57,17 +60,36 @@ public class Event extends Fragment {
             }
         });
         try {
-            GetDistribution(view, listView, 0);
+            GetDistribution(view, listView, 0, false);
 
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
                 public void onRefresh() {
                     try {
-                        GetDistribution(view, listView, 0);
+                        GetDistribution(view, listView, 0, false);
                     } catch (JSONException | ExecutionException | InterruptedException e) {
                         e.printStackTrace();
                     }
                     swipeRefreshLayout.setRefreshing(false);
+                }
+            });
+            listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+                @Override
+                public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+                }
+
+                @Override
+                public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                    if (lastFirstVisibleItem < firstVisibleItem){
+                        value+=5;
+                        try {
+                            GetDistribution(view, listView, value, true);
+                        } catch (JSONException | ExecutionException | InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        lastFirstVisibleItem = firstVisibleItem;
+                    }
                 }
             });
 
@@ -105,21 +127,29 @@ public class Event extends Fragment {
             return row;
         }
     }
-    public void GetDistribution(View view, ListView listView, int value) throws JSONException, ExecutionException, InterruptedException {
+    public void GetDistribution(View view, ListView listView, int value, boolean scroll) throws JSONException, ExecutionException, InterruptedException {
+        if (!scroll){
+            Title = new ArrayList<>();
+            Discription = new ArrayList<>();
+        }
         SendQuery sendQuery = new SendQuery("Get_distribution_soshicon.php");
         sendQuery.execute("?start=" + value);
         String distributions_str = sendQuery.get();
+        if (!distributions_str.equals("eror")){
+            JSONArray array = new JSONArray(distributions_str);
 
-        JSONArray array = new JSONArray(distributions_str);
-
-        ArrayList<String> Title = new ArrayList<String>();
-        ArrayList<String> Discription = new ArrayList<String>();
-        for (int i=0; i < array.length(); i++){
-            JSONObject jo = new JSONObject((String) array.get(i));
-            Discription.add((String) jo.get("content"));
-            Title.add((String) jo.get("nickname"));
+            for (int i=0; i < array.length(); i++){
+                JSONObject jo = new JSONObject((String) array.get(i));
+                Discription.add((String) jo.get("content"));
+                Title.add((String) jo.get("nickname"));
+            }
+            if (!scroll){
+                myAdapter = new MyAdapter(requireContext(), Title, Discription);
+                listView.setAdapter(myAdapter);
+            }
+            else{
+                myAdapter.notifyDataSetChanged();
+            }
         }
-        MyAdapter myAdapter = new MyAdapter(requireContext(), Title, Discription);
-        listView.setAdapter(myAdapter);
     }
 }
