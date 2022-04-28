@@ -41,13 +41,27 @@ public class Fragment_Add extends BottomSheetDialogFragment {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.bottomshit_add_event, container, false);
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        BottomSheetBehavior<View> bottomSheetBehavior = BottomSheetBehavior.from((View) view.getParent());
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+        CoordinatorLayout layout = getDialog().findViewById(R.id.bottom_sheet_layout);
+        assert layout != null;
+        layout.setMinimumHeight(Resources.getSystem().getDisplayMetrics().heightPixels);
+
+        ImageView cancelEvent = view.findViewById(R.id.cancel);
+        ImageView add = view.findViewById(R.id.add);
         EditText editText = (EditText) view.findViewById(R.id.ed_add);
-        String[] recipient_arr = getResources().getStringArray(R.array.recipient);
 
         SharedPreferences sp = getActivity().getSharedPreferences("UserData", getContext().MODE_PRIVATE);
         TextView name = view.findViewById(R.id.username);
         name.setText(sp.getString("U_NICKNAME", ""));
-        ImageView add = view.findViewById(R.id.add);
+
         add.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -66,6 +80,7 @@ public class Fragment_Add extends BottomSheetDialogFragment {
                         String answer = sendQuery.get();
                         if (answer.equals("true")){
                             //здесть будет выводиться сообщение об успешном создании события
+                            closeBottomSheet(bottomSheetBehavior);
                         }
                         else{
                             //здесть будет выводиться сообщение об ошибке
@@ -76,20 +91,16 @@ public class Fragment_Add extends BottomSheetDialogFragment {
                 }
             }
         });
+        cancelEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                closeBottomSheet(bottomSheetBehavior);
+            }
+        });
 
-        return view;
     }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        BottomSheetBehavior<View> bottomSheetBehavior = BottomSheetBehavior.from((View) view.getParent());
-        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-
-        CoordinatorLayout layout = getDialog().findViewById(R.id.bottom_sheet_layout);
-        assert layout != null;
-        layout.setMinimumHeight(Resources.getSystem().getDisplayMetrics().heightPixels);
-
+    private void closeBottomSheet(BottomSheetBehavior bottomSheetBehavior) {
+        bottomSheetBehavior.setHideable(true);
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
     }
 }
