@@ -1,5 +1,7 @@
 package com.bulat.soshicon2.Registration;
 
+import static com.bulat.soshicon2.constants.constants.*;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
@@ -29,8 +31,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class RegistrationPassword extends Fragment {
-
-    private final String PASSWORD = "password";
 
     @Nullable
     @Override
@@ -72,7 +72,7 @@ public class RegistrationPassword extends Fragment {
             }
             else {
                 //Переход на фрагмент создания электронной почты
-                SharedPreferences sp = getContext().getSharedPreferences("user_data", getContext().MODE_PRIVATE);
+                SharedPreferences sp = getContext().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
                 String hexPassword = toHexString(getSHA(password.getText().toString()));
                 editor.putString(PASSWORD, hexPassword);

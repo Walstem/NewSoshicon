@@ -1,5 +1,7 @@
 package com.bulat.soshicon2.Registration;
 
+import static com.bulat.soshicon2.constants.constants.*;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -23,11 +25,6 @@ import com.bulat.soshicon2.checks.NetCheck;
 import java.io.IOException;
 
 public class RegistrationFinish extends Fragment {
-
-    private final String U_NICKNAME = "U_NICKNAME";
-    private final String PASSWORD = "password";
-    private final String EMAIL = "email";
-    final String ID = "ID";
 
     @Nullable
     @Override
@@ -60,7 +57,7 @@ public class RegistrationFinish extends Fragment {
     public void Welcome(View view) throws IOException {
         //излекаем данные регистрации из файла
         TextView welcome = (TextView) view.findViewById(R.id.welcome);
-        SharedPreferences sp = getContext().getSharedPreferences("user_data", getContext().MODE_PRIVATE);
+        SharedPreferences sp = getContext().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
 
         String welcomeText = sp.getString(U_NICKNAME, "") + ", добро \n пожаловать в Soshicon!";
         welcome.setText(welcomeText);
@@ -72,7 +69,7 @@ public class RegistrationFinish extends Fragment {
             ViewToastMessage(view);
         } else {
             //получаем данные введенные в процессе регистрации
-            SharedPreferences sp = getContext().getSharedPreferences("user_data", getContext().MODE_PRIVATE);
+            SharedPreferences sp = getContext().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
             String name = sp.getString(U_NICKNAME, "");
             String password = sp.getString(PASSWORD, "");
             String email = sp.getString(EMAIL, "");

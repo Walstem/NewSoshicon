@@ -1,5 +1,7 @@
 package com.bulat.soshicon2;
 
+import static com.bulat.soshicon2.constants.constants.*;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -22,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        SharedPreferences sp = getSharedPreferences("UserData", MODE_PRIVATE);
-        String id = sp.getString("ID", "");
+        SharedPreferences sp = getSharedPreferences(DATABASE, MODE_PRIVATE);
+        String id = sp.getString(ID, "");
 
 
         if (id.equals("0")){

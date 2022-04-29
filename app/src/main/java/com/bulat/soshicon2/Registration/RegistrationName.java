@@ -1,5 +1,7 @@
 package com.bulat.soshicon2.Registration;
 
+import static com.bulat.soshicon2.constants.constants.*;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -26,8 +28,6 @@ import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
 public class RegistrationName extends Fragment {
-
-    private final String U_NICKNAME = "U_NICKNAME";
 
     @Nullable
     @Override
@@ -83,7 +83,7 @@ public class RegistrationName extends Fragment {
 
             else {
                 //Переход на фрагмент создания пароля
-                SharedPreferences sp = getContext().getSharedPreferences("user_data", getContext().MODE_PRIVATE);
+                SharedPreferences sp = getContext().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
 
                 editor.putString(U_NICKNAME, u_nickname);

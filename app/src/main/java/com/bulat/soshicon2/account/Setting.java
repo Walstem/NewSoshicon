@@ -1,6 +1,9 @@
 package com.bulat.soshicon2.account;
 
+import static com.bulat.soshicon2.constants.constants.*;
+
 import android.app.Dialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,12 +16,12 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.Registration.Authorization;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-public class Setting extends BottomSheetDialogFragment {
+public class
+Setting extends BottomSheetDialogFragment {
 
     @NonNull
     @Override
@@ -37,6 +40,14 @@ public class Setting extends BottomSheetDialogFragment {
         log_out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
+                SharedPreferences sp = view.getContext().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString(ID, "");
+                editor.putString(U_NICKNAME, "");
+                editor.putString(EMAIL, "");
+                editor.putString(PASSWORD, "");
+
+
                 Authorization authorization = new Authorization();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.add(R.id.nav_host_fragment_activity_main, authorization);

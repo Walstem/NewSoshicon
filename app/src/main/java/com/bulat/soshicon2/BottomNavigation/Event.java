@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -19,7 +18,6 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bulat.soshicon2.R;
-import com.bulat.soshicon2.Registration.RegistrationFinish;
 import com.bulat.soshicon2.asynctasks.SendQuery;
 import com.bulat.soshicon2.event.Fragment_Add;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -40,7 +38,6 @@ public class Event extends Fragment {
     private ArrayList<String> Discription = new ArrayList<String>();
     private ArrayAdapter myAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
-    private int lastFirstVisibleItem = 0;
     private int value = 0;
     private int countRowsDisitibution;
 
@@ -73,6 +70,8 @@ public class Event extends Fragment {
                 transaction.add(R.id.nav_host_fragment_activity_main, account);
                 transaction.addToBackStack(null);
                 transaction.commit();
+                BottomNavigationView navigationView = getActivity().findViewById(R.id.bottom_navigation);
+                navigationView.setSelectedItemId(R.id.nav_account);
             }
         });
         try {

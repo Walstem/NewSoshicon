@@ -1,5 +1,7 @@
 package com.bulat.soshicon2.BottomNavigation;
 
+import static com.bulat.soshicon2.constants.constants.*;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -13,27 +15,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.bulat.soshicon2.R;
-import com.bulat.soshicon2.Registration.Authorization;
-import com.bulat.soshicon2.Registration.RegistrationPassword;
+import com.bulat.soshicon2.R;;
 import com.bulat.soshicon2.account.Setting;
-import com.bulat.soshicon2.event.Fragment_Add;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-import java.io.BufferedInputStream;
-import java.io.ByteArrayInputStream;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.URI;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -45,13 +39,13 @@ public class Account extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.account, container, false);
 
-        SharedPreferences sp = getActivity().getSharedPreferences("user_data", getContext().MODE_PRIVATE);
+        SharedPreferences sp = getActivity().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
         TextView name = view.findViewById(R.id.username_bottom_avatar);
         BottomSheetDialogFragment BottomSheet = new Setting();
         ImageView account_setting = view.findViewById(R.id.account_edit);
         profile = (CircleImageView) view.findViewById(R.id.profile_avatar);
 
-        name.setText(sp.getString("U_NICKNAME", ""));
+        name.setText(sp.getString(U_NICKNAME, ""));
 
         BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
         navBar.setVisibility(view.VISIBLE);

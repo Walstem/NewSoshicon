@@ -1,9 +1,7 @@
 package com.bulat.soshicon2.checks;
 
-import android.os.AsyncTask;
 
 import com.bulat.soshicon2.asynctasks.SendQuery;
-
 import java.util.concurrent.ExecutionException;
 
 public class UniqueNameCheck {

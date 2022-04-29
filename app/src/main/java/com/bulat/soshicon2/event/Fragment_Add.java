@@ -1,9 +1,10 @@
 package com.bulat.soshicon2.event;
 
+import static com.bulat.soshicon2.constants.constants.*;
+
 import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +16,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.fragment.app.Fragment;
 
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.SQLUtils.SQLUtils;
@@ -58,9 +58,9 @@ public class Fragment_Add extends BottomSheetDialogFragment {
         ImageView add = view.findViewById(R.id.add);
         EditText editText = (EditText) view.findViewById(R.id.ed_add);
 
-        SharedPreferences sp = getActivity().getSharedPreferences("user_data", getContext().MODE_PRIVATE);
+        SharedPreferences sp = getActivity().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
         TextView name = view.findViewById(R.id.username);
-        name.setText(sp.getString("U_NICKNAME", ""));
+        name.setText(sp.getString(U_NICKNAME, ""));
 
         add.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -68,9 +68,9 @@ public class Fragment_Add extends BottomSheetDialogFragment {
                 String content = editText.getText().toString();
 
                 if(!content.equals("")){
-                    SharedPreferences sp = getContext().getSharedPreferences("user_data", 0);
-                    String user_id = sp.getString("ID", "");
-                    String nickname = sp.getString("U_NICKNAME", "");
+                    SharedPreferences sp = getContext().getSharedPreferences(DATABASE, 0);
+                    String user_id = sp.getString(ID, "");
+                    String nickname = sp.getString(U_NICKNAME, "");
                     String Message = editText.getText().toString();
                     String urlArgs = new SQLUtils(user_id, Message, nickname).input_distribution();
 

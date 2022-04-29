@@ -1,5 +1,7 @@
 package com.bulat.soshicon2.Registration;
 
+import static com.bulat.soshicon2.constants.constants.*;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -30,8 +32,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class Authorization extends Fragment {
-    final String ID = "ID";
-    private final String U_NICKNAME = "U_NICKNAME";
+
 
     @Nullable
     @Override
@@ -39,7 +40,7 @@ public class Authorization extends Fragment {
         View view = inflater.inflate(R.layout.authorization, container, false);
 
         BottomNavigationView navigationView = getActivity().findViewById(R.id.bottom_navigation);
-        navigationView.setVisibility(0x00000008);
+        navigationView.setVisibility(View.GONE);
 
         TextView tv_registration = (TextView) view.findViewById(R.id.tv_registration);
         tv_registration.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +88,7 @@ public class Authorization extends Fragment {
                     String id =  request_id.get();
 
                     // добавляем id пользователя в сохраненные настрйоки
-                    SharedPreferences sPref = getContext().getSharedPreferences("user_data", getContext().MODE_PRIVATE);
+                    SharedPreferences sPref = getContext().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
                     SharedPreferences.Editor ed = sPref.edit();
                     ed.putString(ID, id);
                     ed.putString(U_NICKNAME, login);

@@ -1,5 +1,7 @@
 package com.bulat.soshicon2.Registration;
 
+import static com.bulat.soshicon2.constants.constants.*;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -25,8 +27,6 @@ import com.bulat.soshicon2.checks.NetCheck;
 import java.io.IOException;
 
 public class RegistrationEmail extends Fragment {
-
-    private final String EMAIL = "email";
 
     @Nullable
     @Override
@@ -75,7 +75,7 @@ public class RegistrationEmail extends Fragment {
             }
             else {
                 //Переход на фрагмент окончания регистрации
-                SharedPreferences sp = getContext().getSharedPreferences("user_data", getContext().MODE_PRIVATE);
+                SharedPreferences sp = getContext().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
 
                 editor.putString(EMAIL, email.getText().toString());
