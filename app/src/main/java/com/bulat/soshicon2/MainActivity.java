@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_activity_main, new Authorization()).commit();
         }
         else{
-            getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_activity_main, new Authorization()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_activity_main, new Event()).commit();
         }
 
 

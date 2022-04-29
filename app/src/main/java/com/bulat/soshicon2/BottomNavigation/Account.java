@@ -13,9 +13,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.R;
+import com.bulat.soshicon2.Registration.Authorization;
+import com.bulat.soshicon2.Registration.RegistrationPassword;
 import com.bulat.soshicon2.account.Setting;
 import com.bulat.soshicon2.event.Fragment_Add;
 import com.github.dhaval2404.imagepicker.ImagePicker;
@@ -39,17 +43,18 @@ public class Account extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View RootView = inflater.inflate(R.layout.account, container, false);
+        View view = inflater.inflate(R.layout.account, container, false);
 
         SharedPreferences sp = getActivity().getSharedPreferences("user_data", getContext().MODE_PRIVATE);
-        TextView name = RootView.findViewById(R.id.username_bottom_avatar);
+        TextView name = view.findViewById(R.id.username_bottom_avatar);
         BottomSheetDialogFragment BottomSheet = new Setting();
-        ImageView account_setting = RootView.findViewById(R.id.account_edit);
+        ImageView account_setting = view.findViewById(R.id.account_edit);
+        profile = (CircleImageView) view.findViewById(R.id.profile_avatar);
 
         name.setText(sp.getString("U_NICKNAME", ""));
 
         BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
-        navBar.setVisibility(View.VISIBLE);
+        navBar.setVisibility(view.VISIBLE);
 
         account_setting.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,10 +62,6 @@ public class Account extends Fragment {
                 BottomSheet.show(getFragmentManager().beginTransaction(), "BottomSheetDialog");
             }
         });
-
-
-        profile = (CircleImageView) RootView.findViewById(R.id.profile_avatar);
-
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,7 +73,7 @@ public class Account extends Fragment {
             }
         });
 
-        return RootView;
+        return view;
     }
 
     @Override

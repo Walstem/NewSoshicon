@@ -22,6 +22,7 @@ import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.SQLUtils.SQLUtils;
 import com.bulat.soshicon2.asynctasks.SendQuery;
 import com.bulat.soshicon2.checks.NetCheck;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
@@ -36,6 +37,9 @@ public class Authorization extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.authorization, container, false);
+
+        BottomNavigationView navigationView = getActivity().findViewById(R.id.bottom_navigation);
+        navigationView.setVisibility(0x00000008);
 
         TextView tv_registration = (TextView) view.findViewById(R.id.tv_registration);
         tv_registration.setOnClickListener(new View.OnClickListener() {
