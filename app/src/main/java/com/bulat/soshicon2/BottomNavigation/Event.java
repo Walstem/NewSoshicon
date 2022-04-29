@@ -38,7 +38,8 @@ public class Event extends Fragment {
     private ArrayList<String> Discription = new ArrayList<String>();
     private ArrayAdapter myAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
-    private int value = 0;
+    private int start = 0;
+    private int end = 10;
     private int countRowsDisitibution;
 
     @Override
@@ -55,13 +56,14 @@ public class Event extends Fragment {
         CircleImageView avatar = view.findViewById(R.id.avatar);
         BottomSheetDialogFragment BottomSheet = new Fragment_Add();
 
-
+        //вызываем редактор создания событий
         addEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BottomSheet.show(getFragmentManager().beginTransaction(), "BottomShitDialog");
             }
         });
+        //переключаем фрагмент событий на фрагмент профиль
         avatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,35 +77,41 @@ public class Event extends Fragment {
             }
         });
         try {
-            GetDistribution(view, listView, 0, false);
+            //прогружаем данные при запуске фрагмента
+            GetDistribution(view, listView, start, end, false);
 
+            //прогружаем данные при ручной перезагрузке
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
                 public void onRefresh() {
                     try {
-                        GetDistribution(view, listView, 0, false);
+                        start = 0;end = 10;
+                        GetDistribution(view, listView, start, end, false);
                     } catch (JSONException | ExecutionException | InterruptedException e) {
                         e.printStackTrace();
                     }
                     swipeRefreshLayout.setRefreshing(false);
                 }
             });
+            //отслеживаем свайп  пользователя
             listView.setOnScrollListener(new AbsListView.OnScrollListener() {
                 @Override
                 public void onScrollStateChanged(AbsListView view, int scrollState) {
                     try {
-                        if (countRowsDisitibution == 0) {
+                        if (countRowsDisitibution < 1) {
                             System.out.println("Записи закончились!");
                         }
                         else if(countRowsDisitibution / 10 < 1){
-                            value = countRowsDisitibution;
-                            countRowsDisitibution = 0;
-                            GetDistribution(view, listView, value, true);
+                            System.out.println(start);
+                            start +=10;
+                            end = countRowsDisitibution;
+                            GetDistribution(view, listView, start, end, true);
                         }
                         else{
-                            value+=10;
-                            GetDistribution(view, listView, value, true);
-                            countRowsDisitibution =- 10;
+                            end = 10;
+                            start +=10;
+                            System.out.println(start);
+                            GetDistribution(view, listView, start, end, true);
                         }
                     } catch (JSONException | ExecutionException | InterruptedException e) {
                         e.printStackTrace();
@@ -149,41 +157,48 @@ public class Event extends Fragment {
             return row;
         }
     }
-    public void GetDistribution(View view, ListView listView, int value, boolean scroll) throws JSONException, ExecutionException, InterruptedException {
+    public void GetDistribution(View view, ListView listView, int start, int end, boolean scroll) throws JSONException, ExecutionException, InterruptedException {
+        //если происходит загрузка при переходе на страницу
         if (!scroll){
+            //опусташаем списки данных
             Title = new ArrayList<>();
             Discription = new ArrayList<>();
 
-            value = 0;
+            //вычисляем количество записей в таблице с событиями
             SendQuery sendQuery = new SendQuery("getCountDistribution.php");
-            sendQuery.execute("?name=");
+            sendQuery.execute("?example=");
             try {
                 distributions_str = sendQuery.get();
-                countRowsDisitibution = Integer.parseInt(distributions_str) - 10;
+                countRowsDisitibution = Integer.parseInt(distributions_str);
                 System.out.println("countRowsDisitibution " + countRowsDisitibution);
             } catch (ExecutionException | InterruptedException e) {
                 e.printStackTrace();
             }
 
         }
+        //получаем данные события
         SendQuery sendQuery = new SendQuery("Get_distribution_soshicon.php");
-        sendQuery.execute("?start=" + value);
+        sendQuery.execute("?start=" + start + "&end=" + end);
         String distributions_str = sendQuery.get();
-        if (!distributions_str.equals("[]")){
-            JSONArray array = new JSONArray(distributions_str);
+        JSONArray array = new JSONArray(distributions_str);
+        //уменьшаем количество записей оставшихся в таблице
+        countRowsDisitibution -=10;
 
-            for (int i=0; i < array.length(); i++){
-                JSONObject jo = new JSONObject((String) array.get(i));
-                Discription.add((String) jo.get("content"));
-                Title.add((String) jo.get("nickname"));
-            }
-            if (!scroll){
-                myAdapter = new MyAdapter(requireContext(), Title, Discription);
-                listView.setAdapter(myAdapter);
-            }
-            else{
-                myAdapter.notifyDataSetChanged();
-            }
+        //добавляем данные в массивы
+        for (int i=0; i < array.length(); i++){
+            JSONObject jo = new JSONObject((String) array.get(i));
+            Discription.add((String) jo.get("content"));
+            Title.add((String) jo.get("nickname"));
+        }
+
+        //если происходит загрузка при переходе на страницу прогружаем listview Заново
+        if (!scroll){
+            myAdapter = new MyAdapter(requireContext(), Title, Discription);
+            listView.setAdapter(myAdapter);
+        }
+        //если функция была вызванна свайпом, то обновляем Listview
+        else{
+            myAdapter.notifyDataSetChanged();
         }
     }
 }
