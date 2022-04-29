@@ -27,7 +27,7 @@ import java.util.concurrent.ExecutionException;
 
 public class RegistrationName extends Fragment {
 
-    private final String U_NICKNAME = "u_nickname";
+    private final String U_NICKNAME = "U_NICKNAME";
 
     @Nullable
     @Override

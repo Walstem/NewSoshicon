@@ -16,18 +16,15 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.BottomNavigation.Event;
-import com.bulat.soshicon2.FileHandler.AppSpecificFiles;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.SQLUtils.SQLUtils;
 import com.bulat.soshicon2.asynctasks.SendQuery;
 import com.bulat.soshicon2.checks.NetCheck;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class RegistrationFinish extends Fragment {
 
-    private final String U_NICKNAME = "u_nickname";
+    private final String U_NICKNAME = "U_NICKNAME";
     private final String PASSWORD = "password";
     private final String EMAIL = "email";
     final String ID = "ID";
@@ -106,11 +103,6 @@ public class RegistrationFinish extends Fragment {
             transaction.addToBackStack(null);
             transaction.commit();
         }
-    }
-
-    public String[] extraction() throws FileNotFoundException {
-        String Data = new AppSpecificFiles().ReadFile(getContext().getApplicationContext(), "/user_data.txt");
-        return Data.split(" ");
     }
 
     public void ViewToastMessage(View view) {

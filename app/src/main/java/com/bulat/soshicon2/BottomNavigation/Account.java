@@ -2,6 +2,8 @@ package com.bulat.soshicon2.BottomNavigation;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -27,6 +29,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URI;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -38,7 +41,7 @@ public class Account extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View RootView = inflater.inflate(R.layout.account, container, false);
 
-        SharedPreferences sp = getActivity().getSharedPreferences("UserData", getContext().MODE_PRIVATE);
+        SharedPreferences sp = getActivity().getSharedPreferences("user_data", getContext().MODE_PRIVATE);
         TextView name = RootView.findViewById(R.id.username_bottom_avatar);
         BottomSheetDialogFragment BottomSheet = new Setting();
         ImageView account_setting = RootView.findViewById(R.id.account_edit);
@@ -64,7 +67,7 @@ public class Account extends Fragment {
                 ImagePicker.with(Account.this)
                         .crop()	    			//Crop image(Optional), Check Customization for more option
                         .compress(1024)			//Final image size will be less than 1 MB(Optional)
-                        .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
+                        .maxResultSize(600, 600)	//Final image resolution will be less than 1080 x 1080(Optional)
                         .start();
             }
         });
@@ -77,7 +80,23 @@ public class Account extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
 
         Uri uri = data.getData();
-        System.out.println(uri);
         profile.setImageURI(uri);
+        System.out.println(uri.getPath());
+        try {
+            byte[] img = ReadFile(uri.getPath());
+            System.out.println(img.length);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    public byte[] ReadFile(String filename) throws FileNotFoundException {
+
+        File file = new File(filename);
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(file));
+        bitmap.compress(Bitmap.CompressFormat.PNG, 0, stream);
+        byte[] byteArray = stream.toByteArray();
+        bitmap.recycle();
+        return byteArray;
     }
 }

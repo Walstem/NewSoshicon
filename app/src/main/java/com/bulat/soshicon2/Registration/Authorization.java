@@ -30,6 +30,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class Authorization extends Fragment {
     final String ID = "ID";
+    private final String U_NICKNAME = "U_NICKNAME";
 
     @Nullable
     @Override
@@ -82,10 +83,10 @@ public class Authorization extends Fragment {
                     String id =  request_id.get();
 
                     // добавляем id пользователя в сохраненные настрйоки
-                    SharedPreferences sPref = getContext().getSharedPreferences("UserData", getContext().MODE_PRIVATE);
+                    SharedPreferences sPref = getContext().getSharedPreferences("user_data", getContext().MODE_PRIVATE);
                     SharedPreferences.Editor ed = sPref.edit();
                     ed.putString(ID, id);
-                    ed.putString("U_NICKNAME", login);
+                    ed.putString(U_NICKNAME, login);
                     ed.apply();
                     String data_id = sPref.getString(ID, "");
                     System.out.println(data_id);

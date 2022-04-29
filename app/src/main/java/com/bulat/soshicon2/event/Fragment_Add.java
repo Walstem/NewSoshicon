@@ -58,7 +58,7 @@ public class Fragment_Add extends BottomSheetDialogFragment {
         ImageView add = view.findViewById(R.id.add);
         EditText editText = (EditText) view.findViewById(R.id.ed_add);
 
-        SharedPreferences sp = getActivity().getSharedPreferences("UserData", getContext().MODE_PRIVATE);
+        SharedPreferences sp = getActivity().getSharedPreferences("user_data", getContext().MODE_PRIVATE);
         TextView name = view.findViewById(R.id.username);
         name.setText(sp.getString("U_NICKNAME", ""));
 
@@ -68,7 +68,7 @@ public class Fragment_Add extends BottomSheetDialogFragment {
                 String content = editText.getText().toString();
 
                 if(!content.equals("")){
-                    SharedPreferences sp = getContext().getSharedPreferences("UserData", 0);
+                    SharedPreferences sp = getContext().getSharedPreferences("user_data", 0);
                     String user_id = sp.getString("ID", "");
                     String nickname = sp.getString("U_NICKNAME", "");
                     String Message = editText.getText().toString();
