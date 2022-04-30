@@ -15,6 +15,7 @@ import com.bulat.soshicon2.BottomNavigation.Chat;
 import com.bulat.soshicon2.BottomNavigation.Event;
 import com.bulat.soshicon2.BottomNavigation.Response;
 import com.bulat.soshicon2.Registration.Authorization;
+import com.bulat.soshicon2.Setting.LanguageManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        LanguageManager languageManager = new LanguageManager(this);
+        languageManager.updateResource(languageManager.getLang());
 
         SharedPreferences sp = getSharedPreferences(DATABASE, MODE_PRIVATE);
         String id = sp.getString(ID, "");

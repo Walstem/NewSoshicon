@@ -16,12 +16,12 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.R;;
-import com.bulat.soshicon2.account.Setting;
+import com.bulat.soshicon2.Setting.Setting;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 
 import java.io.ByteArrayOutputStream;
@@ -41,7 +41,6 @@ public class Account extends Fragment {
 
         SharedPreferences sp = getActivity().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
         TextView name = view.findViewById(R.id.username_bottom_avatar);
-        BottomSheetDialogFragment BottomSheet = new Setting();
         ImageView account_setting = view.findViewById(R.id.account_edit);
         profile = (CircleImageView) view.findViewById(R.id.profile_avatar);
 
@@ -53,7 +52,11 @@ public class Account extends Fragment {
         account_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                BottomSheet.show(getFragmentManager().beginTransaction(), "BottomSheetDialog");
+                Setting set = new Setting();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.add(R.id.nav_host_fragment_activity_main, set);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
         profile.setOnClickListener(new View.OnClickListener() {

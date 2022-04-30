@@ -1,32 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    //title
+                                            <!--    ОСНОВНЫЕ    -->
+
     <string name="app_name">Soshicon</string>
     <string name="title_home">Home</string>
-    <string name="proceed">Далее</string>
     <string name="login">Логин</string>
     <string name="password">Пароль</string>
     <string name="email">email</string>
+    <string name="next">Далее</string>
 
-    ////////////////////////////////////////////////РЕГИСТРАЦИЯ
+                                            <!--    РЕГИСТРАЦИЯ    -->
 
-    //Проверка полей на символы на валидацию
+    <!--Проверка полей на символы на валидацию-->
     <string name="Limitation_EditText">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._</string>
     <string name="Limitation_EditText_email">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._@-</string>
 
-    //Name_Fragment
+    <!--Создания имени-->
     <string name="login_headline">Создание имени пользователя</string>
     <string name="login_info">Выберите имя пользователя для своего нового аккаунта. Вы сможете изменить его позже.</string>
+    <string name="username_hint">Имя пользователя</string>
 
-    //Password_Fragment
+    <!--Создания пароля-->
     <string name="password_headline">Придумайте пароль</string>
     <string name="password_info">Мы можем запомнить пароль в ваш аккаунт Google.</string>
     <string name="password_checkbox">Сохранить пароль</string>
 
-    //Email_Fragment
+    <!--Создание электронной почты-->
     <string name="email_info">Soshicon может отправлять вам сообщения на почту. Вы можете отказаться от них в любой момент.</string>
     <string name="email_headline">Добавить \nэлектронный адрес</string>
 
-    //Finish_Fragment
+    <!--Завершение регистрации-->
     <string name="welcome">,добро \n пожаловать в Soshicon!</string>
     <string name="сomplete">Завершить регистрацию</string>
     <string name="btn_registration">Зарегистрироваться</string>
@@ -34,35 +37,63 @@
     <string name="et_password">Пароль</string>
     <string name="ed_login">Логин</string>
 
-    ////////////////////////////////////////////////ПОСЛЕ РЕГИСТРАЦИИ
+                                            <!--    СОБЫТИЯ   -->
 
-    //Account_Fragment
-    <string name="account_edit">Edit</string>
+    <string name="event">События</string>
 
-    //Add_Event_Fragment
+    <!--Фрагмент добавления события-->
     <string-array name="recipient">
         <item>Выберите получателя рассылки</item>
         <item>Всем</item>
         <item>Друзьям</item>
     </string-array>
 
-    ////////////////////////////////////////////////ВСПЛЫВАЮЩИЕ СООБЩЕНИЯ
+    <!--Добавление события-->
+    <string name="Anything_new"><font size="24">Что у вас нового?</font></string>
 
-    //Ошибки при регистрации имени
+                                            <!--    ОТКЛИКИ   -->
+
+    <string name="response">Отклики</string>
+
+                                            <!--    ЧАТ   -->
+
+    <string name="chat">Чат</string>
+
+                                            <!--    АККАУНТ   -->
+
+    <string name="account_edit">Edit</string>
+
+                                            <!--    НАСТРОЙКИ   -->
+
+    <string name="setting">Настройки</string>
+    <string name="setting_edit">Редактировать</string>
+    <string name="lightMode">Светлая тема</string>
+    <string name="notification">Уведомления</string>
+    <string name="textSize">Размер шрифта</string>
+    <string name="language">Язык</string>
+    <string name="aboutUs">О нас</string>
+    <string name="faq">FAQ</string>
+    <string name="logOut">Выйти</string>
+
+
+                                            <!--    ВСПЛЫВАЮЩИЕ СООБЩЕНИЯ   -->
+
+    <!--Ошибка при авторизации-->
+    <string name="authorization_error">Проверьте правильность введенных данных.</string>
+    <string name="authorization_error_logpass">Неверный логин или пароль</string>
+
+    <!--Ошибка при регистрации имени-->
     <string name="min_size_name_error">Имя должно содержать минимум 3 символа</string>
     <string name="name_taken_1">имя пользователя </string>
     <string name="name_taken_2"> уже занято </string>
 
-    //Ошибки при регистрации пароля
+    <!--Ошибка при регистрации пароля-->
     <string name="min_size_password">Пароль должен содержать минимум 8 символов</string>
 
-    //Ошибки при регистрации эл. почты
+    <!--Ошибка при регистрации электронной почты-->
     <string name="email_error">Введите действительную эл. почту. \nНапример: myemail@gmail.com</string>
 
-    //Ошибка при отсутствии интернета
+    <!--Ошибка при отсутствии интернета-->
     <string name="not_internet_error">Отсутствует подключение к Интернету</string>
-
-    //add event
-    <string name="Anything_new"><font size="24">Что у вас нового?</font></string>
 
 </resources>
