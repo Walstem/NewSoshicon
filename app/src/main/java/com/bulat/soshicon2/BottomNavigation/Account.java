@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 
 import com.bulat.soshicon2.R;;
 import com.bulat.soshicon2.account.Setting;
+import com.bulat.soshicon2.asynctasks.SendQuery;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -79,7 +80,12 @@ public class Account extends Fragment {
         System.out.println(uri.getPath());
         try {
             byte[] img = ReadFile(uri.getPath());
-            System.out.println(img.length);
+            String req_str = "";
+            for (int i=0; i < img.length; i++){
+                req_str += img[i];
+            }
+            SendQuery request = new SendQuery("upload_photo.php");
+            request.execute("?img=" + new File(req_str));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
