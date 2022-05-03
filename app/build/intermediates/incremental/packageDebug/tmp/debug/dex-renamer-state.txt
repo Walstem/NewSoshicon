@@ -1,7 +1,7 @@
-#Sun May 01 19:51:29 MSK 2022
+#Mon May 02 13:34:46 MSK 2022
 path.4=15/classes.dex
 path.3=14/classes.dex
-path.2=10/classes.dex
+path.2=13/classes.dex
 renamed.9=classes10.dex
 path.1=0/classes.dex
 renamed.8=classes9.dex
@@ -13,7 +13,7 @@ renamed.10=classes11.dex
 path.0=classes.dex
 base.4=C\:\\NewSoshicon\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
 base.3=C\:\\NewSoshicon\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
-base.2=C\:\\NewSoshicon\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
+base.2=C\:\\NewSoshicon\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
 base.1=C\:\\NewSoshicon\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.0=C\:\\NewSoshicon\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 renamed.3=classes4.dex

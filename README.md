@@ -1,1 +1,1 @@
-# NewSoshicon
+# NewSoshico

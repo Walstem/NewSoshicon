@@ -6,9 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -29,6 +31,12 @@ public final class AccountSettingBinding implements ViewBinding {
   public final ImageView FAQImage;
 
   @NonNull
+  public final ConstraintLayout SecondPanelSetting;
+
+  @NonNull
+  public final ConstraintLayout ThirdPanelSetting;
+
+  @NonNull
   public final ConstraintLayout aboutUs;
 
   @NonNull
@@ -41,16 +49,16 @@ public final class AccountSettingBinding implements ViewBinding {
   public final ImageView cancel;
 
   @NonNull
+  public final Spinner choiceLanguage;
+
+  @NonNull
   public final ConstraintLayout constraintLayout;
 
   @NonNull
-  public final ConstraintLayout constraintLayout4;
+  public final ConstraintLayout containerSetting;
 
   @NonNull
-  public final ConstraintLayout constraintLayout5;
-
-  @NonNull
-  public final ConstraintLayout constraintLayout6;
+  public final ConstraintLayout firstPanelSetting;
 
   @NonNull
   public final ConstraintLayout languages;
@@ -59,13 +67,19 @@ public final class AccountSettingBinding implements ViewBinding {
   public final ImageView languagesImage;
 
   @NonNull
+  public final ConstraintLayout lightMode;
+
+  @NonNull
+  public final ImageView lightModeImage;
+
+  @NonNull
+  public final SwitchCompat lightModeSwitch;
+
+  @NonNull
   public final ImageView logOut;
 
   @NonNull
-  public final ConstraintLayout nightMode;
-
-  @NonNull
-  public final ImageView nightModeImage;
+  public final ConstraintLayout logOutSetting;
 
   @NonNull
   public final ConstraintLayout notification;
@@ -95,13 +109,15 @@ public final class AccountSettingBinding implements ViewBinding {
   public final TextView usernameBottomAvatar;
 
   private AccountSettingBinding(@NonNull ConstraintLayout rootView, @NonNull ConstraintLayout FAQ,
-      @NonNull ImageView FAQImage, @NonNull ConstraintLayout aboutUs,
+      @NonNull ImageView FAQImage, @NonNull ConstraintLayout SecondPanelSetting,
+      @NonNull ConstraintLayout ThirdPanelSetting, @NonNull ConstraintLayout aboutUs,
       @NonNull ImageView aboutUsImage, @NonNull Button button, @NonNull ImageView cancel,
-      @NonNull ConstraintLayout constraintLayout, @NonNull ConstraintLayout constraintLayout4,
-      @NonNull ConstraintLayout constraintLayout5, @NonNull ConstraintLayout constraintLayout6,
+      @NonNull Spinner choiceLanguage, @NonNull ConstraintLayout constraintLayout,
+      @NonNull ConstraintLayout containerSetting, @NonNull ConstraintLayout firstPanelSetting,
       @NonNull ConstraintLayout languages, @NonNull ImageView languagesImage,
-      @NonNull ImageView logOut, @NonNull ConstraintLayout nightMode,
-      @NonNull ImageView nightModeImage, @NonNull ConstraintLayout notification,
+      @NonNull ConstraintLayout lightMode, @NonNull ImageView lightModeImage,
+      @NonNull SwitchCompat lightModeSwitch, @NonNull ImageView logOut,
+      @NonNull ConstraintLayout logOutSetting, @NonNull ConstraintLayout notification,
       @NonNull ImageView notificationImage, @NonNull CircleImageView profileAvatarSetting,
       @NonNull ConstraintLayout settingLogOut, @NonNull ConstraintLayout textSize,
       @NonNull ImageView textSizeImage, @NonNull TextView textView, @NonNull TextView username,
@@ -109,19 +125,23 @@ public final class AccountSettingBinding implements ViewBinding {
     this.rootView = rootView;
     this.FAQ = FAQ;
     this.FAQImage = FAQImage;
+    this.SecondPanelSetting = SecondPanelSetting;
+    this.ThirdPanelSetting = ThirdPanelSetting;
     this.aboutUs = aboutUs;
     this.aboutUsImage = aboutUsImage;
     this.button = button;
     this.cancel = cancel;
+    this.choiceLanguage = choiceLanguage;
     this.constraintLayout = constraintLayout;
-    this.constraintLayout4 = constraintLayout4;
-    this.constraintLayout5 = constraintLayout5;
-    this.constraintLayout6 = constraintLayout6;
+    this.containerSetting = containerSetting;
+    this.firstPanelSetting = firstPanelSetting;
     this.languages = languages;
     this.languagesImage = languagesImage;
+    this.lightMode = lightMode;
+    this.lightModeImage = lightModeImage;
+    this.lightModeSwitch = lightModeSwitch;
     this.logOut = logOut;
-    this.nightMode = nightMode;
-    this.nightModeImage = nightModeImage;
+    this.logOutSetting = logOutSetting;
     this.notification = notification;
     this.notificationImage = notificationImage;
     this.profileAvatarSetting = profileAvatarSetting;
@@ -172,6 +192,18 @@ public final class AccountSettingBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.SecondPanelSetting;
+      ConstraintLayout SecondPanelSetting = ViewBindings.findChildViewById(rootView, id);
+      if (SecondPanelSetting == null) {
+        break missingId;
+      }
+
+      id = R.id.ThirdPanelSetting;
+      ConstraintLayout ThirdPanelSetting = ViewBindings.findChildViewById(rootView, id);
+      if (ThirdPanelSetting == null) {
+        break missingId;
+      }
+
       id = R.id.aboutUs;
       ConstraintLayout aboutUs = ViewBindings.findChildViewById(rootView, id);
       if (aboutUs == null) {
@@ -196,27 +228,23 @@ public final class AccountSettingBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.choiceLanguage;
+      Spinner choiceLanguage = ViewBindings.findChildViewById(rootView, id);
+      if (choiceLanguage == null) {
+        break missingId;
+      }
+
       id = R.id.constraintLayout;
       ConstraintLayout constraintLayout = ViewBindings.findChildViewById(rootView, id);
       if (constraintLayout == null) {
         break missingId;
       }
 
-      id = R.id.constraintLayout4;
-      ConstraintLayout constraintLayout4 = ViewBindings.findChildViewById(rootView, id);
-      if (constraintLayout4 == null) {
-        break missingId;
-      }
+      ConstraintLayout containerSetting = (ConstraintLayout) rootView;
 
-      id = R.id.constraintLayout5;
-      ConstraintLayout constraintLayout5 = ViewBindings.findChildViewById(rootView, id);
-      if (constraintLayout5 == null) {
-        break missingId;
-      }
-
-      id = R.id.constraintLayout6;
-      ConstraintLayout constraintLayout6 = ViewBindings.findChildViewById(rootView, id);
-      if (constraintLayout6 == null) {
+      id = R.id.firstPanelSetting;
+      ConstraintLayout firstPanelSetting = ViewBindings.findChildViewById(rootView, id);
+      if (firstPanelSetting == null) {
         break missingId;
       }
 
@@ -232,21 +260,33 @@ public final class AccountSettingBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.lightMode;
+      ConstraintLayout lightMode = ViewBindings.findChildViewById(rootView, id);
+      if (lightMode == null) {
+        break missingId;
+      }
+
+      id = R.id.lightMode_image;
+      ImageView lightModeImage = ViewBindings.findChildViewById(rootView, id);
+      if (lightModeImage == null) {
+        break missingId;
+      }
+
+      id = R.id.lightModeSwitch;
+      SwitchCompat lightModeSwitch = ViewBindings.findChildViewById(rootView, id);
+      if (lightModeSwitch == null) {
+        break missingId;
+      }
+
       id = R.id.log_out;
       ImageView logOut = ViewBindings.findChildViewById(rootView, id);
       if (logOut == null) {
         break missingId;
       }
 
-      id = R.id.nightMode;
-      ConstraintLayout nightMode = ViewBindings.findChildViewById(rootView, id);
-      if (nightMode == null) {
-        break missingId;
-      }
-
-      id = R.id.nightMode_image;
-      ImageView nightModeImage = ViewBindings.findChildViewById(rootView, id);
-      if (nightModeImage == null) {
+      id = R.id.logOutSetting;
+      ConstraintLayout logOutSetting = ViewBindings.findChildViewById(rootView, id);
+      if (logOutSetting == null) {
         break missingId;
       }
 
@@ -304,9 +344,10 @@ public final class AccountSettingBinding implements ViewBinding {
         break missingId;
       }
 
-      return new AccountSettingBinding((ConstraintLayout) rootView, FAQ, FAQImage, aboutUs,
-          aboutUsImage, button, cancel, constraintLayout, constraintLayout4, constraintLayout5,
-          constraintLayout6, languages, languagesImage, logOut, nightMode, nightModeImage,
+      return new AccountSettingBinding((ConstraintLayout) rootView, FAQ, FAQImage,
+          SecondPanelSetting, ThirdPanelSetting, aboutUs, aboutUsImage, button, cancel,
+          choiceLanguage, constraintLayout, containerSetting, firstPanelSetting, languages,
+          languagesImage, lightMode, lightModeImage, lightModeSwitch, logOut, logOutSetting,
           notification, notificationImage, profileAvatarSetting, settingLogOut, textSize,
           textSizeImage, textView, username, usernameBottomAvatar);
     }
