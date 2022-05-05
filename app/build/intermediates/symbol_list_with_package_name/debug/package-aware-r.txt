@@ -1289,6 +1289,8 @@ color background_material_light
 color bg_error_div
 color black
 color border_text_error
+color bottom_nav_color
+color bottom_nav_item_color
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1347,6 +1349,7 @@ color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
+color editText_color
 color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
@@ -1357,7 +1360,6 @@ color highlighted_text_material_dark
 color highlighted_text_material_light
 color ic_launcher_background
 color languages
-color light_grey
 color light_white
 color log_out
 color m3_appbar_overlay_color
@@ -1846,6 +1848,8 @@ color purple_700
 color radiobutton_themeable_attribute_color
 color ripple_material_dark
 color ripple_material_light
+color round_setting
+color row_card_event_color
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
@@ -1862,6 +1866,10 @@ color teal_700
 color test_color
 color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
+color text_color_block
+color text_color_gray
+color text_color_hint
+color text_color_primary
 color text_size
 color tooltip_background_dark
 color tooltip_background_light
@@ -3244,8 +3252,6 @@ id textStart
 id textTop
 id textView
 id textView1
-id textView11
-id textView12
 id textView2
 id text_input_end_icon
 id text_input_error_icon

@@ -1,6 +1,7 @@
 package com.bulat.soshicon2.BottomNavigation;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,8 +44,7 @@ public class Event extends Fragment {
     private int countRowsDisitibution;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
         navBar.setVisibility(View.VISIBLE);
@@ -159,7 +159,7 @@ public class Event extends Fragment {
     }
     public void GetDistribution(View view, ListView listView, int start, int end, boolean scroll) throws JSONException, ExecutionException, InterruptedException {
         //если происходит загрузка при переходе на страницу
-        if (!scroll){
+        if (!scroll) {
             //опусташаем списки данных
             Title = new ArrayList<>();
             Discription = new ArrayList<>();
@@ -182,22 +182,22 @@ public class Event extends Fragment {
         String distributions_str = sendQuery.get();
         JSONArray array = new JSONArray(distributions_str);
         //уменьшаем количество записей оставшихс€ в таблице
-        countRowsDisitibution -=10;
+        countRowsDisitibution -= 10;
 
         //добавл€ем данные в массивы
-        for (int i=0; i < array.length(); i++){
+        for (int i = 0; i < array.length(); i++) {
             JSONObject jo = new JSONObject((String) array.get(i));
             Discription.add((String) jo.get("content"));
             Title.add((String) jo.get("nickname"));
         }
 
         //если происходит загрузка при переходе на страницу прогружаем listview «аново
-        if (!scroll){
+        if (!scroll) {
             myAdapter = new MyAdapter(requireContext(), Title, Discription);
             listView.setAdapter(myAdapter);
         }
         //если функци€ была вызванна свайпом, то обновл€ем Listview
-        else{
+        else {
             myAdapter.notifyDataSetChanged();
         }
     }

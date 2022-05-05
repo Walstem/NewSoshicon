@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/radius"
-    android:backgroundTint="#191919">
+    android:backgroundTint="@color/row_card_event_color">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/avatar"
@@ -39,7 +39,7 @@
         android:layout_marginLeft="16dp"
         android:fontFamily="sans-serif-light"
         android:text="Булат Камалов"
-        android:textColor="@color/white"
+        android:textColor="@color/text_color_primary"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@+id/avatar"
@@ -54,7 +54,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text="Шаблон пользовательского интерфейса «пролистывание для обновления» полностью реализован в SwipeRefreshLayoutвиджете"
-        android:textColor="@color/white"
+        android:textColor="@color/text_color_primary"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

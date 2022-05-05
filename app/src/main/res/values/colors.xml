@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+                                            <!--    СТАНДАРТНЫЕ ЦВЕТА   -->
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,9 +9,28 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+                                            <!--    ДОБАВЛЕННЫЕ ЦВЕТА   -->
+    <!--Основной фон-->
+    <color name="background">#FAFAFA</color>
+
+    <!--Цвет текста-->
+    <color name="text_color_primary">#000000</color>
+    <color name="text_color_block">#F9F9F9</color>
+    <color name="text_color_gray">#7C7C7C</color>
+    <color name="text_color_hint">#797979</color>
+
+    <!--Цвет EditText-->
+    <color name="editText_color">#E8E8E8</color>
+
+    <!--Цвет события-->
+    <color name="row_card_event_color">#E8E8E8</color>
+
+    <!--Навигация-->
+    <color name="bottom_nav_color">#F9F9F9</color>
+    <color name="bottom_nav_item_color">#000000</color>
+
     <color name="grey">#191919</color>
-    <color name="light_grey">#7C7C7C</color>
-    <color name="background">#000000</color>
     <color name="light_white">#D2D2D2</color>
     <color name="yellow">#F4DA58</color>
     <color name="ColorPrimaryDark">#191919</color>
@@ -20,16 +41,14 @@
     <color name="green">#3AAA35</color>
 
 
-    <!--НАСТРОЙКИ-->
+                                            <!--НАСТРОЙКИ-->
     <color name="night_mode">#38AAC8</color>
     <color name="notifications">#FD3B31</color>
-
     <color name="languages">#AF51DE</color>
     <color name="text_size">#EDA230</color>
-
     <color name="about_us">#38C554</color>
     <color name="FAQ">#037BFF</color>
-
     <color name="log_out">#DD6D6C</color>
+    <color name="round_setting">#E8E8E8</color>
 
 </resources>

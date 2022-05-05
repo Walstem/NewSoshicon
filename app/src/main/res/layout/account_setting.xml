@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/setting"
-            android:textColor="@color/white"
+            android:textColor="@color/text_color_primary"
             android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" >
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -71,7 +71,7 @@
                 android:fontFamily="sans-serif-light"
                 android:gravity="center"
                 android:text="Username"
-                android:textColor="@color/white"
+                android:textColor="@color/text_color_primary"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -141,7 +141,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:text="@string/lightMode"
-                            android:textColor="@color/white"
+                            android:textColor="@color/text_color_primary"
                             android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="@+id/lightMode_image"
                             app:layout_constraintStart_toEndOf="@+id/lightMode_image"
@@ -152,12 +152,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="20dp"
-                            android:thumb="@drawable/thumb_shape"
                             android:theme="@style/nightModeSwitch"
-                            app:track="@drawable/track_shape"
+                            android:thumb="@drawable/thumb_shape"
                             app:layout_constraintBottom_toBottomOf="@+id/lightMode_image"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="@+id/lightMode_image" />
+                            app:layout_constraintTop_toTopOf="@+id/lightMode_image"
+                            app:track="@drawable/track_shape" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -202,7 +202,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:text="@string/notification"
-                            android:textColor="@color/white"
+                            android:textColor="@color/text_color_primary"
                             android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="@+id/notification_image"
                             app:layout_constraintStart_toEndOf="@+id/notification_image"
@@ -212,12 +212,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="20dp"
-                            android:thumb="@drawable/thumb_shape"
                             android:theme="@style/nightModeSwitch"
-                            app:track="@drawable/track_shape"
+                            android:thumb="@drawable/thumb_shape"
                             app:layout_constraintBottom_toBottomOf="@+id/notification_image"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="@+id/notification_image" />
+                            app:layout_constraintTop_toTopOf="@+id/notification_image"
+                            app:track="@drawable/track_shape" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -275,7 +275,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:text="@string/textSize"
-                            android:textColor="@color/white"
+                            android:textColor="@color/text_color_primary"
                             android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="@+id/text_size_image"
                             app:layout_constraintStart_toEndOf="@+id/text_size_image"
@@ -333,7 +333,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:text="@string/language"
-                            android:textColor="@color/white"
+                            android:textColor="@color/text_color_primary"
                             android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="@+id/languages_image"
                             app:layout_constraintStart_toEndOf="@+id/languages_image"
@@ -347,7 +347,7 @@
                             android:src="@drawable/ic_arrow_right"
                             app:layout_constraintBottom_toBottomOf="@+id/languages_image"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="@+id/languages_image" >
+                            app:layout_constraintTop_toTopOf="@+id/languages_image">
 
                         </Spinner>
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -406,7 +406,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:text="@string/aboutUs"
-                            android:textColor="@color/white"
+                            android:textColor="@color/text_color_primary"
                             android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="@+id/aboutUs_image"
                             app:layout_constraintStart_toEndOf="@+id/aboutUs_image"
@@ -464,7 +464,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:text="@string/faq"
-                            android:textColor="@color/white"
+                            android:textColor="@color/text_color_primary"
                             android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="@+id/FAQ_image"
                             app:layout_constraintStart_toEndOf="@+id/FAQ_image"
@@ -536,7 +536,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:text="@string/logOut"
-                            android:textColor="@color/white"
+                            android:textColor="@color/text_color_primary"
                             android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="@+id/log_out"
                             app:layout_constraintStart_toEndOf="@+id/log_out"

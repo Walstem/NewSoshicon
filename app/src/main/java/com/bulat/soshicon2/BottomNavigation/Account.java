@@ -26,10 +26,29 @@ import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpVersion;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.CoreProtocolPNames;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -77,22 +96,23 @@ public class Account extends Fragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        Uri uri = data.getData();
-        profile.setImageURI(uri);
-        System.out.println(uri.getPath());
         try {
-            byte[] img = ReadFile(uri.getPath());
-            String req_str = "";
-            for (int i=0; i < img.length; i++){
-                req_str += img[i];
+            super.onActivityResult(requestCode, resultCode, data);
+
+            Uri uri = data.getData();
+            profile.setImageURI(uri);
+
+            try {
+                byte[] img = ReadFile(uri.getPath());
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
             }
-            SendQuery request = new SendQuery("upload_photo.php");
-            request.execute("?img=" + new File(req_str));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         }
+        catch (Exception e){
+
+        }
+
     }
     public byte[] ReadFile(String filename) throws FileNotFoundException {
 
@@ -103,5 +123,27 @@ public class Account extends Fragment {
         byte[] byteArray = stream.toByteArray();
         bitmap.recycle();
         return byteArray;
+    }
+    public void UplPhoto(String strURL) throws IOException {
+        HttpClient httpclient = HttpClients.createDefault();
+        HttpPost httppost = new HttpPost("http://www.a-domain.com/foo/");
+
+// Request parameters and other properties.
+        List<NameValuePair> params = new ArrayList<NameValuePair>(2);
+        params.add(new BasicNameValuePair("param-1", "12345"));
+        params.add(new BasicNameValuePair("param-2", "Hello!"));
+        httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
+
+//Execute and get the response.
+        HttpResponse response = httpclient.execute(httppost);
+        HttpEntity entity = response.getEntity();
+
+        if (entity != null) {
+            try (InputStream instream = entity.getContent()) {
+                // do something useful
+            }
+        }
+
+        httpclient.getConnectionManager().shutdown();
     }
 }

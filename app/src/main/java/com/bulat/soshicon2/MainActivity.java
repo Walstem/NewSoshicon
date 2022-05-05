@@ -3,11 +3,13 @@ package com.bulat.soshicon2;
 import static com.bulat.soshicon2.constants.constants.*;
 
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import com.bulat.soshicon2.BottomNavigation.Account;
@@ -16,6 +18,7 @@ import com.bulat.soshicon2.BottomNavigation.Event;
 import com.bulat.soshicon2.BottomNavigation.Response;
 import com.bulat.soshicon2.Registration.Authorization;
 import com.bulat.soshicon2.Setting.LanguageManager;
+import com.bulat.soshicon2.Setting.ThemeManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.FragmentContainerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.bulat.soshicon2.R;
@@ -22,10 +23,15 @@ public final class MainBinding implements ViewBinding {
   @NonNull
   public final BottomNavigationView bottomNavigation;
 
+  @NonNull
+  public final FragmentContainerView navHostFragmentActivityMain;
+
   private MainBinding(@NonNull ConstraintLayout rootView,
-      @NonNull BottomNavigationView bottomNavigation) {
+      @NonNull BottomNavigationView bottomNavigation,
+      @NonNull FragmentContainerView navHostFragmentActivityMain) {
     this.rootView = rootView;
     this.bottomNavigation = bottomNavigation;
+    this.navHostFragmentActivityMain = navHostFragmentActivityMain;
   }
 
   @Override
@@ -61,7 +67,14 @@ public final class MainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new MainBinding((ConstraintLayout) rootView, bottomNavigation);
+      id = R.id.nav_host_fragment_activity_main;
+      FragmentContainerView navHostFragmentActivityMain = ViewBindings.findChildViewById(rootView, id);
+      if (navHostFragmentActivityMain == null) {
+        break missingId;
+      }
+
+      return new MainBinding((ConstraintLayout) rootView, bottomNavigation,
+          navHostFragmentActivityMain);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

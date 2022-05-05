@@ -596,7 +596,7 @@
     <color name="accent_material_light">@color/material_deep_teal_500</color>
     <color name="androidx_core_ripple_material_light">#1f000000</color>
     <color name="androidx_core_secondary_text_default_material_light">#8a000000</color>
-    <color name="background">#000000</color>
+    <color name="background">#FAFAFA</color>
     <color name="background_floating_material_dark">@color/material_grey_800</color>
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
@@ -604,6 +604,8 @@
     <color name="bg_error_div">#22070B</color>
     <color name="black">#FF000000</color>
     <color name="border_text_error">#FF3450</color>
+    <color name="bottom_nav_color">#F9F9F9</color>
+    <color name="bottom_nav_item_color">#000000</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
     <color name="bright_foreground_inverse_material_dark">@color/bright_foreground_material_light</color>
@@ -658,6 +660,7 @@
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
+    <color name="editText_color">#E8E8E8</color>
     <color name="error_color_material_dark">#ff7043</color>
     <color name="error_color_material_light">#ff5722</color>
     <color name="foreground_material_dark">@android:color/white</color>
@@ -668,7 +671,6 @@
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="ic_launcher_background">#3DDC84</color>
     <color name="languages">#AF51DE</color>
-    <color name="light_grey">#7C7C7C</color>
     <color name="light_white">#D2D2D2</color>
     <color name="log_out">#DD6D6C</color>
     <color name="m3_ref_palette_error0">#ff000000</color>
@@ -840,6 +842,8 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
+    <color name="round_setting">#E8E8E8</color>
+    <color name="row_card_event_color">#E8E8E8</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
@@ -852,6 +856,10 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="test_color">#000</color>
+    <color name="text_color_block">#F9F9F9</color>
+    <color name="text_color_gray">#7C7C7C</color>
+    <color name="text_color_hint">#797979</color>
+    <color name="text_color_primary">#000000</color>
     <color name="text_size">#EDA230</color>
     <color name="tooltip_background_dark">#e6616161</color>
     <color name="tooltip_background_light">#e6FFFFFF</color>
@@ -5848,7 +5856,7 @@
     <style name="Theme.SoshiconJava" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/white</item>
-        <item name="colorPrimaryVariant">@color/background</item>
+        <item name="colorPrimaryVariant">@color/white</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -5856,7 +5864,6 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
     </style>
     <style name="Theme.Transparent.ImagePicker" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowIsTranslucent">true</item>
