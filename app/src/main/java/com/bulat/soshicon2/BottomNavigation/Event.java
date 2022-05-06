@@ -4,13 +4,11 @@ import static com.bulat.soshicon2.constants.constants.DATABASE;
 import static com.bulat.soshicon2.constants.constants.ID;
 
 import android.content.Context;
-<<<<<<< HEAD
-=======
+
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
->>>>>>> a653cbf2232ac29a2cbde4c241cb8655906422ca
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.LayoutInflater;

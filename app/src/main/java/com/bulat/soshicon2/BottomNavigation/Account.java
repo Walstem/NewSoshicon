@@ -22,30 +22,20 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-<<<<<<< HEAD
 import com.bulat.soshicon2.R;
-=======
-import com.bulat.soshicon2.R;;
->>>>>>> a653cbf2232ac29a2cbde4c241cb8655906422ca
+
 import com.bulat.soshicon2.Setting.Setting;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> a653cbf2232ac29a2cbde4c241cb8655906422ca
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
-<<<<<<< HEAD
 import org.apache.http.impl.client.HttpClients;
-=======
 import org.apache.http.impl.client.DefaultHttpClient;
->>>>>>> a653cbf2232ac29a2cbde4c241cb8655906422ca
 import org.apache.http.message.BasicNameValuePair;
 
 import java.io.ByteArrayOutputStream;
@@ -53,13 +43,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-<<<<<<< HEAD
 import java.io.InputStream;
-=======
 import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
->>>>>>> a653cbf2232ac29a2cbde4c241cb8655906422ca
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,12 +78,20 @@ public class Account extends Fragment {
         //Выбор аватара пользователя
         profile.setOnClickListener(view ->
                 ImagePicker.with(Account.this)
-                .crop()	    			                //Обрезать изображение (необязательно)
-                .compress(1024)			                //Окончательный размер изображения будет меньше 1 МБ (необязательно)
-                .maxResultSize(600, 600)	//Окончательное разрешение изображения будет меньше 1080 x 1080 (необязательно)
-                .start());
+                        .crop()                                 //Обрезать изображение (необязательно)
+                        .compress(1024)                         //Окончательный размер изображения будет меньше 1 МБ (необязательно)
+                        .maxResultSize(600, 600)    //Окончательное разрешение изображения будет меньше 1080 x 1080 (необязательно)
+                        .start());
 
         return MainView;
+    }
+
+    //Функция обновление родительского фрагмента
+    public void replaceFragmentParent(Fragment fragment) {
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
+        fragmentTransaction.commit();
     }
 
     @Override
@@ -116,12 +111,12 @@ public class Account extends Fragment {
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
 
         }
 
     }
+
     public byte[] ReadFile(String filename) throws FileNotFoundException {
 
         File file = new File(filename);
@@ -132,33 +127,14 @@ public class Account extends Fragment {
         bitmap.recycle();
         return byteArray;
     }
-<<<<<<< HEAD
-    public void UplPhoto(String strURL) throws IOException {
-        HttpClient httpclient = HttpClients.createDefault();
-        HttpPost httppost = new HttpPost("http://www.a-domain.com/foo/");
 
-        // Request parameters and other properties.
-        List<NameValuePair> params = new ArrayList<NameValuePair>(2);
-        params.add(new BasicNameValuePair("param-1", "12345"));
-        params.add(new BasicNameValuePair("param-2", "Hello!"));
-        httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
-
-        //Execute and get the response.
-        HttpResponse response = httpclient.execute(httppost);
-        HttpEntity entity = response.getEntity();
-
-        if (entity != null) {
-            try (InputStream instream = entity.getContent()) {
-                // do something useful
-            }
-=======
-    class UploadAvatar extends AsyncTask<String, String, String>{
+    class UploadAvatar extends AsyncTask<String, String, String> {
         String filename;
         byte[] imgArray;
-        UploadAvatar(byte[] imgArray, String filename){
+
+        UploadAvatar(byte[] imgArray, String filename) {
             this.imgArray = imgArray;
             this.filename = filename;
->>>>>>> a653cbf2232ac29a2cbde4c241cb8655906422ca
         }
 
         @Override
@@ -202,14 +178,5 @@ public class Account extends Fragment {
             httpclient.getConnectionManager().shutdown();
             return null;
         }
-    }
-
-    //Функция обновление родительского фрагмента
-    public void replaceFragmentParent(Fragment fragment) {
-        FragmentManager fragmentManager = getParentFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
     }
 }

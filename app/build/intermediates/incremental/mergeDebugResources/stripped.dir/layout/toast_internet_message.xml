@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toast_layout_root"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/toast_internet_error"
+    android:gravity="">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_toast_error"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:layout_gravity="center"
+        android:id="@+id/text"
+        android:layout_width="300dp"
+        android:layout_height="20dp"
+        android:text="@string/not_internet_error"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        android:layout_marginEnd="30dp"/>
+
+</LinearLayout>

@@ -36,12 +36,12 @@
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\mipmap-hdpi\\soshicon.png"
     },
     {
-        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_toast_success.xml.flat",
-        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_success.xml"
-    },
-    {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_clear.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_clear.xml"
+    },
+    {
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_toast_success.xml.flat",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_success.xml"
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_account.xml.flat",
@@ -60,12 +60,12 @@
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\mipmap-xxxhdpi\\soshicon.png"
     },
     {
-        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\anim_cycle_7.xml.flat",
-        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\anim\\cycle_7.xml"
-    },
-    {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_account_setting.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_account_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\anim_cycle_7.xml.flat",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\anim\\cycle_7.xml"
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_setting_about_us.xml.flat",
@@ -172,16 +172,16 @@
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\radius_top.xml"
     },
     {
-        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_soshicon_foreground.png.flat",
-        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\mipmap-xxxhdpi\\soshicon_foreground.png"
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_registration_finish.xml.flat",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\registration_finish.xml"
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_radius_bottom.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\radius_bottom.xml"
     },
     {
-        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_registration_finish.xml.flat",
-        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\registration_finish.xml"
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_soshicon_foreground.png.flat",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\mipmap-xxxhdpi\\soshicon_foreground.png"
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_arrow_right.xml.flat",
