@@ -1,8 +1,15 @@
 package com.bulat.soshicon2.BottomNavigation;
 
+import static com.bulat.soshicon2.constants.constants.DATABASE;
+import static com.bulat.soshicon2.constants.constants.ID;
+
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,19 +31,36 @@ import com.bulat.soshicon2.event.Fragment_Add;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Event extends Fragment {
+    public static final String GET_COUNT_DISTRIBUTION_PHP = "getCountDistribution.php";
+    public static final String GET_DISTRIBUTION_SOSHICON_PHP = "Get_distribution_soshicon.php";
     String distributions_str;
     private ArrayList<String> Title = new ArrayList<String>();
     private ArrayList<String> Discription = new ArrayList<String>();
+    private ArrayList<String> Avatars = new ArrayList<String>();
     private ArrayAdapter myAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
     private int start = 0;
@@ -134,12 +158,14 @@ public class Event extends Fragment {
         Context context;
         ArrayList<String> Title;
         ArrayList<String> Discription;
+        ArrayList<String> Avatars;
 
-        public MyAdapter(@NonNull Context context, ArrayList<String> Title, ArrayList<String> Discription) {
+        public MyAdapter(@NonNull Context context, ArrayList<String> Title, ArrayList<String> Discription, ArrayList<String> Avatars) {
             super(context, R.layout.row_card_event, R.id.NameMessage, Title);
             this.context = context;
             this.Title = Title;
             this.Discription = Discription;
+            this.Avatars = Avatars;
         }
 
         @NonNull
@@ -149,10 +175,17 @@ public class Event extends Fragment {
             View row = layoutInflater.inflate(R.layout.row_card_event, parent, false);
             TextView NameMessage = row.findViewById(R.id.NameMessage);
             TextView Content = row.findViewById(R.id.ContentMessage);
+            ImageView avatar = row.findViewById(R.id.avatar);
+            System.out.println(Avatars.get(position));
+            if (Avatars.get(position) != "null"){
+                byte [] encodeByte = Base64.decode(Avatars.get(position),Base64.DEFAULT);
+                Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
+
+                avatar.setImageBitmap(bitmap);
+            }
 
             NameMessage.setText(Title.get(position));
             Content.setText(Discription.get(position));
-
 
             return row;
         }
@@ -163,9 +196,10 @@ public class Event extends Fragment {
             //опусташаем списки данных
             Title = new ArrayList<>();
             Discription = new ArrayList<>();
+            Avatars = new ArrayList<String>();
 
             //вычисл€ем количество записей в таблице с событи€ми
-            SendQuery sendQuery = new SendQuery("getCountDistribution.php");
+            SendQuery sendQuery = new SendQuery(GET_COUNT_DISTRIBUTION_PHP);
             sendQuery.execute("?example=");
             try {
                 distributions_str = sendQuery.get();
@@ -177,9 +211,10 @@ public class Event extends Fragment {
 
         }
         //получаем данные событи€
-        SendQuery sendQuery = new SendQuery("Get_distribution_soshicon.php");
-        sendQuery.execute("?start=" + start + "&end=" + end);
-        String distributions_str = sendQuery.get();
+        GetDistribution Distributions = new GetDistribution(GET_DISTRIBUTION_SOSHICON_PHP, start, end);
+        Distributions.execute();
+        String distributions_str = Distributions.get();
+        System.out.println( distributions_str);
         JSONArray array = new JSONArray(distributions_str);
         //уменьшаем количество записей оставшихс€ в таблице
         countRowsDisitibution -= 10;
@@ -189,16 +224,73 @@ public class Event extends Fragment {
             JSONObject jo = new JSONObject((String) array.get(i));
             Discription.add((String) jo.get("content"));
             Title.add((String) jo.get("nickname"));
+            Avatars.add((String) jo.get("img").toString());
         }
 
         //если происходит загрузка при переходе на страницу прогружаем listview «аново
         if (!scroll) {
-            myAdapter = new MyAdapter(requireContext(), Title, Discription);
+            myAdapter = new MyAdapter(requireContext(), Title, Discription, Avatars);
             listView.setAdapter(myAdapter);
         }
         //если функци€ была вызванна свайпом, то обновл€ем Listview
         else {
             myAdapter.notifyDataSetChanged();
+        }
+    }
+    class GetDistribution extends AsyncTask<String, String, String>{
+        String filename;
+        String start, end;
+
+        GetDistribution( String filename, int start, int end){
+            this.filename = filename;
+            this.start = Integer.toString(start);
+            this.end = Integer.toString(end);
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            HttpClient httpclient = new DefaultHttpClient();
+            HttpPost httppost = new HttpPost("http://j911147y.beget.tech/" + filename);
+
+            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+            nameValuePairs.add(new BasicNameValuePair("start", start));
+            nameValuePairs.add(new BasicNameValuePair("end", end));
+            try {
+                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+
+            //Execute and get the response.
+            HttpResponse response = null;
+            try {
+                response = httpclient.execute(httppost);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                assert response != null;
+                HttpEntity entity = response.getEntity();
+
+                int n = 0;
+                char[] buffer = new char[1024 * 4];
+                InputStreamReader reader = new InputStreamReader(entity.getContent(), "UTF8");
+                StringWriter writer = new StringWriter();
+                while (-1 != (n = reader.read(buffer))) writer.write(buffer, 0, n);
+
+                httpclient.getConnectionManager().shutdown();
+                return writer.toString();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+
+                httpclient.getConnectionManager().shutdown();
+                return null;
+            }
+
+
+
+
         }
     }
 }
