@@ -1,7 +1,6 @@
 package com.bulat.soshicon2.BottomNavigation;
 
 import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
@@ -45,7 +45,7 @@ public class Event extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
         navBar.setVisibility(View.VISIBLE);
 
@@ -56,44 +56,32 @@ public class Event extends Fragment {
         CircleImageView avatar = view.findViewById(R.id.avatar);
         BottomSheetDialogFragment BottomSheet = new Fragment_Add();
 
-        //вызываем редактор создания событий
-        addEvent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                BottomSheet.show(getFragmentManager().beginTransaction(), "BottomShitDialog");
-            }
+        //Вызываем редактор создания событий
+        addEvent.setOnClickListener(v -> BottomSheet.show(getParentFragmentManager().beginTransaction(), "BottomShitDialog"));
+
+        //Переходим на фрагмент профиля
+        avatar.setOnClickListener(v -> {
+            replaceFragmentParent(new Account());
+            BottomNavigationView navigationView = getActivity().findViewById(R.id.bottom_navigation);
+            navigationView.setSelectedItemId(R.id.nav_account);
         });
-        //переключаем фрагмент событий на фрагмент профиль
-        avatar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Account account = new Account();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.add(R.id.nav_host_fragment_activity_main, account);
-                transaction.addToBackStack(null);
-                transaction.commit();
-                BottomNavigationView navigationView = getActivity().findViewById(R.id.bottom_navigation);
-                navigationView.setSelectedItemId(R.id.nav_account);
-            }
-        });
+
         try {
             //прогружаем данные при запуске фрагмента
             GetDistribution(view, listView, start, end, false);
 
-            //прогружаем данные при ручной перезагрузке
-            swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-                @Override
-                public void onRefresh() {
-                    try {
-                        start = 0;end = 10;
-                        GetDistribution(view, listView, start, end, false);
-                    } catch (JSONException | ExecutionException | InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    swipeRefreshLayout.setRefreshing(false);
+            //Прогружаем данные при ручной перезагрузке
+            swipeRefreshLayout.setOnRefreshListener(() -> {
+                try {
+                    start = 0;end = 10;
+                    GetDistribution(view, listView, start, end, false);
+                } catch (JSONException | ExecutionException | InterruptedException e) {
+                    e.printStackTrace();
                 }
+                swipeRefreshLayout.setRefreshing(false);
             });
-            //отслеживаем свайп  пользователя
+
+            //Отслеживаем свайп пользователя
             listView.setOnScrollListener(new AbsListView.OnScrollListener() {
                 @Override
                 public void onScrollStateChanged(AbsListView view, int scrollState) {
@@ -119,8 +107,7 @@ public class Event extends Fragment {
                 }
 
                 @Override
-                public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-                }
+                public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) { }
             });
 
 
@@ -130,6 +117,15 @@ public class Event extends Fragment {
 
         return view;
     }
+
+    //Функция обновление родительского фрагмента
+    public void replaceFragmentParent(Fragment fragment) {
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
+        fragmentTransaction.commit();
+    }
+
     static class MyAdapter extends ArrayAdapter<String> {
         Context context;
         ArrayList<String> Title;

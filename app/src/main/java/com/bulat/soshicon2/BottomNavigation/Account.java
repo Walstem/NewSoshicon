@@ -2,6 +2,7 @@ package com.bulat.soshicon2.BottomNavigation;
 
 import static com.bulat.soshicon2.constants.constants.*;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -16,29 +17,22 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.bulat.soshicon2.R;;
-import com.bulat.soshicon2.Setting.Setting;
-import com.bulat.soshicon2.asynctasks.SendQuery;
+import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.Setting.Setting;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-
-import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.HttpVersion;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.params.CoreProtocolPNames;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -46,7 +40,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,40 +51,31 @@ public class Account extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.account, container, false);
+        View MainView = inflater.inflate(R.layout.account, container, false);
 
-        SharedPreferences sp = getActivity().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
-        TextView name = view.findViewById(R.id.username_bottom_avatar);
-        ImageView account_setting = view.findViewById(R.id.account_edit);
-        profile = (CircleImageView) view.findViewById(R.id.profile_avatar);
+        SharedPreferences sp = getActivity().getSharedPreferences(DATABASE, Context.MODE_PRIVATE);
+        TextView name = MainView.findViewById(R.id.username_bottom_avatar);
+        ImageView account_setting = MainView.findViewById(R.id.account_edit);
+        profile = (CircleImageView) MainView.findViewById(R.id.profile_avatar);
 
         name.setText(sp.getString(U_NICKNAME, ""));
 
+        //Включение bottom navigation
         BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
-        navBar.setVisibility(view.VISIBLE);
+        navBar.setVisibility(View.VISIBLE);
 
-        account_setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Setting set = new Setting();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.add(R.id.nav_host_fragment_activity_main, set);
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
-        });
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        //Переход в настройки
+        account_setting.setOnClickListener(v -> replaceFragmentParent(new Setting()));
+
+        //Выбор аватара пользователя
+        profile.setOnClickListener(view ->
                 ImagePicker.with(Account.this)
-                        .crop()	    			//Crop image(Optional), Check Customization for more option
-                        .compress(1024)			//Final image size will be less than 1 MB(Optional)
-                        .maxResultSize(600, 600)	//Final image resolution will be less than 1080 x 1080(Optional)
-                        .start();
-            }
-        });
+                .crop()	    			                //Обрезать изображение (необязательно)
+                .compress(1024)			                //Окончательный размер изображения будет меньше 1 МБ (необязательно)
+                .maxResultSize(600, 600)	//Окончательное разрешение изображения будет меньше 1080 x 1080 (необязательно)
+                .start());
 
-        return view;
+        return MainView;
     }
 
     @Override
@@ -128,13 +112,13 @@ public class Account extends Fragment {
         HttpClient httpclient = HttpClients.createDefault();
         HttpPost httppost = new HttpPost("http://www.a-domain.com/foo/");
 
-// Request parameters and other properties.
+        // Request parameters and other properties.
         List<NameValuePair> params = new ArrayList<NameValuePair>(2);
         params.add(new BasicNameValuePair("param-1", "12345"));
         params.add(new BasicNameValuePair("param-2", "Hello!"));
         httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
 
-//Execute and get the response.
+        //Execute and get the response.
         HttpResponse response = httpclient.execute(httppost);
         HttpEntity entity = response.getEntity();
 
@@ -145,5 +129,14 @@ public class Account extends Fragment {
         }
 
         httpclient.getConnectionManager().shutdown();
+    }
+
+    //Функция обновление родительского фрагмента
+    public void replaceFragmentParent(Fragment fragment) {
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 }
