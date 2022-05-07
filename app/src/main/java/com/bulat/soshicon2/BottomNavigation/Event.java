@@ -111,29 +111,37 @@ public class Event extends Fragment {
             listView.setOnScrollListener(new AbsListView.OnScrollListener() {
                 @Override
                 public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+                }
+
+                @Override
+<<<<<<< HEAD
+                public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
                     try {
-                        if (countRowsDisitibution < 1) {
-                            System.out.println("Записи закончились!");
-                        }
-                        else if(countRowsDisitibution / 10 < 1){
-                            System.out.println(start);
-                            start +=10;
-                            end = countRowsDisitibution;
-                            GetDistribution(view, listView, start, end, true);
-                        }
-                        else{
-                            end = 10;
-                            start +=10;
-                            System.out.println(start);
-                            GetDistribution(view, listView, start, end, true);
+                        if (visibleItemCount > start || countRowsDisitibution / 10 < 1){
+                            if (countRowsDisitibution < 1) {
+                                System.out.println("Записи закончились!");
+                            }
+                            else if(countRowsDisitibution / 10 < 1){
+                                System.out.println("countRowsDisitibution1 " + countRowsDisitibution);
+                                start +=10;
+                                end = countRowsDisitibution;
+                                GetDistribution(view, listView, start, end, true);
+                            }
+                            else{
+                                end = 10;
+                                start +=10;
+                                System.out.println("countRowsDisitibution2 " + countRowsDisitibution);
+                                GetDistribution(view, listView, start, end, true);
+                            }
                         }
                     } catch (JSONException | ExecutionException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-
-                @Override
+=======
                 public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) { }
+>>>>>>> bff05e154e5a95ade09357438f07f80846ae8a98
             });
 
 
@@ -174,7 +182,6 @@ public class Event extends Fragment {
             TextView NameMessage = row.findViewById(R.id.NameMessage);
             TextView Content = row.findViewById(R.id.ContentMessage);
             ImageView avatar = row.findViewById(R.id.avatar);
-            System.out.println(Avatars.get(position));
             if (Avatars.get(position) != "null"){
                 byte [] encodeByte = Base64.decode(Avatars.get(position),Base64.DEFAULT);
                 Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
@@ -202,7 +209,6 @@ public class Event extends Fragment {
             try {
                 distributions_str = sendQuery.get();
                 countRowsDisitibution = Integer.parseInt(distributions_str);
-                System.out.println("countRowsDisitibution " + countRowsDisitibution);
             } catch (ExecutionException | InterruptedException e) {
                 e.printStackTrace();
             }
@@ -212,7 +218,6 @@ public class Event extends Fragment {
         GetDistribution Distributions = new GetDistribution(GET_DISTRIBUTION_SOSHICON_PHP, start, end);
         Distributions.execute();
         String distributions_str = Distributions.get();
-        System.out.println( distributions_str);
         JSONArray array = new JSONArray(distributions_str);
         //уменьшаем количество записей оставшихся в таблице
         countRowsDisitibution -= 10;
