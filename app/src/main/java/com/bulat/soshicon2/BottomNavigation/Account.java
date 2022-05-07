@@ -2,7 +2,6 @@ package com.bulat.soshicon2.BottomNavigation;
 
 import static com.bulat.soshicon2.constants.constants.*;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -19,14 +18,13 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.bulat.soshicon2.R;
-
+import com.bulat.soshicon2.R;;
 import com.bulat.soshicon2.Setting.Setting;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -34,7 +32,6 @@ import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
@@ -43,7 +40,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
@@ -59,39 +55,40 @@ public class Account extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View MainView = inflater.inflate(R.layout.account, container, false);
+        View view = inflater.inflate(R.layout.account, container, false);
 
-        SharedPreferences sp = getActivity().getSharedPreferences(DATABASE, Context.MODE_PRIVATE);
-        TextView name = MainView.findViewById(R.id.username_bottom_avatar);
-        ImageView account_setting = MainView.findViewById(R.id.account_edit);
-        profile = (CircleImageView) MainView.findViewById(R.id.profile_avatar);
+        SharedPreferences sp = getActivity().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
+        TextView name = view.findViewById(R.id.username_bottom_avatar);
+        ImageView account_setting = view.findViewById(R.id.account_edit);
+        profile = (CircleImageView) view.findViewById(R.id.profile_avatar);
 
         name.setText(sp.getString(U_NICKNAME, ""));
 
-        //Включение bottom navigation
         BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
-        navBar.setVisibility(View.VISIBLE);
+        navBar.setVisibility(view.VISIBLE);
 
-        //Переход в настройки
-        account_setting.setOnClickListener(v -> replaceFragmentParent(new Setting()));
-
-        //Выбор аватара пользователя
-        profile.setOnClickListener(view ->
+        account_setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Setting set = new Setting();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.add(R.id.nav_host_fragment_activity_main, set);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 ImagePicker.with(Account.this)
-                        .crop()                                 //Обрезать изображение (необязательно)
-                        .compress(1024)                         //Окончательный размер изображения будет меньше 1 МБ (необязательно)
-                        .maxResultSize(600, 600)    //Окончательное разрешение изображения будет меньше 1080 x 1080 (необязательно)
-                        .start());
+                        .crop()	    			//Crop image(Optional), Check Customization for more option
+                        .compress(1024)			//Final image size will be less than 1 MB(Optional)
+                        .maxResultSize(600, 600)	//Final image resolution will be less than 1080 x 1080(Optional)
+                        .start();
+            }
+        });
 
-        return MainView;
-    }
-
-    //Функция обновление родительского фрагмента
-    public void replaceFragmentParent(Fragment fragment) {
-        FragmentManager fragmentManager = getParentFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
-        fragmentTransaction.commit();
+        return view;
     }
 
     @Override
@@ -112,17 +109,13 @@ public class Account extends Fragment {
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-        } catch (Exception e) {
+        }
+        catch (Exception e){
 
         }
 
     }
-<<<<<<< HEAD
     public byte[] ReadFile(String filename, int compress) throws FileNotFoundException {
-=======
-
-    public byte[] ReadFile(String filename) throws FileNotFoundException {
->>>>>>> bff05e154e5a95ade09357438f07f80846ae8a98
 
         File file = new File(filename);
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
@@ -133,17 +126,11 @@ public class Account extends Fragment {
         bitmap.recycle();
         return byteArray;
     }
-
-    class UploadAvatar extends AsyncTask<String, String, String> {
+    class UploadAvatar extends AsyncTask<String, String, String>{
         String filename;
         byte[] imgArray;
-<<<<<<< HEAD
         byte[] CompressImgArray;
         UploadAvatar(byte[] imgArray, byte[] CompressImgArray,String filename){
-=======
-
-        UploadAvatar(byte[] imgArray, String filename) {
->>>>>>> bff05e154e5a95ade09357438f07f80846ae8a98
             this.imgArray = imgArray;
             this.filename = filename;
             this.CompressImgArray = CompressImgArray;
