@@ -100,9 +100,10 @@ public class Account extends Fragment {
             profile.setImageURI(uri);
 
             try {
-                byte[] img = ReadFile(uri.getPath());
+                byte[] img = ReadFile(uri.getPath(), 100);
+                byte[] compress_img = ReadFile(uri.getPath(), 20);
 
-                UploadAvatar UploadPhoto = new UploadAvatar(img, UPLOAD_AVATAR_PHP);
+                UploadAvatar UploadPhoto = new UploadAvatar(img,compress_img, UPLOAD_AVATAR_PHP);
                 UploadPhoto.execute();
 
             } catch (FileNotFoundException e) {
@@ -114,12 +115,13 @@ public class Account extends Fragment {
         }
 
     }
-    public byte[] ReadFile(String filename) throws FileNotFoundException {
+    public byte[] ReadFile(String filename, int compress) throws FileNotFoundException {
 
         File file = new File(filename);
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(file));
-        bitmap.compress(Bitmap.CompressFormat.PNG, 0, stream);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, compress, stream);
+
         byte[] byteArray = stream.toByteArray();
         bitmap.recycle();
         return byteArray;
@@ -127,9 +129,11 @@ public class Account extends Fragment {
     class UploadAvatar extends AsyncTask<String, String, String>{
         String filename;
         byte[] imgArray;
-        UploadAvatar(byte[] imgArray, String filename){
+        byte[] CompressImgArray;
+        UploadAvatar(byte[] imgArray, byte[] CompressImgArray,String filename){
             this.imgArray = imgArray;
             this.filename = filename;
+            this.CompressImgArray = CompressImgArray;
         }
 
         @Override
@@ -138,9 +142,12 @@ public class Account extends Fragment {
             HttpPost httppost = new HttpPost("http://j911147y.beget.tech/" + filename);
             SharedPreferences sp = getContext().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
 
-            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
             final String ConvertImage = Base64.encodeToString(imgArray, Base64.DEFAULT);
-            nameValuePairs.add(new BasicNameValuePair("img", ConvertImage));
+            final String ConvertCompressImage = Base64.encodeToString(CompressImgArray, Base64.DEFAULT);
+
+            nameValuePairs.add(new BasicNameValuePair("avatar_img", ConvertImage));
+            nameValuePairs.add(new BasicNameValuePair("compress_img", ConvertCompressImage));
             nameValuePairs.add(new BasicNameValuePair("id", sp.getString(ID, "")));
             try {
                 httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
