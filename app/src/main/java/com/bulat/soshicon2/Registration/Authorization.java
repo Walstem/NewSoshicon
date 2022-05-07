@@ -2,6 +2,7 @@ package com.bulat.soshicon2.Registration;
 
 import static com.bulat.soshicon2.constants.constants.*;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.BottomNavigation.Event;
@@ -37,30 +39,25 @@ public class Authorization extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.authorization, container, false);
+        View MainView = inflater.inflate(R.layout.authorization, container, false);
 
+        //Выключение bottom navigation
         BottomNavigationView navigationView = getActivity().findViewById(R.id.bottom_navigation);
         navigationView.setVisibility(View.GONE);
 
-        TextView tv_registration = (TextView) view.findViewById(R.id.tv_registration);
-        tv_registration.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                registration(view);
-            }
-        });
-        Button authorization_enter = view.findViewById(R.id.authorization_enter);
-        authorization_enter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Authorization(view);
-            }
-        });
+        //Кнопка регистрации
+        TextView tv_registration = (TextView) MainView.findViewById(R.id.tv_registration);
+        tv_registration.setOnClickListener(v -> registration(MainView));
 
-        return view;
+        //Кнопка авторизации
+        Button authorization_enter = MainView.findViewById(R.id.authorization_enter);
+        authorization_enter.setOnClickListener(v -> authorization(MainView));
+
+        return MainView;
     }
 
-    public void Authorization(View view){
+    //Авторизация
+    public void authorization(View view){
         if (NetCheck.StatusConnection(getContext())) {
             ViewToastMessage(view);
         }
@@ -88,7 +85,7 @@ public class Authorization extends Fragment {
                     String id =  request_id.get();
 
                     // добавляем id пользователя в сохраненные настрйоки
-                    SharedPreferences sPref = getContext().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
+                    SharedPreferences sPref = getContext().getSharedPreferences(DATABASE, Context.MODE_PRIVATE);
                     SharedPreferences.Editor ed = sPref.edit();
                     ed.putString(ID, id);
                     ed.putString(U_NICKNAME, login);
@@ -96,11 +93,7 @@ public class Authorization extends Fragment {
                     String data_id = sPref.getString(ID, "");
                     System.out.println(data_id);
 
-                    Event event = new Event();
-                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                    transaction.add(this.getId(), event);
-                    transaction.addToBackStack(null);
-                    transaction.commit();
+                    replaceFragmentParent(new Event());
                 }
                 // если сообщения ложные выводим сообщение об ошибке
                 else {
@@ -114,19 +107,25 @@ public class Authorization extends Fragment {
         }
     }
 
-    //проверка на наличие интернета, если он есть, начинается регистрация
+    //Проверка на наличие интернета, если он есть, начинается регистрация
     public void registration(View view) {
         if (NetCheck.StatusConnection(getContext())) {
             ViewToastMessage(view);
         }
         else {
-            RegistrationName rn = new RegistrationName();
-            FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            transaction.add(this.getId(), rn);
-            transaction.addToBackStack(null);
-            transaction.commit();
+            replaceFragmentParent(new RegistrationName());
         }
     }
+
+    //Функция обновление родительского фрагмента
+    public void replaceFragmentParent(Fragment fragment) {
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
+        fragmentTransaction.commit();
+    }
+
+    //Сообщение об отсутствии интернета
     public void ViewToastMessage(View view) {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.toast_internet_message,(ViewGroup) view.findViewById(R.id.toast_layout_root));

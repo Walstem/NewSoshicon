@@ -2,6 +2,7 @@ package com.bulat.soshicon2.Registration;
 
 import static com.bulat.soshicon2.constants.constants.*;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.R;
@@ -36,18 +38,11 @@ public class RegistrationName extends Fragment {
 
         Button onwards = (Button) root.findViewById(R.id.login_btn);
 
-        onwards.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    onwards(root);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        onwards.setOnClickListener(view -> {
+            try {
+                onwards(root);
+            } catch (IOException | ExecutionException | InterruptedException e) {
+                e.printStackTrace();
             }
         });
 
@@ -65,8 +60,8 @@ public class RegistrationName extends Fragment {
             TextView MessageError = (TextView) view.findViewById(R.id.error_text);
 
             //запрос в бд на существование имени
-            UniqueNameCheck uniq = new UniqueNameCheck();
-            String answerUniq = uniq.uniqueness(u_nickname);
+            UniqueNameCheck unique = new UniqueNameCheck();
+            String answerUnique = unique.uniqueness(u_nickname);
 
             //Если пользователь введет слишком короткое имя
             if(u_nickname.length() < 3) {
@@ -75,7 +70,7 @@ public class RegistrationName extends Fragment {
                 alertError(username, MessageError, ErrorMess);
             }
             //Если пользователь введет уже существующие имя
-            else if(answerUniq.equals(u_nickname)) {
+            else if(answerUnique.equals(u_nickname)) {
                 String ErrorMess = getResources().getString(R.string.name_taken_1) + u_nickname + getResources().getString(R.string.name_taken_2);;
                 alertError(username, MessageError, ErrorMess);
             }
@@ -83,17 +78,13 @@ public class RegistrationName extends Fragment {
 
             else {
                 //Переход на фрагмент создания пароля
-                SharedPreferences sp = getContext().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
+                SharedPreferences sp = getContext().getSharedPreferences(DATABASE, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
 
                 editor.putString(U_NICKNAME, u_nickname);
                 editor.apply();
 
-                RegistrationPassword rp = new RegistrationPassword();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.add(this.getId(), rp);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                replaceFragmentParent(new RegistrationPassword());
             }
         }
     }
@@ -119,5 +110,13 @@ public class RegistrationName extends Fragment {
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();
+    }
+
+    //Функция обновление родительского фрагмента
+    public void replaceFragmentParent(Fragment fragment) {
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
+        fragmentTransaction.commit();
     }
 }

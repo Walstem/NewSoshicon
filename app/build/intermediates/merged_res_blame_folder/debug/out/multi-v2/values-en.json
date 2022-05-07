@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
+            "outputFile": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
             "map": [
                 {
-                    "source": "C:\\NewSoshicon\\app\\src\\main\\res\\values-en\\strings.xml",
+                    "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\values-en\\strings.xml",
                     "from": {
                         "startLines": "44,51,14,15,73,63,4,80,81,35,34,59,37,8,92,29,28,36,41,74,72,69,75,6,18,19,84,89,85,86,9,95,70,7,25,23,24,55,67,68,71,5,20,32,33",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

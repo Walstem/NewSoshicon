@@ -3,14 +3,12 @@ package com.bulat.soshicon2;
 import static com.bulat.soshicon2.constants.constants.*;
 
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.BottomNavigation.Account;
 import com.bulat.soshicon2.BottomNavigation.Chat;
@@ -18,7 +16,6 @@ import com.bulat.soshicon2.BottomNavigation.Event;
 import com.bulat.soshicon2.BottomNavigation.Response;
 import com.bulat.soshicon2.Registration.Authorization;
 import com.bulat.soshicon2.Setting.LanguageManager;
-import com.bulat.soshicon2.Setting.ThemeManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,44 +31,39 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences(DATABASE, MODE_PRIVATE);
         String id = sp.getString(ID, "");
 
-
-        if (id.equals("0")){
-            getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_activity_main, new Authorization()).commit();
+        if (id.equals("0")) {
+            replaceFragment(new Authorization());
         }
-        else{
-            getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_activity_main, new Event()).commit();
+        else {
+            replaceFragment(new Event());
         }
-
 
         BottomNavigationView navigationView = findViewById(R.id.bottom_navigation);
-        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            //depending on the button pressed, a fragment (page) is selected
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment fragment = null;
-                switch (item.getItemId()) {
-                    case R.id.nav_event:
-                        fragment = new Event();
-                        break;
-                    case R.id.nav_response:
-                        fragment = new Response();
-                        break;
-                    case R.id.nav_chat:
-                        fragment = new Chat();
-                        break;
-                    case R.id.nav_account:
-                        fragment = new Account();
-                        break;
-                }
+        navigationView.setOnItemSelectedListener(item -> {
 
-                //change the current page to the selected one
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_activity_main, fragment).commit();
-                return true;
-            }
+            int idMenu = item.getItemId();
+
+            if (idMenu == R.id.nav_event)
+                replaceFragment(new Event());
+
+            else if (idMenu == R.id.nav_response)
+                replaceFragment(new Response());
+
+            else if (idMenu == R.id.nav_chat)
+                replaceFragment(new Chat());
+
+            else if (idMenu == R.id.nav_account)
+                replaceFragment(new Account());
+
+            return true;
         });
     }
 
-    public void setArguments(Bundle bundle) {
-
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 }

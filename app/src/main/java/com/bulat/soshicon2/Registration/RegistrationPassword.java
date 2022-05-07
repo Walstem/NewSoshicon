@@ -2,6 +2,7 @@ package com.bulat.soshicon2.Registration;
 
 import static com.bulat.soshicon2.constants.constants.*;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.R;
@@ -35,25 +37,22 @@ public class RegistrationPassword extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.registration_password, container, false);
+        View MainView = inflater.inflate(R.layout.registration_password, container, false);
 
-        EditText password = (EditText) root.findViewById(R.id.password);
+        EditText password = (EditText) MainView.findViewById(R.id.password);
         password.setTransformationMethod(PasswordTransformationMethod.getInstance());
 
-        Button onwards = (Button) root.findViewById(R.id.password_btn);
+        Button onwards = (Button) MainView.findViewById(R.id.password_btn);
 
-        onwards.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    onwards(root);
-                } catch (IOException | NoSuchAlgorithmException e) {
-                    e.printStackTrace();
-                }
+        onwards.setOnClickListener(view -> {
+            try {
+                onwards(MainView);
+            } catch (IOException | NoSuchAlgorithmException e) {
+                e.printStackTrace();
             }
         });
 
-        return root;
+        return MainView;
     }
 
     //when you click on the onwards button, we start the registrationActivityEmail activity
@@ -68,26 +67,22 @@ public class RegistrationPassword extends Fragment {
             //Если пароль меньше восьми символов
             if(password.getText().toString().length()<8) {
                 String message = getResources().getString(R.string.min_size_password);
-                alertEror(password,filedError, message);
+                alertError(password,filedError, message);
             }
             else {
                 //Переход на фрагмент создания электронной почты
-                SharedPreferences sp = getContext().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
+                SharedPreferences sp = getContext().getSharedPreferences(DATABASE, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
                 String hexPassword = toHexString(getSHA(password.getText().toString()));
                 editor.putString(PASSWORD, hexPassword);
                 editor.apply();
 
-                RegistrationEmail re = new RegistrationEmail();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.add(this.getId(), re);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                replaceFragmentParent(new RegistrationEmail());
             }
         }
     }
     //анимация edittext, если пользователь ошибется
-    public void alertEror(EditText filed, TextView filedEror ,String message){
+    public void alertError(EditText filed, TextView filedError ,String message){
         final Animation shakeAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.error_shake);
 
         //анимация
@@ -95,8 +90,8 @@ public class RegistrationPassword extends Fragment {
         filed.setBackground(getResources().getDrawable(R.drawable.anim_et_changecolor));
 
         //сообщение о ошибке
-        filedEror.setText(message);
-        filedEror.setVisibility(View.VISIBLE);
+        filedError.setText(message);
+        filedError.setVisibility(View.VISIBLE);
     }
 
     private static byte[] getSHA(String input) throws NoSuchAlgorithmException {
@@ -134,5 +129,13 @@ public class RegistrationPassword extends Fragment {
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();
+    }
+
+    //Функция обновление родительского фрагмента
+    public void replaceFragmentParent(Fragment fragment) {
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
+        fragmentTransaction.commit();
     }
 }

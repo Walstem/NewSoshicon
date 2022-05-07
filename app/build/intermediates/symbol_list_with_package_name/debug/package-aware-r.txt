@@ -3054,6 +3054,7 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id media_actions
+id menu
 id menu_crop
 id menu_loader
 id message

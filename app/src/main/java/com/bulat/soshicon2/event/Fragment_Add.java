@@ -3,6 +3,7 @@ package com.bulat.soshicon2.event;
 import static com.bulat.soshicon2.constants.constants.*;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -38,65 +39,54 @@ public class Fragment_Add extends BottomSheetDialogFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.bottomshit_add_event, container, false);
-        return view;
+        return inflater.inflate(R.layout.bottomshit_add_event, container, false);
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void onViewCreated(@NonNull View MainView, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(MainView, savedInstanceState);
 
-        BottomSheetBehavior<View> bottomSheetBehavior = BottomSheetBehavior.from((View) view.getParent());
+        BottomSheetBehavior<View> bottomSheetBehavior = BottomSheetBehavior.from((View) MainView.getParent());
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
         CoordinatorLayout layout = getDialog().findViewById(R.id.bottom_sheet_layout);
         assert layout != null;
         layout.setMinimumHeight(Resources.getSystem().getDisplayMetrics().heightPixels);
 
-        ImageView cancelEvent = view.findViewById(R.id.cancel);
-        ImageView add = view.findViewById(R.id.add);
-        EditText editText = (EditText) view.findViewById(R.id.ed_add);
+        ImageView cancelEvent = MainView.findViewById(R.id.cancel);
+        ImageView add = MainView.findViewById(R.id.add);
+        EditText editText = (EditText) MainView.findViewById(R.id.ed_add);
 
-        SharedPreferences sp = getActivity().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
-        TextView name = view.findViewById(R.id.username);
+        SharedPreferences sp = getActivity().getSharedPreferences(DATABASE, Context.MODE_PRIVATE);
+        TextView name = MainView.findViewById(R.id.username);
         name.setText(sp.getString(U_NICKNAME, ""));
 
-        add.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                String content = editText.getText().toString();
+        add.setOnClickListener(view -> {
+            String content = editText.getText().toString();
 
-                if(!content.equals("")){
-                    SharedPreferences sp = getContext().getSharedPreferences(DATABASE, 0);
-                    String user_id = sp.getString(ID, "");
-                    String nickname = sp.getString(U_NICKNAME, "");
-                    String Message = editText.getText().toString();
-                    String urlArgs = new SQLUtils(user_id, Message, nickname).input_distribution();
+            if(!content.equals("")){
+                SharedPreferences sp1 = getContext().getSharedPreferences(DATABASE, 0);
+                String user_id = sp1.getString(ID, "");
+                String nickname = sp1.getString(U_NICKNAME, "");
+                String Message = editText.getText().toString();
+                String urlArgs = new SQLUtils(user_id, Message, nickname).input_distribution();
 
-                    SendQuery sendQuery = new SendQuery("input_distribution_soshicon.php");
-                    sendQuery.execute(urlArgs);
-                    try {
-                        String answer = sendQuery.get();
-                        if (answer.equals("true")){
-                            //здесть будет выводиться сообщение об успешном создании события
-                            closeBottomSheet(bottomSheetBehavior);
-                        }
-                        else{
-                            //здесть будет выводиться сообщение об ошибке
-                        }
-                    } catch (ExecutionException | InterruptedException e) {
+                SendQuery sendQuery = new SendQuery("input_distribution_soshicon.php");
+                sendQuery.execute(urlArgs);
+                try {
+                    String answer = sendQuery.get();
+                    if (answer.equals("true")) {
+                        //здесть будет выводиться сообщение об успешном создании события
+                        closeBottomSheet(bottomSheetBehavior);
+                    }
+                    else {
                         //здесть будет выводиться сообщение об ошибке
                     }
+                } catch (ExecutionException | InterruptedException e) {
+                    //здесть будет выводиться сообщение об ошибке
                 }
             }
         });
-        cancelEvent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                closeBottomSheet(bottomSheetBehavior);
-            }
-        });
+        cancelEvent.setOnClickListener(v -> closeBottomSheet(bottomSheetBehavior));
 
     }
     private void closeBottomSheet(BottomSheetBehavior bottomSheetBehavior) {

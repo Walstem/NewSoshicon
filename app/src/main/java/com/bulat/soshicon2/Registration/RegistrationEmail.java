@@ -2,6 +2,7 @@ package com.bulat.soshicon2.Registration;
 
 import static com.bulat.soshicon2.constants.constants.*;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.R;
@@ -31,22 +33,19 @@ public class RegistrationEmail extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.registration_email, container, false);
+        View MainView = inflater.inflate(R.layout.registration_email, container, false);
 
-        Button onwards = (Button) root.findViewById(R.id.email_btn);
+        Button onwards = (Button) MainView.findViewById(R.id.email_btn);
 
-        onwards.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    onwards(root);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+        onwards.setOnClickListener(view -> {
+            try {
+                onwards(MainView);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         });
 
-        return root;
+        return MainView;
     }
 
     //Проверка ввода электронной почты
@@ -63,34 +62,31 @@ public class RegistrationEmail extends Fragment {
         if (NetCheck.StatusConnection(getContext())) {
             ViewToastMessage(view);
         }
-        else{
+        else {
             EditText email = (EditText) view.findViewById(R.id.email);
-            TextView MessageEror = (TextView) view.findViewById(R.id.error_text);
+            TextView MessageError = (TextView) view.findViewById(R.id.error_text);
 
             //User input validation
             CharSequence mail = email.getText().toString();
             if (!isValidEmail(mail)) {
                 String message = getResources().getString(R.string.email_error);
-                alertEror(email, MessageEror, message);
+                alertError(email, MessageError, message);
             }
             else {
                 //Переход на фрагмент окончания регистрации
-                SharedPreferences sp = getContext().getSharedPreferences(DATABASE, getContext().MODE_PRIVATE);
+                SharedPreferences sp = getContext().getSharedPreferences(DATABASE, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
 
                 editor.putString(EMAIL, email.getText().toString());
                 editor.apply();
 
-                RegistrationFinish rf = new RegistrationFinish();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.add(this.getId(), rf);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                replaceFragmentParent(new RegistrationFinish());
             }
         }
     }
+
     //анимация edittext, если пользователь ошибется
-    public void alertEror(EditText filed, TextView MessageEror ,String message){
+    public void alertError(EditText filed, TextView MessageError ,String message){
         final Animation shakeAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.error_shake);
 
         //анимация
@@ -98,9 +94,10 @@ public class RegistrationEmail extends Fragment {
         filed.setBackground(getResources().getDrawable(R.drawable.anim_et_changecolor));
 
         //сообщение о ошибке
-        MessageEror.setText(message);
-        MessageEror.setVisibility(View.VISIBLE);
+        MessageError.setText(message);
+        MessageError.setVisibility(View.VISIBLE);
     }
+
     public void ViewToastMessage(View view) {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.toast_internet_message,(ViewGroup) view.findViewById(R.id.toast_layout_root));
@@ -109,5 +106,13 @@ public class RegistrationEmail extends Fragment {
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();
+    }
+
+    //Функция обновление родительского фрагмента
+    public void replaceFragmentParent(Fragment fragment) {
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
+        fragmentTransaction.commit();
     }
 }
