@@ -75,6 +75,9 @@
     <string name="faq">FAQ</string>
     <string name="logOut">Log out</string>
 
+    <!--Смена языка-->
+    <string name="language_fragment">Language</string>
+
                                             <!--    ВСПЛЫВАЮЩИЕ СООБЩЕНИЯ   -->
 
     <!--Ошибка при авторизации-->

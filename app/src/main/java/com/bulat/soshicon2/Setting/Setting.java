@@ -32,13 +32,14 @@ public class Setting extends Fragment {
 
         navBar = getActivity().findViewById(R.id.bottom_navigation);
         ConstraintLayout log_out = MainView.findViewById(R.id.setting_log_out);
-        LanguageManager lang = new LanguageManager(getContext());
-        ImageView faq = MainView.findViewById(R.id.aboutUs_image);
-        ImageView tex = MainView.findViewById(R.id.text_size_image);
+        ConstraintLayout language = MainView.findViewById(R.id.languages);
         ImageView cancel = MainView.findViewById(R.id.cancel);
 
         //Выключение bottom navigation
         navBar.setVisibility(View.GONE);
+
+        //Переход на фрагмент смены языка
+        language.setOnClickListener(view -> { replaceFragmentParent(new Language()); });
 
         //Смена темы приложения
         SwitchCompat lightMode = MainView.findViewById(R.id.lightModeSwitch);
@@ -58,17 +59,6 @@ public class Setting extends Fragment {
             replaceFragmentParent(new Account());
             BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
             navBar.setVisibility(View.VISIBLE);
-        });
-
-        //Смена языка приложения
-        tex.setOnClickListener(view -> {
-            lang.updateResource("ru");
-            replaceFragmentParent(new Setting());
-        });
-
-        faq.setOnClickListener(view -> {
-            lang.updateResource("en");
-            replaceFragmentParent(new Setting());
         });
 
         //Выход из аккаунта

@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -28,9 +27,6 @@ public final class AccountSettingBinding implements ViewBinding {
   public final ConstraintLayout FAQ;
 
   @NonNull
-  public final ImageView FAQImage;
-
-  @NonNull
   public final ConstraintLayout SecondPanelSetting;
 
   @NonNull
@@ -47,9 +43,6 @@ public final class AccountSettingBinding implements ViewBinding {
 
   @NonNull
   public final ImageView cancel;
-
-  @NonNull
-  public final Spinner choiceLanguage;
 
   @NonNull
   public final ConstraintLayout constraintLayout;
@@ -103,16 +96,18 @@ public final class AccountSettingBinding implements ViewBinding {
   public final TextView textView;
 
   @NonNull
+  public final TextView textView3;
+
+  @NonNull
   public final TextView username;
 
   @NonNull
   public final TextView usernameBottomAvatar;
 
   private AccountSettingBinding(@NonNull ConstraintLayout rootView, @NonNull ConstraintLayout FAQ,
-      @NonNull ImageView FAQImage, @NonNull ConstraintLayout SecondPanelSetting,
-      @NonNull ConstraintLayout ThirdPanelSetting, @NonNull ConstraintLayout aboutUs,
-      @NonNull ImageView aboutUsImage, @NonNull Button button, @NonNull ImageView cancel,
-      @NonNull Spinner choiceLanguage, @NonNull ConstraintLayout constraintLayout,
+      @NonNull ConstraintLayout SecondPanelSetting, @NonNull ConstraintLayout ThirdPanelSetting,
+      @NonNull ConstraintLayout aboutUs, @NonNull ImageView aboutUsImage, @NonNull Button button,
+      @NonNull ImageView cancel, @NonNull ConstraintLayout constraintLayout,
       @NonNull ConstraintLayout containerSetting, @NonNull ConstraintLayout firstPanelSetting,
       @NonNull ConstraintLayout languages, @NonNull ImageView languagesImage,
       @NonNull ConstraintLayout lightMode, @NonNull ImageView lightModeImage,
@@ -120,18 +115,16 @@ public final class AccountSettingBinding implements ViewBinding {
       @NonNull ConstraintLayout logOutSetting, @NonNull ConstraintLayout notification,
       @NonNull ImageView notificationImage, @NonNull CircleImageView profileAvatarSetting,
       @NonNull ConstraintLayout settingLogOut, @NonNull ConstraintLayout textSize,
-      @NonNull ImageView textSizeImage, @NonNull TextView textView, @NonNull TextView username,
-      @NonNull TextView usernameBottomAvatar) {
+      @NonNull ImageView textSizeImage, @NonNull TextView textView, @NonNull TextView textView3,
+      @NonNull TextView username, @NonNull TextView usernameBottomAvatar) {
     this.rootView = rootView;
     this.FAQ = FAQ;
-    this.FAQImage = FAQImage;
     this.SecondPanelSetting = SecondPanelSetting;
     this.ThirdPanelSetting = ThirdPanelSetting;
     this.aboutUs = aboutUs;
     this.aboutUsImage = aboutUsImage;
     this.button = button;
     this.cancel = cancel;
-    this.choiceLanguage = choiceLanguage;
     this.constraintLayout = constraintLayout;
     this.containerSetting = containerSetting;
     this.firstPanelSetting = firstPanelSetting;
@@ -149,6 +142,7 @@ public final class AccountSettingBinding implements ViewBinding {
     this.textSize = textSize;
     this.textSizeImage = textSizeImage;
     this.textView = textView;
+    this.textView3 = textView3;
     this.username = username;
     this.usernameBottomAvatar = usernameBottomAvatar;
   }
@@ -186,12 +180,6 @@ public final class AccountSettingBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.FAQ_image;
-      ImageView FAQImage = ViewBindings.findChildViewById(rootView, id);
-      if (FAQImage == null) {
-        break missingId;
-      }
-
       id = R.id.SecondPanelSetting;
       ConstraintLayout SecondPanelSetting = ViewBindings.findChildViewById(rootView, id);
       if (SecondPanelSetting == null) {
@@ -225,12 +213,6 @@ public final class AccountSettingBinding implements ViewBinding {
       id = R.id.cancel;
       ImageView cancel = ViewBindings.findChildViewById(rootView, id);
       if (cancel == null) {
-        break missingId;
-      }
-
-      id = R.id.choiceLanguage;
-      Spinner choiceLanguage = ViewBindings.findChildViewById(rootView, id);
-      if (choiceLanguage == null) {
         break missingId;
       }
 
@@ -332,6 +314,12 @@ public final class AccountSettingBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textView3;
+      TextView textView3 = ViewBindings.findChildViewById(rootView, id);
+      if (textView3 == null) {
+        break missingId;
+      }
+
       id = R.id.username;
       TextView username = ViewBindings.findChildViewById(rootView, id);
       if (username == null) {
@@ -344,12 +332,12 @@ public final class AccountSettingBinding implements ViewBinding {
         break missingId;
       }
 
-      return new AccountSettingBinding((ConstraintLayout) rootView, FAQ, FAQImage,
-          SecondPanelSetting, ThirdPanelSetting, aboutUs, aboutUsImage, button, cancel,
-          choiceLanguage, constraintLayout, containerSetting, firstPanelSetting, languages,
-          languagesImage, lightMode, lightModeImage, lightModeSwitch, logOut, logOutSetting,
-          notification, notificationImage, profileAvatarSetting, settingLogOut, textSize,
-          textSizeImage, textView, username, usernameBottomAvatar);
+      return new AccountSettingBinding((ConstraintLayout) rootView, FAQ, SecondPanelSetting,
+          ThirdPanelSetting, aboutUs, aboutUsImage, button, cancel, constraintLayout,
+          containerSetting, firstPanelSetting, languages, languagesImage, lightMode, lightModeImage,
+          lightModeSwitch, logOut, logOutSetting, notification, notificationImage,
+          profileAvatarSetting, settingLogOut, textSize, textSizeImage, textView, textView3,
+          username, usernameBottomAvatar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

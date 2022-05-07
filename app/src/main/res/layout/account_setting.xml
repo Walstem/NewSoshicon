@@ -329,6 +329,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
+                            android:id="@+id/textView3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
@@ -339,17 +340,15 @@
                             app:layout_constraintStart_toEndOf="@+id/languages_image"
                             app:layout_constraintTop_toTopOf="@+id/languages_image" />
 
-                        <Spinner
-                            android:id="@+id/choiceLanguage"
+                        <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="16dp"
                             android:src="@drawable/ic_arrow_right"
-                            app:layout_constraintBottom_toBottomOf="@+id/languages_image"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="@+id/languages_image">
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                        </Spinner>
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -433,53 +432,7 @@
                     android:background="@drawable/round_setting_back_bottom"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/aboutUs">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_marginBottom="6dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <ImageView
-                            android:id="@+id/FAQ_image"
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:background="@drawable/round_setting_back_faq"
-                            android:padding="5dp"
-                            android:src="@drawable/ic_setting_faq"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:text="@string/faq"
-                            android:textColor="@color/text_color_primary"
-                            android:textSize="18sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/FAQ_image"
-                            app:layout_constraintStart_toEndOf="@+id/FAQ_image"
-                            app:layout_constraintTop_toTopOf="@+id/FAQ_image" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="16dp"
-                            android:src="@drawable/ic_arrow_right"
-                            app:layout_constraintBottom_toBottomOf="@+id/FAQ_image"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="@+id/FAQ_image" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                    app:layout_constraintTop_toBottomOf="@+id/aboutUs"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

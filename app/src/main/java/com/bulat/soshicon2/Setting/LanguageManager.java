@@ -1,5 +1,7 @@
 package com.bulat.soshicon2.Setting;
 
+import static com.bulat.soshicon2.constants.constants.*;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -10,12 +12,12 @@ import java.util.Locale;
 public class LanguageManager {
     private final Context context;
 
-    private SharedPreferences sharedPreferences;
+    private final SharedPreferences sharedPreferences;
 
     public LanguageManager(Context cont) {
         context = cont;
 
-        sharedPreferences = context.getSharedPreferences("LANG", Context.MODE_PRIVATE);
+        sharedPreferences = context.getSharedPreferences(DATABASE, Context.MODE_PRIVATE);
     }
 
     public void updateResource(String code) {
@@ -33,12 +35,12 @@ public class LanguageManager {
     }
 
     public String getLang() {
-        return sharedPreferences.getString("lang", "en");
+        return sharedPreferences.getString(LANG, "en");
     }
 
     public void setLang(String code) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("lang", code);
-        editor.commit();
+        editor.putString(LANG, code);
+        editor.apply();
     }
 }

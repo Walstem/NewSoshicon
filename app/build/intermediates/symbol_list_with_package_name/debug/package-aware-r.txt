@@ -2733,7 +2733,6 @@ id BOTTOM_START
 id CTRL
 id ContentMessage
 id FAQ
-id FAQ_image
 id FUNCTION
 id META
 id NO_DEBUG
@@ -2865,7 +2864,6 @@ id chip1
 id chip2
 id chip3
 id chip_group
-id choiceLanguage
 id chronometer
 id circle_center
 id clear_text
@@ -2943,6 +2941,7 @@ id email_btn
 id end
 id endToStart
 id end_padder
+id english_radio
 id enterAlways
 id enterAlwaysCollapsed
 id error_message_out
@@ -3006,6 +3005,7 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id languages
+id languages_group
 id languages_image
 id layout
 id layout_aspect_ratio
@@ -3156,6 +3156,7 @@ id rotate_scroll_wheel
 id rounded
 id row_index_key
 id rtl
+id russian_radio
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3254,6 +3255,7 @@ id textTop
 id textView
 id textView1
 id textView2
+id textView3
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3503,6 +3505,7 @@ layout row_card_event
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout setting_language
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_chip_zero_corner_radius
@@ -3612,6 +3615,7 @@ string icon_content_description
 string image_picker_provider_authority_suffix
 string item_view_role_description
 string language
+string language_fragment
 string lightMode
 string logOut
 string login
