@@ -74,6 +74,12 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/image_picker_provider_paths" />
         </provider>
+
+        <service
+            android:name="com.parse.PushServiceApi26"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.example.soshicon.androidx-startup"

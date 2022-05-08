@@ -21,7 +21,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.bulat.soshicon2.BottomNavigation.Event;
+import com.bulat.soshicon2.BottomNavigation.event.Event;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.SQLUtils.SQLUtils;
 import com.bulat.soshicon2.asynctasks.SendQuery;

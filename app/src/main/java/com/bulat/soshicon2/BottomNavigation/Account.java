@@ -2,6 +2,7 @@ package com.bulat.soshicon2.BottomNavigation;
 
 import static com.bulat.soshicon2.constants.constants.*;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -35,10 +36,12 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
+import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
@@ -101,7 +104,7 @@ public class Account extends Fragment {
 
             try {
                 byte[] img = ReadFile(uri.getPath(), 100);
-                byte[] compress_img = ReadFile(uri.getPath(), 20);
+                byte[] compress_img = ReadFile(uri.getPath(), 10);
 
                 UploadAvatar UploadPhoto = new UploadAvatar(img,compress_img, UPLOAD_AVATAR_PHP);
                 UploadPhoto.execute();
@@ -180,5 +183,17 @@ public class Account extends Fragment {
             httpclient.getConnectionManager().shutdown();
             return null;
         }
+    }
+    public void WriteImages(String filename, String content, Context context) throws IOException {
+
+        File file = new File(context.getFilesDir(), filename);
+
+        //We write the data entered by the user into a file
+        FileWriter filewriter = new FileWriter(file);
+        System.out.println(file.getName()+ file.exists());
+        BufferedWriter out = new BufferedWriter(filewriter);
+        out.write(content);
+
+        out.close();
     }
 }
