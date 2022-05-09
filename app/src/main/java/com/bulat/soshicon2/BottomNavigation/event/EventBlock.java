@@ -22,14 +22,16 @@ class EventBlock extends ArrayAdapter<String> {
     Context context;
     ArrayList<String> Title;
     ArrayList<String> Discription;
-    ArrayList<String> Avatars;
+    ArrayList<String> Avatar;
+    ArrayList<String> Time;
 
-    public EventBlock(@NonNull Context context, ArrayList<String> Title, ArrayList<String> Discription, ArrayList<String> Avatars) {
+    public EventBlock(@NonNull Context context, ArrayList<String> Title, ArrayList<String> Discription, ArrayList<String> Avatars,  ArrayList<String> Time) {
         super(context, R.layout.row_card_event, R.id.NameMessage, Title);
         this.context = context;
         this.Title = Title;
         this.Discription = Discription;
-        this.Avatars = Avatars;
+        this.Avatar = Avatars;
+        this.Time = Time;
     }
 
     @NonNull
@@ -40,8 +42,9 @@ class EventBlock extends ArrayAdapter<String> {
         TextView NameMessage = row.findViewById(R.id.NameMessage);
         TextView Content = row.findViewById(R.id.ContentMessage);
         ImageView avatar = row.findViewById(R.id.avatar);
-        if (Avatars.get(position) != "null"){
-            byte [] encodeByte = Base64.decode(Avatars.get(position),Base64.DEFAULT);
+        TextView time = row.findViewById(R.id.Time);
+        if (Avatar.get(position) != "null"){
+            byte [] encodeByte = Base64.decode(Avatar.get(position),Base64.DEFAULT);
             Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
 
             avatar.setImageBitmap(bitmap);
@@ -49,7 +52,7 @@ class EventBlock extends ArrayAdapter<String> {
 
         NameMessage.setText(Title.get(position));
         Content.setText(Discription.get(position));
-
+        time.setText(Time.get(position));
         return row;
     }
 }

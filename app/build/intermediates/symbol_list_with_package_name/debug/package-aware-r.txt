@@ -2738,7 +2738,6 @@ id FUNCTION
 id META
 id NO_DEBUG
 id NameMessage
-id Role
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -2749,6 +2748,7 @@ id SwipeRefreshLayout
 id TOP_END
 id TOP_START
 id ThirdPanelSetting
+id Time
 id aboutUs
 id aboutUs_image
 id accelerate

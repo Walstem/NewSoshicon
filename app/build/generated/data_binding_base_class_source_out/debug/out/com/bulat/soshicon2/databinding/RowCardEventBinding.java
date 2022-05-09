@@ -27,17 +27,17 @@ public final class RowCardEventBinding implements ViewBinding {
   public final TextView NameMessage;
 
   @NonNull
-  public final TextView Role;
+  public final TextView Time;
 
   @NonNull
   public final CircleImageView avatar;
 
   private RowCardEventBinding(@NonNull ConstraintLayout rootView, @NonNull TextView ContentMessage,
-      @NonNull TextView NameMessage, @NonNull TextView Role, @NonNull CircleImageView avatar) {
+      @NonNull TextView NameMessage, @NonNull TextView Time, @NonNull CircleImageView avatar) {
     this.rootView = rootView;
     this.ContentMessage = ContentMessage;
     this.NameMessage = NameMessage;
-    this.Role = Role;
+    this.Time = Time;
     this.avatar = avatar;
   }
 
@@ -80,9 +80,9 @@ public final class RowCardEventBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.Role;
-      TextView Role = ViewBindings.findChildViewById(rootView, id);
-      if (Role == null) {
+      id = R.id.Time;
+      TextView Time = ViewBindings.findChildViewById(rootView, id);
+      if (Time == null) {
         break missingId;
       }
 
@@ -92,7 +92,7 @@ public final class RowCardEventBinding implements ViewBinding {
         break missingId;
       }
 
-      return new RowCardEventBinding((ConstraintLayout) rootView, ContentMessage, NameMessage, Role,
+      return new RowCardEventBinding((ConstraintLayout) rootView, ContentMessage, NameMessage, Time,
           avatar);
     }
     String missingId = rootView.getResources().getResourceName(id);

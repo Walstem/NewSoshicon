@@ -23,7 +23,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.concurrent.ExecutionException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -31,10 +33,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class Event extends Fragment {
     public static final String GET_COUNT_DISTRIBUTION_PHP = "getCountDistribution.php";
     public static final String GET_DISTRIBUTION_SOSHICON_PHP = "Get_distribution_soshicon.php";
-    String eventCountRows;
     private ArrayList<String> Title = new ArrayList<String>();
     private ArrayList<String> Content = new ArrayList<String>();
     private ArrayList<String> Avatar = new ArrayList<String>();
+    private ArrayList<String> Time = new ArrayList<String>();
     private ArrayAdapter eventBlock;
     private SwipeRefreshLayout swipeRefreshLayout;
     public int start = 10;
@@ -126,6 +128,7 @@ public class Event extends Fragment {
             Title = new ArrayList<>();
             Content = new ArrayList<>();
             Avatar = new ArrayList<String>();
+            Time = new ArrayList<String>();
 
             //вычисляем количество записей в таблице с событиями
             SendQuery sendQuery = new SendQuery(GET_COUNT_DISTRIBUTION_PHP);
@@ -142,6 +145,7 @@ public class Event extends Fragment {
         Query.execute();
 
         JSONArray Event_json = new JSONArray(Query.get());
+        System.out.println(Event_json);
         //уменьшаем количество записей оставшихся в таблице
         countRowsEvent -= 10;
 
@@ -150,12 +154,15 @@ public class Event extends Fragment {
             JSONObject jo = new JSONObject((String) Event_json.get(i));
             Content.add((String) jo.get("content"));
             Title.add((String) jo.get("nickname"));
-            Avatar.add((String) jo.get("img").toString());
+            Avatar.add(jo.get("img").toString());
+
+            String eventTime = (String) jo.get("time");
+            Time.add(new EventTime().handle(eventTime));
         }
 
         //если происходит загрузка при переходе на страницу прогружаем listview Заново
         if (!scroll) {
-            eventBlock = new EventBlock(requireContext(), Title, Content, Avatar);
+            eventBlock = new EventBlock(requireContext(), Title, Content, Avatar, Time);
             listView.setAdapter(eventBlock);
         }
         //если функция была вызванна свайпом, то обновляем Listview

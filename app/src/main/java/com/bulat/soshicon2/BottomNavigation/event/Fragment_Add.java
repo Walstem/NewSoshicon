@@ -25,6 +25,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.ExecutionException;
 
@@ -47,6 +48,7 @@ public class Fragment_Add extends BottomSheetDialogFragment {
     public void onViewCreated(@NonNull View MainView, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(MainView, savedInstanceState);
 
+
         BottomSheetBehavior<View> bottomSheetBehavior = BottomSheetBehavior.from((View) MainView.getParent());
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
         CoordinatorLayout layout = getDialog().findViewById(R.id.bottom_sheet_layout);
@@ -65,15 +67,18 @@ public class Fragment_Add extends BottomSheetDialogFragment {
             String content = editText.getText().toString();
 
             if(!content.equals("")){
+                String pattern = "yyyy-MM-dd-HH-mm";
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
                 SharedPreferences sp1 = getContext().getSharedPreferences(DATABASE, 0);
-                String user_id = sp1.getString(ID, "");
+                String user_id  = sp1.getString(ID, "");
                 String nickname = sp1.getString(U_NICKNAME, "");
                 String Message = editText.getText().toString();
-                Date currentDate = new java.util.Date();
-                System.out.println(currentDate);
-                String urlArgs = new SQLUtils(user_id, Message, nickname).input_distribution();
+                String time = simpleDateFormat.format(new Date());
 
-                SendQuery sendQuery = new SendQuery("input_distribution_soshicon.php");
+                String urlArgs = new SQLUtils(user_id, Message, nickname, time).input_event();
+
+                SendQuery sendQuery = new SendQuery("input_event.php");
                 sendQuery.execute(urlArgs);
                 try {
                     String answer = sendQuery.get();

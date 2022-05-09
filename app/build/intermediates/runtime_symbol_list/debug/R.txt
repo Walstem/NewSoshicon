@@ -2737,7 +2737,6 @@ int id FUNCTION 0x7f090007
 int id META 0x7f090008
 int id NO_DEBUG 0x7f090009
 int id NameMessage 0x7f09000a
-int id Role 0x7f09000b
 int id SHIFT 0x7f09000c
 int id SHOW_ALL 0x7f09000d
 int id SHOW_PATH 0x7f09000e
@@ -2748,6 +2747,7 @@ int id SwipeRefreshLayout 0x7f090012
 int id TOP_END 0x7f090013
 int id TOP_START 0x7f090014
 int id ThirdPanelSetting 0x7f090015
+int id Time 0x7f090253
 int id aboutUs 0x7f090016
 int id aboutUs_image 0x7f090017
 int id accelerate 0x7f090018
