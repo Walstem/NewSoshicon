@@ -26,7 +26,7 @@ public class EventTime {
         }
         else if (eventTime.equals(clientTime)) {
             time = "только что";
-        } else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && eventTimeArrInt[2] == clientTimeArrInt[2] && eventTimeArrInt[3] == clientTimeArrInt[3] && clientTimeArrInt[4] - eventTimeArrInt[4]  < 5){
+        } else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && eventTimeArrInt[2] == clientTimeArrInt[2] && eventTimeArrInt[3] == clientTimeArrInt[3] && eventTimeArrInt[4] -clientTimeArrInt[4]  < 5){
             time = "только что";
         }
         else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && eventTimeArrInt[2] == clientTimeArrInt[2] && eventTimeArrInt[3] == clientTimeArrInt[3] && clientTimeArrInt[4] - eventTimeArrInt[4] < 21 && clientTimeArrInt[4] - eventTimeArrInt[4] > 25 || clientTimeArrInt[4] - eventTimeArrInt[4] > 34 && clientTimeArrInt[4] - eventTimeArrInt[4] < 41 || clientTimeArrInt[4] - eventTimeArrInt[4] > 44 && clientTimeArrInt[4] - eventTimeArrInt[4] < 50 || clientTimeArrInt[4] - eventTimeArrInt[4] > 54 && clientTimeArrInt[4] - eventTimeArrInt[4] < 60) {
@@ -47,14 +47,17 @@ public class EventTime {
         else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && eventTimeArrInt[2] == clientTimeArrInt[2] && clientTimeArrInt[3] - eventTimeArrInt[3] > 4 && clientTimeArrInt[3] - eventTimeArrInt[3] < 21){
             time = clientTimeArrInt[3] - eventTimeArrInt[3] + " часов назад";
         }
-        else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && clientTimeArrInt[2] - eventTimeArrInt[2] == 1 ||  clientTimeArrInt[2] - eventTimeArrInt[2] == 31 || clientTimeArrInt[2] - eventTimeArrInt[2] == 21){
-            time = clientTimeArrInt[3] - eventTimeArrInt[3] + " день назад";
+        else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && clientTimeArrInt[2] - eventTimeArrInt[2] == 1){
+            time = "вчера в " + eventTimeArrInt[3] + ":" + eventTimeArr[4] ;
+        }
+        else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] &&  clientTimeArrInt[2] - eventTimeArrInt[2] == 31 || clientTimeArrInt[2] - eventTimeArrInt[2] == 21){
+            time = clientTimeArrInt[2] - eventTimeArrInt[2] + " день назад в " + eventTimeArrInt[3] + ":" + eventTimeArr[4];
         }
         else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && clientTimeArrInt[2] - eventTimeArrInt[2] > 1 && clientTimeArrInt[2] - eventTimeArrInt[2] < 5 ||  clientTimeArrInt[2] - eventTimeArrInt[2] > 21 && clientTimeArrInt[2] - eventTimeArrInt[2] < 25){
-            time = clientTimeArrInt[3] - eventTimeArrInt[3] + " дня назад";
+            time = clientTimeArrInt[2] - eventTimeArrInt[2] + " дня назад в " + eventTimeArrInt[3] + ":" + eventTimeArr[4];
         }
         else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && clientTimeArrInt[2] - eventTimeArrInt[2] > 4 &&  clientTimeArrInt[2] - eventTimeArrInt[2] < 21 || clientTimeArrInt[2] - eventTimeArrInt[2] > 24 &&  clientTimeArrInt[2] - eventTimeArrInt[2] < 31 ){
-            time = clientTimeArrInt[3] - eventTimeArrInt[3] + " дней назад";
+            time = clientTimeArrInt[2] - eventTimeArrInt[2] + " дней назад в " + eventTimeArrInt[3] + ":" + eventTimeArr[4];
         }
         else {
             time = eventTimeArrInt[0] + "г. " +  eventTimeArrInt[1] + "/" +  eventTimeArrInt[2] + " " + eventTimeArr[3] + ":" + eventTimeArr[4];
