@@ -29,8 +29,14 @@ public class EventTime {
         } else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && eventTimeArrInt[2] == clientTimeArrInt[2] && eventTimeArrInt[3] == clientTimeArrInt[3] && clientTimeArrInt[4] - eventTimeArrInt[4]  < 5){
             time = "только что";
         }
-        else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && eventTimeArrInt[2] == clientTimeArrInt[2] && eventTimeArrInt[3] == clientTimeArrInt[3] && eventTimeArrInt[4] < clientTimeArrInt[4]){
+        else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && eventTimeArrInt[2] == clientTimeArrInt[2] && eventTimeArrInt[3] == clientTimeArrInt[3] && clientTimeArrInt[4] - eventTimeArrInt[4] < 21 || clientTimeArrInt[4] - eventTimeArrInt[4] > 25 ){
             time = clientTimeArrInt[4] - eventTimeArrInt[4] + " минут назад";
+        }
+        else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && eventTimeArrInt[2] == clientTimeArrInt[2] && eventTimeArrInt[3] == clientTimeArrInt[3] && clientTimeArrInt[4] - eventTimeArrInt[4]  == 21 ){
+            time = clientTimeArrInt[4] - eventTimeArrInt[4] + " минута назад";
+        }
+        else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && eventTimeArrInt[2] == clientTimeArrInt[2] && eventTimeArrInt[3] == clientTimeArrInt[3] && clientTimeArrInt[4] - eventTimeArrInt[4] > 21 || clientTimeArrInt[4] - eventTimeArrInt[4] < 25 ){
+            time = clientTimeArrInt[4] - eventTimeArrInt[4] + " минуты назад";
         }
         else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && eventTimeArrInt[2] == clientTimeArrInt[2] && clientTimeArrInt[3] - eventTimeArrInt[3] == 1 || clientTimeArrInt[3] - eventTimeArrInt[3] == 21){
             time = clientTimeArrInt[3] - eventTimeArrInt[3] + " час назад";
