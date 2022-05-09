@@ -21,7 +21,10 @@ public class EventTime {
             eventTimeArrInt[j] = Integer.parseInt(eventTimeArr[j]);
             clientTimeArrInt[j] = Integer.parseInt(clientTimeArr[j]);
         }
-        if (eventTime.equals(clientTime)) {
+        if (eventTime == ""){
+            time = "";
+        }
+        else if (eventTime.equals(clientTime)) {
             time = "только что";
         } else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && eventTimeArrInt[2] == clientTimeArrInt[2] && eventTimeArrInt[3] == clientTimeArrInt[3] && clientTimeArrInt[4] - eventTimeArrInt[4]  < 5){
             time = "только что";
