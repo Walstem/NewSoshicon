@@ -29,10 +29,10 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:extractNativeLibs="false"
-        android:icon="@drawable/ic_launcher_foreground"
+        android:icon="@mipmap/soshicon_foreground"
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
-        android:roundIcon="@mipmap/soshicon_round"
+        android:roundIcon="@mipmap/soshicon_foreground"
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.SoshiconJava"
@@ -74,6 +74,12 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/image_picker_provider_paths" />
         </provider>
+
+        <service
+            android:name="com.parse.PushServiceApi26"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.example.soshicon.androidx-startup"

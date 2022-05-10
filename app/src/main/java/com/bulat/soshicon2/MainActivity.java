@@ -12,13 +12,17 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.bulat.soshicon2.BottomNavigation.Account;
+import com.bulat.soshicon2.BottomNavigation.account.Account;
 import com.bulat.soshicon2.BottomNavigation.Chat;
-import com.bulat.soshicon2.BottomNavigation.Event;
+import com.bulat.soshicon2.BottomNavigation.event.Event;
 import com.bulat.soshicon2.BottomNavigation.Response;
 import com.bulat.soshicon2.Registration.Authorization;
+<<<<<<< HEAD
 import com.bulat.soshicon2.Setting.LanguageManager;
 import com.bulat.soshicon2.Setting.ThemeManager;
+=======
+import com.bulat.soshicon2.BottomNavigation.account.LanguageManager;
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

@@ -4,7 +4,10 @@ import static com.bulat.soshicon2.constants.constants.*;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +23,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.bulat.soshicon2.BottomNavigation.Event;
+import com.bulat.soshicon2.BottomNavigation.event.Event;
+import com.bulat.soshicon2.BottomNavigation.event.EventTime;
+import com.bulat.soshicon2.BottomNavigation.event.receivingEvent;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.SQLUtils.SQLUtils;
 import com.bulat.soshicon2.asynctasks.SendQuery;
@@ -28,13 +33,26 @@ import com.bulat.soshicon2.checks.NetCheck;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 
 public class Authorization extends Fragment {
+    private String Avatar;
+    private String CompressAvatar;
 
+<<<<<<< HEAD
+=======
+    public static final String GET_AVATAR_PHP = "get_avatar.php";
+
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -51,6 +69,7 @@ public class Authorization extends Fragment {
         // нопка авторизации
         Button authorization_enter = MainView.findViewById(R.id.authorization_enter);
         authorization_enter.setOnClickListener(v -> authorization(MainView));
+
 
         return MainView;
     }
@@ -90,8 +109,44 @@ public class Authorization extends Fragment {
                     ed.putString(U_NICKNAME, login);
                     ed.apply();
                     String data_id = sPref.getString(ID, "");
-                    System.out.println(data_id);
 
+                    //загружаем аватар
+                    String[] KeyArgs = {"id"};
+                    String[] Args = {sPref.getString(ID, "")};
+
+
+                    receivingEvent Query = new receivingEvent(GET_AVATAR_PHP, KeyArgs, Args);
+                    Query.execute();
+
+                    JSONArray Event_json = new JSONArray(Query.get());
+                    System.out.println(Event_json);
+                    //уменьшаем количество записей оставшихс€ в таблице
+
+                    //добавл€ем данные в массивы
+                    for (int i = 0; i < Event_json.length(); i++) {
+                        JSONObject jo = new JSONObject((String) Event_json.get(i));
+                        CompressAvatar = (String) jo.get("compress_avatar");
+                        Avatar = (String) jo.get("avatar");
+                    }
+                    String compressPathTrue = getContext().getFilesDir() + "avatar_compress_" + true + ".jpg";
+                    String compressPathFalse = getContext().getFilesDir() + "avatar_compress_" + false + ".jpg";
+                    FileOutputStream outTrue = new FileOutputStream(compressPathTrue);
+                    FileOutputStream outFalse = new FileOutputStream(compressPathFalse);
+
+                    byte [] encodeByte1 = Base64.decode(CompressAvatar,Base64.DEFAULT);
+                    Bitmap bitmap1 = BitmapFactory.decodeByteArray(encodeByte1, 0, encodeByte1.length);
+                    byte [] encodeByte2 = Base64.decode(Avatar,Base64.DEFAULT);
+                    Bitmap bitmap2 = BitmapFactory.decodeByteArray(encodeByte2, 0, encodeByte2.length);
+
+                    bitmap1.compress(Bitmap.CompressFormat.JPEG, 100, outTrue);
+                    bitmap2.compress(Bitmap.CompressFormat.JPEG, 100, outFalse);
+
+
+
+
+                    ed.putString("compress_avatar_" + true, compressPathTrue);
+                    ed.putString("compress_avatar_" + false, compressPathFalse);
+                    ed.commit();
                     replaceFragmentParent(new Event());
                 }
                 // если сообщени€ ложные выводим сообщение об ошибке

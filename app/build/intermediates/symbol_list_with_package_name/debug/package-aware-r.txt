@@ -2621,9 +2621,11 @@ drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_like
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
+drawable ic_more_vert
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -2640,6 +2642,7 @@ drawable ic_setting_notifications
 drawable ic_setting_text_size
 drawable ic_toast_error
 drawable ic_toast_success
+drawable logo
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
 drawable m3_radiobutton_ripple
@@ -2737,7 +2740,6 @@ id FUNCTION
 id META
 id NO_DEBUG
 id NameMessage
-id Role
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -2748,6 +2750,7 @@ id SwipeRefreshLayout
 id TOP_END
 id TOP_START
 id ThirdPanelSetting
+id Time
 id aboutUs
 id aboutUs_image
 id accelerate
@@ -2991,6 +2994,7 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id imageView2
 id image_view_crop
 id image_view_logo
 id image_view_state_aspect_ratio
@@ -3147,7 +3151,6 @@ id pin
 id position
 id postLayout
 id profile_avatar
-id profile_avatar_setting
 id progress_circular
 id progress_horizontal
 id radio
@@ -3416,7 +3419,6 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout account
-layout account_setting
 layout authorization
 layout bottomshit_add_event
 layout chat
@@ -3509,7 +3511,11 @@ layout row_card_event
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+<<<<<<< HEAD
 layout setting_language
+=======
+layout setting
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_chip_zero_corner_radius
@@ -3542,8 +3548,6 @@ menu bottom_nav_menu
 menu example_menu
 menu example_menu2
 menu ucrop_menu_activity
-mipmap ic_launcher
-mipmap ic_launcher_foreground
 mipmap soshicon
 mipmap soshicon_foreground
 mipmap soshicon_round

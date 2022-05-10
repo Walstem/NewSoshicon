@@ -43,6 +43,7 @@
         </LinearLayout>
 
     <ImageView
+<<<<<<< HEAD
         android:id="@+id/imageView"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -55,11 +56,25 @@
         android:contentDescription="@string/app_name" />
 
     <com.google.android.material.textfield.TextInputLayout
+=======
+        android:id="@+id/imageView2"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="128dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
+<<<<<<< HEAD
         android:layout_marginBottom="1dp"
         android:digits="@string/Limitation_EditText"
         app:boxStrokeWidth="0dp"
@@ -68,6 +83,21 @@
         app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" >
+=======
+        android:background="@drawable/radius_top"
+        android:digits="@string/Limitation_EditText"
+        android:hint="@string/ed_login"
+        android:inputType="textPersonName"
+        android:maxLength="15"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:textColor="@color/text_color_gray"
+        android:textColorHint="@color/text_color_hint"
+        android:textCursorDrawable="@drawable/cursor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_height="60dp"
@@ -88,7 +118,9 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="24dp"
+<<<<<<< HEAD
         android:layout_marginBottom="16dp"
         android:digits="@string/Limitation_EditText"
         app:boxStrokeWidth="0dp"
@@ -112,22 +144,38 @@
             android:textColorHint="@color/text_color_hint" />
 
     </com.google.android.material.textfield.TextInputLayout>
+=======
+        android:background="@drawable/radius_bottom"
+        android:digits="@string/Limitation_EditText"
+        android:hint="@string/et_password"
+        android:inputType="textPassword"
+        android:maxLength="25"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:textColor="@color/text_color_gray"
+        android:textColorHint="@color/text_color_hint"
+        android:textCursorDrawable="@drawable/cursor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login" />
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/authorization_enter"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="@color/btn_reg_yellow"
         android:text="@string/btn_enter"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:cornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_registration"
@@ -143,5 +191,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/authorization_enter" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

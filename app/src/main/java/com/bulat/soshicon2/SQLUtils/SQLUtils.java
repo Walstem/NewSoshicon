@@ -23,12 +23,11 @@ public class SQLUtils {
         StringBuilder query = new StringBuilder();
         for (int i = 0; i < DataArr.length; i++){
             query.append(args[i]).append(DataArr[i]);
-            System.out.println(args[i]);
         }
         return query.toString();
     }
-    public String input_distribution(){
-        String[] args = {"?user_id=", "&content=","&nickname="};
+    public String input_event(){
+        String[] args = {"?user_id=", "&content=","&nickname=", "&time="};
         return createUrl(args);
     }
 }

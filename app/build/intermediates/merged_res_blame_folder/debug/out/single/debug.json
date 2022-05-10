@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\anim_error_shake.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\anim\\error_shake.xml"
     },
@@ -178,14 +179,27 @@
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_radius_bottom.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\radius_bottom.xml"
+=======
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_round_setting_back_faq.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\round_setting_back_faq.xml"
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_registration_finish.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\registration_finish.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_arrow_right.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_arrow_right.xml"
+=======
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_round_setting_back_top.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\round_setting_back_top.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_search.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_search.xml"
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
@@ -196,6 +210,7 @@
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\round_setting_back_bottom.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_bottom_nav_item_selector.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\bottom_nav_item_selector.xml"
     },
@@ -206,12 +221,41 @@
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_setting_text_size.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_setting_text_size.xml"
+=======
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_account_setting.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_account_setting.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_bottom_nav_account.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_bottom_nav_account.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_radius.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\radius.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_anim_et_changecolor.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\anim_et_changecolor.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_soshicon_round.png.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\mipmap-xhdpi\\soshicon_round.png"
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_setting_invert_colors.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_setting_invert_colors.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_oval_shape_cancel.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable-v24\\oval_shape_cancel.xml"
     },
@@ -226,14 +270,59 @@
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_radius.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\radius.xml"
+=======
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_toast_error_message_out.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\toast_error_message_out.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_chat.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\chat.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_setting_notifications.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_setting_notifications.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_row_card_event.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\row_card_event.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_setting_logout.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_setting_logout.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_soshicon_round.png.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\mipmap-xxhdpi\\soshicon_round.png"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_registration_name.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\registration_name.xml"
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_soshicon_foreground.png.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\mipmap-hdpi\\soshicon_foreground.png"
+=======
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_oval_shape_cancel.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable-v24\\oval_shape_cancel.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_arrow_right.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_arrow_right.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_like.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_like.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_round_setting_back_notification.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\round_setting_back_notification.xml"
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_profile.png.flat",
@@ -248,12 +337,37 @@
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\round_setting_back_log_out.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_registration_password.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\registration_password.xml"
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_soshicon_foreground.png.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\mipmap-mdpi\\soshicon_foreground.png"
+=======
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_arrow_left.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_arrow_left.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_soshicon_round.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\mipmap-anydpi-v26\\soshicon_round.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_round_setting_back_text_size.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\round_setting_back_text_size.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_toast_add_error_two.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_add_error_two.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_add.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_add.xml"
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_splash_screen.xml.flat",
@@ -268,8 +382,17 @@
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_chat.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\chat.xml"
+=======
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_setting_language.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_setting_language.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_soshicon.png.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\mipmap-xxxhdpi\\soshicon.png"
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_bottom_nav_account.xml.flat",
@@ -280,8 +403,17 @@
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\mipmap-mdpi\\soshicon.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_toast_success_message.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\toast_success_message.xml"
+=======
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_bottom_nav_chat.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_bottom_nav_chat.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_soshicon.png.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\mipmap-hdpi\\soshicon.png"
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
@@ -308,8 +440,13 @@
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\mipmap-xhdpi\\soshicon.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_track_shape.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\track_shape.xml"
+=======
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_authorization.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\authorization.xml"
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_cursor.xml.flat",
@@ -320,6 +457,7 @@
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\round_setting_back_language.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_arrow_left.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_arrow_left.xml"
     },
@@ -330,24 +468,78 @@
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_bottom_nav_article.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_bottom_nav_article.xml"
+=======
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_splash_screen.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\splash_screen.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\anim_error_text.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\anim\\error_text.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_soshicon_foreground.png.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\mipmap-hdpi\\soshicon_foreground.png"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_soshicon_foreground.png.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\mipmap-mdpi\\soshicon_foreground.png"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_round_setting_back_night_mode.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\round_setting_back_night_mode.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_toast_add_error.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_add_error.xml"
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_round_setting_back_top.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\round_setting_back_top.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_soshicon_round.png.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\mipmap-xhdpi\\soshicon_round.png"
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_anim_et_changecolor.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\anim_et_changecolor.xml"
+=======
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_account.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\account.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_bottom_nav_item_selector.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\bottom_nav_item_selector.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_bottom_nav_article.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_bottom_nav_article.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_radius_top.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\radius_top.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_soshicon.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\mipmap-anydpi-v26\\soshicon.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_round_setting_back.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\round_setting_back.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\anim_error_shake.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\anim\\error_shake.xml"
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_setting_logout.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_setting_logout.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_bottom_nav_chat.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_bottom_nav_chat.xml"
     },
@@ -362,14 +554,63 @@
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_toast_add_error.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_add_error.xml"
+=======
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_logo.png.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable-v24\\logo.png"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_bottomshit_add_event.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\bottomshit_add_event.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_soshicon_foreground.png.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\mipmap-xxxhdpi\\soshicon_foreground.png"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_soshicon_foreground.png.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\mipmap-xxhdpi\\soshicon_foreground.png"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_soshicon_foreground.png.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\mipmap-xhdpi\\soshicon_foreground.png"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_registration_finish.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\registration_finish.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_radius_bottom.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\radius_bottom.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_clear.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_clear.xml"
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\anim_error_text.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\anim\\error_text.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_registration_email.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\registration_email.xml"
+=======
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_main.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_soshicon.png.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\mipmap-xxhdpi\\soshicon.png"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_setting.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\setting.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_more_vert.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_more_vert.xml"
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
@@ -388,11 +629,32 @@
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\menu_bottom_nav_menu.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\menu\\bottom_nav_menu.xml"
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_setting_language.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\setting_language.xml"
+=======
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_toast_success_message.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\toast_success_message.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_round_setting_back_bottom.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\round_setting_back_bottom.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_round_setting_back_language.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\round_setting_back_language.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_round_setting_back_center.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\round_setting_back_center.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_round_setting_back_log_out.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\round_setting_back_log_out.xml"
+>>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     }
 ]
