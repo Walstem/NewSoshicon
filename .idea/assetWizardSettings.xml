@@ -81,7 +81,9 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\Admin\Desktop\Soshicon\splash_logo.png" />
+                                                <entry key="imagePath" value="C:\Users\Admin\Desktop\Soshicon\logo_soshicon копия.png" />
+                                                <entry key="scalingPercent" value="76" />
+                                                <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -116,7 +118,6 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="e1c839" />
                                       <entry key="outputName" value="soshicon" />
                                     </map>
                                   </option>
@@ -321,9 +322,10 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_setting_about_us" />
-                            <entry key="sourceFile" value="C:\Users\Admin\Desktop\Soshicon\Без имени-1.psd" />
+                            <entry key="outputName" value="ic_logo_soshicon" />
+                            <entry key="sourceFile" value="C:\Users\Admin\Desktop\Soshicon\logo_soshicon.psd" />
                           </map>
                         </option>
                       </PersistentState>

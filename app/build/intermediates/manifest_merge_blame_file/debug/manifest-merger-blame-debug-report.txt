@@ -48,14 +48,14 @@
 29-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:14:9-77
 30        android:debuggable="true"
 31        android:extractNativeLibs="false"
-32        android:icon="@drawable/ic_launcher_foreground"
-32-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:15:9-56
+32        android:icon="@mipmap/soshicon_foreground"
+32-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:15:9-51
 33        android:label="@string/app_name"
 33-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:16:9-41
 34        android:requestLegacyExternalStorage="true"
 34-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:17:9-52
-35        android:roundIcon="@mipmap/soshicon_round"
-35-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:18:9-51
+35        android:roundIcon="@mipmap/soshicon_foreground"
+35-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:18:9-56
 36        android:supportsRtl="true"
 36-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:19:9-35
 37        android:testOnly="true"

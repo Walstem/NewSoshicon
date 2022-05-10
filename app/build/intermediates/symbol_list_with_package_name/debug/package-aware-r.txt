@@ -2640,6 +2640,7 @@ drawable ic_setting_notifications
 drawable ic_setting_text_size
 drawable ic_toast_error
 drawable ic_toast_success
+drawable logo
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
 drawable m3_radiobutton_ripple
@@ -2986,6 +2987,7 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id imageView2
 id image_view_crop
 id image_view_logo
 id image_view_state_aspect_ratio
@@ -3534,8 +3536,6 @@ menu bottom_nav_menu
 menu example_menu
 menu example_menu2
 menu ucrop_menu_activity
-mipmap ic_launcher
-mipmap ic_launcher_foreground
 mipmap soshicon
 mipmap soshicon_foreground
 mipmap soshicon_round

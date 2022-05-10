@@ -54,10 +54,7 @@ public class EventTime {
             }
         }
         else if (year == 0 && month == 0 && day == 0){
-            if (hour == 1 ){
-                time = "час назад";
-            }
-            else if (hour == 21){
+            if (hour == 1 && hour == 21){
                 time = hour + " час назад";
             }
             else if (hour > 1 && hour < 5 || hour > 21){

@@ -2639,6 +2639,7 @@ int drawable ic_setting_notifications 0x7f080085
 int drawable ic_setting_text_size 0x7f080086
 int drawable ic_toast_error 0x7f080087
 int drawable ic_toast_success 0x7f080088
+int drawable logo 0x7f0800e0
 int drawable m3_appbar_background 0x7f080089
 int drawable m3_popupmenu_background_overlay 0x7f08008a
 int drawable m3_radiobutton_ripple 0x7f08008b
@@ -2985,6 +2986,7 @@ int id ignore 0x7f0900ff
 int id ignoreRequest 0x7f090100
 int id image 0x7f090101
 int id imageView 0x7f090102
+int id imageView2 0x7f090253
 int id image_view_crop 0x7f090103
 int id image_view_logo 0x7f090104
 int id image_view_state_aspect_ratio 0x7f090105
@@ -3533,8 +3535,6 @@ int menu bottom_nav_menu 0x7f0d0000
 int menu example_menu 0x7f0d0001
 int menu example_menu2 0x7f0d0002
 int menu ucrop_menu_activity 0x7f0d0003
-int mipmap ic_launcher 0x7f0e0000
-int mipmap ic_launcher_foreground 0x7f0e0001
 int mipmap soshicon 0x7f0e0002
 int mipmap soshicon_foreground 0x7f0e0003
 int mipmap soshicon_round 0x7f0e0004

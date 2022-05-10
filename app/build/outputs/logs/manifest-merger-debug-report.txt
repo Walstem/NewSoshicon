@@ -142,11 +142,11 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Admin\.gradle\cach
 	android:testOnly
 		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:20:9-32
 	android:roundIcon
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:18:9-51
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:18:9-56
 	tools:targetApi
 		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:23:9-28
 	android:icon
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:15:9-56
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:15:9-51
 	android:theme
 		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:21:9-50
 	android:usesCleartextTraffic

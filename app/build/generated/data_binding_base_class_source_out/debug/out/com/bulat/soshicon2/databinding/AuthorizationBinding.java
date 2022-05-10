@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -32,6 +33,9 @@ public final class AuthorizationBinding implements ViewBinding {
   public final LinearLayout errorMessageOut;
 
   @NonNull
+  public final ImageView imageView2;
+
+  @NonNull
   public final EditText login;
 
   @NonNull
@@ -42,12 +46,13 @@ public final class AuthorizationBinding implements ViewBinding {
 
   private AuthorizationBinding(@NonNull ConstraintLayout rootView,
       @NonNull MaterialButton authorizationEnter, @NonNull ConstraintLayout containerAuthorization,
-      @NonNull LinearLayout errorMessageOut, @NonNull EditText login, @NonNull EditText password,
-      @NonNull TextView tvRegistration) {
+      @NonNull LinearLayout errorMessageOut, @NonNull ImageView imageView2, @NonNull EditText login,
+      @NonNull EditText password, @NonNull TextView tvRegistration) {
     this.rootView = rootView;
     this.authorizationEnter = authorizationEnter;
     this.containerAuthorization = containerAuthorization;
     this.errorMessageOut = errorMessageOut;
+    this.imageView2 = imageView2;
     this.login = login;
     this.password = password;
     this.tvRegistration = tvRegistration;
@@ -94,6 +99,12 @@ public final class AuthorizationBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageView2;
+      ImageView imageView2 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView2 == null) {
+        break missingId;
+      }
+
       id = R.id.login;
       EditText login = ViewBindings.findChildViewById(rootView, id);
       if (login == null) {
@@ -113,7 +124,7 @@ public final class AuthorizationBinding implements ViewBinding {
       }
 
       return new AuthorizationBinding((ConstraintLayout) rootView, authorizationEnter,
-          containerAuthorization, errorMessageOut, login, password, tvRegistration);
+          containerAuthorization, errorMessageOut, imageView2, login, password, tvRegistration);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
