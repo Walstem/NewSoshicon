@@ -1,4 +1,4 @@
-package com.bulat.soshicon2.Setting;
+package com.bulat.soshicon2.BottomNavigation.account;
 
 import static com.bulat.soshicon2.constants.constants.*;
 

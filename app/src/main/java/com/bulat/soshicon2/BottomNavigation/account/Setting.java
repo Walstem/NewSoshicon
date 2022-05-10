@@ -6,10 +6,11 @@ import static com.bulat.soshicon2.constants.constants.EMAIL;
 import static com.bulat.soshicon2.constants.constants.ID;
 import static com.bulat.soshicon2.constants.constants.PASSWORD;
 import static com.bulat.soshicon2.constants.constants.SMALL_AVATAR;
+import static com.bulat.soshicon2.constants.constants.THEME;
 import static com.bulat.soshicon2.constants.constants.U_NICKNAME;
 
-import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -43,26 +44,19 @@ public class Setting extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View View = inflater.inflate(R.layout.setting, container, false);
+        View MainView = inflater.inflate(R.layout.setting, container, false);
         SharedPreferences sp = getContext().getSharedPreferences(DATABASE, 0);
 
         navBar = getActivity().findViewById(R.id.bottom_navigation);
-<<<<<<< HEAD:app/src/main/java/com/bulat/soshicon2/Setting/Setting.java
         ConstraintLayout log_out = MainView.findViewById(R.id.setting_log_out);
         ConstraintLayout language = MainView.findViewById(R.id.languages);
         ImageView cancel = MainView.findViewById(R.id.cancel);
         SwitchCompat lightMode = MainView.findViewById(R.id.lightModeSwitch);
-=======
-        ConstraintLayout log_out = View.findViewById(R.id.setting_log_out);
-        LanguageManager lang = new LanguageManager(getContext());
-        ImageView faq = View.findViewById(R.id.aboutUs_image);
-        ImageView tex = View.findViewById(R.id.text_size_image);
-        ImageView cancel = View.findViewById(R.id.cancel);
-        CircleImageView avatar = View.findViewById(R.id.avatar);
-        TextView username = View.findViewById(R.id.username_bottom_avatar);
-        username .setText(sp.getString(U_NICKNAME, ""));
+        ThemeManager themeManager = new ThemeManager(getContext());
 
-
+        CircleImageView avatar = MainView.findViewById(R.id.avatar);
+        TextView username = MainView.findViewById(R.id.username_bottom_avatar);
+        username.setText(sp.getString(U_NICKNAME, ""));
         File file = new File(sp.getString(AVATAR, ""));
 
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
@@ -72,7 +66,6 @@ public class Setting extends Fragment {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
->>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f:app/src/main/java/com/bulat/soshicon2/BottomNavigation/account/Setting.java
 
         //Выключение bottom navigation
         navBar.setVisibility(View.GONE);
@@ -81,30 +74,26 @@ public class Setting extends Fragment {
         language.setOnClickListener(view -> { replaceFragmentParent(new Language()); });
 
         //Смена темы приложения
-<<<<<<< HEAD:app/src/main/java/com/bulat/soshicon2/Setting/Setting.java
         SharedPreferences spp = getActivity().getSharedPreferences("night", 0);
-        boolean booleanValue = spp.getBoolean("night_mode", false);
+        boolean booleanValue = spp.getBoolean(THEME, false);
         if (booleanValue) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             lightMode.setChecked(true);
         }
 
-=======
-        SwitchCompat lightMode = View.findViewById(R.id.lightModeSwitch);
->>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f:app/src/main/java/com/bulat/soshicon2/BottomNavigation/account/Setting.java
         lightMode.setOnCheckedChangeListener((compoundButton, isChecked) -> {
             if (isChecked) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                themeManager.updateResource(true);
                 lightMode.setChecked(true);
                 SharedPreferences.Editor editor = spp.edit();
-                editor.putBoolean("night_mode", true);
+                editor.putBoolean(THEME, true);
                 editor.apply();
             }
             else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                themeManager.updateResource(false);
                 lightMode.setChecked(false);
                 SharedPreferences.Editor editor = spp.edit();
-                editor.putBoolean("night_mode", false);
+                editor.putBoolean(THEME, false);
                 editor.apply();
             }
         });
@@ -134,7 +123,7 @@ public class Setting extends Fragment {
             navBar.setVisibility(View.GONE);
         });
 
-        return View;
+        return MainView;
     }
 
     //Функция обновление родительского фрагмента

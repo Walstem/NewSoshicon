@@ -48,7 +48,6 @@ public class AddEvent extends BottomSheetDialogFragment {
     public void onViewCreated(@NonNull View MainView, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(MainView, savedInstanceState);
 
-
         BottomSheetBehavior<View> bottomSheetBehavior = BottomSheetBehavior.from((View) MainView.getParent());
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
         CoordinatorLayout layout = getDialog().findViewById(R.id.bottom_sheet_layout);

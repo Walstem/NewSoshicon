@@ -54,6 +54,9 @@ public final class SettingBinding implements ViewBinding {
   public final ConstraintLayout containerSetting;
 
   @NonNull
+  public final ImageView faqImage;
+
+  @NonNull
   public final ConstraintLayout firstPanelSetting;
 
   @NonNull
@@ -104,33 +107,20 @@ public final class SettingBinding implements ViewBinding {
   @NonNull
   public final TextView usernameBottomAvatar;
 
-<<<<<<< HEAD:app/build/generated/data_binding_base_class_source_out/debug/out/com/bulat/soshicon2/databinding/AccountSettingBinding.java
-  private AccountSettingBinding(@NonNull ConstraintLayout rootView, @NonNull ConstraintLayout FAQ,
+  private SettingBinding(@NonNull ConstraintLayout rootView, @NonNull ConstraintLayout FAQ,
       @NonNull ConstraintLayout SecondPanelSetting, @NonNull ConstraintLayout ThirdPanelSetting,
-      @NonNull ConstraintLayout aboutUs, @NonNull ImageView aboutUsImage, @NonNull Button button,
-      @NonNull ImageView cancel, @NonNull ConstraintLayout constraintLayout,
-      @NonNull ConstraintLayout containerSetting, @NonNull ConstraintLayout firstPanelSetting,
+      @NonNull ConstraintLayout aboutUs, @NonNull ImageView aboutUsImage,
+      @NonNull CircleImageView avatar, @NonNull Button button, @NonNull ImageView cancel,
+      @NonNull ConstraintLayout constraintLayout, @NonNull ConstraintLayout containerSetting,
+      @NonNull ImageView faqImage, @NonNull ConstraintLayout firstPanelSetting,
       @NonNull ConstraintLayout languages, @NonNull ImageView languagesImage,
       @NonNull ConstraintLayout lightMode, @NonNull ImageView lightModeImage,
       @NonNull SwitchCompat lightModeSwitch, @NonNull ImageView logOut,
       @NonNull ConstraintLayout logOutSetting, @NonNull ConstraintLayout notification,
-      @NonNull ImageView notificationImage, @NonNull CircleImageView profileAvatarSetting,
-=======
-  private SettingBinding(@NonNull ConstraintLayout rootView, @NonNull ConstraintLayout FAQ,
-      @NonNull ImageView FAQImage, @NonNull ConstraintLayout SecondPanelSetting,
-      @NonNull ConstraintLayout ThirdPanelSetting, @NonNull ConstraintLayout aboutUs,
-      @NonNull ImageView aboutUsImage, @NonNull CircleImageView avatar, @NonNull Button button,
-      @NonNull ImageView cancel, @NonNull Spinner choiceLanguage,
-      @NonNull ConstraintLayout constraintLayout, @NonNull ConstraintLayout containerSetting,
-      @NonNull ConstraintLayout firstPanelSetting, @NonNull ConstraintLayout languages,
-      @NonNull ImageView languagesImage, @NonNull ConstraintLayout lightMode,
-      @NonNull ImageView lightModeImage, @NonNull SwitchCompat lightModeSwitch,
-      @NonNull ImageView logOut, @NonNull ConstraintLayout logOutSetting,
-      @NonNull ConstraintLayout notification, @NonNull ImageView notificationImage,
->>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f:app/build/generated/data_binding_base_class_source_out/debug/out/com/bulat/soshicon2/databinding/SettingBinding.java
-      @NonNull ConstraintLayout settingLogOut, @NonNull ConstraintLayout textSize,
-      @NonNull ImageView textSizeImage, @NonNull TextView textView, @NonNull TextView textView3,
-      @NonNull TextView username, @NonNull TextView usernameBottomAvatar) {
+      @NonNull ImageView notificationImage, @NonNull ConstraintLayout settingLogOut,
+      @NonNull ConstraintLayout textSize, @NonNull ImageView textSizeImage,
+      @NonNull TextView textView, @NonNull TextView textView3, @NonNull TextView username,
+      @NonNull TextView usernameBottomAvatar) {
     this.rootView = rootView;
     this.FAQ = FAQ;
     this.SecondPanelSetting = SecondPanelSetting;
@@ -142,6 +132,7 @@ public final class SettingBinding implements ViewBinding {
     this.cancel = cancel;
     this.constraintLayout = constraintLayout;
     this.containerSetting = containerSetting;
+    this.faqImage = faqImage;
     this.firstPanelSetting = firstPanelSetting;
     this.languages = languages;
     this.languagesImage = languagesImage;
@@ -243,6 +234,12 @@ public final class SettingBinding implements ViewBinding {
       }
 
       ConstraintLayout containerSetting = (ConstraintLayout) rootView;
+
+      id = R.id.faq_image;
+      ImageView faqImage = ViewBindings.findChildViewById(rootView, id);
+      if (faqImage == null) {
+        break missingId;
+      }
 
       id = R.id.firstPanelSetting;
       ConstraintLayout firstPanelSetting = ViewBindings.findChildViewById(rootView, id);
@@ -346,21 +343,12 @@ public final class SettingBinding implements ViewBinding {
         break missingId;
       }
 
-<<<<<<< HEAD:app/build/generated/data_binding_base_class_source_out/debug/out/com/bulat/soshicon2/databinding/AccountSettingBinding.java
-      return new AccountSettingBinding((ConstraintLayout) rootView, FAQ, SecondPanelSetting,
-          ThirdPanelSetting, aboutUs, aboutUsImage, button, cancel, constraintLayout,
-          containerSetting, firstPanelSetting, languages, languagesImage, lightMode, lightModeImage,
-          lightModeSwitch, logOut, logOutSetting, notification, notificationImage,
-          profileAvatarSetting, settingLogOut, textSize, textSizeImage, textView, textView3,
-          username, usernameBottomAvatar);
-=======
-      return new SettingBinding((ConstraintLayout) rootView, FAQ, FAQImage, SecondPanelSetting,
-          ThirdPanelSetting, aboutUs, aboutUsImage, avatar, button, cancel, choiceLanguage,
-          constraintLayout, containerSetting, firstPanelSetting, languages, languagesImage,
-          lightMode, lightModeImage, lightModeSwitch, logOut, logOutSetting, notification,
-          notificationImage, settingLogOut, textSize, textSizeImage, textView, username,
+      return new SettingBinding((ConstraintLayout) rootView, FAQ, SecondPanelSetting,
+          ThirdPanelSetting, aboutUs, aboutUsImage, avatar, button, cancel, constraintLayout,
+          containerSetting, faqImage, firstPanelSetting, languages, languagesImage, lightMode,
+          lightModeImage, lightModeSwitch, logOut, logOutSetting, notification, notificationImage,
+          settingLogOut, textSize, textSizeImage, textView, textView3, username,
           usernameBottomAvatar);
->>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f:app/build/generated/data_binding_base_class_source_out/debug/out/com/bulat/soshicon2/databinding/SettingBinding.java
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

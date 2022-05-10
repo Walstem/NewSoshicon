@@ -4,10 +4,6 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< HEAD
-=======
-import android.widget.EditText;
->>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
@@ -37,14 +33,7 @@ public final class AuthorizationBinding implements ViewBinding {
   public final LinearLayout errorMessageOut;
 
   @NonNull
-<<<<<<< HEAD
   public final ImageView imageView;
-=======
-  public final ImageView imageView2;
-
-  @NonNull
-  public final EditText login;
->>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
 
   @NonNull
   public final TextInputLayout login;
@@ -57,23 +46,14 @@ public final class AuthorizationBinding implements ViewBinding {
 
   private AuthorizationBinding(@NonNull ConstraintLayout rootView,
       @NonNull MaterialButton authorizationEnter, @NonNull ConstraintLayout containerAuthorization,
-<<<<<<< HEAD
       @NonNull LinearLayout errorMessageOut, @NonNull ImageView imageView,
       @NonNull TextInputLayout login, @NonNull TextInputLayout password,
       @NonNull MaterialTextView tvRegistration) {
-=======
-      @NonNull LinearLayout errorMessageOut, @NonNull ImageView imageView2, @NonNull EditText login,
-      @NonNull EditText password, @NonNull TextView tvRegistration) {
->>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     this.rootView = rootView;
     this.authorizationEnter = authorizationEnter;
     this.containerAuthorization = containerAuthorization;
     this.errorMessageOut = errorMessageOut;
-<<<<<<< HEAD
     this.imageView = imageView;
-=======
-    this.imageView2 = imageView2;
->>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     this.login = login;
     this.password = password;
     this.tvRegistration = tvRegistration;
@@ -120,15 +100,9 @@ public final class AuthorizationBinding implements ViewBinding {
         break missingId;
       }
 
-<<<<<<< HEAD
       id = R.id.imageView;
       ImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
-=======
-      id = R.id.imageView2;
-      ImageView imageView2 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView2 == null) {
->>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
         break missingId;
       }
 
@@ -151,11 +125,7 @@ public final class AuthorizationBinding implements ViewBinding {
       }
 
       return new AuthorizationBinding((ConstraintLayout) rootView, authorizationEnter,
-<<<<<<< HEAD
           containerAuthorization, errorMessageOut, imageView, login, password, tvRegistration);
-=======
-          containerAuthorization, errorMessageOut, imageView2, login, password, tvRegistration);
->>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

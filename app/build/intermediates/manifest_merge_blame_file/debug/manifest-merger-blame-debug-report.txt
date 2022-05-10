@@ -48,25 +48,14 @@
 29-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:14:9-77
 30        android:debuggable="true"
 31        android:extractNativeLibs="false"
-<<<<<<< HEAD
-32        android:icon="@drawable/ic_launcher_foreground"
-32-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:15:9-56
-=======
 32        android:icon="@mipmap/soshicon_foreground"
-32-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:15:9-51
->>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
+32-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:15:9-51
 33        android:label="@string/app_name"
 33-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:16:9-41
 34        android:requestLegacyExternalStorage="true"
-<<<<<<< HEAD
 34-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:17:9-52
-35        android:roundIcon="@mipmap/soshicon_round"
-35-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:18:9-51
-=======
-34-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:17:9-52
 35        android:roundIcon="@mipmap/soshicon_foreground"
-35-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:18:9-56
->>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
+35-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:18:9-56
 36        android:supportsRtl="true"
 36-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:19:9-35
 37        android:testOnly="true"
@@ -144,90 +133,50 @@
 75                android:resource="@xml/image_picker_provider_paths" />
 75-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:38:17-68
 76        </provider>
-<<<<<<< HEAD
-77        <provider
-77-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-78            android:name="androidx.startup.InitializationProvider"
-78-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
-79            android:authorities="com.example.soshicon.androidx-startup"
-79-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
-80            android:exported="false" >
-80-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
-81            <meta-data
-81-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-82                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-82-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
-83                android:value="androidx.startup" />
-83-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
-84            <meta-data
-84-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\littl\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-85                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-85-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\littl\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-86                android:value="androidx.startup" />
-86-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\littl\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-87        </provider>
-88
-89        <uses-library
-89-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
-90            android:name="androidx.window.extensions"
-90-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
-91            android:required="false" />
-91-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
-92        <uses-library
-92-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
-93            android:name="androidx.window.sidecar"
-93-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
-94            android:required="false" />
-94-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
-95    </application>
-96
-97</manifest>
-=======
 77
 78        <service
-78-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\a84e01bb053f27a6c87eb9cf29e07bcc\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:23:9-26:72
+78-->[com.parse:parse-android:1.16.3] C:\Users\littl\.gradle\caches\transforms-3\6873e9c41f53d1dee27627f1df287259\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:23:9-26:72
 79            android:name="com.parse.PushServiceApi26"
-79-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\a84e01bb053f27a6c87eb9cf29e07bcc\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:24:13-54
+79-->[com.parse:parse-android:1.16.3] C:\Users\littl\.gradle\caches\transforms-3\6873e9c41f53d1dee27627f1df287259\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:24:13-54
 80            android:exported="true"
-80-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\a84e01bb053f27a6c87eb9cf29e07bcc\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:25:13-36
+80-->[com.parse:parse-android:1.16.3] C:\Users\littl\.gradle\caches\transforms-3\6873e9c41f53d1dee27627f1df287259\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:25:13-36
 81            android:permission="android.permission.BIND_JOB_SERVICE" />
-81-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\a84e01bb053f27a6c87eb9cf29e07bcc\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:26:13-69
+81-->[com.parse:parse-android:1.16.3] C:\Users\littl\.gradle\caches\transforms-3\6873e9c41f53d1dee27627f1df287259\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:26:13-69
 82
 83        <provider
-83-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\f1920f1d9631b904725b19a966861cf8\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+83-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
 84            android:name="androidx.startup.InitializationProvider"
-84-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\f1920f1d9631b904725b19a966861cf8\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+84-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
 85            android:authorities="com.example.soshicon.androidx-startup"
-85-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\f1920f1d9631b904725b19a966861cf8\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+85-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
 86            android:exported="false" >
-86-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\f1920f1d9631b904725b19a966861cf8\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+86-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
 87            <meta-data
-87-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\f1920f1d9631b904725b19a966861cf8\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+87-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
 88                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-88-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\f1920f1d9631b904725b19a966861cf8\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+88-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
 89                android:value="androidx.startup" />
-89-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\f1920f1d9631b904725b19a966861cf8\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+89-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
 90            <meta-data
-90-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\e2a4092d19f5ec1c3a53b27f970ef211\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+90-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\littl\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
 91                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-91-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\e2a4092d19f5ec1c3a53b27f970ef211\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+91-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\littl\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
 92                android:value="androidx.startup" />
-92-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\e2a4092d19f5ec1c3a53b27f970ef211\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+92-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\littl\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
 93        </provider>
 94
 95        <uses-library
-95-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\3c9a7f6f2fcbef61d050204e3a7ded45\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
+95-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
 96            android:name="androidx.window.extensions"
-96-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\3c9a7f6f2fcbef61d050204e3a7ded45\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
+96-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
 97            android:required="false" />
-97-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\3c9a7f6f2fcbef61d050204e3a7ded45\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
+97-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
 98        <uses-library
-98-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\3c9a7f6f2fcbef61d050204e3a7ded45\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
+98-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
 99            android:name="androidx.window.sidecar"
-99-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\3c9a7f6f2fcbef61d050204e3a7ded45\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
+99-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
 100            android:required="false" />
-100-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\3c9a7f6f2fcbef61d050204e3a7ded45\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
+100-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
 101    </application>
 102
 103</manifest>
->>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f

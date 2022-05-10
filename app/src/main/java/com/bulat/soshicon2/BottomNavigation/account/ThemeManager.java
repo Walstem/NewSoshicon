@@ -17,27 +17,27 @@ public class ThemeManager {
 
     public ThemeManager(Context cont) {
         context = cont;
-        sharedPreferences = context.getSharedPreferences(DATABASE, Context.MODE_PRIVATE);
+        sharedPreferences = context.getSharedPreferences(DATABASE, 0);
     }
 
-    public void updateResource(String checked) {
-        if (checked.equals("true")) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+    public void updateResource(boolean checked) {
+        if(checked) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
         else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
 
         setTheme(checked);
     }
 
-    public String getTheme() {
-        return sharedPreferences.getString(THEME, "");
+    public boolean getTheme() {
+        return sharedPreferences.getBoolean(THEME, true);
     }
 
-    public void setTheme(String checked) {
+    public void setTheme(boolean checked) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(THEME, checked);
+        editor.putBoolean(THEME, checked);
         editor.apply();
     }
 }

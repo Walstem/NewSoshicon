@@ -7,22 +7,19 @@ import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.BottomNavigation.account.Account;
 import com.bulat.soshicon2.BottomNavigation.Chat;
+import com.bulat.soshicon2.BottomNavigation.account.ThemeManager;
 import com.bulat.soshicon2.BottomNavigation.event.Event;
 import com.bulat.soshicon2.BottomNavigation.Response;
 import com.bulat.soshicon2.Registration.Authorization;
-<<<<<<< HEAD
-import com.bulat.soshicon2.Setting.LanguageManager;
-import com.bulat.soshicon2.Setting.ThemeManager;
-=======
+
 import com.bulat.soshicon2.BottomNavigation.account.LanguageManager;
->>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
         LanguageManager languageManager = new LanguageManager(this);
         languageManager.updateResource(languageManager.getLang());
+
+        ThemeManager themeManager = new ThemeManager(this);
+        themeManager.updateResource(themeManager.getTheme());
 
         SharedPreferences sp = getSharedPreferences(DATABASE, MODE_PRIVATE);
         String id = sp.getString(ID, "");

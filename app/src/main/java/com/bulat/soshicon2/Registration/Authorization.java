@@ -48,11 +48,8 @@ public class Authorization extends Fragment {
     private String Avatar;
     private String CompressAvatar;
 
-<<<<<<< HEAD
-=======
     public static final String GET_AVATAR_PHP = "get_avatar.php";
 
->>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -141,12 +138,10 @@ public class Authorization extends Fragment {
                     bitmap1.compress(Bitmap.CompressFormat.JPEG, 100, outTrue);
                     bitmap2.compress(Bitmap.CompressFormat.JPEG, 100, outFalse);
 
-
-
-
                     ed.putString("compress_avatar_" + true, compressPathTrue);
                     ed.putString("compress_avatar_" + false, compressPathFalse);
-                    ed.commit();
+                    ed.apply();
+
                     replaceFragmentParent(new Event());
                 }
                 // если сообщения ложные выводим сообщение об ошибке
@@ -176,7 +171,6 @@ public class Authorization extends Fragment {
         FragmentManager fragmentManager = getParentFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
-        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 

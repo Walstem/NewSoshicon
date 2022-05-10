@@ -17,7 +17,7 @@ public class LanguageManager {
     public LanguageManager(Context cont) {
         context = cont;
 
-        sharedPreferences = context.getSharedPreferences(DATABASE, Context.MODE_PRIVATE);
+        sharedPreferences = context.getSharedPreferences(DATABASE, 0);
     }
 
     public void updateResource(String code) {
@@ -34,9 +34,7 @@ public class LanguageManager {
         setLang(code);
     }
 
-    public String getLang() {
-        return sharedPreferences.getString(LANG, "en");
-    }
+    public String getLang() { return sharedPreferences.getString(LANG, "en"); }
 
     public void setLang(String code) {
         SharedPreferences.Editor editor = sharedPreferences.edit();

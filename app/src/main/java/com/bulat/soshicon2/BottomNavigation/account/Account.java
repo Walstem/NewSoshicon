@@ -53,6 +53,7 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+
 public class Account extends Fragment {
 
     public static final String UPLOAD_AVATAR_PHP = "upload_avatar.php";
@@ -118,13 +119,8 @@ public class Account extends Fragment {
             profile.setImageURI(uri);
 
             try {
-<<<<<<< HEAD:app/src/main/java/com/bulat/soshicon2/BottomNavigation/Account.java
-                byte[] img = ReadFile(uri.getPath(), 100);
-                byte[] compress_img = ReadFile(uri.getPath(), 10);
-=======
                 byte[] img = ReadFileOrSaveInDevice(uri.getPath(), 100);
                 byte[] compress_img = ReadFileOrSaveInDevice(uri.getPath(), 10);
->>>>>>> 2cb00f7e0e57132dec9400ef9eb7700604c3930f:app/src/main/java/com/bulat/soshicon2/BottomNavigation/account/Account.java
 
                 UploadAvatar UploadPhoto = new UploadAvatar(img,compress_img, UPLOAD_AVATAR_PHP);
                 UploadPhoto.execute();

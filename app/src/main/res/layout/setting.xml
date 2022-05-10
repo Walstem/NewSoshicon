@@ -96,12 +96,12 @@
                 android:id="@+id/firstPanelSetting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/button">
 
-                <!--Светлая тема-->
+                <!--Темная тема-->
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/lightMode"
                     android:layout_width="match_parent"
@@ -367,7 +367,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/SecondPanelSetting">
 
-                <!--РАЗМЕР ТЕКСТА-->
+                <!--О нас-->
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/aboutUs"
                     android:layout_width="match_parent"
@@ -425,7 +425,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <!--ЯЗЫК-->
+                <!--FAQ-->
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/FAQ"
                     android:layout_width="match_parent"
@@ -435,7 +435,56 @@
                     android:background="@drawable/round_setting_back_bottom"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/aboutUs"/>
+                    app:layout_constraintTop_toBottomOf="@+id/aboutUs">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="6dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/faq_image"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/round_setting_back_faq"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_setting_faq"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:text="@string/faq"
+                            android:textColor="@color/text_color_block"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/faq_image"
+                            app:layout_constraintStart_toEndOf="@+id/faq_image"
+                            app:layout_constraintTop_toTopOf="@+id/faq_image" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:src="@drawable/ic_arrow_right"
+                            app:layout_constraintBottom_toBottomOf="@+id/faq_image"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/faq_image" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

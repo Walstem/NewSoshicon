@@ -1,10 +1,6 @@
 package com.bulat.soshicon2.BottomNavigation;
 
-import static com.bulat.soshicon2.constants.constants.DATABASE;
-import static com.bulat.soshicon2.constants.constants.ID;
-
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -25,9 +21,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.bulat.soshicon2.BottomNavigation.account.Account;
+import com.bulat.soshicon2.BottomNavigation.event.AddEvent;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.asynctasks.SendQuery;
-import com.bulat.soshicon2.event.Fragment_Add;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
@@ -43,7 +40,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
@@ -78,7 +74,7 @@ public class Event extends Fragment {
         swipeRefreshLayout = view.findViewById(R.id.SwipeRefreshLayout);
         ImageView addEvent = view.findViewById(R.id.add);
         CircleImageView avatar = view.findViewById(R.id.avatar);
-        BottomSheetDialogFragment BottomSheet = new Fragment_Add();
+        BottomSheetDialogFragment BottomSheet = new AddEvent();
 
         //вызываем редактор создания событий
         addEvent.setOnClickListener(new View.OnClickListener() {
