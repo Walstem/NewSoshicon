@@ -32,6 +32,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -89,7 +90,7 @@ public class Event extends Fragment {
         //прогружаем данные при запуске фрагмента
         try {
             HandlingEventOutput(view, listView, start, end, false);
-        } catch (JSONException | ExecutionException | InterruptedException e) {
+        } catch (JSONException | ExecutionException | InterruptedException | ParseException e) {
             e.printStackTrace();
         }
 
@@ -101,7 +102,7 @@ public class Event extends Fragment {
                     start = 10;
                     end = 10;
                     HandlingEventOutput(view, listView, start, end, false);
-                } catch (JSONException | ExecutionException | InterruptedException e) {
+                } catch (JSONException | ExecutionException | InterruptedException | ParseException e) {
                     e.printStackTrace();
                 }
                 swipeRefreshLayout.setRefreshing(false);
@@ -129,7 +130,7 @@ public class Event extends Fragment {
                         }
                         HandlingEventOutput(view, listView, start, end, true);
                     }
-                } catch (JSONException | ExecutionException | InterruptedException e) {
+                } catch (JSONException | ExecutionException | InterruptedException | ParseException e) {
                     e.printStackTrace();
                 }
             }
@@ -138,7 +139,7 @@ public class Event extends Fragment {
     }
 
 
-    public void HandlingEventOutput(View view, ListView listView, int start, int end, boolean scroll) throws JSONException, ExecutionException, InterruptedException {
+    public void HandlingEventOutput(View view, ListView listView, int start, int end, boolean scroll) throws JSONException, ExecutionException, InterruptedException, ParseException {
         //если происходит загрузка при переходе на страницу
         if (!scroll) {
             //опусташаем списки данных
