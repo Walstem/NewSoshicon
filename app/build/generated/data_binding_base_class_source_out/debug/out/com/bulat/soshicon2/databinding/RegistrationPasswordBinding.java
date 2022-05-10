@@ -4,9 +4,7 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -14,6 +12,8 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.bulat.soshicon2.R;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputLayout;
+import com.google.android.material.textview.MaterialTextView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -26,35 +26,36 @@ public final class RegistrationPasswordBinding implements ViewBinding {
   public final ConstraintLayout containerRegistrationPassword;
 
   @NonNull
-  public final TextView errorText;
+  public final MaterialTextView createPasswordInfo;
+
+  @NonNull
+  public final MaterialTextView createPasswordText;
+
+  @NonNull
+  public final MaterialTextView errorText;
 
   @NonNull
   public final ImageView imageView;
 
   @NonNull
-  public final EditText password;
+  public final TextInputLayout password;
 
   @NonNull
   public final MaterialButton passwordBtn;
 
-  @NonNull
-  public final TextView textView1;
-
-  @NonNull
-  public final TextView textView2;
-
   private RegistrationPasswordBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout containerRegistrationPassword, @NonNull TextView errorText,
-      @NonNull ImageView imageView, @NonNull EditText password, @NonNull MaterialButton passwordBtn,
-      @NonNull TextView textView1, @NonNull TextView textView2) {
+      @NonNull ConstraintLayout containerRegistrationPassword,
+      @NonNull MaterialTextView createPasswordInfo, @NonNull MaterialTextView createPasswordText,
+      @NonNull MaterialTextView errorText, @NonNull ImageView imageView,
+      @NonNull TextInputLayout password, @NonNull MaterialButton passwordBtn) {
     this.rootView = rootView;
     this.containerRegistrationPassword = containerRegistrationPassword;
+    this.createPasswordInfo = createPasswordInfo;
+    this.createPasswordText = createPasswordText;
     this.errorText = errorText;
     this.imageView = imageView;
     this.password = password;
     this.passwordBtn = passwordBtn;
-    this.textView1 = textView1;
-    this.textView2 = textView2;
   }
 
   @Override
@@ -86,8 +87,20 @@ public final class RegistrationPasswordBinding implements ViewBinding {
     missingId: {
       ConstraintLayout containerRegistrationPassword = (ConstraintLayout) rootView;
 
+      id = R.id.create_password_info;
+      MaterialTextView createPasswordInfo = ViewBindings.findChildViewById(rootView, id);
+      if (createPasswordInfo == null) {
+        break missingId;
+      }
+
+      id = R.id.create_password_text;
+      MaterialTextView createPasswordText = ViewBindings.findChildViewById(rootView, id);
+      if (createPasswordText == null) {
+        break missingId;
+      }
+
       id = R.id.error_text;
-      TextView errorText = ViewBindings.findChildViewById(rootView, id);
+      MaterialTextView errorText = ViewBindings.findChildViewById(rootView, id);
       if (errorText == null) {
         break missingId;
       }
@@ -99,7 +112,7 @@ public final class RegistrationPasswordBinding implements ViewBinding {
       }
 
       id = R.id.password;
-      EditText password = ViewBindings.findChildViewById(rootView, id);
+      TextInputLayout password = ViewBindings.findChildViewById(rootView, id);
       if (password == null) {
         break missingId;
       }
@@ -110,21 +123,9 @@ public final class RegistrationPasswordBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView1;
-      TextView textView1 = ViewBindings.findChildViewById(rootView, id);
-      if (textView1 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView2;
-      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
-      if (textView2 == null) {
-        break missingId;
-      }
-
       return new RegistrationPasswordBinding((ConstraintLayout) rootView,
-          containerRegistrationPassword, errorText, imageView, password, passwordBtn, textView1,
-          textView2);
+          containerRegistrationPassword, createPasswordInfo, createPasswordText, errorText,
+          imageView, password, passwordBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

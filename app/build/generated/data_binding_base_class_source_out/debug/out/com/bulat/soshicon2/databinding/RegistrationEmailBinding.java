@@ -4,9 +4,7 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -14,6 +12,8 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.bulat.soshicon2.R;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputLayout;
+import com.google.android.material.textview.MaterialTextView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -26,35 +26,36 @@ public final class RegistrationEmailBinding implements ViewBinding {
   public final ConstraintLayout containerRegistrationEmail;
 
   @NonNull
-  public final EditText email;
+  public final MaterialTextView createEmailInfo;
+
+  @NonNull
+  public final MaterialTextView createEmailText;
+
+  @NonNull
+  public final TextInputLayout email;
 
   @NonNull
   public final MaterialButton emailBtn;
 
   @NonNull
-  public final TextView errorText;
+  public final MaterialTextView errorText;
 
   @NonNull
   public final ImageView imageView;
 
-  @NonNull
-  public final TextView textView1;
-
-  @NonNull
-  public final TextView textView2;
-
   private RegistrationEmailBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout containerRegistrationEmail, @NonNull EditText email,
-      @NonNull MaterialButton emailBtn, @NonNull TextView errorText, @NonNull ImageView imageView,
-      @NonNull TextView textView1, @NonNull TextView textView2) {
+      @NonNull ConstraintLayout containerRegistrationEmail,
+      @NonNull MaterialTextView createEmailInfo, @NonNull MaterialTextView createEmailText,
+      @NonNull TextInputLayout email, @NonNull MaterialButton emailBtn,
+      @NonNull MaterialTextView errorText, @NonNull ImageView imageView) {
     this.rootView = rootView;
     this.containerRegistrationEmail = containerRegistrationEmail;
+    this.createEmailInfo = createEmailInfo;
+    this.createEmailText = createEmailText;
     this.email = email;
     this.emailBtn = emailBtn;
     this.errorText = errorText;
     this.imageView = imageView;
-    this.textView1 = textView1;
-    this.textView2 = textView2;
   }
 
   @Override
@@ -86,8 +87,20 @@ public final class RegistrationEmailBinding implements ViewBinding {
     missingId: {
       ConstraintLayout containerRegistrationEmail = (ConstraintLayout) rootView;
 
+      id = R.id.create_email_info;
+      MaterialTextView createEmailInfo = ViewBindings.findChildViewById(rootView, id);
+      if (createEmailInfo == null) {
+        break missingId;
+      }
+
+      id = R.id.create_email_text;
+      MaterialTextView createEmailText = ViewBindings.findChildViewById(rootView, id);
+      if (createEmailText == null) {
+        break missingId;
+      }
+
       id = R.id.email;
-      EditText email = ViewBindings.findChildViewById(rootView, id);
+      TextInputLayout email = ViewBindings.findChildViewById(rootView, id);
       if (email == null) {
         break missingId;
       }
@@ -99,7 +112,7 @@ public final class RegistrationEmailBinding implements ViewBinding {
       }
 
       id = R.id.error_text;
-      TextView errorText = ViewBindings.findChildViewById(rootView, id);
+      MaterialTextView errorText = ViewBindings.findChildViewById(rootView, id);
       if (errorText == null) {
         break missingId;
       }
@@ -110,20 +123,8 @@ public final class RegistrationEmailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView1;
-      TextView textView1 = ViewBindings.findChildViewById(rootView, id);
-      if (textView1 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView2;
-      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
-      if (textView2 == null) {
-        break missingId;
-      }
-
       return new RegistrationEmailBinding((ConstraintLayout) rootView, containerRegistrationEmail,
-          email, emailBtn, errorText, imageView, textView1, textView2);
+          createEmailInfo, createEmailText, email, emailBtn, errorText, imageView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

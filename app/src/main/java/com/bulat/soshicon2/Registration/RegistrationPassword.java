@@ -25,6 +25,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.checks.NetCheck;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.IOException;
 import java.math.BigInteger;
@@ -38,9 +39,6 @@ public class RegistrationPassword extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View MainView = inflater.inflate(R.layout.registration_password, container, false);
-
-        EditText password = (EditText) MainView.findViewById(R.id.password);
-        password.setTransformationMethod(PasswordTransformationMethod.getInstance());
 
         Button onwards = (Button) MainView.findViewById(R.id.password_btn);
 
@@ -61,11 +59,11 @@ public class RegistrationPassword extends Fragment {
             ViewToastMessage(view);
         }
         else{
-            EditText password = (EditText) view.findViewById(R.id.password);
+            TextInputLayout password = view.findViewById(R.id.password);
             TextView filedError = (TextView) view.findViewById(R.id.error_text);
 
             //Если пароль меньше восьми символов
-            if(password.getText().toString().length()<8) {
+            if(password.getEditText().getText().toString().length()<8) {
                 String message = getResources().getString(R.string.min_size_password);
                 alertError(password,filedError, message);
             }
@@ -73,7 +71,7 @@ public class RegistrationPassword extends Fragment {
                 //Переход на фрагмент создания электронной почты
                 SharedPreferences sp = getContext().getSharedPreferences(DATABASE, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
-                String hexPassword = toHexString(getSHA(password.getText().toString()));
+                String hexPassword = toHexString(getSHA(password.getEditText().getText().toString()));
                 editor.putString(PASSWORD, hexPassword);
                 editor.apply();
 
@@ -82,7 +80,7 @@ public class RegistrationPassword extends Fragment {
         }
     }
     //анимация edittext, если пользователь ошибется
-    public void alertError(EditText filed, TextView filedError ,String message){
+    public void alertError(TextInputLayout filed, TextView filedError ,String message){
         final Animation shakeAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.error_shake);
 
         //анимация

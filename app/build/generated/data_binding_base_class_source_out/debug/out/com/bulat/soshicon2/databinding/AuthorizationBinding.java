@@ -4,9 +4,8 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -14,6 +13,8 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.bulat.soshicon2.R;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputLayout;
+import com.google.android.material.textview.MaterialTextView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -32,22 +33,27 @@ public final class AuthorizationBinding implements ViewBinding {
   public final LinearLayout errorMessageOut;
 
   @NonNull
-  public final EditText login;
+  public final ImageView imageView;
 
   @NonNull
-  public final EditText password;
+  public final TextInputLayout login;
 
   @NonNull
-  public final TextView tvRegistration;
+  public final TextInputLayout password;
+
+  @NonNull
+  public final MaterialTextView tvRegistration;
 
   private AuthorizationBinding(@NonNull ConstraintLayout rootView,
       @NonNull MaterialButton authorizationEnter, @NonNull ConstraintLayout containerAuthorization,
-      @NonNull LinearLayout errorMessageOut, @NonNull EditText login, @NonNull EditText password,
-      @NonNull TextView tvRegistration) {
+      @NonNull LinearLayout errorMessageOut, @NonNull ImageView imageView,
+      @NonNull TextInputLayout login, @NonNull TextInputLayout password,
+      @NonNull MaterialTextView tvRegistration) {
     this.rootView = rootView;
     this.authorizationEnter = authorizationEnter;
     this.containerAuthorization = containerAuthorization;
     this.errorMessageOut = errorMessageOut;
+    this.imageView = imageView;
     this.login = login;
     this.password = password;
     this.tvRegistration = tvRegistration;
@@ -94,26 +100,32 @@ public final class AuthorizationBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageView;
+      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
+      if (imageView == null) {
+        break missingId;
+      }
+
       id = R.id.login;
-      EditText login = ViewBindings.findChildViewById(rootView, id);
+      TextInputLayout login = ViewBindings.findChildViewById(rootView, id);
       if (login == null) {
         break missingId;
       }
 
       id = R.id.password;
-      EditText password = ViewBindings.findChildViewById(rootView, id);
+      TextInputLayout password = ViewBindings.findChildViewById(rootView, id);
       if (password == null) {
         break missingId;
       }
 
       id = R.id.tv_registration;
-      TextView tvRegistration = ViewBindings.findChildViewById(rootView, id);
+      MaterialTextView tvRegistration = ViewBindings.findChildViewById(rootView, id);
       if (tvRegistration == null) {
         break missingId;
       }
 
       return new AuthorizationBinding((ConstraintLayout) rootView, authorizationEnter,
-          containerAuthorization, errorMessageOut, login, password, tvRegistration);
+          containerAuthorization, errorMessageOut, imageView, login, password, tvRegistration);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

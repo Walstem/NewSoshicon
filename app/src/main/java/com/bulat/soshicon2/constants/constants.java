@@ -9,6 +9,9 @@ public class constants {
     public static final String EMAIL = "email";
     public static final String PASSWORD = "password";
 
-    //язык системы
+    //язык приложени€
     public static final String LANG = "lang";
+
+    //“ема приложени€
+    public static final String THEME = "theme";
 }

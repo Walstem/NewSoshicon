@@ -6,7 +6,7 @@
     <string name="title_home">Home</string>
     <string name="login">Логин</string>
     <string name="password">Пароль</string>
-    <string name="email">email</string>
+    <string name="email">Email</string>
     <string name="next">Далее</string>
 
                                             <!--    РЕГИСТРАЦИЯ    -->
@@ -30,7 +30,7 @@
     <string name="email_headline">Добавить \nэлектронный адрес</string>
 
     <!--Завершение регистрации-->
-    <string name="welcome">,добро \n пожаловать в Soshicon!</string>
+    <string name="welcome">, добро \n пожаловать в Soshicon!</string>
     <string name="сomplete">Завершить регистрацию</string>
     <string name="btn_registration">Зарегистрироваться</string>
     <string name="btn_enter">Войти</string>
@@ -67,7 +67,7 @@
 
     <string name="setting">Настройки</string>
     <string name="setting_edit">Редактировать</string>
-    <string name="lightMode">Светлая тема</string>
+    <string name="DarkMode">Темная тема</string>
     <string name="notification">Уведомления</string>
     <string name="textSize">Размер шрифта</string>
     <string name="language">Язык</string>
@@ -83,7 +83,7 @@
 
     <!--Ошибка при авторизации-->
     <string name="authorization_error">Проверьте правильность введенных данных.</string>
-    <string name="authorization_error_logpass">Неверный логин или пароль</string>
+    <string name="authorization_error_login_password">Неверный логин или пароль</string>
 
     <!--Ошибка при регистрации имени-->
     <string name="min_size_name_error">Имя должно содержать минимум 3 символа</string>

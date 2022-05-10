@@ -25,6 +25,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.checks.NetCheck;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.IOException;
 
@@ -63,11 +64,11 @@ public class RegistrationEmail extends Fragment {
             ViewToastMessage(view);
         }
         else {
-            EditText email = (EditText) view.findViewById(R.id.email);
+            TextInputLayout email = view.findViewById(R.id.email);
             TextView MessageError = (TextView) view.findViewById(R.id.error_text);
 
             //User input validation
-            CharSequence mail = email.getText().toString();
+            CharSequence mail = email.getEditText().getText().toString();
             if (!isValidEmail(mail)) {
                 String message = getResources().getString(R.string.email_error);
                 alertError(email, MessageError, message);
@@ -77,7 +78,7 @@ public class RegistrationEmail extends Fragment {
                 SharedPreferences sp = getContext().getSharedPreferences(DATABASE, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
 
-                editor.putString(EMAIL, email.getText().toString());
+                editor.putString(EMAIL, email.getEditText().getText().toString());
                 editor.apply();
 
                 replaceFragmentParent(new RegistrationFinish());
@@ -86,7 +87,7 @@ public class RegistrationEmail extends Fragment {
     }
 
     //анимация edittext, если пользователь ошибется
-    public void alertError(EditText filed, TextView MessageError ,String message){
+    public void alertError(TextInputLayout filed, TextView MessageError ,String message){
         final Animation shakeAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.error_shake);
 
         //анимация

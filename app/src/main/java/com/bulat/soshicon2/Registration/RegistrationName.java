@@ -25,6 +25,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.checks.NetCheck;
 import com.bulat.soshicon2.checks.UniqueNameCheck;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
@@ -55,9 +56,9 @@ public class RegistrationName extends Fragment {
             ViewToastMessage(view);
         }
         else {
-            EditText username = (EditText) view.findViewById(R.id.username);
-            String u_nickname = username.getText().toString();
-            TextView MessageError = (TextView) view.findViewById(R.id.error_text);
+            TextInputLayout username = view.findViewById(R.id.username);
+            String u_nickname = username.getEditText().getText().toString();
+            TextView MessageError = view.findViewById(R.id.error_text);
 
             //запрос в бд на существование имени
             UniqueNameCheck unique = new UniqueNameCheck();
@@ -90,7 +91,7 @@ public class RegistrationName extends Fragment {
     }
 
     //анимация edittext, если пользователь ошибется
-    public void alertError(EditText filed, TextView MessageError ,String message) {
+    public void alertError(TextInputLayout filed, TextView MessageError ,String message) {
         final Animation shakeAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.error_shake);
 
         //анимация

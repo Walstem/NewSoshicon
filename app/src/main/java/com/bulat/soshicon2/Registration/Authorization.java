@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +26,7 @@ import com.bulat.soshicon2.SQLUtils.SQLUtils;
 import com.bulat.soshicon2.asynctasks.SendQuery;
 import com.bulat.soshicon2.checks.NetCheck;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
@@ -34,7 +34,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class Authorization extends Fragment {
-
 
     @Nullable
     @Override
@@ -65,11 +64,11 @@ public class Authorization extends Fragment {
 
             try {
                 //получаем данные пользователя
-                EditText ed_login = (EditText) view.findViewById(R.id.login);
-                EditText ed_password = (EditText) view.findViewById(R.id.password);
-                String login = ed_login.getText().toString();
+                TextInputLayout ed_login = view.findViewById(R.id.login);
+                TextInputLayout ed_password = view.findViewById(R.id.password);
+                String login = ed_login.getEditText().getText().toString();
                 //преобразуем пароль в хэш
-                String password =  toHexString(getSHA(ed_password.getText().toString()));
+                String password =  toHexString(getSHA(ed_password.getEditText().getText().toString()));
 
                 //выполняем запрос в базу данных
                 String UserData = new SQLUtils(login, password).Authorization();
@@ -122,6 +121,7 @@ public class Authorization extends Fragment {
         FragmentManager fragmentManager = getParentFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 

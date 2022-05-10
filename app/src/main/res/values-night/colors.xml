@@ -16,7 +16,7 @@
 
     <!--Цвет текста-->
     <color name="text_color_primary">#F9F9F9</color>
-    <color name="text_color_block">#F9F9F9</color>
+    <color name="text_color_block">#000000</color>
     <color name="text_color_gray">#7C7C7C</color>
     <color name="text_color_hint">#797979</color>
 
@@ -31,6 +31,6 @@
     <color name="bottom_nav_item_color">#F9F9F9</color>
 
                                             <!--НАСТРОЙКИ-->
-    <color name="round_setting">#000000</color>
+    <color name="round_setting">#E8E8E8</color>
 
 </resources>

@@ -4,7 +4,6 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -12,6 +11,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.bulat.soshicon2.R;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textview.MaterialTextView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -27,11 +27,11 @@ public final class RegistrationFinishBinding implements ViewBinding {
   public final MaterialButton finish;
 
   @NonNull
-  public final TextView welcome;
+  public final MaterialTextView welcome;
 
   private RegistrationFinishBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout containerRegistrationFinish, @NonNull MaterialButton finish,
-      @NonNull TextView welcome) {
+      @NonNull MaterialTextView welcome) {
     this.rootView = rootView;
     this.containerRegistrationFinish = containerRegistrationFinish;
     this.finish = finish;
@@ -74,7 +74,7 @@ public final class RegistrationFinishBinding implements ViewBinding {
       }
 
       id = R.id.welcome;
-      TextView welcome = ViewBindings.findChildViewById(rootView, id);
+      MaterialTextView welcome = ViewBindings.findChildViewById(rootView, id);
       if (welcome == null) {
         break missingId;
       }

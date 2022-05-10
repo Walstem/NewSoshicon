@@ -34,6 +34,7 @@ public class Setting extends Fragment {
         ConstraintLayout log_out = MainView.findViewById(R.id.setting_log_out);
         ConstraintLayout language = MainView.findViewById(R.id.languages);
         ImageView cancel = MainView.findViewById(R.id.cancel);
+        SwitchCompat lightMode = MainView.findViewById(R.id.lightModeSwitch);
 
         //Выключение bottom navigation
         navBar.setVisibility(View.GONE);
@@ -42,15 +43,27 @@ public class Setting extends Fragment {
         language.setOnClickListener(view -> { replaceFragmentParent(new Language()); });
 
         //Смена темы приложения
-        SwitchCompat lightMode = MainView.findViewById(R.id.lightModeSwitch);
+        SharedPreferences spp = getActivity().getSharedPreferences("night", 0);
+        boolean booleanValue = spp.getBoolean("night_mode", false);
+        if (booleanValue) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            lightMode.setChecked(true);
+        }
+
         lightMode.setOnCheckedChangeListener((compoundButton, isChecked) -> {
             if (isChecked) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                 lightMode.setChecked(true);
+                SharedPreferences.Editor editor = spp.edit();
+                editor.putBoolean("night_mode", true);
+                editor.apply();
             }
             else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 lightMode.setChecked(false);
+                SharedPreferences.Editor editor = spp.edit();
+                editor.putBoolean("night_mode", false);
+                editor.apply();
             }
         });
 
@@ -71,6 +84,7 @@ public class Setting extends Fragment {
             editor.putString(PASSWORD, "");
             editor.apply();
 
+            getActivity().getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
             replaceFragmentParent(new Authorization());
 
             BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);

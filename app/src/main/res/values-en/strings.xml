@@ -6,7 +6,7 @@
     <string name="title_home">Home</string>
     <string name="login">Login</string>
     <string name="password">Password</string>
-    <string name="email">email</string>
+    <string name="email">Email</string>
     <string name="next">Next</string>
 
                                             <!--    РЕГИСТРАЦИЯ    -->
@@ -30,7 +30,7 @@
     <string name="email_headline">Add \nemail address</string>
 
     <!--Завершение регистрации-->
-    <string name="welcome">,welcome \n to Soshicon!</string>
+    <string name="welcome">, welcome \n to Soshicon!</string>
     <string name="сomplete">Complete registration</string>
     <string name="btn_registration">Register</string>
     <string name="btn_enter">Sing in</string>
@@ -67,7 +67,7 @@
 
     <string name="setting">Setting</string>
     <string name="setting_edit">Edit</string>
-    <string name="lightMode">Light mode</string>
+    <string name="DarkMode">Dark mode</string>
     <string name="notification">Notification</string>
     <string name="textSize">Text size</string>
     <string name="language">Language</string>
@@ -82,7 +82,7 @@
 
     <!--Ошибка при авторизации-->
     <string name="authorization_error">Check the correctness of the entered data.</string>
-    <string name="authorization_error_logpass">Invalid login or password</string>
+    <string name="authorization_error_login_password">Invalid login or password</string>
 
     <!--Ошибка при регистрации имени-->
     <string name="min_size_name_error">Name must contain at least 3 characters</string>

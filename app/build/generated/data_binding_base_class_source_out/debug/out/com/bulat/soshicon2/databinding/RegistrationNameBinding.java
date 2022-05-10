@@ -4,9 +4,7 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -14,6 +12,8 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.bulat.soshicon2.R;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputLayout;
+import com.google.android.material.textview.MaterialTextView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -26,7 +26,13 @@ public final class RegistrationNameBinding implements ViewBinding {
   public final ConstraintLayout containerRegistrationName;
 
   @NonNull
-  public final TextView errorText;
+  public final MaterialTextView createUsernameInfo;
+
+  @NonNull
+  public final MaterialTextView createUsernameText;
+
+  @NonNull
+  public final MaterialTextView errorText;
 
   @NonNull
   public final ImageView imageView;
@@ -35,25 +41,20 @@ public final class RegistrationNameBinding implements ViewBinding {
   public final MaterialButton loginBtn;
 
   @NonNull
-  public final TextView textView1;
-
-  @NonNull
-  public final TextView textView2;
-
-  @NonNull
-  public final EditText username;
+  public final TextInputLayout username;
 
   private RegistrationNameBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout containerRegistrationName, @NonNull TextView errorText,
-      @NonNull ImageView imageView, @NonNull MaterialButton loginBtn, @NonNull TextView textView1,
-      @NonNull TextView textView2, @NonNull EditText username) {
+      @NonNull ConstraintLayout containerRegistrationName,
+      @NonNull MaterialTextView createUsernameInfo, @NonNull MaterialTextView createUsernameText,
+      @NonNull MaterialTextView errorText, @NonNull ImageView imageView,
+      @NonNull MaterialButton loginBtn, @NonNull TextInputLayout username) {
     this.rootView = rootView;
     this.containerRegistrationName = containerRegistrationName;
+    this.createUsernameInfo = createUsernameInfo;
+    this.createUsernameText = createUsernameText;
     this.errorText = errorText;
     this.imageView = imageView;
     this.loginBtn = loginBtn;
-    this.textView1 = textView1;
-    this.textView2 = textView2;
     this.username = username;
   }
 
@@ -86,8 +87,20 @@ public final class RegistrationNameBinding implements ViewBinding {
     missingId: {
       ConstraintLayout containerRegistrationName = (ConstraintLayout) rootView;
 
+      id = R.id.create_username_info;
+      MaterialTextView createUsernameInfo = ViewBindings.findChildViewById(rootView, id);
+      if (createUsernameInfo == null) {
+        break missingId;
+      }
+
+      id = R.id.create_username_text;
+      MaterialTextView createUsernameText = ViewBindings.findChildViewById(rootView, id);
+      if (createUsernameText == null) {
+        break missingId;
+      }
+
       id = R.id.error_text;
-      TextView errorText = ViewBindings.findChildViewById(rootView, id);
+      MaterialTextView errorText = ViewBindings.findChildViewById(rootView, id);
       if (errorText == null) {
         break missingId;
       }
@@ -104,26 +117,14 @@ public final class RegistrationNameBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView1;
-      TextView textView1 = ViewBindings.findChildViewById(rootView, id);
-      if (textView1 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView2;
-      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
-      if (textView2 == null) {
-        break missingId;
-      }
-
       id = R.id.username;
-      EditText username = ViewBindings.findChildViewById(rootView, id);
+      TextInputLayout username = ViewBindings.findChildViewById(rootView, id);
       if (username == null) {
         break missingId;
       }
 
       return new RegistrationNameBinding((ConstraintLayout) rootView, containerRegistrationName,
-          errorText, imageView, loginBtn, textView1, textView2, username);
+          createUsernameInfo, createUsernameText, errorText, imageView, loginBtn, username);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
