@@ -63,7 +63,7 @@ public class Event extends Fragment {
         swipeRefreshLayout = view.findViewById(R.id.SwipeRefreshLayout);
         ImageView addEvent = view.findViewById(R.id.add);
         CircleImageView avatar = view.findViewById(R.id.avatar);
-        BottomSheetDialogFragment BottomSheet = new Fragment_Add();
+        BottomSheetDialogFragment BottomSheet = new AddEvent();
 
         File file = new File(sp.getString(SMALL_AVATAR, ""));
 
@@ -86,7 +86,7 @@ public class Event extends Fragment {
             transaction.commit();
             BottomNavigationView navigationView = getActivity().findViewById(R.id.bottom_navigation);
             navigationView.setSelectedItemId(R.id.nav_account);
-        });
+        });;
         //прогружаем данные при запуске фрагмента
         try {
             HandlingEventOutput(view, listView, start, end, false);

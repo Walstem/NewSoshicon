@@ -2620,9 +2620,11 @@ int drawable ic_clock_black_24dp 0x7f080072
 int drawable ic_keyboard_black_24dp 0x7f080073
 int drawable ic_launcher_background 0x7f080074
 int drawable ic_launcher_foreground 0x7f080075
+int drawable ic_like 0x7f0800e1
 int drawable ic_m3_chip_check 0x7f080076
 int drawable ic_m3_chip_checked_circle 0x7f080077
 int drawable ic_m3_chip_close 0x7f080078
+int drawable ic_more_vert 0x7f0800e2
 int drawable ic_mtrl_checked_circle 0x7f080079
 int drawable ic_mtrl_chip_checked_black 0x7f08007a
 int drawable ic_mtrl_chip_checked_circle 0x7f08007b

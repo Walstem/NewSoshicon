@@ -45,6 +45,13 @@
         app:layout_constraintLeft_toRightOf="@+id/avatar"
         app:layout_constraintTop_toTopOf="@+id/avatar" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_more_vert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/avatar" />
     <TextView
         android:id="@+id/ContentMessage"
         android:layout_width="match_parent"
