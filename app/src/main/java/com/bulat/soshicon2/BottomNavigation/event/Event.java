@@ -1,5 +1,10 @@
 package com.bulat.soshicon2.BottomNavigation.event;
 
+import static com.bulat.soshicon2.constants.constants.*;
+
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.bulat.soshicon2.BottomNavigation.Account;
+import com.bulat.soshicon2.BottomNavigation.account.Account;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.asynctasks.SendQuery;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -23,9 +28,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.concurrent.ExecutionException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -50,12 +57,22 @@ public class Event extends Fragment {
         navBar.setVisibility(View.VISIBLE);
 
         View view = inflater.inflate(R.layout.event_tape, container, false);
-
+        SharedPreferences sp = getContext().getSharedPreferences(DATABASE, 0);
         ListView listView = view.findViewById(R.id.listView);
         swipeRefreshLayout = view.findViewById(R.id.SwipeRefreshLayout);
         ImageView addEvent = view.findViewById(R.id.add);
         CircleImageView avatar = view.findViewById(R.id.avatar);
         BottomSheetDialogFragment BottomSheet = new Fragment_Add();
+
+        File file = new File(sp.getString(SMALL_AVATAR, ""));
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        try {
+            Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(file));
+            avatar.setImageBitmap(bitmap);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
         //вызываем редактор создания событий
         addEvent.setOnClickListener(v -> BottomSheet.show(getFragmentManager().beginTransaction(), "BottomShitDialog"));
@@ -162,7 +179,7 @@ public class Event extends Fragment {
 
         //если происходит загрузка при переходе на страницу прогружаем listview Заново
         if (!scroll) {
-            eventBlock = new EventBlock(requireContext(), Title, Content, Avatar, Time);
+            eventBlock = new EventAdapter(requireContext(), Title, Content, Avatar, Time);
             listView.setAdapter(eventBlock);
         }
         //если функция была вызванна свайпом, то обновляем Listview

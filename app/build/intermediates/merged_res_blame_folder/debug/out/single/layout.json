@@ -44,6 +44,10 @@
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\registration_name.xml"
     },
     {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\setting.xml",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\setting.xml"
+    },
+    {
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\account.xml",
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\account.xml"
     },

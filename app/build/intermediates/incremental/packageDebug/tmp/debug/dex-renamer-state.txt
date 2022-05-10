@@ -1,8 +1,7 @@
-#Tue May 10 00:20:18 MSK 2022
+#Tue May 10 03:30:22 MSK 2022
 path.4=15/classes.dex
 path.3=14/classes.dex
-path.2=13/classes.dex
-renamed.9=classes10.dex
+path.2=classes2.dex
 path.1=0/classes.dex
 renamed.8=classes9.dex
 path.8=7/classes.dex
@@ -12,15 +11,13 @@ path.5=1/classes.dex
 path.0=classes.dex
 base.4=C\:\\NewSoshicon\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
 base.3=C\:\\NewSoshicon\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
-base.2=C\:\\NewSoshicon\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.2=C\:\\NewSoshicon\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 base.1=C\:\\NewSoshicon\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.0=C\:\\NewSoshicon\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.9=C\:\\NewSoshicon\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-path.9=classes2.dex
 renamed.7=classes8.dex
 base.8=C\:\\NewSoshicon\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
 renamed.6=classes7.dex

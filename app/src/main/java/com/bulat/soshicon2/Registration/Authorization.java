@@ -91,7 +91,9 @@ public class Authorization extends Fragment {
                     ed.putString(U_NICKNAME, login);
                     ed.apply();
                     String data_id = sPref.getString(ID, "");
-                    System.out.println(data_id);
+
+                    //загружаем аватар
+
 
                     replaceFragmentParent(new Event());
                 }

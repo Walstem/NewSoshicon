@@ -26,10 +26,10 @@ public class EventTime {
         }
         else if (eventTime.equals(clientTime)) {
             time = "только что";
-        } else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && eventTimeArrInt[2] == clientTimeArrInt[2] && eventTimeArrInt[3] == clientTimeArrInt[3] && eventTimeArrInt[4] -clientTimeArrInt[4]  < 5){
+        } else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && eventTimeArrInt[2] == clientTimeArrInt[2] && eventTimeArrInt[3] == clientTimeArrInt[3] && clientTimeArrInt[4] - eventTimeArrInt[4]  < 5){
             time = "только что";
         }
-        else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && eventTimeArrInt[2] == clientTimeArrInt[2] && eventTimeArrInt[3] == clientTimeArrInt[3] && clientTimeArrInt[4] - eventTimeArrInt[4] < 21 && clientTimeArrInt[4] - eventTimeArrInt[4] > 25 || clientTimeArrInt[4] - eventTimeArrInt[4] > 34 && clientTimeArrInt[4] - eventTimeArrInt[4] < 41 || clientTimeArrInt[4] - eventTimeArrInt[4] > 44 && clientTimeArrInt[4] - eventTimeArrInt[4] < 50 || clientTimeArrInt[4] - eventTimeArrInt[4] > 54 && clientTimeArrInt[4] - eventTimeArrInt[4] < 60) {
+        else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && eventTimeArrInt[2] == clientTimeArrInt[2] && eventTimeArrInt[3] == clientTimeArrInt[3] && clientTimeArrInt[4] - eventTimeArrInt[4] > 5 && clientTimeArrInt[4] - eventTimeArrInt[4] < 21 || clientTimeArrInt[4] - eventTimeArrInt[4] > 34 && clientTimeArrInt[4] - eventTimeArrInt[4] < 41 || clientTimeArrInt[4] - eventTimeArrInt[4] > 44 && clientTimeArrInt[4] - eventTimeArrInt[4] < 50 || clientTimeArrInt[4] - eventTimeArrInt[4] > 54 && clientTimeArrInt[4] - eventTimeArrInt[4] < 60) {
             time = clientTimeArrInt[4] - eventTimeArrInt[4] + " минут назад";
         }
         else if (eventTimeArrInt[0] == clientTimeArrInt[0] && eventTimeArrInt[1] == clientTimeArrInt[1] && eventTimeArrInt[2] == clientTimeArrInt[2] && eventTimeArrInt[3] == clientTimeArrInt[3] && clientTimeArrInt[4] - eventTimeArrInt[4]  == 21 || clientTimeArrInt[4] - eventTimeArrInt[4]  == 31 || clientTimeArrInt[4] - eventTimeArrInt[4]  == 41 || clientTimeArrInt[4] - eventTimeArrInt[4]  == 51){

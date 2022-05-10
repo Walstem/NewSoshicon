@@ -3141,7 +3141,6 @@ id pin
 id position
 id postLayout
 id profile_avatar
-id profile_avatar_setting
 id progress_circular
 id progress_horizontal
 id radio
@@ -3410,7 +3409,6 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout account
-layout account_setting
 layout authorization
 layout bottomshit_add_event
 layout chat
@@ -3503,6 +3501,7 @@ layout row_card_event
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout setting
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_chip_zero_corner_radius
