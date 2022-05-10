@@ -159,7 +159,11 @@ public class Event extends Fragment {
 
         }
         //получаем данные события
-        receivingEvent Query = new receivingEvent(GET_DISTRIBUTION_SOSHICON_PHP, start-10, end);
+        String[] KeyArgs = {"start", "end"};
+        String[] Args = { Integer.toString(start-10),  Integer.toString(end)};
+
+
+        receivingEvent Query = new receivingEvent(GET_DISTRIBUTION_SOSHICON_PHP, KeyArgs, Args);
         Query.execute();
 
         JSONArray Event_json = new JSONArray(Query.get());

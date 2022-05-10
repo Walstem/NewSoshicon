@@ -18,14 +18,15 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-class receivingEvent extends AsyncTask<String, String, String> {
+public class receivingEvent extends AsyncTask<String, String, String> {
     String filename;
-    String start, end;
+    String[] Args;
+    String[] KeysArgs;
 
-    receivingEvent(String filename, int start, int end){
+    public receivingEvent(String filename, String[] KeysArgs, String[] Args){
         this.filename = filename;
-        this.start = Integer.toString(start);
-        this.end = Integer.toString(end);
+        this.Args = Args;
+        this.KeysArgs = KeysArgs;
     }
 
     @Override
@@ -33,9 +34,11 @@ class receivingEvent extends AsyncTask<String, String, String> {
         HttpClient httpclient = new DefaultHttpClient();
         HttpPost httppost = new HttpPost("http://j911147y.beget.tech/" + filename);
 
-        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-        nameValuePairs.add(new BasicNameValuePair("start", start));
-        nameValuePairs.add(new BasicNameValuePair("end", end));
+        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(Args.length);
+        for (int i=0; i< Args.length; i++){
+            nameValuePairs.add(new BasicNameValuePair(KeysArgs[i], Args[i]));
+        }
+
         try {
             httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
         }
