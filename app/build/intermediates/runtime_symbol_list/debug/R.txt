@@ -2735,6 +2735,7 @@ int id BOTTOM_START 0x7f090002
 int id CTRL 0x7f090003
 int id ContentMessage 0x7f090004
 int id FAQ 0x7f090005
+int id FAQ_image 0x7f09025b
 int id FUNCTION 0x7f090006
 int id META 0x7f090007
 int id NO_DEBUG 0x7f090008
@@ -2888,6 +2889,7 @@ int id container_registration_name 0x7f09009b
 int id container_registration_password 0x7f09009c
 int id container_response 0x7f09009d
 int id container_setting 0x7f09009e
+int id container_setting_edit 0x7f09025a
 int id content 0x7f09009f
 int id contentPanel 0x7f0900a0
 int id contiguous 0x7f0900a1
@@ -3513,6 +3515,7 @@ int layout select_dialog_item_material 0x7f0c0077
 int layout select_dialog_multichoice_material 0x7f0c0078
 int layout select_dialog_singlechoice_material 0x7f0c0079
 int layout setting 0x7f0c007a
+int layout setting_edit 0x7f0c0098
 int layout setting_language 0x7f0c007b
 int layout support_simple_spinner_dropdown_item 0x7f0c007c
 int layout test_action_chip 0x7f0c007d
@@ -4774,8 +4777,15 @@ int style Widget_MaterialComponents_Toolbar_PrimarySurface 0x7f1103fe
 int style Widget_MaterialComponents_Toolbar_Surface 0x7f1103ff
 int style Widget_MaterialComponents_Tooltip 0x7f110400
 int style Widget_Support_CoordinatorLayout 0x7f110401
+int style arrowIconSetting 0x7f11040a
 int style circleImageView 0x7f110402
+int style imageViewIconSetting 0x7f11040b
 int style nightModeSwitch 0x7f110403
+int style oval_shape_cancel 0x7f11040c
+int style textIconSetting 0x7f11040d
+int style textInputEditText 0x7f11040e
+int style textInputLayout 0x7f11040f
+int style textViewPrimarySetting 0x7f110410
 int style ucrop_ImageViewWidgetIcon 0x7f110404
 int style ucrop_TextViewCropAspectRatio 0x7f110405
 int style ucrop_TextViewWidget 0x7f110406

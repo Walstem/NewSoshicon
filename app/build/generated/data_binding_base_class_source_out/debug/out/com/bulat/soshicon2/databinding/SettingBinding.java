@@ -102,9 +102,6 @@ public final class SettingBinding implements ViewBinding {
   public final TextView textView3;
 
   @NonNull
-  public final TextView username;
-
-  @NonNull
   public final TextView usernameBottomAvatar;
 
   private SettingBinding(@NonNull ConstraintLayout rootView, @NonNull ConstraintLayout FAQ,
@@ -119,7 +116,7 @@ public final class SettingBinding implements ViewBinding {
       @NonNull ConstraintLayout logOutSetting, @NonNull ConstraintLayout notification,
       @NonNull ImageView notificationImage, @NonNull ConstraintLayout settingLogOut,
       @NonNull ConstraintLayout textSize, @NonNull ImageView textSizeImage,
-      @NonNull TextView textView, @NonNull TextView textView3, @NonNull TextView username,
+      @NonNull TextView textView, @NonNull TextView textView3,
       @NonNull TextView usernameBottomAvatar) {
     this.rootView = rootView;
     this.FAQ = FAQ;
@@ -148,7 +145,6 @@ public final class SettingBinding implements ViewBinding {
     this.textSizeImage = textSizeImage;
     this.textView = textView;
     this.textView3 = textView3;
-    this.username = username;
     this.usernameBottomAvatar = usernameBottomAvatar;
   }
 
@@ -331,12 +327,6 @@ public final class SettingBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.username;
-      TextView username = ViewBindings.findChildViewById(rootView, id);
-      if (username == null) {
-        break missingId;
-      }
-
       id = R.id.username_bottom_avatar;
       TextView usernameBottomAvatar = ViewBindings.findChildViewById(rootView, id);
       if (usernameBottomAvatar == null) {
@@ -347,8 +337,7 @@ public final class SettingBinding implements ViewBinding {
           ThirdPanelSetting, aboutUs, aboutUsImage, avatar, button, cancel, constraintLayout,
           containerSetting, faqImage, firstPanelSetting, languages, languagesImage, lightMode,
           lightModeImage, lightModeSwitch, logOut, logOutSetting, notification, notificationImage,
-          settingLogOut, textSize, textSizeImage, textView, textView3, username,
-          usernameBottomAvatar);
+          settingLogOut, textSize, textSizeImage, textView, textView3, usernameBottomAvatar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -11,13 +11,11 @@ import android.content.SharedPreferences;
 import androidx.appcompat.app.AppCompatDelegate;
 
 public class ThemeManager {
-    private final Context context;
 
     private final SharedPreferences sharedPreferences;
 
     public ThemeManager(Context cont) {
-        context = cont;
-        sharedPreferences = context.getSharedPreferences(DATABASE, 0);
+        sharedPreferences = cont.getSharedPreferences(DATABASE, 0);
     }
 
     public void updateResource(boolean checked) {
@@ -32,7 +30,7 @@ public class ThemeManager {
     }
 
     public boolean getTheme() {
-        return sharedPreferences.getBoolean(THEME, true);
+        return sharedPreferences.getBoolean(THEME, false);
     }
 
     public void setTheme(boolean checked) {
