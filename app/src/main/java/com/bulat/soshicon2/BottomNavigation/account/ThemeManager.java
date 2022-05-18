@@ -3,7 +3,6 @@ package com.bulat.soshicon2.BottomNavigation.account;
 import static com.bulat.soshicon2.constants.constants.*;
 
 import static com.bulat.soshicon2.constants.constants.DATABASE;
-import static com.bulat.soshicon2.constants.constants.LANG;
 
 import android.content.Context;
 import android.content.SharedPreferences;

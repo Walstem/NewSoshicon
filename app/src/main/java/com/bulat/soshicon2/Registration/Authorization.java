@@ -2,6 +2,8 @@ package com.bulat.soshicon2.Registration;
 
 import static com.bulat.soshicon2.constants.constants.*;
 
+import com.bulat.soshicon2.constants.constants;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -100,9 +102,9 @@ public class Authorization extends Fragment {
                     String id =  request_id.get();
 
                     // добавляем id пользователя в сохраненные настрйоки
-                    SharedPreferences sPref = getContext().getSharedPreferences(DATABASE, Context.MODE_PRIVATE);
+                    SharedPreferences sPref = getContext().getSharedPreferences(constants.DATABASE, Context.MODE_PRIVATE);
                     SharedPreferences.Editor ed = sPref.edit();
-                    ed.putString(ID, id);
+                    ed.putString(constants.ID, id);
                     ed.putString(U_NICKNAME, login);
                     ed.apply();
                     String data_id = sPref.getString(ID, "");

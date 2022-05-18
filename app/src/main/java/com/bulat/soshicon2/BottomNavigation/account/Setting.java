@@ -1,14 +1,6 @@
 package com.bulat.soshicon2.BottomNavigation.account;
 
-import static com.bulat.soshicon2.constants.constants.AVATAR;
-import static com.bulat.soshicon2.constants.constants.DATABASE;
-import static com.bulat.soshicon2.constants.constants.EMAIL;
-import static com.bulat.soshicon2.constants.constants.ID;
-import static com.bulat.soshicon2.constants.constants.PASSWORD;
-import static com.bulat.soshicon2.constants.constants.SMALL_AVATAR;
-import static com.bulat.soshicon2.constants.constants.THEME;
-import static com.bulat.soshicon2.constants.constants.U_NICKNAME;
-
+import static com.bulat.soshicon2.constants.constants.*;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -45,6 +37,7 @@ public class Setting extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View MainView = inflater.inflate(R.layout.setting, container, false);
+
         SharedPreferences sp = getContext().getSharedPreferences(DATABASE, 0);
 
         navBar = getActivity().findViewById(R.id.bottom_navigation);

@@ -42,6 +42,7 @@
 
 
                                             <!--НАСТРОЙКИ-->
+    <color name="setting_item_text_color">#000000</color>
     <color name="night_mode">#38AAC8</color>
     <color name="notifications">#FD3B31</color>
     <color name="languages">#AF51DE</color>

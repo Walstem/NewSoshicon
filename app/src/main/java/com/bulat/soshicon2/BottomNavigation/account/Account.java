@@ -2,7 +2,6 @@ package com.bulat.soshicon2.BottomNavigation.account;
 
 import static com.bulat.soshicon2.constants.constants.*;
 
-import com.bulat.soshicon2.BottomNavigation.account.*;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,7 +22,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.R;;
-import com.bulat.soshicon2.BottomNavigation.account.Setting;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 

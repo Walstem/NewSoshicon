@@ -74,7 +74,8 @@
             android:background="@drawable/radius"
             android:hint="@string/username_hint"
             android:textColor="@color/text_color_gray"
-            android:textColorHint="@color/text_color_hint" />
+            android:textColorHint="@color/text_color_hint"
+            android:textCursorDrawable="@drawable/cursor"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
