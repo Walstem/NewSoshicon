@@ -80,7 +80,8 @@
             android:hint="@string/ed_login"
             android:background="@drawable/radius_top"
             android:textColor="@color/text_color_gray"
-            android:textColorHint="@color/text_color_hint" />
+            android:textColorHint="@color/text_color_hint"
+            android:textCursorDrawable="@drawable/cursor"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -111,7 +112,8 @@
             android:hint="@string/et_password"
             android:background="@drawable/radius_bottom"
             android:textColor="@color/text_color_gray"
-            android:textColorHint="@color/text_color_hint" />
+            android:textColorHint="@color/text_color_hint"
+            android:textCursorDrawable="@drawable/cursor"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

@@ -10,16 +10,10 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="round_setting">#E8E8E8</color>
     <color name="row_card_event_color">#191919</color>
-<<<<<<< HEAD
     <color name="setting_item_text_color">#ffffff</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="text_color_block">#ffffff</color>
-=======
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="text_color_block">#000000</color>
->>>>>>> 6d875149125203c59977a99cc2d1313a8d645273
     <color name="text_color_gray">#7C7C7C</color>
     <color name="text_color_hint">#797979</color>
     <color name="text_color_primary">#F9F9F9</color>
@@ -59,17 +53,6 @@
     <style name="Theme.MaterialComponents.DayNight.NoActionBar" parent="Theme.MaterialComponents.NoActionBar"/>
     <style name="Theme.MaterialComponents.DayNight.NoActionBar.Bridge" parent="Theme.MaterialComponents.NoActionBar.Bridge"/>
     <style name="Theme.SoshiconJava" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-<<<<<<< HEAD
-        
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryVariant">@color/black</item>
-        <item name="colorOnPrimary">@color/black</item>
-        
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        
-=======
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryVariant">@color/black</item>
@@ -79,7 +62,6 @@
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
->>>>>>> 6d875149125203c59977a99cc2d1313a8d645273
         <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
     </style>
     <style name="ThemeOverlay.AppCompat.DayNight" parent="ThemeOverlay.AppCompat.Dark"/>

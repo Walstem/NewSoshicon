@@ -1,89 +1,9 @@
 -- Merging decision tree log ---
 manifest
-<<<<<<< HEAD
-ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-44:12
-=======
-<<<<<<< HEAD
-ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-43:12
-MERGED from [androidx.databinding:viewbinding:7.1.3] C:\Users\littl\.gradle\caches\transforms-3\f7da5741e1bad5a5b65960363aecbe92\transformed\jetified-viewbinding-7.1.3\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.navigation:navigation-ui:2.4.2] C:\Users\littl\.gradle\caches\transforms-3\95fe71d8b42322e63d12f26f25cff6ef\transformed\navigation-ui-2.4.2\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.material:material:1.5.0] C:\Users\littl\.gradle\caches\transforms-3\f4644d49845b47ba06b9572c54ce16a0\transformed\material-1.5.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\littl\.gradle\caches\transforms-3\aa44eb9e8d37a3439d636831a2be5455\transformed\constraintlayout-2.1.3\AndroidManifest.xml:2:1-11:12
-MERGED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:2:1-42:12
-MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\littl\.gradle\caches\transforms-3\d12aba642c03d568a36488383a2f9481\transformed\jetified-ucrop-2.2.6\AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.appcompat:appcompat:1.4.1] C:\Users\littl\.gradle\caches\transforms-3\914116008979e77bc79da871871e9f31\transformed\appcompat-1.4.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.4.1] C:\Users\littl\.gradle\caches\transforms-3\d94f90afd3d530bd4dda00f3fd97931a\transformed\jetified-lifecycle-livedata-ktx-2.4.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.navigation:navigation-fragment:2.4.2] C:\Users\littl\.gradle\caches\transforms-3\a6923b03a314092b7528f78cfa8f9749\transformed\navigation-fragment-2.4.2\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.fragment:fragment-ktx:1.4.1] C:\Users\littl\.gradle\caches\transforms-3\469a82db85f0c7c6203916a53c5798fd\transformed\jetified-fragment-ktx-1.4.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.navigation:navigation-runtime:2.4.2] C:\Users\littl\.gradle\caches\transforms-3\c3fceffbd356b5ee9bbe256948b7ea49\transformed\navigation-runtime-2.4.2\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.activity:activity-ktx:1.2.3] C:\Users\littl\.gradle\caches\transforms-3\59e10f99d02e3c23c362e5d5885124f4\transformed\jetified-activity-ktx-1.2.3\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.navigation:navigation-common:2.4.2] C:\Users\littl\.gradle\caches\transforms-3\c02d8bf5cfa821cf6660a4cf6eb09046\transformed\navigation-common-2.4.2\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1] C:\Users\littl\.gradle\caches\transforms-3\2151b0298666d70dad5e22bb44d891a5\transformed\jetified-lifecycle-viewmodel-ktx-2.4.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\fbd8dda460e62af0bcea3ac84c47eb75\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\littl\.gradle\caches\transforms-3\c9249bf15903e236034c83bb12b3a106\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:2:1-11:12
-MERGED from [com.parse:parse-android:1.16.3] C:\Users\littl\.gradle\caches\transforms-3\6873e9c41f53d1dee27627f1df287259\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:10:1-29:12
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\f2cb70bdfca79293a5d7d76477e7c812\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.fragment:fragment:1.4.1] C:\Users\littl\.gradle\caches\transforms-3\76de88d31d8a4db587fd70ff2de210ce\transformed\fragment-1.4.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.activity:activity:1.2.4] C:\Users\littl\.gradle\caches\transforms-3\cb66e461fd9e99575bb56695f00506ab\transformed\jetified-activity-1.2.4\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.appcompat:appcompat-resources:1.4.1] C:\Users\littl\.gradle\caches\transforms-3\1f4973b9873a6b0accadbc4a765aa101\transformed\jetified-appcompat-resources-1.4.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\27061b85e2d5a3b43a0523a4635c520f\transformed\jetified-emoji2-views-helper-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:17:1-37:12
-MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\010e175a01a56214c9e0513773f6cc6d\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\littl\.gradle\caches\transforms-3\f9f13cb9407dc9161caf4cf532aae1a0\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\littl\.gradle\caches\transforms-3\c2365997c5712c09b8e040cdba48ec6f\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\2732231502652d49f6471d738fea92f2\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\littl\.gradle\caches\transforms-3\d7bfb4d57ba25c58c1ed4e8afb52dc48\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\littl\.gradle\caches\transforms-3\131fc640a9fa001c570148d810d62306\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\littl\.gradle\caches\transforms-3\d25e8a8dab647eac357056887a718eae\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4dc2d7de2e36c1331823605ddccab851\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\littl\.gradle\caches\transforms-3\b799179d0f364501512efedbe756bc89\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.customview:customview:1.1.0] C:\Users\littl\.gradle\caches\transforms-3\05004be9d5f40db3a3f43ef3ca30f636\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.media:media:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\e815605bb395830277d015e0e19ca4b8\transformed\media-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\ea99aa67336d4d62f7f663b262956f65\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\littl\.gradle\caches\transforms-3\a0259706a5179253b70adbda5e8abc90\transformed\jetified-core-ktx-1.3.2\AndroidManifest.xml:2:1-9:12
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\e68bd84e89a1199c0e0bb7915ca54e8d\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.transition:transition:1.4.1] C:\Users\littl\.gradle\caches\transforms-3\15cb71aeabc755905366f214fab5121c\transformed\transition-1.4.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:17:1-33:12
-MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\451d5deef0055514db33ca16d3954957\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\dddae96cfa5564f52996739cb78817ca\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.7.0] C:\Users\littl\.gradle\caches\transforms-3\b9e4376e452ce4f1a2bbb1fc4b534124\transformed\core-1.7.0\AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\ba5c646dbbc9b110b0bbc2352c403cb8\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\littl\.gradle\caches\transforms-3\a80264089550c9371acb9d2f7d48c329\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.savedstate:savedstate-ktx:1.1.0] C:\Users\littl\.gradle\caches\transforms-3\e715482cfa9509f12100d014f7258f24\transformed\jetified-savedstate-ktx-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\littl\.gradle\caches\transforms-3\f08aa1569562031982a90915b0d403c6\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\5c5564f3c21f160b8593b6357f42704c\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.1] C:\Users\littl\.gradle\caches\transforms-3\0462999d532ea43ec1086a82e9d5a17f\transformed\lifecycle-viewmodel-2.4.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.exifinterface:exifinterface:1.3.2] C:\Users\littl\.gradle\caches\transforms-3\e32bc1f345956912369ae7e7834c1200\transformed\exifinterface-1.3.2\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.documentfile:documentfile:1.0.1] C:\Users\littl\.gradle\caches\transforms-3\69170994e1c2455375232312244bd8e2\transformed\documentfile-1.0.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\littl\.gradle\caches\transforms-3\36325408cec9ed0dd0d5d908fc64e1b9\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\littl\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:17:1-37:12
-MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\3b6ee467fac90b27cde8f39b2bba82a2\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:17:1-33:12
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\063e8774a5ccd067d6cad35d29bac916\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.4.1] C:\Users\littl\.gradle\caches\transforms-3\41aaa245e2419cd13dc4cd5ce09fac68\transformed\lifecycle-livedata-2.4.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.4.1] C:\Users\littl\.gradle\caches\transforms-3\f71227417006c6b96dd30440ba5e1308\transformed\jetified-lifecycle-livedata-core-ktx-2.4.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.4.1] C:\Users\littl\.gradle\caches\transforms-3\5e6411a70f4b77889bc129066266f248\transformed\lifecycle-livedata-core-2.4.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.3.1] C:\Users\littl\.gradle\caches\transforms-3\283457f8121d68ec6af9478ddfbceeaf\transformed\jetified-lifecycle-runtime-ktx-2.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0] C:\Users\littl\.gradle\caches\transforms-3\490e1edacc633f6009a0c863dd73bafe\transformed\lifecycle-runtime-2.4.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\littl\.gradle\caches\transforms-3\aa032f33b1d34c08ed370a72f750a373\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\23bc2eaa3d335b525ba2ecfef837b657\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.print:print:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\58d3fb1b78397bc15eea1568e0b97297\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\9e495b0e9f7cb70c1ccd9a8c2fa3dac5\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\littl\.gradle\caches\transforms-3\56b1aaac53fce27f3a58c0d828bab898\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-43:12
-=======
-ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-42:12
->>>>>>> 6d875149125203c59977a99cc2d1313a8d645273
+ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-45:12
 MERGED from [androidx.databinding:viewbinding:7.1.3] C:\Users\Admin\.gradle\caches\transforms-3\f7da5741e1bad5a5b65960363aecbe92\transformed\jetified-viewbinding-7.1.3\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\677aacac5d7f5317935ac0c761fac44b\transformed\jetified-play-services-location-17.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.navigation:navigation-ui:2.4.2] C:\Users\Admin\.gradle\caches\transforms-3\95fe71d8b42322e63d12f26f25cff6ef\transformed\navigation-ui-2.4.2\AndroidManifest.xml:17:1-24:12
@@ -153,16 +73,9 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.print:print:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\58d3fb1b78397bc15eea1568e0b97297\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\9e495b0e9f7cb70c1ccd9a8c2fa3dac5\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Admin\.gradle\caches\transforms-3\56b1aaac53fce27f3a58c0d828bab898\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-<<<<<<< HEAD
-INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-44:12
-=======
-INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-42:12
->>>>>>> 4981b6c41691e2ab4808409fc7a1eaaac73fa859
->>>>>>> 6d875149125203c59977a99cc2d1313a8d645273
+INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:2:1-45:12
 	package
 		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:4:5-34
 		INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml
@@ -208,38 +121,9 @@ ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:13:5-80
 	android:name
 		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:13:22-78
 application
-<<<<<<< HEAD
-ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:15:5-43:19
+ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:15:5-44:19
 MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\677aacac5d7f5317935ac0c761fac44b\transformed\jetified-play-services-location-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\677aacac5d7f5317935ac0c761fac44b\transformed\jetified-play-services-location-17.0.0\AndroidManifest.xml:7:5-20
-=======
-<<<<<<< HEAD
-ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:13:5-42:19
-MERGED from [com.google.android.material:material:1.5.0] C:\Users\littl\.gradle\caches\transforms-3\f4644d49845b47ba06b9572c54ce16a0\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.material:material:1.5.0] C:\Users\littl\.gradle\caches\transforms-3\f4644d49845b47ba06b9572c54ce16a0\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\littl\.gradle\caches\transforms-3\aa44eb9e8d37a3439d636831a2be5455\transformed\constraintlayout-2.1.3\AndroidManifest.xml:9:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\littl\.gradle\caches\transforms-3\aa44eb9e8d37a3439d636831a2be5455\transformed\constraintlayout-2.1.3\AndroidManifest.xml:9:5-20
-MERGED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:21:5-40:19
-MERGED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:21:5-40:19
-MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\littl\.gradle\caches\transforms-3\c9249bf15903e236034c83bb12b3a106\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
-MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\littl\.gradle\caches\transforms-3\c9249bf15903e236034c83bb12b3a106\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
-MERGED from [com.parse:parse-android:1.16.3] C:\Users\littl\.gradle\caches\transforms-3\6873e9c41f53d1dee27627f1df287259\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:22:5-27:19
-MERGED from [com.parse:parse-android:1.16.3] C:\Users\littl\.gradle\caches\transforms-3\6873e9c41f53d1dee27627f1df287259\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:22:5-27:19
-MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:25:5-35:19
-MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:25:5-35:19
-MERGED from [androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:24:5-31:19
-MERGED from [androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:24:5-31:19
-MERGED from [androidx.core:core:1.7.0] C:\Users\littl\.gradle\caches\transforms-3\b9e4376e452ce4f1a2bbb1fc4b534124\transformed\core-1.7.0\AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.7.0] C:\Users\littl\.gradle\caches\transforms-3\b9e4376e452ce4f1a2bbb1fc4b534124\transformed\core-1.7.0\AndroidManifest.xml:24:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\littl\.gradle\caches\transforms-3\36325408cec9ed0dd0d5d908fc64e1b9\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\littl\.gradle\caches\transforms-3\36325408cec9ed0dd0d5d908fc64e1b9\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\littl\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:25:5-35:19
-MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\littl\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:25:5-35:19
-MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\3b6ee467fac90b27cde8f39b2bba82a2\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:25:5-31:19
-MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\3b6ee467fac90b27cde8f39b2bba82a2\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:25:5-31:19
-=======
-ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:13:5-41:19
->>>>>>> 6d875149125203c59977a99cc2d1313a8d645273
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Admin\.gradle\caches\transforms-3\f4644d49845b47ba06b9572c54ce16a0\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Admin\.gradle\caches\transforms-3\f4644d49845b47ba06b9572c54ce16a0\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\Admin\.gradle\caches\transforms-3\aa44eb9e8d37a3439d636831a2be5455\transformed\constraintlayout-2.1.3\AndroidManifest.xml:9:5-20
@@ -270,131 +154,60 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\3b6ee467fac90b27cde8f39b2bba82a2\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\3b6ee467fac90b27cde8f39b2bba82a2\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:25:5-31:19
->>>>>>> 4981b6c41691e2ab4808409fc7a1eaaac73fa859
 	android:requestLegacyExternalStorage
 		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:19:9-52
 	android:supportsRtl
-<<<<<<< HEAD
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:21:9-35
-=======
-<<<<<<< HEAD
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:20:9-35
-=======
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:19:9-35
->>>>>>> 4981b6c41691e2ab4808409fc7a1eaaac73fa859
->>>>>>> 6d875149125203c59977a99cc2d1313a8d645273
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:22:9-35
 	android:label
 		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:18:9-41
 	android:appComponentFactory
 		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:16:9-77
 	android:testOnly
-<<<<<<< HEAD
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:22:9-32
-=======
-<<<<<<< HEAD
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:21:9-32
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:23:9-32
 	android:roundIcon
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:19:9-56
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:21:9-56
 	tools:targetApi
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:24:9-28
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:26:9-28
 	android:largeHeap
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:18:9-33
-=======
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:20:9-32
->>>>>>> 6d875149125203c59977a99cc2d1313a8d645273
-	android:roundIcon
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:20:9-56
-	tools:targetApi
-<<<<<<< HEAD
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:25:9-28
-=======
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:23:9-28
->>>>>>> 4981b6c41691e2ab4808409fc7a1eaaac73fa859
->>>>>>> 6d875149125203c59977a99cc2d1313a8d645273
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:20:9-33
 	android:icon
 		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:17:9-51
 	android:theme
-<<<<<<< HEAD
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:23:9-50
-=======
-<<<<<<< HEAD
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:22:9-50
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:24:9-50
 	android:usesCleartextTraffic
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:23:9-44
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:25:9-44
 uses-library#org.apache.http.legacy
-ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:25:9-27:40
+ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:27:9-29:40
 	android:required
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:27:13-37
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:29:13-37
 	android:name
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:26:13-50
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:28:13-50
 activity#com.bulat.soshicon2.SplashActivity
-ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:28:9-36:20
+ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:30:9-38:20
 	android:exported
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:31:13-36
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:33:13-36
 	android:theme
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:30:13-47
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:32:13-47
 	android:name
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:29:13-43
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:31:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:32:13-35:29
+ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:34:13-37:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:33:17-69
+ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:35:17-69
 	android:name
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:33:25-66
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:35:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:34:17-77
+ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:36:17-77
 	android:name
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:34:27-74
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:36:27-74
 activity#com.bulat.soshicon2.MainActivity
-ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:37:9-41:20
+ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:39:9-43:20
 	android:label
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:40:13-45
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:42:13-45
 	android:exported
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:39:13-36
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:41:13-36
 	android:name
-		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:38:13-41
-=======
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:21:9-50
->>>>>>> 6d875149125203c59977a99cc2d1313a8d645273
-	android:usesCleartextTraffic
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:24:9-44
-uses-library#org.apache.http.legacy
-ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:26:9-28:40
-	android:required
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:28:13-37
-	android:name
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:27:13-50
-activity#com.bulat.soshicon2.SplashActivity
-ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:29:9-37:20
-	android:exported
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:32:13-36
-	android:theme
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:31:13-47
-	android:name
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:30:13-43
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:33:13-36:29
-action#android.intent.action.MAIN
-ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:34:17-69
-	android:name
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:34:25-66
-category#android.intent.category.LAUNCHER
-ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:35:17-77
-	android:name
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:35:27-74
-activity#com.bulat.soshicon2.MainActivity
-ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:38:9-42:20
-	android:label
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:41:13-45
-	android:exported
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:40:13-36
-	android:name
-<<<<<<< HEAD
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:39:13-41
-=======
-		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:37:13-41
->>>>>>> 4981b6c41691e2ab4808409fc7a1eaaac73fa859
->>>>>>> 6d875149125203c59977a99cc2d1313a8d645273
+		ADDED from C:\NewSoshicon\app\src\main\AndroidManifest.xml:40:13-41
 uses-sdk
 INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\NewSoshicon\app\src\main\AndroidManifest.xml

@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/NewSoshicon.SoshiconJava.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/NewSoshicon.SoshiconJava.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/NewSoshicon.SoshiconJava.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/NewSoshicon.SoshiconJava.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/NewSoshicon.SoshiconJava.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/NewSoshicon.SoshiconJava.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/NewSoshicon.SoshiconJava.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/NewSoshicon.SoshiconJava.app.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SoshiconJava.iml" filepath="$PROJECT_DIR$/.idea/modules/SoshiconJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SoshiconJava.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SoshiconJava.app.iml" />
     </modules>
   </component>
 </project>

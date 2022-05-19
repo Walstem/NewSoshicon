@@ -29,7 +29,6 @@
 16-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:13:5-80
 16-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:13:22-78
 17
-<<<<<<< HEAD
 18    <queries>
 18-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:9:5-19:15
 19
@@ -50,7 +49,7 @@
 28    </queries>
 29
 30    <application
-30-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:15:5-43:19
+30-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:15:5-44:19
 31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 31-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:16:9-77
 32        android:debuggable="true"
@@ -59,441 +58,149 @@
 34-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:17:9-51
 35        android:label="@string/app_name"
 35-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:18:9-41
-36        android:requestLegacyExternalStorage="true"
-36-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:19:9-52
-37        android:roundIcon="@mipmap/soshicon_foreground"
-37-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:20:9-56
-38        android:supportsRtl="true"
-38-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:21:9-35
-39        android:testOnly="true"
-39-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:22:9-32
-40        android:theme="@style/Theme.SoshiconJava"
-40-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:23:9-50
-41        android:usesCleartextTraffic="true" >
-41-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:24:9-44
-42        <uses-library
-42-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:26:9-28:40
-43            android:name="org.apache.http.legacy"
-43-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:27:13-50
-44            android:required="false" />
-44-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:28:13-37
-45
-46        <activity
-46-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:29:9-37:20
-47            android:name="com.bulat.soshicon2.SplashActivity"
-47-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:30:13-43
-48            android:exported="true"
-48-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:32:13-36
-49            android:theme="@style/SplashTheme" >
-49-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:31:13-47
-50            <intent-filter>
-50-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:33:13-36:29
-51                <action android:name="android.intent.action.MAIN" />
-51-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:34:17-69
-51-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:34:25-66
-52
-53                <category android:name="android.intent.category.LAUNCHER" />
-53-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:35:17-77
-53-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:35:27-74
-54            </intent-filter>
-55        </activity>
-56        <activity
-56-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:38:9-42:20
-57            android:name="com.bulat.soshicon2.MainActivity"
-57-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:39:13-41
-58            android:exported="true"
-58-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:40:13-36
-59            android:label="@string/app_name" >
-59-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:41:13-45
-60        </activity>
-61        <activity
-61-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:22:9-25:68
-62            android:name="com.github.dhaval2404.imagepicker.ImagePickerActivity"
-62-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:23:13-81
-63            android:screenOrientation="unspecified"
-63-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:24:13-52
-64            android:theme="@style/Theme.Transparent.ImagePicker" />
-64-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:25:13-65
-65        <activity
-65-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:26:9-29:72
-66            android:name="com.yalantis.ucrop.UCropActivity"
-66-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:27:13-60
-67            android:screenOrientation="portrait"
-67-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:28:13-49
-68            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-68-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:29:13-69
-69
-70        <provider
-70-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:31:9-39:20
-71            android:name="com.github.dhaval2404.imagepicker.ImagePickerFileProvider"
-71-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:32:13-85
-72            android:authorities="com.example.soshicon.imagepicker.provider"
-72-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:33:13-72
-73            android:exported="false"
-73-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:34:13-37
-74            android:grantUriPermissions="true" >
-74-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:35:13-47
-75            <meta-data
-75-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:36:13-38:71
-76                android:name="android.support.FILE_PROVIDER_PATHS"
-76-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:37:17-67
-77                android:resource="@xml/image_picker_provider_paths" />
-77-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:38:17-68
-78        </provider>
-79
-80        <service
-80-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\3959f9acd7b1e1b8f32a3099cbd64dd1\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:23:9-26:72
-81            android:name="com.parse.PushServiceApi26"
-81-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\3959f9acd7b1e1b8f32a3099cbd64dd1\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:24:13-54
-82            android:exported="true"
-82-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\3959f9acd7b1e1b8f32a3099cbd64dd1\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:25:13-36
-83            android:permission="android.permission.BIND_JOB_SERVICE" />
-83-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\3959f9acd7b1e1b8f32a3099cbd64dd1\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:26:13-69
-84
-85        <activity
-85-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\b49001972d9b2063905ae1f45abb5d2e\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-86            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-86-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\b49001972d9b2063905ae1f45abb5d2e\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-87            android:exported="false"
-87-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\b49001972d9b2063905ae1f45abb5d2e\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-88            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-88-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\b49001972d9b2063905ae1f45abb5d2e\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-89
-90        <meta-data
-90-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\d5e407bf595fc230824dba833fd24d0c\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-91            android:name="com.google.android.gms.version"
-91-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\d5e407bf595fc230824dba833fd24d0c\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-92            android:value="@integer/google_play_services_version" />
-92-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\d5e407bf595fc230824dba833fd24d0c\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-93
-94        <provider
-94-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-95            android:name="androidx.startup.InitializationProvider"
-95-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
-96            android:authorities="com.example.soshicon.androidx-startup"
-96-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
-97            android:exported="false" >
-97-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
-98            <meta-data
-98-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-99                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-99-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
-100                android:value="androidx.startup" />
-100-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
-101            <meta-data
-101-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-102                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-102-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-103                android:value="androidx.startup" />
-103-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-104        </provider>
-105
-106        <uses-library
-106-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
-107            android:name="androidx.window.extensions"
-107-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
-108            android:required="false" />
-108-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
-109        <uses-library
-109-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
-110            android:name="androidx.window.sidecar"
-110-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
-111            android:required="false" />
-111-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
-112    </application>
-113
-114</manifest>
-=======
-18        <!-- Query Camera Packages -->
-19        <intent>
-19-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:12:9-14:18
-20            <action android:name="android.media.action.IMAGE_CAPTURE" />
-20-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:13:13-73
-20-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:13:21-70
-21        </intent>
-22        <!-- Query Open Document -->
-23        <intent>
-23-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:16:9-18:18
-24            <action android:name="android.intent.action.OPEN_DOCUMENT_TREE" />
-24-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:17:13-79
-24-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:17:21-76
-25        </intent>
-26    </queries>
-27
-28    <application
-<<<<<<< HEAD
-28-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:13:5-42:19
-=======
-28-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:13:5-41:19
->>>>>>> 4981b6c41691e2ab4808409fc7a1eaaac73fa859
-29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-29-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:14:9-77
-30        android:debuggable="true"
-31        android:extractNativeLibs="false"
-32        android:icon="@mipmap/soshicon_foreground"
-32-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:15:9-51
-33        android:label="@string/app_name"
-<<<<<<< HEAD
-33-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:16:9-41
-34        android:largeHeap="true"
-34-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:18:9-33
-35        android:requestLegacyExternalStorage="true"
-35-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:17:9-52
-36        android:roundIcon="@mipmap/soshicon_foreground"
-36-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:19:9-56
-37        android:supportsRtl="true"
-37-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:20:9-35
-38        android:testOnly="true"
-38-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:21:9-32
-39        android:theme="@style/Theme.SoshiconJava"
-39-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:22:9-50
-40        android:usesCleartextTraffic="true" >
-40-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:23:9-44
-41        <uses-library
-41-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:25:9-27:40
-42            android:name="org.apache.http.legacy"
-42-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:26:13-50
-43            android:required="false" />
-43-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:27:13-37
-44
-45        <activity
-45-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:28:9-36:20
-46            android:name="com.bulat.soshicon2.SplashActivity"
-46-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:29:13-43
-47            android:exported="true"
-47-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:31:13-36
-48            android:theme="@style/SplashTheme" >
-48-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:30:13-47
-49            <intent-filter>
-49-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:32:13-35:29
-50                <action android:name="android.intent.action.MAIN" />
-50-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:33:17-69
-50-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:33:25-66
-51
-52                <category android:name="android.intent.category.LAUNCHER" />
-52-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:34:17-77
-52-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:34:27-74
-53            </intent-filter>
-54        </activity>
-55        <activity
-55-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:37:9-41:20
-56            android:name="com.bulat.soshicon2.MainActivity"
-56-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:38:13-41
-57            android:exported="true"
-57-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:39:13-36
-58            android:label="@string/app_name" >
-58-->C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:40:13-45
-59        </activity>
-60        <activity
-60-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:22:9-25:68
-61            android:name="com.github.dhaval2404.imagepicker.ImagePickerActivity"
-61-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:23:13-81
-62            android:screenOrientation="unspecified"
-62-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:24:13-52
-63            android:theme="@style/Theme.Transparent.ImagePicker" />
-63-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:25:13-65
-64        <activity
-64-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:26:9-29:72
-65            android:name="com.yalantis.ucrop.UCropActivity"
-65-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:27:13-60
-66            android:screenOrientation="portrait"
-66-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:28:13-49
-67            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-67-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:29:13-69
-68
-69        <provider
-69-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:31:9-39:20
-70            android:name="com.github.dhaval2404.imagepicker.ImagePickerFileProvider"
-70-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:32:13-85
-71            android:authorities="com.example.soshicon.imagepicker.provider"
-71-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:33:13-72
-72            android:exported="false"
-72-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:34:13-37
-73            android:grantUriPermissions="true" >
-73-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:35:13-47
-74            <meta-data
-74-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:36:13-38:71
-75                android:name="android.support.FILE_PROVIDER_PATHS"
-75-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:37:17-67
-76                android:resource="@xml/image_picker_provider_paths" />
-76-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:38:17-68
-77        </provider>
-78
-79        <service
-79-->[com.parse:parse-android:1.16.3] C:\Users\littl\.gradle\caches\transforms-3\6873e9c41f53d1dee27627f1df287259\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:23:9-26:72
-80            android:name="com.parse.PushServiceApi26"
-80-->[com.parse:parse-android:1.16.3] C:\Users\littl\.gradle\caches\transforms-3\6873e9c41f53d1dee27627f1df287259\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:24:13-54
-81            android:exported="true"
-81-->[com.parse:parse-android:1.16.3] C:\Users\littl\.gradle\caches\transforms-3\6873e9c41f53d1dee27627f1df287259\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:25:13-36
-82            android:permission="android.permission.BIND_JOB_SERVICE" />
-82-->[com.parse:parse-android:1.16.3] C:\Users\littl\.gradle\caches\transforms-3\6873e9c41f53d1dee27627f1df287259\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:26:13-69
-83
-84        <provider
-84-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-85            android:name="androidx.startup.InitializationProvider"
-85-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
-86            android:authorities="com.example.soshicon.androidx-startup"
-86-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
-87            android:exported="false" >
-87-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
-88            <meta-data
-88-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-89                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-89-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
-90                android:value="androidx.startup" />
-90-->[androidx.emoji2:emoji2:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
-91            <meta-data
-91-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\littl\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-92                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-92-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\littl\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-93                android:value="androidx.startup" />
-93-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\littl\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-94        </provider>
-95
-96        <uses-library
-96-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
-97            android:name="androidx.window.extensions"
-97-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
-98            android:required="false" />
-98-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
-99        <uses-library
-99-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
-100            android:name="androidx.window.sidecar"
-100-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
-101            android:required="false" />
-101-->[androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
-102    </application>
-103
-104</manifest>
-=======
-33-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:16:9-41
-34        android:requestLegacyExternalStorage="true"
-34-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:17:9-52
-35        android:roundIcon="@mipmap/soshicon_foreground"
-35-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:18:9-56
-36        android:supportsRtl="true"
-36-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:19:9-35
-37        android:testOnly="true"
-37-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:20:9-32
-38        android:theme="@style/Theme.SoshiconJava"
-38-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:21:9-50
-39        android:usesCleartextTraffic="true" >
-39-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:22:9-44
-40        <uses-library
-40-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:24:9-26:40
-41            android:name="org.apache.http.legacy"
-41-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:25:13-50
-42            android:required="false" />
-42-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:26:13-37
-43
-44        <activity
-44-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:27:9-35:20
-45            android:name="com.bulat.soshicon2.SplashActivity"
-45-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:28:13-43
-46            android:exported="true"
-46-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:30:13-36
-47            android:theme="@style/SplashTheme" >
-47-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:29:13-47
-48            <intent-filter>
-48-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:31:13-34:29
-49                <action android:name="android.intent.action.MAIN" />
-49-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:32:17-69
-49-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:32:25-66
-50
-51                <category android:name="android.intent.category.LAUNCHER" />
-51-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:33:17-77
-51-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:33:27-74
-52            </intent-filter>
-53        </activity>
-54        <activity
-54-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:36:9-40:20
-55            android:name="com.bulat.soshicon2.MainActivity"
-55-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:37:13-41
-56            android:exported="true"
-56-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:38:13-36
-57            android:label="@string/app_name" >
-57-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:39:13-45
-58        </activity>
-59        <activity
-59-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:22:9-25:68
-60            android:name="com.github.dhaval2404.imagepicker.ImagePickerActivity"
-60-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:23:13-81
-61            android:screenOrientation="unspecified"
-61-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:24:13-52
-62            android:theme="@style/Theme.Transparent.ImagePicker" />
-62-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:25:13-65
-63        <activity
-63-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:26:9-29:72
-64            android:name="com.yalantis.ucrop.UCropActivity"
-64-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:27:13-60
-65            android:screenOrientation="portrait"
-65-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:28:13-49
-66            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-66-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:29:13-69
-67
-68        <provider
-68-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:31:9-39:20
-69            android:name="com.github.dhaval2404.imagepicker.ImagePickerFileProvider"
-69-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:32:13-85
-70            android:authorities="com.example.soshicon.imagepicker.provider"
-70-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:33:13-72
-71            android:exported="false"
-71-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:34:13-37
-72            android:grantUriPermissions="true" >
-72-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:35:13-47
-73            <meta-data
-73-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:36:13-38:71
-74                android:name="android.support.FILE_PROVIDER_PATHS"
-74-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:37:17-67
-75                android:resource="@xml/image_picker_provider_paths" />
-75-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:38:17-68
-76        </provider>
-77
-78        <service
-78-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\3959f9acd7b1e1b8f32a3099cbd64dd1\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:23:9-26:72
-79            android:name="com.parse.PushServiceApi26"
-79-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\3959f9acd7b1e1b8f32a3099cbd64dd1\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:24:13-54
-80            android:exported="true"
-80-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\3959f9acd7b1e1b8f32a3099cbd64dd1\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:25:13-36
-81            android:permission="android.permission.BIND_JOB_SERVICE" />
-81-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\3959f9acd7b1e1b8f32a3099cbd64dd1\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:26:13-69
-82
-83        <provider
-83-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-84            android:name="androidx.startup.InitializationProvider"
-84-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
-85            android:authorities="com.example.soshicon.androidx-startup"
-85-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
-86            android:exported="false" >
-86-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
-87            <meta-data
-87-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-88                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-88-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
-89                android:value="androidx.startup" />
-89-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
-90            <meta-data
-90-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-91                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-91-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-92                android:value="androidx.startup" />
-92-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-93        </provider>
+36        android:largeHeap="true"
+36-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:20:9-33
+37        android:requestLegacyExternalStorage="true"
+37-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:19:9-52
+38        android:roundIcon="@mipmap/soshicon_foreground"
+38-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:21:9-56
+39        android:supportsRtl="true"
+39-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:22:9-35
+40        android:testOnly="true"
+40-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:23:9-32
+41        android:theme="@style/Theme.SoshiconJava"
+41-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:24:9-50
+42        android:usesCleartextTraffic="true" >
+42-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:25:9-44
+43        <uses-library
+43-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:27:9-29:40
+44            android:name="org.apache.http.legacy"
+44-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:28:13-50
+45            android:required="false" />
+45-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:29:13-37
+46
+47        <activity
+47-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:30:9-38:20
+48            android:name="com.bulat.soshicon2.SplashActivity"
+48-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:31:13-43
+49            android:exported="true"
+49-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:33:13-36
+50            android:theme="@style/SplashTheme" >
+50-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:32:13-47
+51            <intent-filter>
+51-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:34:13-37:29
+52                <action android:name="android.intent.action.MAIN" />
+52-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:35:17-69
+52-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:35:25-66
+53
+54                <category android:name="android.intent.category.LAUNCHER" />
+54-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:36:17-77
+54-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:36:27-74
+55            </intent-filter>
+56        </activity>
+57        <activity
+57-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:39:9-43:20
+58            android:name="com.bulat.soshicon2.MainActivity"
+58-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:40:13-41
+59            android:exported="true"
+59-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:41:13-36
+60            android:label="@string/app_name" >
+60-->C:\NewSoshicon\app\src\main\AndroidManifest.xml:42:13-45
+61        </activity>
+62        <activity
+62-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:22:9-25:68
+63            android:name="com.github.dhaval2404.imagepicker.ImagePickerActivity"
+63-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:23:13-81
+64            android:screenOrientation="unspecified"
+64-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:24:13-52
+65            android:theme="@style/Theme.Transparent.ImagePicker" />
+65-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:25:13-65
+66        <activity
+66-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:26:9-29:72
+67            android:name="com.yalantis.ucrop.UCropActivity"
+67-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:27:13-60
+68            android:screenOrientation="portrait"
+68-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:28:13-49
+69            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+69-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:29:13-69
+70
+71        <provider
+71-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:31:9-39:20
+72            android:name="com.github.dhaval2404.imagepicker.ImagePickerFileProvider"
+72-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:32:13-85
+73            android:authorities="com.example.soshicon.imagepicker.provider"
+73-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:33:13-72
+74            android:exported="false"
+74-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:34:13-37
+75            android:grantUriPermissions="true" >
+75-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:35:13-47
+76            <meta-data
+76-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:36:13-38:71
+77                android:name="android.support.FILE_PROVIDER_PATHS"
+77-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:37:17-67
+78                android:resource="@xml/image_picker_provider_paths" />
+78-->[com.github.dhaval2404:imagepicker:2.1] C:\Users\Admin\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:38:17-68
+79        </provider>
+80
+81        <service
+81-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\3959f9acd7b1e1b8f32a3099cbd64dd1\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:23:9-26:72
+82            android:name="com.parse.PushServiceApi26"
+82-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\3959f9acd7b1e1b8f32a3099cbd64dd1\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:24:13-54
+83            android:exported="true"
+83-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\3959f9acd7b1e1b8f32a3099cbd64dd1\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:25:13-36
+84            android:permission="android.permission.BIND_JOB_SERVICE" />
+84-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\3959f9acd7b1e1b8f32a3099cbd64dd1\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:26:13-69
+85
+86        <activity
+86-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\b49001972d9b2063905ae1f45abb5d2e\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+87            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+87-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\b49001972d9b2063905ae1f45abb5d2e\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+88            android:exported="false"
+88-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\b49001972d9b2063905ae1f45abb5d2e\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+89            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+89-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\b49001972d9b2063905ae1f45abb5d2e\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+90
+91        <meta-data
+91-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\d5e407bf595fc230824dba833fd24d0c\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+92            android:name="com.google.android.gms.version"
+92-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\d5e407bf595fc230824dba833fd24d0c\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+93            android:value="@integer/google_play_services_version" />
+93-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\d5e407bf595fc230824dba833fd24d0c\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
 94
-95        <uses-library
-95-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
-96            android:name="androidx.window.extensions"
-96-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
-97            android:required="false" />
-97-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
-98        <uses-library
-98-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
-99            android:name="androidx.window.sidecar"
-99-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
-100            android:required="false" />
-100-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
-101    </application>
-102
-103</manifest>
->>>>>>> 4981b6c41691e2ab4808409fc7a1eaaac73fa859
->>>>>>> 6d875149125203c59977a99cc2d1313a8d645273
+95        <provider
+95-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+96            android:name="androidx.startup.InitializationProvider"
+96-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+97            android:authorities="com.example.soshicon.androidx-startup"
+97-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+98            android:exported="false" >
+98-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+99            <meta-data
+99-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+100                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+100-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+101                android:value="androidx.startup" />
+101-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+102            <meta-data
+102-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+103                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+103-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+104                android:value="androidx.startup" />
+104-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+105        </provider>
+106
+107        <uses-library
+107-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
+108            android:name="androidx.window.extensions"
+108-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
+109            android:required="false" />
+109-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
+110        <uses-library
+110-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
+111            android:name="androidx.window.sidecar"
+111-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
+112            android:required="false" />
+112-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
+113    </application>
+114
+115</manifest>

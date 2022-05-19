@@ -2,12 +2,10 @@ package com.bulat.soshicon2.BottomNavigation.account;
 
 import static com.bulat.soshicon2.constants.constants.*;
 
-<<<<<<< HEAD
 import com.bulat.soshicon2.BottomNavigation.account.*;
 
 import android.Manifest;
-=======
->>>>>>> 4981b6c41691e2ab4808409fc7a1eaaac73fa859
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;

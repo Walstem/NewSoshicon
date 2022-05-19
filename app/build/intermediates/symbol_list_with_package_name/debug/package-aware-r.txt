@@ -2865,12 +2865,9 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
-<<<<<<< HEAD
+id add_photo
 id adjust_height
 id adjust_width
-=======
-id add_photo
->>>>>>> 6d875149125203c59977a99cc2d1313a8d645273
 id alertTitle
 id aligned
 id all
