@@ -2642,6 +2642,15 @@ drawable ic_setting_notifications
 drawable ic_setting_text_size
 drawable ic_toast_error
 drawable ic_toast_success
+drawable im1
+drawable im2
+drawable im3
+drawable im4
+drawable im5
+drawable im6
+drawable im7
+drawable im8
+drawable im9
 drawable logo
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
@@ -2814,6 +2823,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_photo
 id alertTitle
 id aligned
 id all
@@ -2880,6 +2890,7 @@ id compress
 id confirm_button
 id constraint
 id constraintLayout
+id constraintLayout2
 id container
 id container_account
 id container_authorization
@@ -2975,6 +2986,7 @@ id floating
 id forever
 id fragment_container_view_tag
 id frost
+id gallery_images
 id ghost_view
 id ghost_view_holder
 id gone
@@ -2995,8 +3007,10 @@ id icon_group
 id ifRoom
 id ignore
 id ignoreRequest
+id im
 id image
 id imageView
+id image_recycler
 id image_view_crop
 id image_view_logo
 id image_view_state_aspect_ratio
@@ -3194,6 +3208,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id setting_editBtn
 id setting_log_out
 id sharedValueSet
 id sharedValueUnset
@@ -3444,6 +3459,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_choose_app
 layout event_tape
+layout image_single
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3512,6 +3528,7 @@ layout registration_name
 layout registration_password
 layout response
 layout row_card_event
+layout row_item_profile
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
