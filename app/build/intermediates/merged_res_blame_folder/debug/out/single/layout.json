@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\registration_email.xml",
-        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\registration_email.xml"
-    },
-    {
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\setting_edit.xml",
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\setting_edit.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\registration_email.xml",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\registration_email.xml"
     },
     {
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_internet_message.xml",
@@ -64,12 +64,12 @@
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_error_send_message.xml"
     },
     {
-        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\account_setting.xml",
-        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\account_setting.xml"
-    },
-    {
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\response.xml",
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\response.xml"
+    },
+    {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\account_setting.xml",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\account_setting.xml"
     },
     {
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_success.xml",

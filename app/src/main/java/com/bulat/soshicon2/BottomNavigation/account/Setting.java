@@ -101,7 +101,7 @@ public class Setting extends Fragment {
         //Выход из аккаунта
         log_out.setOnClickListener(v -> {
             SharedPreferences.Editor editor = sp.edit();
-            editor.putString(ID, "");
+            editor.putString(ID, "0");
             editor.putString(U_NICKNAME, "");
             editor.putString(EMAIL, "");
             editor.putString(PASSWORD, "");

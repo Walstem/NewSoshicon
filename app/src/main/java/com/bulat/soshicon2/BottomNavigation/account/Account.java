@@ -220,16 +220,4 @@ public class Account extends Fragment {
             return null;
         }
     }
-    public void WriteImages(String filename, String content, Context context) throws IOException {
-
-        File file = new File(context.getFilesDir(), filename);
-
-        //We write the data entered by the user into a file
-        FileWriter filewriter = new FileWriter(file);
-        System.out.println(file.getName()+ file.exists());
-        BufferedWriter out = new BufferedWriter(filewriter);
-        out.write(content);
-
-        out.close();
-    }
 }

@@ -2,9 +2,15 @@ package com.bulat.soshicon2.BottomNavigation.event;
 
 import static com.bulat.soshicon2.constants.constants.*;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +20,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -38,18 +46,21 @@ import java.util.concurrent.ExecutionException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class Event extends Fragment {
+public class Event extends Fragment implements LocationListener {
     public static final String GET_COUNT_DISTRIBUTION_PHP = "getCountDistribution.php";
     public static final String GET_DISTRIBUTION_SOSHICON_PHP = "Get_distribution_soshicon.php";
     private ArrayList<String> Title = new ArrayList<String>();
     private ArrayList<String> Content = new ArrayList<String>();
     private ArrayList<String> Avatar = new ArrayList<String>();
     private ArrayList<String> Time = new ArrayList<String>();
+    private ArrayList<String> Distance = new ArrayList<String>();
     private ArrayAdapter eventBlock;
     private SwipeRefreshLayout swipeRefreshLayout;
     public int start = 10;
     public int end = 10;
     private int countRowsEvent;
+    double logitude;
+    double latitude;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -62,31 +73,22 @@ public class Event extends Fragment {
         ListView listView = view.findViewById(R.id.listView);
         swipeRefreshLayout = view.findViewById(R.id.SwipeRefreshLayout);
         ImageView addEvent = view.findViewById(R.id.add);
-        CircleImageView avatar = view.findViewById(R.id.avatar);
         BottomSheetDialogFragment BottomSheet = new AddEvent();
 
-        File file = new File(sp.getString(SMALL_AVATAR, ""));
-
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        try {
-            Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(file));
-            avatar.setImageBitmap(bitmap);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            System.out.println(":(");
         }
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) this);
+
+        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        latitude = location.getLatitude();
+        logitude =  location.getLatitude();
 
         //вызываем редактор создания событий
         addEvent.setOnClickListener(v -> BottomSheet.show(getFragmentManager().beginTransaction(), "BottomShitDialog"));
-        //переключаем фрагмент событий на фрагмент профиль
-        avatar.setOnClickListener(v -> {
-            Account account = new Account();
-            FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            transaction.add(R.id.nav_host_fragment_activity_main, account);
-            transaction.addToBackStack(null);
-            transaction.commit();
-            BottomNavigationView navigationView = getActivity().findViewById(R.id.bottom_navigation);
-            navigationView.setSelectedItemId(R.id.nav_account);
-        });;
+
         //прогружаем данные при запуске фрагмента
         try {
             HandlingEventOutput(view, listView, start, end, false);
@@ -147,6 +149,7 @@ public class Event extends Fragment {
             Content = new ArrayList<>();
             Avatar = new ArrayList<String>();
             Time = new ArrayList<String>();
+            Distance = new ArrayList<String>();
 
             //вычисляем количество записей в таблице с событиями
             SendQuery sendQuery = new SendQuery(GET_COUNT_DISTRIBUTION_PHP);
@@ -170,26 +173,43 @@ public class Event extends Fragment {
         System.out.println(Event_json);
         //уменьшаем количество записей оставшихся в таблице
         countRowsEvent -= 10;
-
+        CalculateDistance calculateDistance = new CalculateDistance(logitude, latitude);
         //добавляем данные в массивы
         for (int i = 0; i < Event_json.length(); i++) {
             JSONObject jo = new JSONObject((String) Event_json.get(i));
-            Content.add((String) jo.get("content"));
-            Title.add((String) jo.get("nickname"));
+            Content.add(jo.get("content").toString());
+            Title.add( jo.get("nickname").toString());
             Avatar.add(jo.get("img").toString());
-
+            System.out.println(jo.get("latitude").toString());
+            System.out.println(jo.get("longitude").toString());
             String eventTime = (String) jo.get("time");
+            String kilometers;
             Time.add(new EventTime().handle(eventTime));
+
+            if (jo.get("latitude").toString().equals("") || jo.get("longitude").toString().equals("")){
+                kilometers = null;
+            }
+            else{
+                double latitude = Double.parseDouble(jo.get("latitude").toString());
+                double longitude = Double.parseDouble(jo.get("longitude").toString());
+                kilometers = calculateDistance.caclulate(longitude, latitude);
+            }
+            Distance.add(kilometers + " км");
         }
 
         //если происходит загрузка при переходе на страницу прогружаем listview Заново
         if (!scroll) {
-            eventBlock = new EventAdapter(requireContext(), Title, Content, Avatar, Time);
+            eventBlock = new EventAdapter(requireContext(), Title, Content, Avatar, Time, Distance);
             listView.setAdapter(eventBlock);
         }
         //если функция была вызванна свайпом, то обновляем Listview
         else {
             eventBlock.notifyDataSetChanged();
         }
+    }
+
+    @Override
+    public void onLocationChanged(@NonNull Location location) {
+        System.out.println(location.getAltitude());
     }
 }

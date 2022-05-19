@@ -16,7 +16,6 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.bulat.soshicon2.R;
 import com.google.android.material.appbar.AppBarLayout;
-import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -35,9 +34,6 @@ public final class EventTapeBinding implements ViewBinding {
   public final AppBarLayout appBarLayout;
 
   @NonNull
-  public final CircleImageView avatar;
-
-  @NonNull
   public final TextView editText;
 
   @NonNull
@@ -51,14 +47,12 @@ public final class EventTapeBinding implements ViewBinding {
 
   private EventTapeBinding(@NonNull ConstraintLayout rootView,
       @NonNull SwipeRefreshLayout SwipeRefreshLayout, @NonNull ImageView add,
-      @NonNull AppBarLayout appBarLayout, @NonNull CircleImageView avatar,
-      @NonNull TextView editText, @NonNull ListView listView, @NonNull ImageView search,
-      @NonNull Toolbar toolbar) {
+      @NonNull AppBarLayout appBarLayout, @NonNull TextView editText, @NonNull ListView listView,
+      @NonNull ImageView search, @NonNull Toolbar toolbar) {
     this.rootView = rootView;
     this.SwipeRefreshLayout = SwipeRefreshLayout;
     this.add = add;
     this.appBarLayout = appBarLayout;
-    this.avatar = avatar;
     this.editText = editText;
     this.listView = listView;
     this.search = search;
@@ -110,12 +104,6 @@ public final class EventTapeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.avatar;
-      CircleImageView avatar = ViewBindings.findChildViewById(rootView, id);
-      if (avatar == null) {
-        break missingId;
-      }
-
       id = R.id.editText;
       TextView editText = ViewBindings.findChildViewById(rootView, id);
       if (editText == null) {
@@ -141,7 +129,7 @@ public final class EventTapeBinding implements ViewBinding {
       }
 
       return new EventTapeBinding((ConstraintLayout) rootView, SwipeRefreshLayout, add,
-          appBarLayout, avatar, editText, listView, search, toolbar);
+          appBarLayout, editText, listView, search, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

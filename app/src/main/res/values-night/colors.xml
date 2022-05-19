@@ -16,7 +16,7 @@
 
     <!--Цвет текста-->
     <color name="text_color_primary">#F9F9F9</color>
-    <color name="text_color_block">#000000</color>
+    <color name="text_color_block">#ffffff</color>
     <color name="text_color_gray">#7C7C7C</color>
     <color name="text_color_hint">#797979</color>
 

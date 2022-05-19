@@ -43,24 +43,24 @@ public class EventTime {
             if (min <= 5){
                 time = "только что";
             }
-            else if (min < 21 || min > 24 && min < 31 || min > 34 && min < 41 || min > 44 && min < 51 || min > 54 && min < 60) {
+            if (min < 21 || min > 24 && min < 31 || min > 34 && min < 41 || min > 44 && min < 51 || min > 54 && min < 60) {
                 time = min + " минут назад";
             }
-            else if (min  == 21 || min  == 31 || min  == 41 ||min  == 51){
+            if (min  == 21 || min  == 31 || min  == 41 ||min  == 51){
                 time = min + " минута назад";
             }
-            else if (min < 25 || min > 31 && min < 35 || min > 41 && min < 45 || min > 51 && min < 55){
+            if (min > 21 && min < 25 || min > 31 && min < 35 || min > 41 && min < 45 || min > 51 && min < 55){
                 time = min + " минуты назад";
             }
         }
         else if (year == 0 && month == 0 && day == 0){
-            if (hour == 1 && hour == 21){
+            if (hour == 1 || hour == 21){
                 time = hour + " час назад";
             }
-            else if (hour > 1 && hour < 5 || hour > 21){
+            if (hour > 1 && hour < 5 || hour > 21){
                 time = hour + " часа назад";
             }
-            else if (hour > 4 && hour < 21){
+            if (hour > 4 && hour < 21){
                 time = hour + " часов назад";
             }
         }
@@ -68,13 +68,13 @@ public class EventTime {
             if (day == 1){
                 time = "вчера в " + eventTimeArr[3] + ":" + eventTimeArr[4] ;
             }
-            else if (day == 31 || day == 21){
+            if (day == 31 || day == 21){
                 time = day + " день назад в " +eventTimeArr[3] + ":" + eventTimeArr[4];
             }
-            else if (day > 1 && day < 5 ||  day > 21 && day < 25){
+            if (day > 1 && day < 5 ||  day > 21 && day < 25){
                 time = day + " дня назад в " +eventTimeArr[3] + ":" + eventTimeArr[4];
             }
-            else if (day > 4 &&  day < 21 || day > 24 &&  day < 31 ){
+            if (day > 4 &&  day < 21 || day > 24 &&  day < 31 ){
                 time = day + " дней назад в " + eventTimeArr[3] + ":" + eventTimeArr[4];
             }
         }

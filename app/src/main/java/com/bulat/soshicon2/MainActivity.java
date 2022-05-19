@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences(DATABASE, MODE_PRIVATE);
         String id = sp.getString(ID, "");
 
-        if (id.equals("0")) {
+        if (id.equals("0") || id.equals("")) {
             replaceFragment(new Authorization());
         }
         else {

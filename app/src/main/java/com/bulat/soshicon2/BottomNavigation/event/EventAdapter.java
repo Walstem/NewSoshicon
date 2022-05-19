@@ -24,14 +24,16 @@ class EventAdapter extends ArrayAdapter<String> {
     ArrayList<String> Discription;
     ArrayList<String> Avatar;
     ArrayList<String> Time;
+    ArrayList<String> Distance;
 
-    public EventAdapter(@NonNull Context context, ArrayList<String> Title, ArrayList<String> Discription, ArrayList<String> Avatars, ArrayList<String> Time) {
+    public EventAdapter(@NonNull Context context, ArrayList<String> Title, ArrayList<String> Discription, ArrayList<String> Avatars, ArrayList<String> Time, ArrayList<String> Distance) {
         super(context, R.layout.row_card_event, R.id.NameMessage, Title);
         this.context = context;
         this.Title = Title;
         this.Discription = Discription;
         this.Avatar = Avatars;
         this.Time = Time;
+        this.Distance = Distance;
     }
 
     @NonNull
@@ -42,12 +44,16 @@ class EventAdapter extends ArrayAdapter<String> {
         TextView NameMessage = row.findViewById(R.id.NameMessage);
         TextView Content = row.findViewById(R.id.ContentMessage);
         ImageView avatar = row.findViewById(R.id.avatar);
+        TextView distance = row.findViewById(R.id.distance);
         TextView time = row.findViewById(R.id.Time);
         if (Avatar.get(position) != "null"){
             byte [] encodeByte = Base64.decode(Avatar.get(position),Base64.DEFAULT);
             Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
 
             avatar.setImageBitmap(bitmap);
+        }
+        if (Distance.get(position) != null){
+            distance.setText(Distance.get(position));
         }
 
         NameMessage.setText(Title.get(position));

@@ -25,6 +25,8 @@
 
     <!--Цвет события-->
     <color name="row_card_event_color">#E8E8E8</color>
+    <color name="location_color">#717171</color>
+    <color name="selected_item_bottomnav">#AA982F</color>
 
     <!--Навигация-->
     <color name="bottom_nav_color">#F9F9F9</color>

@@ -27,7 +27,7 @@ public class SQLUtils {
         return query.toString();
     }
     public String input_event(){
-        String[] args = {"?user_id=", "&content=","&nickname=", "&time="};
+        String[] args = {"?user_id=", "&content=","&nickname=", "&time=", "&latitude=", "&longitude="};
         return createUrl(args);
     }
 }
