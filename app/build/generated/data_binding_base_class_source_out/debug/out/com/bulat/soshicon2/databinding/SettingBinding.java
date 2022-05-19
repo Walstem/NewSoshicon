@@ -42,9 +42,6 @@ public final class SettingBinding implements ViewBinding {
   public final CircleImageView avatar;
 
   @NonNull
-  public final Button button;
-
-  @NonNull
   public final ImageView cancel;
 
   @NonNull
@@ -87,6 +84,9 @@ public final class SettingBinding implements ViewBinding {
   public final ImageView notificationImage;
 
   @NonNull
+  public final Button settingEditBtn;
+
+  @NonNull
   public final ConstraintLayout settingLogOut;
 
   @NonNull
@@ -107,16 +107,16 @@ public final class SettingBinding implements ViewBinding {
   private SettingBinding(@NonNull ConstraintLayout rootView, @NonNull ConstraintLayout FAQ,
       @NonNull ConstraintLayout SecondPanelSetting, @NonNull ConstraintLayout ThirdPanelSetting,
       @NonNull ConstraintLayout aboutUs, @NonNull ImageView aboutUsImage,
-      @NonNull CircleImageView avatar, @NonNull Button button, @NonNull ImageView cancel,
+      @NonNull CircleImageView avatar, @NonNull ImageView cancel,
       @NonNull ConstraintLayout constraintLayout, @NonNull ConstraintLayout containerSetting,
       @NonNull ImageView faqImage, @NonNull ConstraintLayout firstPanelSetting,
       @NonNull ConstraintLayout languages, @NonNull ImageView languagesImage,
       @NonNull ConstraintLayout lightMode, @NonNull ImageView lightModeImage,
       @NonNull SwitchCompat lightModeSwitch, @NonNull ImageView logOut,
       @NonNull ConstraintLayout logOutSetting, @NonNull ConstraintLayout notification,
-      @NonNull ImageView notificationImage, @NonNull ConstraintLayout settingLogOut,
-      @NonNull ConstraintLayout textSize, @NonNull ImageView textSizeImage,
-      @NonNull TextView textView, @NonNull TextView textView3,
+      @NonNull ImageView notificationImage, @NonNull Button settingEditBtn,
+      @NonNull ConstraintLayout settingLogOut, @NonNull ConstraintLayout textSize,
+      @NonNull ImageView textSizeImage, @NonNull TextView textView, @NonNull TextView textView3,
       @NonNull TextView usernameBottomAvatar) {
     this.rootView = rootView;
     this.FAQ = FAQ;
@@ -125,7 +125,6 @@ public final class SettingBinding implements ViewBinding {
     this.aboutUs = aboutUs;
     this.aboutUsImage = aboutUsImage;
     this.avatar = avatar;
-    this.button = button;
     this.cancel = cancel;
     this.constraintLayout = constraintLayout;
     this.containerSetting = containerSetting;
@@ -140,6 +139,7 @@ public final class SettingBinding implements ViewBinding {
     this.logOutSetting = logOutSetting;
     this.notification = notification;
     this.notificationImage = notificationImage;
+    this.settingEditBtn = settingEditBtn;
     this.settingLogOut = settingLogOut;
     this.textSize = textSize;
     this.textSizeImage = textSizeImage;
@@ -208,12 +208,6 @@ public final class SettingBinding implements ViewBinding {
       id = R.id.avatar;
       CircleImageView avatar = ViewBindings.findChildViewById(rootView, id);
       if (avatar == null) {
-        break missingId;
-      }
-
-      id = R.id.button;
-      Button button = ViewBindings.findChildViewById(rootView, id);
-      if (button == null) {
         break missingId;
       }
 
@@ -297,6 +291,12 @@ public final class SettingBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.setting_editBtn;
+      Button settingEditBtn = ViewBindings.findChildViewById(rootView, id);
+      if (settingEditBtn == null) {
+        break missingId;
+      }
+
       id = R.id.setting_log_out;
       ConstraintLayout settingLogOut = ViewBindings.findChildViewById(rootView, id);
       if (settingLogOut == null) {
@@ -334,10 +334,11 @@ public final class SettingBinding implements ViewBinding {
       }
 
       return new SettingBinding((ConstraintLayout) rootView, FAQ, SecondPanelSetting,
-          ThirdPanelSetting, aboutUs, aboutUsImage, avatar, button, cancel, constraintLayout,
+          ThirdPanelSetting, aboutUs, aboutUsImage, avatar, cancel, constraintLayout,
           containerSetting, faqImage, firstPanelSetting, languages, languagesImage, lightMode,
           lightModeImage, lightModeSwitch, logOut, logOutSetting, notification, notificationImage,
-          settingLogOut, textSize, textSizeImage, textView, textView3, usernameBottomAvatar);
+          settingEditBtn, settingLogOut, textSize, textSizeImage, textView, textView3,
+          usernameBottomAvatar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

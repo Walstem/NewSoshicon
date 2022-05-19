@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="recipient">
+        <item>Select a mailing recipient</item>
+        <item>Everyone</item>
+        <item>Friends</item>
+    </string-array>
+    <string name="Anything_new"><font size="24">Anything new?</font></string>
+    <string name="DarkMode">Dark mode</string>
+    <string name="Limitation_EditText">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._</string>
+    <string name="Limitation_EditText_email">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._@-</string>
+    <string name="aboutUs">About us</string>
+    <string name="account_edit">Edit</string>
+    <string name="app_name">Soshicon</string>
+    <string name="authorization_error">Check the correctness of the entered data.</string>
+    <string name="authorization_error_login_password">Invalid login or password</string>
+    <string name="btn_enter">Sing in</string>
+    <string name="btn_registration">Register</string>
+    <string name="chat">Chat</string>
+    <string name="ed_login">Login</string>
+    <string name="email">Email</string>
+    <string name="email_error">Please enter a valid email.\nFor example: myemail@gmail.com</string>
+    <string name="email_headline">Add \nemail address</string>
+    <string name="email_info">Soshicon may send you messages by email. You can opt out of them at any time.</string>
+    <string name="et_password">Password</string>
+    <string name="event">Events</string>
+    <string name="faq">FAQ</string>
+    <string name="language">Language</string>
+    <string name="language_fragment">Language</string>
+    <string name="logOut">Log out</string>
+    <string name="login">Login</string>
+    <string name="login_headline">Create a username</string>
+    <string name="login_info">Choose a username for your new account. You can change it later.</string>
+    <string name="min_size_name_error">Name must contain at least 3 characters</string>
+    <string name="min_size_password">Password must contain at least 8 characters</string>
+    <string name="name_taken_1">Username </string>
+    <string name="name_taken_2"> already taken </string>
+    <string name="next">Next</string>
+    <string name="not_internet_error">No internet connection</string>
+    <string name="notification">Notification</string>
+    <string name="password">Password</string>
+    <string name="password_checkbox">Save password</string>
+    <string name="password_headline">Create a password</string>
+    <string name="password_info">We may remember the password to your Google account.</string>
+    <string name="response">Response</string>
+    <string name="setting">Setting</string>
+    <string name="setting_edit">Edit</string>
+    <string name="textSize">Text size</string>
+    <string name="title_home">Home</string>
+    <string name="username_hint">Username</string>
+    <string name="welcome">, welcome \n to Soshicon!</string>
+    <string name="сomplete">Complete registration</string>
+</resources>

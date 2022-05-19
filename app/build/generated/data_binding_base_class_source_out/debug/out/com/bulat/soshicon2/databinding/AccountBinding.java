@@ -5,15 +5,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.bulat.soshicon2.R;
 import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.textview.MaterialTextView;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -30,26 +31,39 @@ public final class AccountBinding implements ViewBinding {
   public final Toolbar accountToolbar;
 
   @NonNull
+  public final ImageView addPhoto;
+
+  @NonNull
   public final AppBarLayout appBarLayout;
+
+  @NonNull
+  public final ConstraintLayout constraintLayout2;
 
   @NonNull
   public final ConstraintLayout containerAccount;
 
   @NonNull
+  public final RecyclerView galleryImages;
+
+  @NonNull
   public final CircleImageView profileAvatar;
 
   @NonNull
-  public final TextView usernameBottomAvatar;
+  public final MaterialTextView usernameBottomAvatar;
 
   private AccountBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView accountEdit,
-      @NonNull Toolbar accountToolbar, @NonNull AppBarLayout appBarLayout,
-      @NonNull ConstraintLayout containerAccount, @NonNull CircleImageView profileAvatar,
-      @NonNull TextView usernameBottomAvatar) {
+      @NonNull Toolbar accountToolbar, @NonNull ImageView addPhoto,
+      @NonNull AppBarLayout appBarLayout, @NonNull ConstraintLayout constraintLayout2,
+      @NonNull ConstraintLayout containerAccount, @NonNull RecyclerView galleryImages,
+      @NonNull CircleImageView profileAvatar, @NonNull MaterialTextView usernameBottomAvatar) {
     this.rootView = rootView;
     this.accountEdit = accountEdit;
     this.accountToolbar = accountToolbar;
+    this.addPhoto = addPhoto;
     this.appBarLayout = appBarLayout;
+    this.constraintLayout2 = constraintLayout2;
     this.containerAccount = containerAccount;
+    this.galleryImages = galleryImages;
     this.profileAvatar = profileAvatar;
     this.usernameBottomAvatar = usernameBottomAvatar;
   }
@@ -93,13 +107,31 @@ public final class AccountBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.add_photo;
+      ImageView addPhoto = ViewBindings.findChildViewById(rootView, id);
+      if (addPhoto == null) {
+        break missingId;
+      }
+
       id = R.id.appBarLayout;
       AppBarLayout appBarLayout = ViewBindings.findChildViewById(rootView, id);
       if (appBarLayout == null) {
         break missingId;
       }
 
+      id = R.id.constraintLayout2;
+      ConstraintLayout constraintLayout2 = ViewBindings.findChildViewById(rootView, id);
+      if (constraintLayout2 == null) {
+        break missingId;
+      }
+
       ConstraintLayout containerAccount = (ConstraintLayout) rootView;
+
+      id = R.id.gallery_images;
+      RecyclerView galleryImages = ViewBindings.findChildViewById(rootView, id);
+      if (galleryImages == null) {
+        break missingId;
+      }
 
       id = R.id.profile_avatar;
       CircleImageView profileAvatar = ViewBindings.findChildViewById(rootView, id);
@@ -108,13 +140,14 @@ public final class AccountBinding implements ViewBinding {
       }
 
       id = R.id.username_bottom_avatar;
-      TextView usernameBottomAvatar = ViewBindings.findChildViewById(rootView, id);
+      MaterialTextView usernameBottomAvatar = ViewBindings.findChildViewById(rootView, id);
       if (usernameBottomAvatar == null) {
         break missingId;
       }
 
-      return new AccountBinding((ConstraintLayout) rootView, accountEdit, accountToolbar,
-          appBarLayout, containerAccount, profileAvatar, usernameBottomAvatar);
+      return new AccountBinding((ConstraintLayout) rootView, accountEdit, accountToolbar, addPhoto,
+          appBarLayout, constraintLayout2, containerAccount, galleryImages, profileAvatar,
+          usernameBottomAvatar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
