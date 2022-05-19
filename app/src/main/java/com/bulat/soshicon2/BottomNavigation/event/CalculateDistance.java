@@ -28,7 +28,7 @@ public class CalculateDistance {
             return result + " μ";
         }
         else{
-            return result/1000 + " κμ";
+            return Math.round(result/1000) + " κμ";
         }
     }
 }
