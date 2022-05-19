@@ -52,6 +52,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class Event extends Fragment implements LocationListener {
     public static final String GET_COUNT_DISTRIBUTION_PHP = "getCountDistribution.php";
     public static final String GET_DISTRIBUTION_SOSHICON_PHP = "Get_distribution_soshicon.php";
+    final int PERMISSION_ID = 44;
     private ArrayList<String> Title = new ArrayList<String>();
     private ArrayList<String> Content = new ArrayList<String>();
     private ArrayList<String> Avatar = new ArrayList<String>();
@@ -82,7 +83,7 @@ public class Event extends Fragment implements LocationListener {
         if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
-            ActivityCompat.requestPermissions(this, new String[]{
+            ActivityCompat.requestPermissions(getActivity(), new String[]{
                     Manifest.permission.ACCESS_COARSE_LOCATION,
                     Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_ID);
         }
@@ -200,7 +201,7 @@ public class Event extends Fragment implements LocationListener {
                 double longitude = Double.parseDouble(jo.get("longitude").toString());
                 kilometers = calculateDistance.caclulate(longitude, latitude);
             }
-            Distance.add(kilometers + " км");
+            Distance.add(kilometers);
         }
 
         //если происходит загрузка при переходе на страницу прогружаем listview Заново

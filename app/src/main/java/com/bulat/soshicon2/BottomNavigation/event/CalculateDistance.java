@@ -24,8 +24,12 @@ public class CalculateDistance {
 
 
         int result = Math.round(locStart.distanceTo(locEnd));
-        System.out.println("result " + locStart.distanceTo(locEnd));
-        return Integer.toString(result);
+        if (result < 1000){
+            return result + " μ";
+        }
+        else{
+            return result/1000 + " κμ";
+        }
     }
 }
 
