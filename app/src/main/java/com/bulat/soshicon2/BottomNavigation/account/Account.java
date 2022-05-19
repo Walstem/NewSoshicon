@@ -2,9 +2,12 @@ package com.bulat.soshicon2.BottomNavigation.account;
 
 import static com.bulat.soshicon2.constants.constants.*;
 
+<<<<<<< HEAD
 import com.bulat.soshicon2.BottomNavigation.account.*;
 
 import android.Manifest;
+=======
+>>>>>>> 4981b6c41691e2ab4808409fc7a1eaaac73fa859
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -41,7 +44,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bulat.soshicon2.R;;
-import com.bulat.soshicon2.BottomNavigation.account.Setting;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container_setting"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,12 +22,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/circleImageView" />
 
-        <TextView
-            style="@style/textViewPrimarySetting"
-            android:text="@string/setting"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/cancel" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -121,6 +115,7 @@
 
                     <com.google.android.material.textview.MaterialTextView
                         style="@style/textIconSetting"
+                        android:textColor="@color/setting_item_text_color"
                         android:text="@string/DarkMode"
                         app:layout_constraintBottom_toBottomOf="@+id/lightMode_image"
                         app:layout_constraintStart_toEndOf="@+id/lightMode_image"
@@ -175,6 +170,7 @@
 
                     <com.google.android.material.textview.MaterialTextView
                         style="@style/textIconSetting"
+                        android:textColor="@color/setting_item_text_color"
                         android:text="@string/notification"
                         app:layout_constraintBottom_toBottomOf="@+id/notification_image"
                         app:layout_constraintStart_toEndOf="@+id/notification_image"
@@ -240,8 +236,8 @@
 
                     <com.google.android.material.textview.MaterialTextView
                         style="@style/textIconSetting"
+                        android:textColor="@color/setting_item_text_color"
                         android:text="@string/textSize"
-                        android:textColor="@color/text_color_block"
                         app:layout_constraintBottom_toBottomOf="@+id/text_size_image"
                         app:layout_constraintStart_toEndOf="@+id/text_size_image"
                         app:layout_constraintTop_toTopOf="@+id/text_size_image" />
@@ -289,6 +285,7 @@
                     <com.google.android.material.textview.MaterialTextView
                         style="@style/textIconSetting"
                         android:text="@string/language"
+                        android:textColor="@color/setting_item_text_color"
                         app:layout_constraintBottom_toBottomOf="@+id/languages_image"
                         app:layout_constraintStart_toEndOf="@+id/languages_image"
                         app:layout_constraintTop_toTopOf="@+id/languages_image" />
@@ -348,6 +345,7 @@
 
                     <com.google.android.material.textview.MaterialTextView
                         style="@style/textIconSetting"
+                        android:textColor="@color/setting_item_text_color"
                         android:text="@string/aboutUs"
                         app:layout_constraintBottom_toBottomOf="@+id/aboutUs_image"
                         app:layout_constraintStart_toEndOf="@+id/aboutUs_image"
@@ -395,7 +393,10 @@
 
                     <com.google.android.material.textview.MaterialTextView
                         style="@style/textIconSetting"
+                        android:layout_width="30dp"
+                        android:layout_height="22dp"
                         android:text="@string/faq"
+                        android:textColor="@color/setting_item_text_color"
                         app:layout_constraintBottom_toBottomOf="@+id/FAQ_image"
                         app:layout_constraintStart_toEndOf="@+id/FAQ_image"
                         app:layout_constraintTop_toTopOf="@+id/FAQ_image" />
@@ -459,6 +460,7 @@
                     <com.google.android.material.textview.MaterialTextView
                         style="@style/textIconSetting"
                         android:text="@string/logOut"
+                        android:textColor="@color/setting_item_text_color"
                         app:layout_constraintBottom_toBottomOf="@+id/log_out"
                         app:layout_constraintStart_toEndOf="@+id/log_out"
                         app:layout_constraintTop_toTopOf="@+id/log_out" />

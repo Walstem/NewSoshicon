@@ -3,7 +3,6 @@ package com.bulat.soshicon2;
 import static com.bulat.soshicon2.constants.constants.*;
 
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,13 +11,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.BottomNavigation.account.Account;
+import com.bulat.soshicon2.BottomNavigation.account.LanguageManager;
 import com.bulat.soshicon2.BottomNavigation.Chat;
 import com.bulat.soshicon2.BottomNavigation.account.ThemeManager;
 import com.bulat.soshicon2.BottomNavigation.event.Event;
 import com.bulat.soshicon2.BottomNavigation.Response;
 import com.bulat.soshicon2.Registration.Authorization;
-
-import com.bulat.soshicon2.BottomNavigation.account.LanguageManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -28,12 +26,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
-        LanguageManager languageManager = new LanguageManager(this);
-        languageManager.updateResource(languageManager.getLang());
-
-        ThemeManager themeManager = new ThemeManager(this);
-        themeManager.updateResource(themeManager.getTheme());
 
         SharedPreferences sp = getSharedPreferences(DATABASE, MODE_PRIVATE);
         String id = sp.getString(ID, "");
@@ -46,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         BottomNavigationView navigationView = findViewById(R.id.bottom_navigation);
+        navigationView.setSelectedItemId(R.id.nav_event);
         navigationView.setOnItemSelectedListener(item -> {
 
             int idMenu = item.getItemId();
