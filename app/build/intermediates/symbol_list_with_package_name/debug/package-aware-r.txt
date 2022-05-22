@@ -2650,6 +2650,7 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_account_setting
 drawable ic_add
+drawable ic_add_plus
 drawable ic_arrow_left
 drawable ic_arrow_right
 drawable ic_arrow_up
@@ -2674,6 +2675,8 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_photo_black_48dp
 drawable ic_photo_camera_black_48dp
+drawable ic_remove
+drawable ic_remove_red
 drawable ic_search
 drawable ic_setting_about_us
 drawable ic_setting_faq
@@ -2684,15 +2687,6 @@ drawable ic_setting_notifications
 drawable ic_setting_text_size
 drawable ic_toast_error
 drawable ic_toast_success
-drawable im1
-drawable im2
-drawable im3
-drawable im4
-drawable im5
-drawable im6
-drawable im7
-drawable im8
-drawable im9
 drawable logo
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
@@ -2971,6 +2965,8 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delete_image
+id delete_photo
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -3372,6 +3368,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id user_status
 id username
 id username_bottom_avatar
 id vertical_only

@@ -52,6 +52,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class Event extends Fragment implements LocationListener {
     public static final String GET_COUNT_DISTRIBUTION_PHP = "getCountDistribution.php";
     public static final String GET_DISTRIBUTION_SOSHICON_PHP = "Get_distribution_soshicon.php";
+    private static final int PERMISSION_ID = 44;
     private ArrayList<String> Title = new ArrayList<String>();
     private ArrayList<String> Content = new ArrayList<String>();
     private ArrayList<String> Avatar = new ArrayList<String>();
@@ -82,18 +83,17 @@ public class Event extends Fragment implements LocationListener {
         if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
-            ActivityCompat.requestPermissions(this, new String[]{
+            ActivityCompat.requestPermissions(getActivity(), new String[]{
                     Manifest.permission.ACCESS_COARSE_LOCATION,
                     Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_ID);
         }
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) this);
-
         Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         latitude = location.getLatitude();
         logitude =  location.getLatitude();
 
         //вызываем редактор создания событий
-        addEvent.setOnClickListener(v -> BottomSheet.show(getFragmentManager().beginTransaction(), "BottomShitDialog"));
+        addEvent.setOnClickListener(v -> BottomSheet.show(getParentFragmentManager().beginTransaction(), "BottomShitDialog"));
 
         //прогружаем данные при запуске фрагмента
         try {
