@@ -28,7 +28,8 @@
 
     <!--Навигация-->
     <color name="bottom_nav_color">#000000</color>
-    <color name="bottom_nav_item_color">#F9F9F9</color>
+    <color name="state_checked_item">#fff</color>
+    <color name="color_item">#717171</color>
 
                                             <!--НАСТРОЙКИ-->
     <color name="round_setting">#E8E8E8</color>

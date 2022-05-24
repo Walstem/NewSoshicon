@@ -40,22 +40,18 @@ public final class EventTapeBinding implements ViewBinding {
   public final ListView listView;
 
   @NonNull
-  public final ImageView search;
-
-  @NonNull
   public final Toolbar toolbar;
 
   private EventTapeBinding(@NonNull ConstraintLayout rootView,
       @NonNull SwipeRefreshLayout SwipeRefreshLayout, @NonNull ImageView add,
       @NonNull AppBarLayout appBarLayout, @NonNull TextView editText, @NonNull ListView listView,
-      @NonNull ImageView search, @NonNull Toolbar toolbar) {
+      @NonNull Toolbar toolbar) {
     this.rootView = rootView;
     this.SwipeRefreshLayout = SwipeRefreshLayout;
     this.add = add;
     this.appBarLayout = appBarLayout;
     this.editText = editText;
     this.listView = listView;
-    this.search = search;
     this.toolbar = toolbar;
   }
 
@@ -116,12 +112,6 @@ public final class EventTapeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.search;
-      ImageView search = ViewBindings.findChildViewById(rootView, id);
-      if (search == null) {
-        break missingId;
-      }
-
       id = R.id.toolbar;
       Toolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
@@ -129,7 +119,7 @@ public final class EventTapeBinding implements ViewBinding {
       }
 
       return new EventTapeBinding((ConstraintLayout) rootView, SwipeRefreshLayout, add,
-          appBarLayout, editText, listView, search, toolbar);
+          appBarLayout, editText, listView, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

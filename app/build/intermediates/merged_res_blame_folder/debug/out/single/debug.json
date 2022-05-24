@@ -76,6 +76,10 @@
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\menu\\bottom_nav_menu.xml"
     },
     {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_logo.png.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\logo.png"
+    },
+    {
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_toast_add_error_two.xml.flat",
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_add_error_two.xml"
     },
@@ -150,10 +154,6 @@
     {
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\anim_error_shake.xml.flat",
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\anim\\error_shake.xml"
-    },
-    {
-        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_logo.png.flat",
-        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable-v24\\logo.png"
     },
     {
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_setting_edit.xml.flat",
@@ -234,10 +234,6 @@
     {
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_event_tape.xml.flat",
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\event_tape.xml"
-    },
-    {
-        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_location.xml.flat",
-        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_location.xml"
     },
     {
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_row_card_event.xml.flat",

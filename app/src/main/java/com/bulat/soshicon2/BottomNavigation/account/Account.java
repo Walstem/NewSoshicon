@@ -98,7 +98,7 @@ public class Account extends Fragment {
         recyclerView = view.findViewById(R.id.gallery_images);
 
         adapter = new RecyclerAdapter(uri);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 4));
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
         recyclerView.setAdapter(adapter);
 
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
@@ -107,7 +107,7 @@ public class Account extends Fragment {
                         if (result.getData().getClipData() != null) {
                             int countOfImages = result.getData().getClipData().getItemCount();
                             for (int i = 0; i < countOfImages; i++) {
-                                if (uri.size() < 11) {
+                                if (uri.size() < 9) {
                                     Uri imagesuri = result.getData().getClipData().getItemAt(i).getUri();
                                     uri.add(imagesuri);
                                 } else {

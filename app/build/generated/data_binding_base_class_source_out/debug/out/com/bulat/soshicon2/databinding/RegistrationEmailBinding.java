@@ -4,7 +4,6 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -40,14 +39,11 @@ public final class RegistrationEmailBinding implements ViewBinding {
   @NonNull
   public final MaterialTextView errorText;
 
-  @NonNull
-  public final ImageView imageView;
-
   private RegistrationEmailBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout containerRegistrationEmail,
       @NonNull MaterialTextView createEmailInfo, @NonNull MaterialTextView createEmailText,
       @NonNull TextInputLayout email, @NonNull MaterialButton emailBtn,
-      @NonNull MaterialTextView errorText, @NonNull ImageView imageView) {
+      @NonNull MaterialTextView errorText) {
     this.rootView = rootView;
     this.containerRegistrationEmail = containerRegistrationEmail;
     this.createEmailInfo = createEmailInfo;
@@ -55,7 +51,6 @@ public final class RegistrationEmailBinding implements ViewBinding {
     this.email = email;
     this.emailBtn = emailBtn;
     this.errorText = errorText;
-    this.imageView = imageView;
   }
 
   @Override
@@ -117,14 +112,8 @@ public final class RegistrationEmailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView;
-      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
-      if (imageView == null) {
-        break missingId;
-      }
-
       return new RegistrationEmailBinding((ConstraintLayout) rootView, containerRegistrationEmail,
-          createEmailInfo, createEmailText, email, emailBtn, errorText, imageView);
+          createEmailInfo, createEmailText, email, emailBtn, errorText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

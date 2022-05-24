@@ -4,7 +4,6 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,19 +35,15 @@ public final class RowCardEventBinding implements ViewBinding {
   @NonNull
   public final TextView distance;
 
-  @NonNull
-  public final ImageView locate;
-
   private RowCardEventBinding(@NonNull ConstraintLayout rootView, @NonNull TextView ContentMessage,
       @NonNull TextView NameMessage, @NonNull TextView Time, @NonNull CircleImageView avatar,
-      @NonNull TextView distance, @NonNull ImageView locate) {
+      @NonNull TextView distance) {
     this.rootView = rootView;
     this.ContentMessage = ContentMessage;
     this.NameMessage = NameMessage;
     this.Time = Time;
     this.avatar = avatar;
     this.distance = distance;
-    this.locate = locate;
   }
 
   @Override
@@ -108,14 +103,8 @@ public final class RowCardEventBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.locate;
-      ImageView locate = ViewBindings.findChildViewById(rootView, id);
-      if (locate == null) {
-        break missingId;
-      }
-
       return new RowCardEventBinding((ConstraintLayout) rootView, ContentMessage, NameMessage, Time,
-          avatar, distance, locate);
+          avatar, distance);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

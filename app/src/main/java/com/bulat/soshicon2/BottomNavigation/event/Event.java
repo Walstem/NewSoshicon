@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -31,7 +32,9 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bulat.soshicon2.BottomNavigation.account.Account;
 import com.bulat.soshicon2.R;
+import com.bulat.soshicon2.Toasts.Toasts;
 import com.bulat.soshicon2.asynctasks.SendQuery;
+import com.bulat.soshicon2.checks.NetCheck;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
@@ -50,6 +53,8 @@ import java.util.concurrent.ExecutionException;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Event extends Fragment implements LocationListener {
+    View view;
+    ListView listView;
     public static final String GET_COUNT_DISTRIBUTION_PHP = "getCountDistribution.php";
     public static final String GET_DISTRIBUTION_SOSHICON_PHP = "Get_distribution_soshicon.php";
     final int PERMISSION_ID = 44;
@@ -65,87 +70,123 @@ public class Event extends Fragment implements LocationListener {
     private int countRowsEvent;
     double logitude;
     double latitude;
+    public Criteria criteria;
+    public String bestProvider;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
         navBar.setVisibility(View.VISIBLE);
+        view = inflater.inflate(R.layout.event_tape, container, false);
 
-        View view = inflater.inflate(R.layout.event_tape, container, false);
-        SharedPreferences sp = getContext().getSharedPreferences(DATABASE, 0);
-        ListView listView = view.findViewById(R.id.listView);
-        swipeRefreshLayout = view.findViewById(R.id.SwipeRefreshLayout);
-        ImageView addEvent = view.findViewById(R.id.add);
-        BottomSheetDialogFragment BottomSheet = new AddEvent();
-
-        LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
-        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-            ActivityCompat.requestPermissions(getActivity(), new String[]{
-                    Manifest.permission.ACCESS_COARSE_LOCATION,
-                    Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_ID);
+        if (NetCheck.StatusConnection(getContext())) {
+            LayoutInflater lnInflater = getLayoutInflater();
+            View ToastId = view.findViewById(R.id.toast_layout_root);
+            Toasts InternetToast  = new Toasts(getContext(), lnInflater, ToastId);
+            InternetToast.ViewInterntEror(view);
         }
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) this);
+        else{
+            //переписать
+            listView = view.findViewById(R.id.listView);
+            SwipeRefreshLayout swipeRefreshLayout = view.findViewById(R.id.SwipeRefreshLayout);
+            ImageView addEvent = view.findViewById(R.id.add);
+            BottomSheetDialogFragment BottomSheet = new AddEvent();
 
-        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        latitude = location.getLatitude();
-        logitude =  location.getLatitude();
+            LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+            if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                    ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
-        //вызываем редактор создания событий
-        addEvent.setOnClickListener(v -> BottomSheet.show(getFragmentManager().beginTransaction(), "BottomShitDialog"));
-
-        //прогружаем данные при запуске фрагмента
-        try {
-            HandlingEventOutput(view, listView, start, end, false);
-        } catch (JSONException | ExecutionException | InterruptedException | ParseException e) {
-            e.printStackTrace();
-        }
-
-        //прогружаем данные при ручной перезагрузке
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                try {
-                    start = 10;
-                    end = 10;
-                    HandlingEventOutput(view, listView, start, end, false);
-                } catch (JSONException | ExecutionException | InterruptedException | ParseException e) {
-                    e.printStackTrace();
-                }
-                swipeRefreshLayout.setRefreshing(false);
+                ActivityCompat.requestPermissions(getActivity(), new String[]{
+                        Manifest.permission.ACCESS_COARSE_LOCATION,
+                        Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_ID);
             }
-        });
-        //отслеживаем свайп  пользователя
-        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(AbsListView view, int scrollState) {
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) this);
 
+            Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            criteria = new Criteria();
+            bestProvider = String.valueOf(locationManager.getBestProvider(criteria, true)).toString();
+
+            if (location != null) {
+                latitude = location.getLatitude();
+                logitude =  location.getLatitude();
             }
+            else{
+                //This is what you need:
+                locationManager.requestLocationUpdates(bestProvider, 1000, 0, this);
+            }
+            //вызываем редактор создания событий
+            addEvent.setOnClickListener(v -> BottomSheet.show(getFragmentManager().beginTransaction(), "BottomShitDialog"));
 
-            @Override
-            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-                try {
-                    if (firstVisibleItem > start - 8) {
-                        if (countRowsEvent < 1) {
-                            return;
-                        } else if (countRowsEvent / 10 < 1) {
-                            start += 10;
-                            end = countRowsEvent;
-                        } else {
-                            end = 10;
-                            start += 10;
-                        }
-                        HandlingEventOutput(view, listView, start, end, true);
+            //прогружаем данные при запуске фрагмента
+            try {
+                HandlingEventOutput(view, listView, start, end, false);
+            } catch (JSONException | ExecutionException | InterruptedException | ParseException e) {
+                e.printStackTrace();
+            }
+            //прогружаем данные при ручной перезагрузке
+            swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                    if (NetCheck.StatusConnection(getContext())) {
+                        LayoutInflater lnInflater = getLayoutInflater();
+                        View ToastId = view.findViewById(R.id.toast_layout_root);
+                        Toasts InternetToast  = new Toasts(getContext(), lnInflater, ToastId);
+                        InternetToast.ViewInterntEror(view);
+                        swipeRefreshLayout.setRefreshing(false);
                     }
-                } catch (JSONException | ExecutionException | InterruptedException | ParseException e) {
-                    e.printStackTrace();
+                    else{
+                        try {
+                            start = 10;
+                            end = 10;
+                            HandlingEventOutput(view, listView, start, end, false);
+                        } catch (JSONException | ExecutionException | InterruptedException | ParseException e) {
+                            e.printStackTrace();
+                        }
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
                 }
+            });
+            //отслеживаем свайп  пользователя
+            listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+                @Override
+                public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+                }
+
+                @Override
+                public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                    if (NetCheck.StatusConnection(getContext())) {
+                        LayoutInflater lnInflater = getLayoutInflater();
+                        View ToastId = view.findViewById(R.id.toast_layout_root);
+                        Toasts InternetToast  = new Toasts(getContext(), lnInflater, ToastId);
+                        InternetToast.ViewInterntEror(view);
+                    }
+                    else{
+                        try {
+                            if (firstVisibleItem > start - 8) {
+                                if (countRowsEvent < 1) {
+                                    return;
+                                } else if (countRowsEvent / 10 < 1) {
+                                    start += 10;
+                                    end = countRowsEvent;
+                                } else {
+                                    end = 10;
+                                    start += 10;
+                                }
+                                HandlingEventOutput(view, listView, start, end, true);
+                            }
+                        } catch (JSONException | ExecutionException | InterruptedException | ParseException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            });
             }
-        });
         return view;
-    }
+        }
+
+
 
 
     public void HandlingEventOutput(View view, ListView listView, int start, int end, boolean scroll) throws JSONException, ExecutionException, InterruptedException, ParseException {
@@ -192,15 +233,13 @@ public class Event extends Fragment implements LocationListener {
             String eventTime = (String) jo.get("time");
             String kilometers;
             Time.add(new EventTime().handle(eventTime));
+            SharedPreferences sp = getContext().getSharedPreferences(DATABASE, 0);
 
-            if (jo.get("latitude").toString().equals("") || jo.get("longitude").toString().equals("")){
-                kilometers = null;
-            }
-            else{
-                double latitude = Double.parseDouble(jo.get("latitude").toString());
-                double longitude = Double.parseDouble(jo.get("longitude").toString());
-                kilometers = calculateDistance.caclulate(longitude, latitude);
-            }
+
+            double latitude = Double.parseDouble(jo.get("latitude").toString());
+            double longitude = Double.parseDouble(jo.get("longitude").toString());
+            kilometers = calculateDistance.caclulate(longitude, latitude);
+
             Distance.add(kilometers);
         }
 

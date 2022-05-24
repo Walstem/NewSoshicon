@@ -9,8 +9,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/avatar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
@@ -27,7 +27,7 @@
         android:fontFamily="sans-serif-light"
         android:text="три часа назад"
         android:textColor="@color/oval_color"
-        android:textSize="13sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@+id/avatar"
         app:layout_constraintStart_toStartOf="@+id/NameMessage"
@@ -41,7 +41,7 @@
         android:fontFamily="sans-serif-light"
         android:text="Булат Камалов"
         android:textColor="@color/text_color_primary"
-        android:textSize="18sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@+id/avatar"
         app:layout_constraintTop_toTopOf="@+id/avatar" />
@@ -49,7 +49,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:src="@drawable/ic_more_vert"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/avatar" />
@@ -61,37 +61,30 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif-light"
         android:text="Шаблон пользовательского интерфейса «пролистывание для обновления» полностью реализован в SwipeRefreshLayoutвиджете"
         android:textColor="@color/text_color_primary"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/avatar"
-        app:layout_constraintTop_toBottomOf="@+id/avatar" />
+        app:layout_constraintTop_toBottomOf="@+id/avatar"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/distance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="sans-serif-light"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="2dp"
         android:text="1 км"
-        android:textColor="@color/white"
+        android:textColor="@color/text_color_primary"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/locate"
-        app:layout_constraintTop_toBottomOf="@+id/ContentMessage"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toBottomOf="@+id/NameMessage"
+        app:layout_constraintStart_toEndOf="@+id/NameMessage" />
 
-    <ImageView
-        android:id="@+id/locate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_location"
-        app:layout_constraintStart_toStartOf="@+id/avatar"
-        app:layout_constraintTop_toTopOf="@+id/distance" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -97,6 +97,6 @@
     <string name="email_error">Введите действительную эл. почту. \nНапример: myemail@gmail.com</string>
 
     <!--Ошибка при отсутствии интернета-->
-    <string name="not_internet_error">Отсутствует подключение к Интернету</string>
+    <string name="not_internet_error">Нет подключения к Интернету</string>
 
 </resources>

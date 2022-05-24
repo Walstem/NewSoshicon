@@ -30,7 +30,9 @@ import androidx.core.content.ContextCompat;
 
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.SQLUtils.SQLUtils;
+import com.bulat.soshicon2.Toasts.Toasts;
 import com.bulat.soshicon2.asynctasks.SendQuery;
+import com.bulat.soshicon2.checks.NetCheck;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -78,45 +80,53 @@ public class AddEvent extends BottomSheetDialogFragment implements LocationListe
         name.setText(sp.getString(U_NICKNAME, ""));
 
         add.setOnClickListener(view -> {
-            String content = editText.getText().toString();
+            if (NetCheck.StatusConnection(getContext())) {
+                LayoutInflater lnInflater = getLayoutInflater();
+                View ToastId = view.findViewById(R.id.toast_layout_root);
+                Toasts InternetToast  = new Toasts(getContext(), lnInflater, ToastId);
+                InternetToast.ViewInterntEror(view);
+            }
+            else{
+                String content = editText.getText().toString();
 
-            if(!content.equals("")){
-                String pattern = "yyyy-MM-dd-HH-mm";
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+                if(!content.equals("")){
+                    String pattern = "yyyy-MM-dd-HH-mm";
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
-                SharedPreferences sp1 = getContext().getSharedPreferences(DATABASE, 0);
-                String user_id  = sp1.getString(ID, "");
-                String nickname = sp1.getString(U_NICKNAME, "");
-                String Message = editText.getText().toString();
-                String time = simpleDateFormat.format(new Date());
+                    SharedPreferences sp1 = getContext().getSharedPreferences(DATABASE, 0);
+                    String user_id  = sp1.getString(ID, "");
+                    String nickname = sp1.getString(U_NICKNAME, "");
+                    String Message = editText.getText().toString();
+                    String time = simpleDateFormat.format(new Date());
 
-                locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
-                if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
-                        ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    return;
-                }
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-
-                Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-
-                String latitude = Double.toString(location.getLatitude());
-                String logitude =  Double.toString(location.getLatitude());
-
-                String urlArgs = new SQLUtils(user_id, Message, nickname, time, latitude, logitude).input_event();
-
-                SendQuery sendQuery = new SendQuery("input_event.php");
-                sendQuery.execute(urlArgs);
-                try {
-                    String answer = sendQuery.get();
-                    if (answer.equals("true")) {
-                        //здесть будет выводиться сообщение об успешном создании события
-                        closeBottomSheet(bottomSheetBehavior);
+                    locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+                    if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                            ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                        return;
                     }
-                    else {
+                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+
+                    Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+                    String latitude = Double.toString(location.getLatitude());
+                    String logitude =  Double.toString(location.getLatitude());
+
+                    String urlArgs = new SQLUtils(user_id, Message, nickname, time, latitude, logitude).input_event();
+
+                    SendQuery sendQuery = new SendQuery("input_event.php");
+                    sendQuery.execute(urlArgs);
+                    try {
+                        String answer = sendQuery.get();
+                        if (answer.equals("true")) {
+                            //здесть будет выводиться сообщение об успешном создании события
+                            closeBottomSheet(bottomSheetBehavior);
+                        }
+                        else {
+                            //здесть будет выводиться сообщение об ошибке
+                        }
+                    } catch (ExecutionException | InterruptedException e) {
                         //здесть будет выводиться сообщение об ошибке
                     }
-                } catch (ExecutionException | InterruptedException e) {
-                    //здесть будет выводиться сообщение об ошибке
                 }
             }
         });

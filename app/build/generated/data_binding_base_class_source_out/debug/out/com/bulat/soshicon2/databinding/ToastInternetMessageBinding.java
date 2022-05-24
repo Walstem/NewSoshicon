@@ -4,10 +4,11 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.bulat.soshicon2.R;
@@ -17,24 +18,29 @@ import java.lang.String;
 
 public final class ToastInternetMessageBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ConstraintLayout rootView;
+
+  @NonNull
+  public final ImageView imageView;
 
   @NonNull
   public final TextView text;
 
   @NonNull
-  public final LinearLayout toastLayoutRoot;
+  public final ConstraintLayout toastLayoutRoot;
 
-  private ToastInternetMessageBinding(@NonNull LinearLayout rootView, @NonNull TextView text,
-      @NonNull LinearLayout toastLayoutRoot) {
+  private ToastInternetMessageBinding(@NonNull ConstraintLayout rootView,
+      @NonNull ImageView imageView, @NonNull TextView text,
+      @NonNull ConstraintLayout toastLayoutRoot) {
     this.rootView = rootView;
+    this.imageView = imageView;
     this.text = text;
     this.toastLayoutRoot = toastLayoutRoot;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -59,15 +65,22 @@ public final class ToastInternetMessageBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.imageView;
+      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
+      if (imageView == null) {
+        break missingId;
+      }
+
       id = R.id.text;
       TextView text = ViewBindings.findChildViewById(rootView, id);
       if (text == null) {
         break missingId;
       }
 
-      LinearLayout toastLayoutRoot = (LinearLayout) rootView;
+      ConstraintLayout toastLayoutRoot = (ConstraintLayout) rootView;
 
-      return new ToastInternetMessageBinding((LinearLayout) rootView, text, toastLayoutRoot);
+      return new ToastInternetMessageBinding((ConstraintLayout) rootView, imageView, text,
+          toastLayoutRoot);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

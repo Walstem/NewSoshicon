@@ -2,6 +2,7 @@ package com.bulat.soshicon2.Registration;
 
 import static com.bulat.soshicon2.constants.constants.*;
 
+import com.bulat.soshicon2.Toasts.Toasts;
 import com.bulat.soshicon2.constants.constants;
 
 import android.content.Context;
@@ -10,7 +11,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +26,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.BottomNavigation.event.Event;
-import com.bulat.soshicon2.BottomNavigation.event.EventTime;
 import com.bulat.soshicon2.BottomNavigation.event.receivingEvent;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.SQLUtils.SQLUtils;
@@ -38,13 +37,11 @@ import com.google.android.material.textfield.TextInputLayout;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
 
 public class Authorization extends Fragment {
     private String Avatar;
@@ -76,7 +73,10 @@ public class Authorization extends Fragment {
     //јвторизаци€
     public void authorization(View view){
         if (NetCheck.StatusConnection(getContext())) {
-            ViewToastMessage(view);
+            LayoutInflater lnInflater = getLayoutInflater();
+            View ToastId = view.findViewById(R.id.toast_layout_root);
+            Toasts InternetToast  = new Toasts(getContext(), lnInflater, ToastId);
+            InternetToast.ViewInterntEror(view);
         }
         else {
 
@@ -161,7 +161,10 @@ public class Authorization extends Fragment {
     //ѕроверка на наличие интернета, если он есть, начинаетс€ регистраци€
     public void registration(View view) {
         if (NetCheck.StatusConnection(getContext())) {
-            ViewToastMessage(view);
+            LayoutInflater lnInflater = getLayoutInflater();
+            View ToastId = view.findViewById(R.id.toast_layout_root);
+            Toasts InternetToast  = new Toasts(getContext(), lnInflater, ToastId);
+            InternetToast.ViewInterntEror(view);
         }
         else {
             replaceFragmentParent(new RegistrationName());
@@ -174,17 +177,6 @@ public class Authorization extends Fragment {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
         fragmentTransaction.commit();
-    }
-
-    //—ообщение об отсутствии интернета
-    public void ViewToastMessage(View view) {
-        LayoutInflater inflater = getLayoutInflater();
-        View layout = inflater.inflate(R.layout.toast_internet_message,(ViewGroup) view.findViewById(R.id.toast_layout_root));
-        Toast toast = new Toast(getContext().getApplicationContext());
-        toast.setGravity(Gravity.BOTTOM, 0, 50);
-        toast.setDuration(Toast.LENGTH_LONG);
-        toast.setView(layout);
-        toast.show();
     }
 
     private static byte[] getSHA(String input) throws NoSuchAlgorithmException {

@@ -43,7 +43,7 @@ public class EventTime {
             if (min <= 5){
                 time = "только что";
             }
-            if (min < 21 || min > 24 && min < 31 || min > 34 && min < 41 || min > 44 && min < 51 || min > 54 && min < 60) {
+            if (min > 5 && min < 21 || min > 24 && min < 31 || min > 34 && min < 41 || min > 44 && min < 51 || min > 54 && min < 60) {
                 time = min + " минут назад";
             }
             if (min  == 21 || min  == 31 || min  == 41 ||min  == 51){
