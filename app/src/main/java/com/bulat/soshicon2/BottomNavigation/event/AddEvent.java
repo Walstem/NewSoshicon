@@ -109,7 +109,7 @@ public class AddEvent extends BottomSheetDialogFragment implements LocationListe
                     Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
                     String latitude = Double.toString(location.getLatitude());
-                    String logitude =  Double.toString(location.getLatitude());
+                    String logitude =  Double.toString(location.getLongitude());
 
                     String urlArgs = new SQLUtils(user_id, Message, nickname, time, latitude, logitude).input_event();
 

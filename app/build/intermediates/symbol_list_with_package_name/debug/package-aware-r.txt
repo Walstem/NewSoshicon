@@ -2986,7 +2986,6 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
-id distance
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -3602,6 +3601,7 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 layout toast_add_error
 layout toast_add_error_two
+layout toast_eror_add_event
 layout toast_error_send_message
 layout toast_internet_message
 layout toast_success
@@ -3622,6 +3622,7 @@ mipmap soshicon_round
 plurals mtrl_badge_content_description
 string Anything_new
 string DarkMode
+string Eror_add_event
 string Limitation_EditText
 string Limitation_EditText_email
 string abc_action_bar_home_description

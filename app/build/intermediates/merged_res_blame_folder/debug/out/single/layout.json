@@ -44,6 +44,10 @@
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\account_setting.xml"
     },
     {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_eror_add_event.xml",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_eror_add_event.xml"
+    },
+    {
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_add_error_two.xml",
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_add_error_two.xml"
     },

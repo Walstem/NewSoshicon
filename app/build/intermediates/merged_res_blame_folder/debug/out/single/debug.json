@@ -144,6 +144,10 @@
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\drawable\\radius_top.xml"
     },
     {
+        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_toast_eror_add_event.xml.flat",
+        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_eror_add_event.xml"
+    },
+    {
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_soshicon.xml.flat",
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\mipmap-anydpi-v26\\soshicon.xml"
     },

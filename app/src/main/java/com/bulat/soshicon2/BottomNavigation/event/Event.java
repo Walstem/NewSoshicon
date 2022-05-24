@@ -62,9 +62,7 @@ public class Event extends Fragment implements LocationListener {
     private ArrayList<String> Content = new ArrayList<String>();
     private ArrayList<String> Avatar = new ArrayList<String>();
     private ArrayList<String> Time = new ArrayList<String>();
-    private ArrayList<String> Distance = new ArrayList<String>();
     private ArrayAdapter eventBlock;
-    private SwipeRefreshLayout swipeRefreshLayout;
     public int start = 10;
     public int end = 10;
     private int countRowsEvent;
@@ -120,7 +118,7 @@ public class Event extends Fragment implements LocationListener {
 
             //прогружаем данные при запуске фрагмента
             try {
-                HandlingEventOutput(view, listView, start, end, false);
+                HandlingEventOutput(listView, start, end, false);
             } catch (JSONException | ExecutionException | InterruptedException | ParseException e) {
                 e.printStackTrace();
             }
@@ -139,7 +137,7 @@ public class Event extends Fragment implements LocationListener {
                         try {
                             start = 10;
                             end = 10;
-                            HandlingEventOutput(view, listView, start, end, false);
+                            HandlingEventOutput(listView, start, end, false);
                         } catch (JSONException | ExecutionException | InterruptedException | ParseException e) {
                             e.printStackTrace();
                         }
@@ -174,7 +172,7 @@ public class Event extends Fragment implements LocationListener {
                                     end = 10;
                                     start += 10;
                                 }
-                                HandlingEventOutput(view, listView, start, end, true);
+                                HandlingEventOutput(listView, start, end, true);
                             }
                         } catch (JSONException | ExecutionException | InterruptedException | ParseException e) {
                             e.printStackTrace();
@@ -189,7 +187,7 @@ public class Event extends Fragment implements LocationListener {
 
 
 
-    public void HandlingEventOutput(View view, ListView listView, int start, int end, boolean scroll) throws JSONException, ExecutionException, InterruptedException, ParseException {
+    public void HandlingEventOutput( ListView listView, int start, int end, boolean scroll) throws JSONException, ExecutionException, InterruptedException, ParseException {
         //если происходит загрузка при переходе на страницу
         if (!scroll) {
             //опусташаем списки данных
@@ -197,7 +195,6 @@ public class Event extends Fragment implements LocationListener {
             Content = new ArrayList<>();
             Avatar = new ArrayList<String>();
             Time = new ArrayList<String>();
-            Distance = new ArrayList<String>();
 
             //вычисл€ем количество записей в таблице с событи€ми
             SendQuery sendQuery = new SendQuery(GET_COUNT_DISTRIBUTION_PHP);
@@ -210,8 +207,8 @@ public class Event extends Fragment implements LocationListener {
 
         }
         //получаем данные событи€
-        String[] KeyArgs = {"start", "end"};
-        String[] Args = { Integer.toString(start-10),  Integer.toString(end)};
+        String[] KeyArgs = {"start", "end", "latitude", "logitude"};
+        String[] Args = { Integer.toString(start-10),  Integer.toString(end), Double.toString(latitude), Double.toString(logitude)};
 
 
         receivingEvent Query = new receivingEvent(GET_DISTRIBUTION_SOSHICON_PHP, KeyArgs, Args);
@@ -221,7 +218,6 @@ public class Event extends Fragment implements LocationListener {
         System.out.println(Event_json);
         //уменьшаем количество записей оставшихс€ в таблице
         countRowsEvent -= 10;
-        CalculateDistance calculateDistance = new CalculateDistance(logitude, latitude);
         //добавл€ем данные в массивы
         for (int i = 0; i < Event_json.length(); i++) {
             JSONObject jo = new JSONObject((String) Event_json.get(i));
@@ -231,21 +227,12 @@ public class Event extends Fragment implements LocationListener {
             System.out.println(jo.get("latitude").toString());
             System.out.println(jo.get("longitude").toString());
             String eventTime = (String) jo.get("time");
-            String kilometers;
             Time.add(new EventTime().handle(eventTime));
-            SharedPreferences sp = getContext().getSharedPreferences(DATABASE, 0);
-
-
-            double latitude = Double.parseDouble(jo.get("latitude").toString());
-            double longitude = Double.parseDouble(jo.get("longitude").toString());
-            kilometers = calculateDistance.caclulate(longitude, latitude);
-
-            Distance.add(kilometers);
         }
 
         //если происходит загрузка при переходе на страницу прогружаем listview «аново
         if (!scroll) {
-            eventBlock = new EventAdapter(requireContext(), Title, Content, Avatar, Time, Distance);
+            eventBlock = new EventAdapter(requireContext(), Title, Content, Avatar, Time);
             listView.setAdapter(eventBlock);
         }
         //если функци€ была вызванна свайпом, то обновл€ем Listview
@@ -256,6 +243,6 @@ public class Event extends Fragment implements LocationListener {
 
     @Override
     public void onLocationChanged(@NonNull Location location) {
-        System.out.println(location.getAltitude());
+
     }
 }

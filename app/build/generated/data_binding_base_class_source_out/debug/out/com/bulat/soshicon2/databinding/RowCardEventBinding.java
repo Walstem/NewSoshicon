@@ -32,18 +32,13 @@ public final class RowCardEventBinding implements ViewBinding {
   @NonNull
   public final CircleImageView avatar;
 
-  @NonNull
-  public final TextView distance;
-
   private RowCardEventBinding(@NonNull ConstraintLayout rootView, @NonNull TextView ContentMessage,
-      @NonNull TextView NameMessage, @NonNull TextView Time, @NonNull CircleImageView avatar,
-      @NonNull TextView distance) {
+      @NonNull TextView NameMessage, @NonNull TextView Time, @NonNull CircleImageView avatar) {
     this.rootView = rootView;
     this.ContentMessage = ContentMessage;
     this.NameMessage = NameMessage;
     this.Time = Time;
     this.avatar = avatar;
-    this.distance = distance;
   }
 
   @Override
@@ -97,14 +92,8 @@ public final class RowCardEventBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.distance;
-      TextView distance = ViewBindings.findChildViewById(rootView, id);
-      if (distance == null) {
-        break missingId;
-      }
-
       return new RowCardEventBinding((ConstraintLayout) rootView, ContentMessage, NameMessage, Time,
-          avatar, distance);
+          avatar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

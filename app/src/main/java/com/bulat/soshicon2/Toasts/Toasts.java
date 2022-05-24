@@ -28,7 +28,7 @@ public class Toasts {
         toast.show();
     }
     public void ViewErorAddEvent(View view) {
-        View layout = infalter.inflate(R.layout.toast_internet_message,(ViewGroup) ToastId);
+        View layout = infalter.inflate(R.layout.toast_eror_add_event,(ViewGroup) ToastId);
         android.widget.Toast toast = new android.widget.Toast(context);
         toast.setGravity(Gravity.BOTTOM, 0, 50);
         toast.setDuration(android.widget.Toast.LENGTH_LONG);
