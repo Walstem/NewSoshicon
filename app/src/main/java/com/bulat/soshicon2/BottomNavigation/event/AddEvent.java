@@ -122,10 +122,16 @@ public class AddEvent extends BottomSheetDialogFragment implements LocationListe
                             closeBottomSheet(bottomSheetBehavior);
                         }
                         else {
-                            //здесть будет выводиться сообщение об ошибке
+                            LayoutInflater lnInflater = getLayoutInflater();
+                            View ToastId = view.findViewById(R.id.toast_layout_root);
+                            Toasts InternetToast  = new Toasts(getContext(), lnInflater, ToastId);
+                            InternetToast.ViewErorAddEvent(view);
                         }
                     } catch (ExecutionException | InterruptedException e) {
-                        //здесть будет выводиться сообщение об ошибке
+                        LayoutInflater lnInflater = getLayoutInflater();
+                        View ToastId = view.findViewById(R.id.toast_layout_root);
+                        Toasts InternetToast  = new Toasts(getContext(), lnInflater, ToastId);
+                        InternetToast.ViewErorAddEvent(view);
                     }
                 }
             }

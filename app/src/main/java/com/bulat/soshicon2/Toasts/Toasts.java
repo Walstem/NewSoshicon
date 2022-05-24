@@ -27,5 +27,13 @@ public class Toasts {
         toast.setView(layout);
         toast.show();
     }
+    public void ViewErorAddEvent(View view) {
+        View layout = infalter.inflate(R.layout.toast_internet_message,(ViewGroup) ToastId);
+        android.widget.Toast toast = new android.widget.Toast(context);
+        toast.setGravity(Gravity.BOTTOM, 0, 50);
+        toast.setDuration(android.widget.Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
+    }
     
 }

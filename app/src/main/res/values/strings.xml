@@ -98,5 +98,6 @@
 
     <!--Ошибка при отсутствии интернета-->
     <string name="not_internet_error">Нет подключения к Интернету</string>
+    <string name="Eror_add_event" translatable="false">Ошибка</string>
 
 </resources>
