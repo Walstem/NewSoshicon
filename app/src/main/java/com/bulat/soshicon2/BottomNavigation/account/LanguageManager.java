@@ -34,7 +34,9 @@ public class LanguageManager {
         setLang(code);
     }
 
-    public String getLang() { return sharedPreferences.getString(LANG, "en"); }
+    public String getLang() {
+        return sharedPreferences.getString(LANG, "ru");
+    }
 
     public void setLang(String code) {
         SharedPreferences.Editor editor = sharedPreferences.edit();

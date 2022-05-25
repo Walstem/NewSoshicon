@@ -27,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        ThemeManager themeManager = new ThemeManager(this);
+        themeManager.updateResource(themeManager.getTheme());
+
+        LanguageManager languageManager = new LanguageManager(this);
+        languageManager.updateResource(languageManager.getLang());
+
         SharedPreferences sp = getSharedPreferences(DATABASE, MODE_PRIVATE);
         String id = sp.getString(ID, "");
 

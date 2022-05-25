@@ -57,6 +57,7 @@ public class Language extends Fragment {
                 replaceFragmentParent(new Language());
             }
             else {
+                russian.setChecked(true);
                 lang.updateResource("ru");
             }
         });
