@@ -16,10 +16,6 @@
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\row_card_event.xml"
     },
     {
-        "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\event_tape_not_internet.xml",
-        "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\event_tape_not_internet.xml"
-    },
-    {
         "merged": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\chat.xml",
         "source": "C:\\NewSoshicon\\app\\src\\main\\res\\layout\\chat.xml"
     },

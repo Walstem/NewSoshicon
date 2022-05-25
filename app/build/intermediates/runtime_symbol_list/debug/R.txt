@@ -2663,6 +2663,7 @@ int drawable ic_keyboard_black_24dp 0x7f080088
 int drawable ic_launcher_background 0x7f080089
 int drawable ic_launcher_foreground 0x7f08008a
 int drawable ic_like 0x7f08008b
+int drawable ic_location 0x7f080101
 int drawable ic_m3_chip_check 0x7f08008c
 int drawable ic_m3_chip_checked_circle 0x7f08008d
 int drawable ic_m3_chip_close 0x7f08008e
@@ -2985,6 +2986,7 @@ int id disableIntraAutoTransition 0x7f0900c9
 int id disablePostScroll 0x7f0900ca
 int id disableScroll 0x7f0900cb
 int id disjoint 0x7f0900cc
+int id distance 0x7f0900cd
 int id dragAnticlockwise 0x7f0900ce
 int id dragClockwise 0x7f0900cf
 int id dragDown 0x7f0900d0

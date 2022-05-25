@@ -4,17 +4,12 @@ import static com.bulat.soshicon2.constants.constants.*;
 
 import android.Manifest;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,15 +17,12 @@ import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.bulat.soshicon2.BottomNavigation.account.Account;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.Toasts.Toasts;
 import com.bulat.soshicon2.asynctasks.SendQuery;
@@ -42,15 +34,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Event extends Fragment implements LocationListener {
     View view;
@@ -62,6 +48,7 @@ public class Event extends Fragment implements LocationListener {
     private ArrayList<String> Content = new ArrayList<String>();
     private ArrayList<String> Avatar = new ArrayList<String>();
     private ArrayList<String> Time = new ArrayList<String>();
+    private ArrayList<String> Distance = new ArrayList<String>();
     private ArrayAdapter eventBlock;
     public int start = 10;
     public int end = 10;
@@ -107,7 +94,7 @@ public class Event extends Fragment implements LocationListener {
 
             if (location != null) {
                 latitude = location.getLatitude();
-                logitude =  location.getLatitude();
+                logitude =  location.getLongitude();
             }
             else{
                 //This is what you need:
@@ -195,6 +182,7 @@ public class Event extends Fragment implements LocationListener {
             Content = new ArrayList<>();
             Avatar = new ArrayList<String>();
             Time = new ArrayList<String>();
+            Distance = new ArrayList<String>();
 
             //вычисл€ем количество записей в таблице с событи€ми
             SendQuery sendQuery = new SendQuery(GET_COUNT_DISTRIBUTION_PHP);
@@ -207,7 +195,7 @@ public class Event extends Fragment implements LocationListener {
 
         }
         //получаем данные событи€
-        String[] KeyArgs = {"start", "end", "latitude", "logitude"};
+        String[] KeyArgs = {"start", "end", "latitude", "longitude"};
         String[] Args = { Integer.toString(start-10),  Integer.toString(end), Double.toString(latitude), Double.toString(logitude)};
 
 
@@ -218,7 +206,8 @@ public class Event extends Fragment implements LocationListener {
         System.out.println(Event_json);
         //уменьшаем количество записей оставшихс€ в таблице
         countRowsEvent -= 10;
-        //добавл€ем данные в массивы
+        CalculateDistance calculateDistance = new CalculateDistance(logitude, latitude);
+        //????????? ?????? ? ???????
         for (int i = 0; i < Event_json.length(); i++) {
             JSONObject jo = new JSONObject((String) Event_json.get(i));
             Content.add(jo.get("content").toString());
@@ -227,12 +216,24 @@ public class Event extends Fragment implements LocationListener {
             System.out.println(jo.get("latitude").toString());
             System.out.println(jo.get("longitude").toString());
             String eventTime = (String) jo.get("time");
+            String kilometers;
             Time.add(new EventTime().handle(eventTime));
+
+            if (jo.get("latitude").toString().equals("") || jo.get("longitude").toString().equals("")){
+                kilometers = null;
+            }
+            else{
+                double latitude = Double.parseDouble(jo.get("latitude").toString());
+                double longitude = Double.parseDouble(jo.get("longitude").toString());
+                kilometers = calculateDistance.caclulate(longitude, latitude);
+            }
+            Distance.add(kilometers);
         }
+
 
         //если происходит загрузка при переходе на страницу прогружаем listview «аново
         if (!scroll) {
-            eventBlock = new EventAdapter(requireContext(), Title, Content, Avatar, Time);
+            eventBlock = new EventAdapter(requireContext(), Title, Content, Avatar, Time, Distance);
             listView.setAdapter(eventBlock);
         }
         //если функци€ была вызванна свайпом, то обновл€ем Listview
