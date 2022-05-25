@@ -11,14 +11,11 @@
         <entry key="..\:/NewSoshicon/app/src/main/res/drawable/radius_bottom.xml" value="0.38177083333333334" />
         <entry key="..\:/NewSoshicon/app/src/main/res/drawable/radius_top.xml" value="0.38177083333333334" />
         <entry key="..\:/NewSoshicon/app/src/main/res/layout/activity_login.xml" value="0.36102564102564105" />
-<<<<<<< HEAD
         <entry key="..\:/NewSoshicon/app/src/main/res/layout/activity_main.xml" value="0.365625" />
         <entry key="..\:/NewSoshicon/app/src/main/res/layout/activity_registration_email.xml" value="0.36666666666666664" />
         <entry key="..\:/NewSoshicon/app/src/main/res/layout/activity_registration_finish.xml" value="0.25416666666666665" />
         <entry key="..\:/NewSoshicon/app/src/main/res/layout/activity_registration_name.xml" value="0.36666666666666664" />
         <entry key="..\:/NewSoshicon/app/src/main/res/layout/activity_registration_password.xml" value="0.25416666666666665" />
-=======
->>>>>>> 4b76e34b4e944c80aaad4eac859a6b9db8749ffd
         <entry key="..\:/NewSoshicon/app/src/main/res/layout/fragment_account2.xml" value="0.36666666666666664" />
         <entry key="..\:/NewSoshicon/app/src/main/res/layout/fragment_chat2.xml" value="0.36666666666666664" />
         <entry key="..\:/NewSoshicon/app/src/main/res/layout/fragment_event2.xml" value="0.36666666666666664" />
@@ -35,6 +32,12 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/SoshiconJava/app/src/main/res/layout/fragment_chat2.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/SoshiconJava/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/SoshiconJava/app/src/main/res/menu/fragment_response2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/littl/Desktop/NewSoshicon/app/src/main/res/drawable/ic_add.xml" value="0.239" />
+        <entry key="..\:/Users/littl/Desktop/NewSoshicon/app/src/main/res/drawable/ic_add_plus.xml" value="0.239" />
+        <entry key="..\:/Users/littl/Desktop/NewSoshicon/app/src/main/res/drawable/ic_remove.xml" value="0.239" />
+        <entry key="..\:/Users/littl/Desktop/NewSoshicon/app/src/main/res/layout/account.xml" value="0.275" />
+        <entry key="..\:/Users/littl/Desktop/NewSoshicon/app/src/main/res/layout/event_tape.xml" value="0.275" />
+        <entry key="..\:/Users/littl/Desktop/NewSoshicon/app/src/main/res/layout/image_single.xml" value="0.275" />
         <entry key="..\:/Users/littl/Music/NewSoshicon/app/src/main/res/drawable/anim.xml" value="0.2796296296296296" />
         <entry key="..\:/Users/littl/Music/NewSoshicon/app/src/main/res/drawable/edittext_changecolor.xml" value="0.15989583333333332" />
         <entry key="..\:/Users/littl/Music/NewSoshicon/app/src/main/res/drawable/gradient.xml" value="0.15989583333333332" />

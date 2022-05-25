@@ -34,6 +34,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.ViewHolder holder, int position) {
         holder.imageView.setImageURI(uriArrayList.get(position));
+
+        holder.delete.setOnClickListener(view -> {
+            uriArrayList.remove(uriArrayList.get(position));
+            notifyItemRemoved(position);
+            notifyItemRangeChanged(position, getItemCount());
+        });
     }
 
     @Override
@@ -43,12 +49,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView imageView;
+        ImageView imageView, delete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.image_recycler);
+            delete = itemView.findViewById(R.id.delete_image);
         }
     }
 }

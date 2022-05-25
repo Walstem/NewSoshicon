@@ -14,4 +14,14 @@
         app:layout_constraintDimensionRatio="1"
         tools:ignore="MissingConstraints" />
 
+    <ImageView
+        android:id="@+id/delete_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_remove_red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        android:visibility="gone"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
