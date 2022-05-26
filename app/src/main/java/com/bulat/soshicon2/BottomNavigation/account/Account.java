@@ -36,7 +36,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bulat.soshicon2.R;;
-import com.bulat.soshicon2.asynctasks.SendQuery;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -61,7 +60,6 @@ import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -72,7 +70,6 @@ public class Account extends Fragment {
     private static final int READ_PERMISSION = 101;
     CircleImageView profile;
     int numPhotoGal;
-
 
     RecyclerView recyclerView;
     ImageView add_photo, delete_photo;
@@ -90,7 +87,7 @@ public class Account extends Fragment {
         View MainView = inflater.inflate(R.layout.account, container, false);
 
         add_photo = MainView.findViewById(R.id.add_photo);
-        delete_photo = MainView.findViewById(R.id.delete_image);
+        delete_photo = MainView.findViewById(R.id.delete_photo);
 
         recyclerView = MainView.findViewById(R.id.gallery_images);
 
@@ -107,8 +104,8 @@ public class Account extends Fragment {
                         if (uri.size() < 9) {
                             Uri imageuri = result.getData().getClipData().getItemAt(i).getUri();
                             try {
-                                String getRealUri = getRealPathFromUri(getContext(), imageuri);
-                                byte[] img = ReadFileOrSaveInDeviceGallery(getRealUri, uri.size());
+                                String getUri = getRealPathFromUri(getContext(), imageuri);
+                                byte[] img = ReadFileOrSaveInDeviceGallery(getUri, uri.size());
                                 numPhotoGal = uri.size();
                                 UploadGallery UploadPhotoGallery = new UploadGallery(img, UPLOAD_GALLERY_PHP, numPhotoGal);
                                 UploadPhotoGallery.execute();
@@ -162,6 +159,15 @@ public class Account extends Fragment {
             activityResultLauncher.launch(intent);
         });
 
+        //Кнопка удаления изображения из галереи
+        delete_photo.setOnClickListener(view -> {
+            if(uri.size() == 0) {
+                Toast.makeText(getContext(), "В галерее нет изображений", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getContext(), "Надо доделать", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         SharedPreferences sp = getActivity().getSharedPreferences(DATABASE, 0);
         TextView name = MainView.findViewById(R.id.username_bottom_avatar);
@@ -179,29 +185,12 @@ public class Account extends Fragment {
             e.printStackTrace();
         }
 
-        //Отображение галереи
-        SendQuery query = new SendQuery("getCountImages.php");
-        query.execute("?=cum");
-        int countImages = 0;
-        try {
-            countImages = Integer.parseInt(query.get());
-        } catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-        for (int i = 0; i < countImages; i++) {
-            File fileGallery = new File(sp.getString("compress_gallery_photo_" + Integer.toString(countImages), ""));
-            try {
-                Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(fileGallery));
-                add_photo.setImageBitmap(bitmap);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-
         //чтение
         name.setText(sp.getString(U_NICKNAME, ""));
 
-        account_setting.setOnClickListener(view -> replaceFragmentParent(new Setting()));
+        account_setting.setOnClickListener(view -> {
+            replaceFragmentParent(new Setting());
+        });
 
         profile.setOnClickListener(view -> ImagePicker.with(Account.this)
                 .crop()	    			//Crop image(Optional), Check Customization for more option
@@ -284,7 +273,7 @@ public class Account extends Fragment {
         return byteArray;
     }
 
-    class UploadAvatar extends AsyncTask<String, String, String>{
+    class UploadAvatar extends AsyncTask<String, String, String> {
         String filename;
         byte[] imgArray;
         byte[] CompressImgArray;
@@ -340,7 +329,7 @@ public class Account extends Fragment {
         }
     }
 
-    class UploadGallery extends AsyncTask<String, String, String>{
+    class UploadGallery extends AsyncTask<String, String, String> {
         String filename;
         byte[] imgArray;
         int numberPhotoGallery;
