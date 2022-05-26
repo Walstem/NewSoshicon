@@ -92,8 +92,8 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\Admin\Desktop\Soshicon\logo_soshicon копия.png" />
-                                                <entry key="scalingPercent" value="102" />
+                                                <entry key="imagePath" value="C:\Users\Admin\Desktop\Soshicon\logo.png" />
+                                                <entry key="scalingPercent" value="111" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
@@ -129,7 +129,7 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="e1c839" />
+                                      <entry key="backgroundColor" value="ed008e" />
                                       <entry key="outputName" value="soshicon" />
                                     </map>
                                   </option>
@@ -324,7 +324,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/add/baseline_add_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/favorite/baseline_favorite_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -334,8 +334,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_add_plus" />
+                            <entry key="color" value="ed008e" />
+                            <entry key="outputName" value="ic_favorite_unlike" />
                             <entry key="sourceFile" value="C:\Users\Admin\Desktop\Soshicon\logo_soshicon.psd" />
                           </map>
                         </option>

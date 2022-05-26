@@ -1,5 +1,7 @@
 package com.bulat.soshicon2.BottomNavigation.event;
 
+import static android.content.Context.LOCATION_SERVICE;
+
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -35,6 +37,7 @@ import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class Event extends Fragment implements LocationListener {
@@ -69,17 +72,16 @@ public class Event extends Fragment implements LocationListener {
         if (NetCheck.StatusConnection(getContext())) {
             LayoutInflater lnInflater = getLayoutInflater();
             View ToastId = view.findViewById(R.id.toast_layout_root);
-            Toasts InternetToast  = new Toasts(getContext(), lnInflater, ToastId);
+            Toasts InternetToast = new Toasts(getContext(), lnInflater, ToastId);
             InternetToast.ViewInterntEror(view);
-        }
-        else{
+        } else {
             //переписать
             listView = view.findViewById(R.id.listView);
             SwipeRefreshLayout swipeRefreshLayout = view.findViewById(R.id.SwipeRefreshLayout);
             ImageView addEvent = view.findViewById(R.id.add);
             BottomSheetDialogFragment BottomSheet = new AddEvent();
 
-            LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+            LocationManager locationManager = (LocationManager) getActivity().getSystemService(LOCATION_SERVICE);
             if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
                     ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
@@ -89,17 +91,17 @@ public class Event extends Fragment implements LocationListener {
             }
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) this);
 
-            Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            Location location = getLastKnownLocation();
             criteria = new Criteria();
             bestProvider = String.valueOf(locationManager.getBestProvider(criteria, true)).toString();
 
             if (location != null) {
                 latitude = location.getLatitude();
-                logitude =  location.getLongitude();
-            }
-            else{
+                logitude = location.getLongitude();
+            } else {
                 //This is what you need:
                 locationManager.requestLocationUpdates(bestProvider, 1000, 0, this);
+
             }
             //вызываем редактор создания событий
             addEvent.setOnClickListener(v -> BottomSheet.show(getFragmentManager().beginTransaction(), "BottomShitDialog"));
@@ -117,11 +119,10 @@ public class Event extends Fragment implements LocationListener {
                     if (NetCheck.StatusConnection(getContext())) {
                         LayoutInflater lnInflater = getLayoutInflater();
                         View ToastId = view.findViewById(R.id.toast_layout_root);
-                        Toasts InternetToast  = new Toasts(getContext(), lnInflater, ToastId);
+                        Toasts InternetToast = new Toasts(getContext(), lnInflater, ToastId);
                         InternetToast.ViewInterntEror(view);
                         swipeRefreshLayout.setRefreshing(false);
-                    }
-                    else{
+                    } else {
                         try {
                             start = 10;
                             end = 10;
@@ -138,16 +139,16 @@ public class Event extends Fragment implements LocationListener {
                 public void onScrollStateChanged(AbsListView view, int scrollState) {
 
                 }
+
                 //отслеживаем свайп  пользователя
                 @Override
                 public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
                     if (NetCheck.StatusConnection(getContext())) {
                         LayoutInflater lnInflater = getLayoutInflater();
                         View ToastId = view.findViewById(R.id.toast_layout_root);
-                        Toasts InternetToast  = new Toasts(getContext(), lnInflater, ToastId);
+                        Toasts InternetToast = new Toasts(getContext(), lnInflater, ToastId);
                         InternetToast.ViewInterntEror(view);
-                    }
-                    else{
+                    } else {
                         try {
                             if (firstVisibleItem > start - 8) {
                                 if (countRowsEvent < 1) {
@@ -171,7 +172,26 @@ public class Event extends Fragment implements LocationListener {
         return view;
     }
 
+    LocationManager mLocationManager;
 
+    private Location getLastKnownLocation() {
+        mLocationManager = (LocationManager) getContext().getSystemService(LOCATION_SERVICE);
+        List<String> providers = mLocationManager.getProviders(true);
+        Location bestLocation = null;
+        for (String provider : providers) {
+            if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            }
+            Location l = mLocationManager.getLastKnownLocation(provider);
+            if (l == null) {
+                continue;
+            }
+            if (bestLocation == null || l.getAccuracy() < bestLocation.getAccuracy()) {
+                // Found best last known location: %s", l);
+                bestLocation = l;
+            }
+        }
+        return bestLocation;
+    }
 
 
     public void HandlingEventOutput( ListView listView, int start, int end, boolean scroll) throws JSONException, ExecutionException, InterruptedException, ParseException {
@@ -247,5 +267,6 @@ public class Event extends Fragment implements LocationListener {
     @Override
     public void onLocationChanged(@NonNull Location location) {
 
+        System.out.println(location.getLongitude());
     }
 }
