@@ -1,7 +1,5 @@
 package com.bulat.soshicon2.BottomNavigation.event;
 
-import static com.bulat.soshicon2.constants.constants.*;
-
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -23,6 +21,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.bulat.soshicon2.BottomNavigation.event.EventAdapter;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.Toasts.Toasts;
 import com.bulat.soshicon2.asynctasks.SendQuery;
@@ -44,11 +43,13 @@ public class Event extends Fragment implements LocationListener {
     public static final String GET_COUNT_DISTRIBUTION_PHP = "getCountDistribution.php";
     public static final String GET_DISTRIBUTION_SOSHICON_PHP = "Get_distribution_soshicon.php";
     final int PERMISSION_ID = 44;
+
     private ArrayList<String> Title = new ArrayList<String>();
     private ArrayList<String> Content = new ArrayList<String>();
     private ArrayList<String> Avatar = new ArrayList<String>();
     private ArrayList<String> Time = new ArrayList<String>();
     private ArrayList<String> Distance = new ArrayList<String>();
+    private ArrayList<String> EventId = new ArrayList<String>();
     private ArrayAdapter eventBlock;
     public int start = 10;
     public int end = 10;
@@ -132,13 +133,12 @@ public class Event extends Fragment implements LocationListener {
                     }
                 }
             });
-            //отслеживаем свайп  пользователя
             listView.setOnScrollListener(new AbsListView.OnScrollListener() {
                 @Override
                 public void onScrollStateChanged(AbsListView view, int scrollState) {
 
                 }
-
+                //отслеживаем свайп  пользователя
                 @Override
                 public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
                     if (NetCheck.StatusConnection(getContext())) {
@@ -167,9 +167,9 @@ public class Event extends Fragment implements LocationListener {
                     }
                 }
             });
-            }
-        return view;
         }
+        return view;
+    }
 
 
 
@@ -183,6 +183,7 @@ public class Event extends Fragment implements LocationListener {
             Avatar = new ArrayList<String>();
             Time = new ArrayList<String>();
             Distance = new ArrayList<String>();
+            EventId = new ArrayList<String>();
 
             //вычисляем количество записей в таблице с событиями
             SendQuery sendQuery = new SendQuery(GET_COUNT_DISTRIBUTION_PHP);
@@ -210,6 +211,7 @@ public class Event extends Fragment implements LocationListener {
         //????????? ?????? ? ???????
         for (int i = 0; i < Event_json.length(); i++) {
             JSONObject jo = new JSONObject((String) Event_json.get(i));
+            EventId.add(jo.get("id").toString());
             Content.add(jo.get("content").toString());
             Title.add( jo.get("nickname").toString());
             Avatar.add(jo.get("img").toString());
@@ -233,7 +235,7 @@ public class Event extends Fragment implements LocationListener {
 
         //если происходит загрузка при переходе на страницу прогружаем listview Заново
         if (!scroll) {
-            eventBlock = new EventAdapter(requireContext(), Title, Content, Avatar, Time, Distance);
+            eventBlock = new EventAdapter(requireContext(), Title, Content, Avatar, Time, Distance, EventId);
             listView.setAdapter(eventBlock);
         }
         //если функция была вызванна свайпом, то обновляем Listview

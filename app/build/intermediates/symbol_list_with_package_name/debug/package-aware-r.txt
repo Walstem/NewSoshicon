@@ -1875,6 +1875,7 @@ color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
 color setting_item_text_color
 color soshicon_background
+color splash_screen_bg
 color state_checked_item
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
@@ -2622,6 +2623,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable checkbox_favorite
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -2661,6 +2663,8 @@ drawable ic_bottom_nav_chat
 drawable ic_bottom_nav_favorite
 drawable ic_clear
 drawable ic_clock_black_24dp
+drawable ic_favorite
+drawable ic_favorite_liked
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -2697,6 +2701,8 @@ drawable im6
 drawable im7
 drawable im8
 drawable im9
+drawable img
+drawable img_1
 drawable logo
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
@@ -2757,6 +2763,7 @@ drawable round_setting_back_notification
 drawable round_setting_back_text_size
 drawable round_setting_back_top
 drawable splash_screen
+drawable splash_screen_soshicon
 drawable test_custom_background
 drawable test_level_drawable
 drawable thumb_shape
@@ -3020,6 +3027,7 @@ id enterAlways
 id enterAlwaysCollapsed
 id error_message_out
 id error_text
+id event_id
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3097,6 +3105,7 @@ id light
 id lightMode
 id lightModeSwitch
 id lightMode_image
+id like
 id line1
 id line3
 id linear

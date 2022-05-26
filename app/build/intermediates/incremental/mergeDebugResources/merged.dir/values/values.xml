@@ -860,6 +860,7 @@
     <color name="secondary_text_disabled_material_light">#24000000</color>
     <color name="setting_item_text_color">#000000</color>
     <color name="soshicon_background">#E1C839</color>
+    <color name="splash_screen_bg">#ED008E</color>
     <color name="state_checked_item">#F4DA58</color>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>

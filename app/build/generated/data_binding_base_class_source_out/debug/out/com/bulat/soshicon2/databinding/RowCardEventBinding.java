@@ -4,6 +4,7 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,15 +36,23 @@ public final class RowCardEventBinding implements ViewBinding {
   @NonNull
   public final TextView distance;
 
+  @NonNull
+  public final TextView eventId;
+
+  @NonNull
+  public final CheckBox like;
+
   private RowCardEventBinding(@NonNull ConstraintLayout rootView, @NonNull TextView ContentMessage,
       @NonNull TextView NameMessage, @NonNull TextView Time, @NonNull CircleImageView avatar,
-      @NonNull TextView distance) {
+      @NonNull TextView distance, @NonNull TextView eventId, @NonNull CheckBox like) {
     this.rootView = rootView;
     this.ContentMessage = ContentMessage;
     this.NameMessage = NameMessage;
     this.Time = Time;
     this.avatar = avatar;
     this.distance = distance;
+    this.eventId = eventId;
+    this.like = like;
   }
 
   @Override
@@ -103,8 +112,20 @@ public final class RowCardEventBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.event_id;
+      TextView eventId = ViewBindings.findChildViewById(rootView, id);
+      if (eventId == null) {
+        break missingId;
+      }
+
+      id = R.id.like;
+      CheckBox like = ViewBindings.findChildViewById(rootView, id);
+      if (like == null) {
+        break missingId;
+      }
+
       return new RowCardEventBinding((ConstraintLayout) rootView, ContentMessage, NameMessage, Time,
-          avatar, distance);
+          avatar, distance, eventId, like);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

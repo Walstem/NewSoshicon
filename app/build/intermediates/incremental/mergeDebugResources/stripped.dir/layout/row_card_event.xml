@@ -7,6 +7,15 @@
     android:background="@drawable/radius"
     android:backgroundTint="@color/row_card_event_color">
 
+    <TextView
+        android:id="@+id/event_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="id"
+        app:layout_constraintStart_toEndOf="@+id/distance"
+        app:layout_constraintTop_toTopOf="@+id/distance"
+        android:visibility="invisible"/>
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/avatar"
         android:layout_width="50dp"
@@ -61,29 +70,40 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="sans-serif-light"
         android:text="Шаблон пользовательского интерфейса «пролистывание для обновления» полностью реализован в SwipeRefreshLayoutвиджете"
         android:textColor="@color/text_color_primary"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/avatar"
-        app:layout_constraintTop_toBottomOf="@+id/distance" />
+        app:layout_constraintTop_toBottomOf="@+id/avatar" />
 
     <TextView
         android:id="@+id/distance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="6dp"
         android:fontFamily="sans-serif-light"
         android:text="100 метров"
-        android:textColor="@color/oval_color"
+        android:textColor="@color/text_color_primary"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/Time"
-        app:layout_constraintTop_toTopOf="@+id/Time" />
+        app:layout_constraintStart_toEndOf="@+id/like"
+        app:layout_constraintTop_toTopOf="@+id/like" />
+
+    <CheckBox
+        android:id="@+id/like"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:button="@drawable/checkbox_favorite"
+        android:buttonTint="@color/text_color_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ContentMessage"
+        app:layout_constraintTop_toBottomOf="@+id/ContentMessage"
+        android:contentDescription="not liked" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
