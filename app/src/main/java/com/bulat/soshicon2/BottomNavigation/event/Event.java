@@ -18,20 +18,11 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import org.json.JSONException;
 
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 public class Event extends Fragment {
     View view;
     ListView listView;
-
-    private ArrayList<String> Title = new ArrayList<>();
-    private ArrayList<String> Content = new ArrayList<>();
-    private ArrayList<String> Avatar = new ArrayList<>();
-    private ArrayList<String> Time = new ArrayList<>();
-    private ArrayList<String> Distance = new ArrayList<>();
-    private ArrayList<String> EventId = new ArrayList<>();
-    private ArrayList<Boolean> IsLiked = new ArrayList<>();
 
     private int countRowsEvent;
     public int start = 10;
@@ -43,6 +34,7 @@ public class Event extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
+        navBar.setSelectedItemId(R.id.event_id);
         navBar.setVisibility(View.VISIBLE);
         view = inflater.inflate(R.layout.event_tape, container, false);
 
@@ -61,7 +53,7 @@ public class Event extends Fragment {
 
             //прогружаем данные при запуске фрагмента
             try {
-                HandlingEventOutput handlingEventOutput = new HandlingEventOutput(Title, Content,Avatar,Time,Distance,EventId,IsLiked, getContext());
+                HandlingEventOutput handlingEventOutput = new HandlingEventOutput(getContext());
                 handlingEventOutput.HandlingEventOutput(listView, start, end, false, latitude, logitude);
             } catch (JSONException | ExecutionException | InterruptedException | ParseException e) {
                 e.printStackTrace();
@@ -82,7 +74,7 @@ public class Event extends Fragment {
                         try {
                             start = 10;
                             end = 10;
-                            HandlingEventOutput handlingEventOutput = new HandlingEventOutput(Title, Content,Avatar,Time,Distance,EventId,IsLiked, getContext());
+                            HandlingEventOutput handlingEventOutput = new HandlingEventOutput(getContext());
                             countRowsEvent = handlingEventOutput.HandlingEventOutput(listView, start, end, false, latitude, logitude);
                         } catch (JSONException | ExecutionException | InterruptedException | ParseException e) {
                             e.printStackTrace();
@@ -118,7 +110,7 @@ public class Event extends Fragment {
                                     end = 10;
                                     start += 10;
                                 }
-                                HandlingEventOutput handlingEventOutput = new HandlingEventOutput(Title, Content,Avatar,Time,Distance,EventId,IsLiked, getContext());
+                                HandlingEventOutput handlingEventOutput = new HandlingEventOutput(getContext());
                                 countRowsEvent = handlingEventOutput.HandlingEventOutput(listView, start, end, false, latitude, logitude);;
                             }
                         } catch (JSONException | ExecutionException | InterruptedException | ParseException e) {

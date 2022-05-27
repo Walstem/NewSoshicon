@@ -25,13 +25,13 @@ public class HandlingEventOutput {
     private static final String GET_COUNT_DISTRIBUTION_PHP = "getCountDistribution.php";
     private static final String GET_DISTRIBUTION_SOSHICON_PHP = "Get_distribution_soshicon.php";
 
-    private ArrayList<String> Title;
-    private ArrayList<String> Content;
-    private ArrayList<String> Avatar;
-    private ArrayList<String> Time;
-    private ArrayList<String> Distance;
-    private ArrayList<String> EventId;
-    private ArrayList<Boolean> IsLiked;
+    private ArrayList<String> Title = new ArrayList<>();
+    private ArrayList<String> Content = new ArrayList<>();
+    private ArrayList<String> Avatar = new ArrayList<>();
+    private ArrayList<String> Time = new ArrayList<>();
+    private ArrayList<String> Distance = new ArrayList<>();
+    private ArrayList<String> EventId = new ArrayList<>();
+    private ArrayList<Boolean> IsLiked = new ArrayList<>();
 
     private ArrayAdapter eventBlock;
 
@@ -41,15 +41,7 @@ public class HandlingEventOutput {
 
     Context context;
 
-    public HandlingEventOutput(ArrayList<String> Title, ArrayList<String> Content, ArrayList<String> Avatar, ArrayList<String> Time, ArrayList<String> Distance, ArrayList<String> EventId, ArrayList<Boolean> IsLiked, Context context){
-        this.Title = Title;
-        this.Content = Content;
-        this.Avatar = Avatar;
-        this.Time = Time;
-        this.Distance = Distance;
-        this.EventId = EventId;
-        this.IsLiked = IsLiked;
-
+    public HandlingEventOutput(Context context){
         this.context = context;
     }
 
@@ -86,14 +78,12 @@ public class HandlingEventOutput {
         Query.execute();
 
         JSONArray Event_json = new JSONArray(Query.get());
-        System.out.println(Event_json);
         //уменьшаем количество записей оставшихся в таблице
         countRowsEvent -= 10;
         CalculateDistance calculateDistance = new CalculateDistance(logitude, latitude);
         //????????? ?????? ? ???????
         for (int i = 0; i < Event_json.length(); i++) {
             JSONObject jo = new JSONObject((String) Event_json.get(i));
-            System.out.println(jo);
             EventId.add(jo.get("id").toString());
             Content.add(jo.get("content").toString());
             Title.add(jo.get("nickname").toString());

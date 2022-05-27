@@ -37,16 +37,22 @@ import com.google.android.material.textfield.TextInputLayout;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 
 public class Authorization extends Fragment {
+    public static final String GET_PHOTOS_GALLERY_PHP = "get_photos_gallery.php";
     private String Avatar;
     private String CompressAvatar;
-
+    private String UserId;
+    private ArrayList<String> GalleryPhotos = new ArrayList<>();
     public static final String GET_AVATAR_PHP = "get_avatar.php";
 
     @Nullable
@@ -96,6 +102,7 @@ public class Authorization extends Fragment {
                 String getData = request.get();
                 //если данные верны, переводим на главную страницу
                 if (getData.equals("true")){
+
                     //получаем id пользователя
                     SendQuery request_id = new SendQuery("get_id.php");
                     request_id.execute("?name="+login);
@@ -107,18 +114,17 @@ public class Authorization extends Fragment {
                     ed.putString(constants.ID, id);
                     ed.putString(U_NICKNAME, login);
                     ed.apply();
-                    String data_id = sPref.getString(ID, "");
 
                     //загружаем аватар
+                    UserId = sPref.getString(ID, "");
                     String[] KeyArgs = {"id"};
-                    String[] Args = {sPref.getString(ID, "")};
+                    String[] Args = {UserId};
 
 
                     receivingEvent Query = new receivingEvent(GET_AVATAR_PHP, KeyArgs, Args);
                     Query.execute();
 
                     JSONArray Event_json = new JSONArray(Query.get());
-                    System.out.println(Event_json);
                     //уменьшаем количество записей оставшихся в таблице
 
                     //добавляем данные в массивы
@@ -143,6 +149,45 @@ public class Authorization extends Fragment {
                     ed.putString("compress_avatar_" + true, compressPathTrue);
                     ed.putString("compress_avatar_" + false, compressPathFalse);
                     ed.apply();
+
+                    //загружаем фотографии
+                    String[] KeyArgsGallery = {"id"};
+                    String[] ArgsGallery = {UserId};
+
+
+                    try {
+                        receivingEvent QueryGallery = new receivingEvent(GET_PHOTOS_GALLERY_PHP, KeyArgsGallery, ArgsGallery);
+                        QueryGallery.execute();
+
+                        JSONArray EventJsonGallery = new JSONArray(QueryGallery.get());
+                        System.out.println(EventJsonGallery);
+
+                        //добавляем данные в массивы
+                        for (int i = 0; i < EventJsonGallery.length(); i++) {
+                            JSONObject jo = new JSONObject((String) EventJsonGallery.get(i));
+                            GalleryPhotos.add((String) jo.get("gallery_image"));
+                        }
+                        for (int i = 0; i < GalleryPhotos.size(); i++) {
+                            String compressPath = requireContext().getFilesDir() + "/gallery_photo_compress_" + i + ".jpg";
+                            System.out.println(compressPath);
+
+                            FileOutputStream outGallery = new FileOutputStream(compressPath);
+
+                            byte[] encodeByte = Base64.decode(GalleryPhotos.get(i), Base64.DEFAULT);
+                            Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
+
+                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outGallery);
+
+                            //запись пути к сжатой фотографии
+                            ed.putString("compress_gallery_photo_" + i, compressPath);
+                            System.out.println(sPref.getString("compress_gallery_photo_" + i, ""));
+                            ed.apply();
+                        }
+                    }
+                    catch (Exception e){
+                        e.printStackTrace();
+                    }
+
 
                     replaceFragmentParent(new Event());
                 }

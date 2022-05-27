@@ -113,6 +113,15 @@ public class Setting extends Fragment {
             editor.putString(PASSWORD, "");
             editor.putString(AVATAR, "");
             editor.putString(SMALL_AVATAR, "");
+            editor.putString("compress_gallery_photo_0", "");
+            editor.putString("compress_gallery_photo_1", "");
+            editor.putString("compress_gallery_photo_2", "");
+            editor.putString("compress_gallery_photo_3", "");
+            editor.putString("compress_gallery_photo_4", "");
+            editor.putString("compress_gallery_photo_5", "");
+            editor.putString("compress_gallery_photo_6", "");
+            editor.putString("compress_gallery_photo_7", "");
+            editor.putString("compress_gallery_photo_8", "");
             editor.apply();
 
             getActivity().getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);

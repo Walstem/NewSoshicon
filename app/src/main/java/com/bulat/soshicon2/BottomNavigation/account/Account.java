@@ -4,6 +4,7 @@ import static com.bulat.soshicon2.constants.constants.*;
 
 import android.Manifest;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,7 +14,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -30,13 +30,12 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bulat.soshicon2.R;;
+import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.asynctasks.SendQuery;
+import com.bulat.soshicon2.checks.FragmentReplace;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -59,6 +58,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -72,98 +72,122 @@ public class Account extends Fragment {
     private static final int READ_PERMISSION = 101;
     CircleImageView profile;
     int numPhotoGal;
-
+    int countImages;
 
     RecyclerView recyclerView;
     ImageView add_photo, delete_photo;
+    SharedPreferences sp;
 
-    ArrayList<Uri> uri = new ArrayList<>();
+    ArrayList<Uri> uriArr = new ArrayList<>();
     RecyclerAdapter adapter;
 
     ActivityResultLauncher<Intent> activityResultLauncher;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
+        BottomNavigationView navBar = requireActivity().findViewById(R.id.bottom_navigation);
         navBar.setVisibility(View.VISIBLE);
 
         View MainView = inflater.inflate(R.layout.account, container, false);
+        sp = requireContext().getSharedPreferences(DATABASE, 0);
 
         add_photo = MainView.findViewById(R.id.add_photo);
-        delete_photo = MainView.findViewById(R.id.delete_image);
+        delete_photo = MainView.findViewById(R.id.delete_photo);
 
         recyclerView = MainView.findViewById(R.id.gallery_images);
 
-        adapter = new RecyclerAdapter(uri);
+        //Обновление галереи
+        SendQuery query = new SendQuery("getCountImages.php");
+        query.execute("?user_id=" + sp.getString(ID, ""));
+        System.out.println("SP: " + sp.getString(ID, ""));
+
+        try {
+            countImages = Integer.parseInt(query.get());
+            System.out.println("!!!!!!! " + countImages);
+            for (int i = 0; i < countImages; i++) {
+                File fileGallery = new File(sp.getString("compress_gallery_photo_" + i, ""));
+                try {
+                    Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(fileGallery));
+                    System.out.println(bitmap.toString());
+                    Uri uri = getImageUri(requireContext(), bitmap, "compress_gallery_photo_" + i);
+                    uriArr.add(uri);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        adapter = new RecyclerAdapter(uriArr);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
         recyclerView.setAdapter(adapter);
 
         //Активность для выбора изображения в галерею
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
-            if(result.getResultCode() == getActivity().RESULT_OK && null != result.getData()) {
+            if(result.getResultCode() == Activity.RESULT_OK && null != result.getData()) {
                 if (result.getData().getClipData() != null) {
                     int countOfImages = result.getData().getClipData().getItemCount();
                     for (int i = 0; i < countOfImages; i++) {
-                        if (uri.size() < 9) {
-                            Uri imageuri = result.getData().getClipData().getItemAt(i).getUri();
+                        if (uriArr.size() < 9) {
+                            Uri imageUri = result.getData().getClipData().getItemAt(i).getUri();
                             try {
-                                String getRealUri = getRealPathFromUri(getContext(), imageuri);
-                                byte[] img = ReadFileOrSaveInDeviceGallery(getRealUri, uri.size());
-                                numPhotoGal = uri.size();
+                                String getUri = getRealPathFromUri(requireContext(), imageUri);
+                                byte[] img = ReadFileOrSaveInDeviceGallery(getUri, uriArr.size());
+                                numPhotoGal = uriArr.size();
                                 UploadGallery UploadPhotoGallery = new UploadGallery(img, UPLOAD_GALLERY_PHP, numPhotoGal);
                                 UploadPhotoGallery.execute();
 
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-                            uri.add(imageuri);
-                        } else {
-                            Toast.makeText(getContext(), "Hehey", Toast.LENGTH_SHORT).show();
+                            uriArr.add(imageUri);
                         }
                     }
                     adapter.notifyDataSetChanged();
                 } else {
-                    if (uri.size() < 9) {
-                        Uri imageuri = result.getData().getData();
-                        System.out.println(imageuri);
+                    if (uriArr.size() < 9) {
+                        Uri imageUri = result.getData().getData();
+                        System.out.println(imageUri);
                         try {
-                            String getUri = getRealPathFromUri(getContext(), imageuri);
-                            byte[] img = ReadFileOrSaveInDeviceGallery(getUri, uri.size());
-                            numPhotoGal = uri.size();
+                            String getUri = getRealPathFromUri(requireContext(), imageUri);
+                            byte[] img = ReadFileOrSaveInDeviceGallery(getUri, uriArr.size());
+                            numPhotoGal = uriArr.size();
                             UploadGallery UploadPhotoGallery = new UploadGallery(img, UPLOAD_GALLERY_PHP, numPhotoGal);
                             UploadPhotoGallery.execute();
 
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-                        uri.add(imageuri);
-                    } else {
-                        Toast.makeText(getContext(), "Hehey", Toast.LENGTH_SHORT).show();
+                        uriArr.add(imageUri);
                     }
                 }
                 adapter.notifyDataSetChanged();
-            } else {
-                Toast.makeText(getContext(), "Hehey", Toast.LENGTH_SHORT).show();
             }
         });
 
         //Кнопка добавления изображения в галерею
         add_photo.setOnClickListener(view -> {
-            if(ContextCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
+            if(ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
                     != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(getActivity(),
+                ActivityCompat.requestPermissions(requireActivity(),
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, READ_PERMISSION);
             }
 
             Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-            }
+            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
             activityResultLauncher.launch(intent);
         });
 
+        //Кнопка удаления изображения из галереи
+        delete_photo.setOnClickListener(view -> {
+            if(uriArr.size() == 0) {
+                Toast.makeText(requireContext(), "В галерее нет изображений", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(requireContext(), "Надо доделать", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        SharedPreferences sp = getActivity().getSharedPreferences(DATABASE, 0);
         TextView name = MainView.findViewById(R.id.username_bottom_avatar);
         ImageView account_setting = MainView.findViewById(R.id.account_edit);
         profile = (CircleImageView) MainView.findViewById(R.id.profile_avatar);
@@ -179,29 +203,10 @@ public class Account extends Fragment {
             e.printStackTrace();
         }
 
-        //Отображение галереи
-        SendQuery query = new SendQuery("getCountImages.php");
-        query.execute("?=cum");
-        int countImages = 0;
-        try {
-            countImages = Integer.parseInt(query.get());
-        } catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-        for (int i = 0; i < countImages; i++) {
-            File fileGallery = new File(sp.getString("compress_gallery_photo_" + Integer.toString(countImages), ""));
-            try {
-                Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(fileGallery));
-                add_photo.setImageBitmap(bitmap);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-
         //чтение
         name.setText(sp.getString(U_NICKNAME, ""));
 
-        account_setting.setOnClickListener(view -> replaceFragmentParent(new Setting()));
+        account_setting.setOnClickListener(view -> FragmentReplace.replaceFragmentParent(new Setting(), requireActivity()));
 
         profile.setOnClickListener(view -> ImagePicker.with(Account.this)
                 .crop()	    			//Crop image(Optional), Check Customization for more option
@@ -210,6 +215,13 @@ public class Account extends Fragment {
                 .start());
 
         return MainView;
+    }
+
+    public Uri getImageUri(Context inContext, Bitmap inImage, String filename) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, filename, null);
+        return Uri.parse(path);
     }
 
     public static String getRealPathFromUri(Context context, Uri contentUri) {
@@ -255,7 +267,7 @@ public class Account extends Fragment {
     public byte[] ReadFileOrSaveInDevice(String filename, int compress) throws IOException {
         boolean compressFlag;
         compressFlag = compress != 100;
-        String compressPath = getContext().getFilesDir() + "avatar_compress_" + compressFlag + ".jpg";
+        String compressPath = requireContext().getFilesDir() + "/avatar_compress_" + compressFlag + ".jpg";
 
 
         //Создание объекта записи сжатой фографии на устройсвто
@@ -271,7 +283,7 @@ public class Account extends Fragment {
         bitmap.compress(Bitmap.CompressFormat.JPEG, compress, out);
         out.close();
         //запись пути к сжатой фотографии
-        SharedPreferences sp = getContext().getSharedPreferences(DATABASE, 0);
+        SharedPreferences sp = requireContext().getSharedPreferences(DATABASE, 0);
         SharedPreferences.Editor ed = sp.edit();
         ed.putString("compress_avatar_" + compressFlag, compressPath);
         ed.apply();
@@ -284,7 +296,7 @@ public class Account extends Fragment {
         return byteArray;
     }
 
-    class UploadAvatar extends AsyncTask<String, String, String>{
+    class UploadAvatar extends AsyncTask<String, String, String> {
         String filename;
         byte[] imgArray;
         byte[] CompressImgArray;
@@ -298,7 +310,7 @@ public class Account extends Fragment {
         protected String doInBackground(String... strings) {
             HttpClient httpclient = new DefaultHttpClient();
             HttpPost httppost = new HttpPost("http://j911147y.beget.tech/" + filename);
-            SharedPreferences sp = getContext().getSharedPreferences(DATABASE, 0);
+            SharedPreferences sp = requireContext().getSharedPreferences(DATABASE, 0);
 
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
             final String ConvertImage = Base64.encodeToString(imgArray, Base64.DEFAULT);
@@ -326,7 +338,7 @@ public class Account extends Fragment {
 
                 int n = 0;
                 char[] buffer = new char[1024 * 4];
-                InputStreamReader reader = new InputStreamReader(entity.getContent(), "UTF8");
+                InputStreamReader reader = new InputStreamReader(entity.getContent(), StandardCharsets.UTF_8);
                 StringWriter writer = new StringWriter();
                 while (-1 != (n = reader.read(buffer))) writer.write(buffer, 0, n);
 
@@ -340,11 +352,11 @@ public class Account extends Fragment {
         }
     }
 
-    class UploadGallery extends AsyncTask<String, String, String>{
+    class UploadGallery extends AsyncTask<String, String, String> {
         String filename;
         byte[] imgArray;
         int numberPhotoGallery;
-        UploadGallery(byte[] imgArray,String filename, int numberPhotoGallery){
+        UploadGallery(byte[] imgArray, String filename, int numberPhotoGallery){
             this.imgArray = imgArray;
             this.filename = filename;
             this.numberPhotoGallery = numberPhotoGallery;
@@ -354,7 +366,7 @@ public class Account extends Fragment {
         protected String doInBackground(String... strings) {
             HttpClient httpclient = new DefaultHttpClient();
             HttpPost httppost = new HttpPost("http://j911147y.beget.tech/" + filename);
-            SharedPreferences sp = getContext().getSharedPreferences(DATABASE, 0);
+            SharedPreferences sp = requireContext().getSharedPreferences(DATABASE, 0);
 
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
             final String ConvertImage = Base64.encodeToString(imgArray, Base64.DEFAULT);
@@ -381,7 +393,7 @@ public class Account extends Fragment {
 
                 int n = 0;
                 char[] buffer = new char[1024 * 4];
-                InputStreamReader reader = new InputStreamReader(entity.getContent(), "UTF8");
+                InputStreamReader reader = new InputStreamReader(entity.getContent(), StandardCharsets.UTF_8);
                 StringWriter writer = new StringWriter();
                 while (-1 != (n = reader.read(buffer))) writer.write(buffer, 0, n);
 
@@ -396,7 +408,7 @@ public class Account extends Fragment {
     }
 
     public byte[] ReadFileOrSaveInDeviceGallery(String filename, int numberPhoto) throws IOException {
-        String compressPath = getContext().getFilesDir() + "/gallery_photo_compress_" + numberPhoto + ".jpg";
+        String compressPath = requireContext().getFilesDir() + "/compress_gallery_photo_" + numberPhoto + ".jpg";
         System.out.println(compressPath);
 
         //Создание объекта записи сжатой фографии на устройсвто
@@ -412,9 +424,10 @@ public class Account extends Fragment {
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
         out.close();
         //запись пути к сжатой фотографии
-        SharedPreferences sp = getContext().getSharedPreferences(DATABASE, 0);
+        SharedPreferences sp = requireContext().getSharedPreferences(DATABASE, 0);
         SharedPreferences.Editor ed = sp.edit();
         ed.putString("compress_gallery_photo_" + numberPhoto, compressPath);
+        System.out.println("ЭТО ОНО2:" + sp.getString("compress_gallery_photo_" + numberPhoto, ""));
         ed.apply();
         System.out.println("1234" + compressPath);
 
@@ -423,13 +436,5 @@ public class Account extends Fragment {
         byte[] byteArray = stream.toByteArray();
         bitmap.recycle();
         return byteArray;
-    }
-
-    //Функция обновление родительского фрагмента
-    public void replaceFragmentParent(Fragment fragment) {
-        FragmentManager fragmentManager = getParentFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
-        fragmentTransaction.commit();
     }
 }
