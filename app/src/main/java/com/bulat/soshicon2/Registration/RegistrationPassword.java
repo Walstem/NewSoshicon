@@ -2,10 +2,8 @@ package com.bulat.soshicon2.Registration;
 
 import static com.bulat.soshicon2.constants.constants.*;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.method.PasswordTransformationMethod;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,17 +11,16 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.R;
+import com.bulat.soshicon2.checks.FragmentReplace;
 import com.bulat.soshicon2.checks.NetCheck;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -55,37 +52,38 @@ public class RegistrationPassword extends Fragment {
 
     //when you click on the onwards button, we start the registrationActivityEmail activity
     public void onwards(View view) throws IOException, NoSuchAlgorithmException {
-        if (NetCheck.StatusConnection(getContext())) {
+        if (NetCheck.StatusConnection(requireContext())) {
             ViewToastMessage(view);
         }
-        else{
-            TextInputLayout password = view.findViewById(R.id.password);
+        else {
+            TextInputLayout password = (TextInputLayout) view.findViewById(R.id.password);
             TextView filedError = (TextView) view.findViewById(R.id.error_text);
 
             //Если пароль меньше восьми символов
-            if(password.getEditText().getText().toString().length()<8) {
+            if(password.getEditText().getText().toString().length() < 8) {
                 String message = getResources().getString(R.string.min_size_password);
                 alertError(password,filedError, message);
             }
             else {
                 //Переход на фрагмент создания электронной почты
-                SharedPreferences sp = getContext().getSharedPreferences(DATABASE, Context.MODE_PRIVATE);
+                SharedPreferences sp = requireContext().getSharedPreferences(DATABASE, 0);
                 SharedPreferences.Editor editor = sp.edit();
                 String hexPassword = toHexString(getSHA(password.getEditText().getText().toString()));
                 editor.putString(PASSWORD, hexPassword);
                 editor.apply();
 
-                replaceFragmentParent(new RegistrationEmail());
+                FragmentReplace.replaceFragmentParent(new RegistrationEmail(), requireActivity());
             }
         }
     }
+
     //анимация edittext, если пользователь ошибется
     public void alertError(TextInputLayout filed, TextView filedError ,String message){
         final Animation shakeAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.error_shake);
 
         //анимация
         filed.startAnimation(shakeAnimation);
-        filed.setBackground(getResources().getDrawable(R.drawable.anim_et_changecolor));
+        filed.setBackground(ResourcesCompat.getDrawable( getResources(), R.drawable.anim_et_changecolor, null));
 
         //сообщение о ошибке
         filedError.setText(message);
@@ -117,23 +115,14 @@ public class RegistrationPassword extends Fragment {
         }
 
         return hexString.toString();
-
     }
     public void ViewToastMessage(View view) {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.toast_internet_message,(ViewGroup) view.findViewById(R.id.toast_layout_root));
-        Toast toast = new Toast(getContext().getApplicationContext());
+        Toast toast = new Toast(requireContext().getApplicationContext());
         toast.setGravity(Gravity.BOTTOM, 0, 50);
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();
-    }
-
-    //Функция обновление родительского фрагмента
-    public void replaceFragmentParent(Fragment fragment) {
-        FragmentManager fragmentManager = getParentFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
-        fragmentTransaction.commit();
     }
 }

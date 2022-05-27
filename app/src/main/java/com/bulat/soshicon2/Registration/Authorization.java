@@ -3,9 +3,9 @@ package com.bulat.soshicon2.Registration;
 import static com.bulat.soshicon2.constants.constants.*;
 
 import com.bulat.soshicon2.Toasts.Toasts;
+import com.bulat.soshicon2.checks.FragmentReplace;
 import com.bulat.soshicon2.constants.constants;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,13 +17,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.BottomNavigation.event.Event;
 import com.bulat.soshicon2.BottomNavigation.event.receivingEvent;
@@ -55,7 +52,7 @@ public class Authorization extends Fragment {
         View MainView = inflater.inflate(R.layout.authorization, container, false);
 
         //Выключение bottom navigation
-        BottomNavigationView navigationView = getActivity().findViewById(R.id.bottom_navigation);
+        BottomNavigationView navigationView = requireActivity().findViewById(R.id.bottom_navigation);
         navigationView.setVisibility(View.GONE);
 
         //Кнопка регистрации
@@ -66,13 +63,12 @@ public class Authorization extends Fragment {
         Button authorization_enter = MainView.findViewById(R.id.authorization_enter);
         authorization_enter.setOnClickListener(v -> authorization(MainView));
 
-
         return MainView;
     }
 
     //Авторизация
     public void authorization(View view){
-        if (NetCheck.StatusConnection(getContext())) {
+        if (NetCheck.StatusConnection(requireContext())) {
             LayoutInflater lnInflater = getLayoutInflater();
             View ToastId = view.findViewById(R.id.toast_layout_root);
             Toasts InternetToast  = new Toasts(getContext(), lnInflater, ToastId);
@@ -102,17 +98,15 @@ public class Authorization extends Fragment {
                     String id =  request_id.get();
 
                     // добавляем id пользователя в сохраненные настрйоки
-                    SharedPreferences sPref = getContext().getSharedPreferences(constants.DATABASE, Context.MODE_PRIVATE);
+                    SharedPreferences sPref = requireActivity().getSharedPreferences(constants.DATABASE, 0);
                     SharedPreferences.Editor ed = sPref.edit();
                     ed.putString(constants.ID, id);
                     ed.putString(U_NICKNAME, login);
                     ed.apply();
-                    String data_id = sPref.getString(ID, "");
 
                     //загружаем аватар
                     String[] KeyArgs = {"id"};
                     String[] Args = {sPref.getString(ID, "")};
-
 
                     receivingEvent Query = new receivingEvent(GET_AVATAR_PHP, KeyArgs, Args);
                     Query.execute();
@@ -127,8 +121,8 @@ public class Authorization extends Fragment {
                         CompressAvatar = (String) jo.get("compress_avatar");
                         Avatar = (String) jo.get("avatar");
                     }
-                    String compressPathTrue = getContext().getFilesDir() + "avatar_compress_" + true + ".jpg";
-                    String compressPathFalse = getContext().getFilesDir() + "avatar_compress_" + false + ".jpg";
+                    String compressPathTrue = requireContext().getFilesDir() + "avatar_compress_" + true + ".jpg";
+                    String compressPathFalse = requireContext().getFilesDir() + "avatar_compress_" + false + ".jpg";
                     FileOutputStream outTrue = new FileOutputStream(compressPathTrue);
                     FileOutputStream outFalse = new FileOutputStream(compressPathFalse);
 
@@ -144,7 +138,7 @@ public class Authorization extends Fragment {
                     ed.putString("compress_avatar_" + false, compressPathFalse);
                     ed.apply();
 
-                    replaceFragmentParent(new Event());
+                    FragmentReplace.replaceFragmentParent(new Event(), requireActivity());
                 }
                 // если сообщения ложные выводим сообщение об ошибке
                 else {
@@ -160,23 +154,15 @@ public class Authorization extends Fragment {
 
     //Проверка на наличие интернета, если он есть, начинается регистрация
     public void registration(View view) {
-        if (NetCheck.StatusConnection(getContext())) {
+        if (NetCheck.StatusConnection(requireContext())) {
             LayoutInflater lnInflater = getLayoutInflater();
             View ToastId = view.findViewById(R.id.toast_layout_root);
             Toasts InternetToast  = new Toasts(getContext(), lnInflater, ToastId);
             InternetToast.ViewInterntEror(view);
         }
         else {
-            replaceFragmentParent(new RegistrationName());
+            FragmentReplace.replaceFragmentParent(new RegistrationName(), requireActivity());
         }
-    }
-
-    //Функция обновление родительского фрагмента
-    public void replaceFragmentParent(Fragment fragment) {
-        FragmentManager fragmentManager = getParentFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
-        fragmentTransaction.commit();
     }
 
     private static byte[] getSHA(String input) throws NoSuchAlgorithmException {

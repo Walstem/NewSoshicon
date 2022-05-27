@@ -1297,6 +1297,7 @@ color black
 color border_text_error
 color bottom_nav_color
 color bottom_nav_item_color
+color bottom_nav_no_selector
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -2983,7 +2984,6 @@ id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
 id delete_image
-id delete_photo
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -3385,7 +3385,6 @@ id uniform
 id unlabeled
 id up
 id useLogo
-id user_status
 id username
 id username_bottom_avatar
 id vertical_only
