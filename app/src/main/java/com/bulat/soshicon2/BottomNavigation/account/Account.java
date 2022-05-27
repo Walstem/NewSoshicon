@@ -33,9 +33,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+<<<<<<< HEAD
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.asynctasks.SendQuery;
 import com.bulat.soshicon2.checks.FragmentReplace;
+=======
+import com.bulat.soshicon2.R;;
+>>>>>>> f3ee6c81f6351646016a8e0d156b512f99b2cd45
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -61,7 +65,6 @@ import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -72,7 +75,10 @@ public class Account extends Fragment {
     private static final int READ_PERMISSION = 101;
     CircleImageView profile;
     int numPhotoGal;
+<<<<<<< HEAD
     int countImages;
+=======
+>>>>>>> f3ee6c81f6351646016a8e0d156b512f99b2cd45
 
     RecyclerView recyclerView;
     ImageView add_photo, delete_photo;
@@ -132,9 +138,15 @@ public class Account extends Fragment {
                         if (uriArr.size() < 9) {
                             Uri imageUri = result.getData().getClipData().getItemAt(i).getUri();
                             try {
+<<<<<<< HEAD
                                 String getUri = getRealPathFromUri(requireContext(), imageUri);
                                 byte[] img = ReadFileOrSaveInDeviceGallery(getUri, uriArr.size());
                                 numPhotoGal = uriArr.size();
+=======
+                                String getUri = getRealPathFromUri(getContext(), imageuri);
+                                byte[] img = ReadFileOrSaveInDeviceGallery(getUri, uri.size());
+                                numPhotoGal = uri.size();
+>>>>>>> f3ee6c81f6351646016a8e0d156b512f99b2cd45
                                 UploadGallery UploadPhotoGallery = new UploadGallery(img, UPLOAD_GALLERY_PHP, numPhotoGal);
                                 UploadPhotoGallery.execute();
 
@@ -181,12 +193,22 @@ public class Account extends Fragment {
 
         //Кнопка удаления изображения из галереи
         delete_photo.setOnClickListener(view -> {
+<<<<<<< HEAD
             if(uriArr.size() == 0) {
                 Toast.makeText(requireContext(), "В галерее нет изображений", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(requireContext(), "Надо доделать", Toast.LENGTH_SHORT).show();
             }
         });
+=======
+            if(uri.size() == 0) {
+                Toast.makeText(getContext(), "В галерее нет изображений", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getContext(), "Надо доделать", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+>>>>>>> f3ee6c81f6351646016a8e0d156b512f99b2cd45
 
         TextView name = MainView.findViewById(R.id.username_bottom_avatar);
         ImageView account_setting = MainView.findViewById(R.id.account_edit);
@@ -206,7 +228,13 @@ public class Account extends Fragment {
         //чтение
         name.setText(sp.getString(U_NICKNAME, ""));
 
+<<<<<<< HEAD
         account_setting.setOnClickListener(view -> FragmentReplace.replaceFragmentParent(new Setting(), requireActivity()));
+=======
+        account_setting.setOnClickListener(view -> {
+            replaceFragmentParent(new Setting());
+        });
+>>>>>>> f3ee6c81f6351646016a8e0d156b512f99b2cd45
 
         profile.setOnClickListener(view -> ImagePicker.with(Account.this)
                 .crop()	    			//Crop image(Optional), Check Customization for more option
