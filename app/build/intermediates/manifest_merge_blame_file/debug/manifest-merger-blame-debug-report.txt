@@ -152,20 +152,20 @@
 84-->[com.parse:parse-android:1.16.3] C:\Users\Admin\.gradle\caches\transforms-3\3959f9acd7b1e1b8f32a3099cbd64dd1\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:26:13-69
 85
 86        <activity
-86-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\b49001972d9b2063905ae1f45abb5d2e\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+86-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Admin\.gradle\caches\transforms-3\9c84058cc8145496fa61d3ab15374b21\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
 87            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-87-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\b49001972d9b2063905ae1f45abb5d2e\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+87-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Admin\.gradle\caches\transforms-3\9c84058cc8145496fa61d3ab15374b21\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
 88            android:exported="false"
-88-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\b49001972d9b2063905ae1f45abb5d2e\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+88-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Admin\.gradle\caches\transforms-3\9c84058cc8145496fa61d3ab15374b21\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
 89            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-89-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\b49001972d9b2063905ae1f45abb5d2e\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+89-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Admin\.gradle\caches\transforms-3\9c84058cc8145496fa61d3ab15374b21\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
 90
 91        <meta-data
-91-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\d5e407bf595fc230824dba833fd24d0c\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+91-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Admin\.gradle\caches\transforms-3\7b0aa70a43263ee3ec23c54e2321a077\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
 92            android:name="com.google.android.gms.version"
-92-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\d5e407bf595fc230824dba833fd24d0c\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+92-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Admin\.gradle\caches\transforms-3\7b0aa70a43263ee3ec23c54e2321a077\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
 93            android:value="@integer/google_play_services_version" />
-93-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Admin\.gradle\caches\transforms-3\d5e407bf595fc230824dba833fd24d0c\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+93-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Admin\.gradle\caches\transforms-3\7b0aa70a43263ee3ec23c54e2321a077\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
 94
 95        <provider
 95-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20

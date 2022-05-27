@@ -105,8 +105,9 @@ public class AddEvent extends BottomSheetDialogFragment implements LocationListe
                         return;
                     }
                     locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+                    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
 
-                    Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    Location location = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
 
                     String latitude = Double.toString(location.getLatitude());
                     String longitude =  Double.toString(location.getLongitude());

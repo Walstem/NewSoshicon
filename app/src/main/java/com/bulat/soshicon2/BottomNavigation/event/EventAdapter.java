@@ -35,8 +35,9 @@ class EventAdapter extends ArrayAdapter<String> {
     ArrayList<String> Time;
     ArrayList<String> Distance;
     ArrayList<String> Id;
+    ArrayList<Boolean> IsLiked;
 
-    public EventAdapter(@NonNull Context context, ArrayList<String> Title, ArrayList<String> Discription, ArrayList<String> Avatars, ArrayList<String> Time, ArrayList<String> Distance, ArrayList<String> Id) {
+    public EventAdapter(@NonNull Context context, ArrayList<String> Title, ArrayList<String> Discription, ArrayList<String> Avatars, ArrayList<String> Time, ArrayList<String> Distance, ArrayList<String> Id, ArrayList<Boolean> IsLiked) {
         super(context, R.layout.row_card_event, R.id.NameMessage, Title);
         this.context = context;
         this.Title = Title;
@@ -44,7 +45,8 @@ class EventAdapter extends ArrayAdapter<String> {
         this.Avatar = Avatars;
         this.Time = Time;
         this.Distance = Distance;
-        this.Id = Distance;
+        this.Id = Id;
+        this.IsLiked=IsLiked;
     }
 
     @NonNull
@@ -61,6 +63,10 @@ class EventAdapter extends ArrayAdapter<String> {
         TextView distance = row.findViewById(R.id.distance);
         CheckBox like = row.findViewById(R.id.like);
 
+        like.setChecked(IsLiked.get(position));
+
+
+
         if (!Avatar.get(position).equals("null")){
             byte [] encodeByte = Base64.decode(Avatar.get(position),Base64.DEFAULT);
             Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
@@ -72,30 +78,31 @@ class EventAdapter extends ArrayAdapter<String> {
         NameMessage.setText(Title.get(position));
         Content.setText(Discription.get(position));
         time.setText(Time.get(position));
-        EventId.setText(Id.get(position));
 
+        ColorStateList colorStateList = new ColorStateList(
+                new int[][] {
+                        new int[] { -android.R.attr.state_checked }, // unchecked
+                        new int[] {  android.R.attr.state_checked }  // checked
+                },
+                new int[] {
+                        getContext().getColor(R.color.text_color_primary),
+                        getContext().getColor(R.color.splash_screen_bg)
+                }
+        );
+
+        like.setButtonTintList(colorStateList);
         like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                ColorStateList colorStateList = new ColorStateList(
-                        new int[][] {
-                                new int[] { -android.R.attr.state_checked }, // unchecked
-                                new int[] {  android.R.attr.state_checked }  // checked
-                        },
-                        new int[] {
-                                getContext().getColor(R.color.text_color_primary),
-                                getContext().getColor(R.color.splash_screen_bg)
-                        }
-                );
-                like.setButtonTintList(colorStateList);
+
 
                 if(like.isChecked()){
                     like.setButtonDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_favorite_liked));
                     if (!sp.getString(ID, "").equals(EventId.getText().toString())){
                         SendQuery query = new SendQuery(INPUT_LIKED_EVENT_PHP);
                         String UserID = sp.getString(ID,"");
-                        query.execute("?user_id="+UserID + "&event_id=" + EventId.getText().toString());
+                        query.execute("?user_id="+UserID + "&event_id=" + Id.get(position));
                     }
                 }
                 else{
@@ -103,12 +110,13 @@ class EventAdapter extends ArrayAdapter<String> {
                     if (!sp.getString(ID, "").equals(EventId.getText().toString())){
                         SendQuery query = new SendQuery(INPUT_UNLIKED_EVENT_PHP);
                         String UserID = sp.getString(ID,"");
-                        query.execute("?user_id="+UserID + "&event_id=" +EventId.getText().toString());
+                        query.execute("?user_id="+UserID + "&event_id=" + Id.get(position));
                     }
                 }
 
             }
         });
+
         return row;
     }
 }
