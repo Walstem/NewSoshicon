@@ -14,10 +14,11 @@
 
     <!--    ДОБАВЛЕННЫЕ ЦВЕТА   -->
     <!--Основной фон-->
-    <color name="background">#FAFAFA</color>
+    <color name="background">#EBECF0</color>
 
     <!--Основной фон-->
     <color name="splash_screen_bg">#ED008E</color>
+    <color name="yellow_text">#F9A74D</color>
     <!--Цвет текста-->
     <color name="text_color_primary">#000000</color>
     <color name="text_color_block">#000000</color>
@@ -28,13 +29,14 @@
     <color name="editText_color">#E8E8E8</color>
 
     <!--Цвет события-->
-    <color name="row_card_event_color">#E8E8E8</color>
+    <color name="row_card_event_color">#FFFFFF</color>
     <color name="location_color">#717171</color>
-    <color name="state_checked_item">#F4DA58</color>
+    <color name="state_checked_item">#ED008E</color>
 
     <!--Навигация-->
     <color name="bottom_nav_color">#F9F9F9</color>
     <color name="bottom_nav_item_color">#000000</color>
+    <color name="bottom_nav_no_selector">#9C9EAA</color>
 
     <color name="grey">#191919</color>
     <color name="light_white">#D2D2D2</color>

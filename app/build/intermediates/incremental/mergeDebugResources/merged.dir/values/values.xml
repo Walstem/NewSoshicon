@@ -596,7 +596,7 @@
     <color name="accent_material_light">@color/material_deep_teal_500</color>
     <color name="androidx_core_ripple_material_light">#1f000000</color>
     <color name="androidx_core_secondary_text_default_material_light">#8a000000</color>
-    <color name="background">#FAFAFA</color>
+    <color name="background">#EBECF0</color>
     <color name="background_floating_material_dark">@color/material_grey_800</color>
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
@@ -606,6 +606,7 @@
     <color name="border_text_error">#FF3450</color>
     <color name="bottom_nav_color">#F9F9F9</color>
     <color name="bottom_nav_item_color">#000000</color>
+    <color name="bottom_nav_no_selector">#9C9EAA</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
     <color name="bright_foreground_inverse_material_dark">@color/bright_foreground_material_light</color>
@@ -853,7 +854,7 @@
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
     <color name="round_setting">#E8E8E8</color>
-    <color name="row_card_event_color">#E8E8E8</color>
+    <color name="row_card_event_color">#FFFFFF</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
@@ -861,7 +862,7 @@
     <color name="setting_item_text_color">#000000</color>
     <color name="soshicon_background">#ED008E</color>
     <color name="splash_screen_bg">#ED008E</color>
-    <color name="state_checked_item">#F4DA58</color>
+    <color name="state_checked_item">#ED008E</color>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
@@ -902,6 +903,7 @@
     <color name="ucrop_color_widget_text">@color/ucrop_color_widget_active</color>
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#F4DA58</color>
+    <color name="yellow_text">#F9A74D</color>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_content_inset_with_nav">72dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
@@ -1894,7 +1896,7 @@
     <string name="ucrop_mutate_exception_hint" translatable="false">Therefore, override color resource (ucrop_color_toolbar_widget) in your app to make it work on pre-L devices</string>
     <string name="ucrop_rotate">Rotate</string>
     <string name="ucrop_scale">Scale</string>
-    <string name="username_hint">Имя пользователя</string>
+    <string name="username_hint">Имя</string>
     <string name="welcome">, добро \n пожаловать в Soshicon!</string>
     <string name="сomplete">Завершить регистрацию</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>

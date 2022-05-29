@@ -23,6 +23,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.R;
+import com.bulat.soshicon2.checks.FragmentReplace;
 import com.bulat.soshicon2.checks.NetCheck;
 import com.bulat.soshicon2.checks.UniqueNameCheck;
 import com.google.android.material.textfield.TextInputLayout;
@@ -85,7 +86,7 @@ public class RegistrationName extends Fragment {
                 editor.putString(U_NICKNAME, u_nickname);
                 editor.apply();
 
-                replaceFragmentParent(new RegistrationPassword());
+                FragmentReplace.replaceFragmentParent(new RegistrationPassword(), getActivity());
             }
         }
     }
@@ -111,13 +112,5 @@ public class RegistrationName extends Fragment {
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();
-    }
-
-    //Функция обновление родительского фрагмента
-    public void replaceFragmentParent(Fragment fragment) {
-        FragmentManager fragmentManager = getParentFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
-        fragmentTransaction.commit();
     }
 }

@@ -22,6 +22,7 @@ import androidx.fragment.app.FragmentTransaction;
 ;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.Registration.Authorization;
+import com.bulat.soshicon2.checks.FragmentReplace;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.ByteArrayOutputStream;
@@ -39,15 +40,16 @@ public class Setting extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View MainView = inflater.inflate(R.layout.setting, container, false);
 
-        SharedPreferences sp = getContext().getSharedPreferences(DATABASE, 0);
+        SharedPreferences sp = requireContext().getSharedPreferences(DATABASE, 0);
 
-        navBar = getActivity().findViewById(R.id.bottom_navigation);
+        navBar = requireActivity().findViewById(R.id.bottom_navigation);
+
         ConstraintLayout log_out = MainView.findViewById(R.id.setting_log_out);
         ConstraintLayout language = MainView.findViewById(R.id.languages);
         ImageView cancel = MainView.findViewById(R.id.cancel);
         SwitchCompat lightMode = MainView.findViewById(R.id.lightModeSwitch);
-        ThemeManager themeManager = new ThemeManager(getContext());
-        Button editBtn = MainView.findViewById(R.id.setting_editBtn);
+        ThemeManager themeManager = new ThemeManager(requireContext());
+        //Button editBtn = MainView.findViewById(R.id.setting_editBtn);
 
         CircleImageView avatar = MainView.findViewById(R.id.avatar);
         TextView username = MainView.findViewById(R.id.username_bottom_avatar);
@@ -65,15 +67,14 @@ public class Setting extends Fragment {
         //Выключение bottom navigation
         navBar.setVisibility(View.GONE);
 
-        editBtn.setOnClickListener(view -> {
-            replaceFragmentParent(new Redactor());
-        });
+        //Переход в редактирование данных
+//        editBtn.setOnClickListener(view -> FragmentReplace.replaceFragmentParent(new Redactor(), requireActivity()));
 
-        //Переход на фрагмент смены языка
-        language.setOnClickListener(view -> { replaceFragmentParent(new Language()); });
+        //Переход в смену языка
+        language.setOnClickListener(view -> FragmentReplace.replaceFragmentParent(new Language(), getActivity()));
 
         //Смена темы приложения
-        SharedPreferences spp = getActivity().getSharedPreferences("night", 0);
+        SharedPreferences spp = requireContext().getSharedPreferences("night", 0);
         boolean booleanValue = spp.getBoolean(THEME, false);
         if (booleanValue) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -100,7 +101,7 @@ public class Setting extends Fragment {
         //Кнопка выхода из настроек
         cancel.setOnClickListener(view -> {
             replaceFragmentParent(new Account());
-            BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
+            BottomNavigationView navBar = requireActivity().findViewById(R.id.bottom_navigation);
             navBar.setVisibility(View.VISIBLE);
         });
 
@@ -124,10 +125,10 @@ public class Setting extends Fragment {
             editor.putString("compress_gallery_photo_8", "");
             editor.apply();
 
-            getActivity().getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            requireActivity().getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
             replaceFragmentParent(new Authorization());
 
-            BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
+            BottomNavigationView navBar = requireActivity().findViewById(R.id.bottom_navigation);
             navBar.setVisibility(View.GONE);
         });
 

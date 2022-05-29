@@ -4,7 +4,6 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -84,9 +83,6 @@ public final class SettingBinding implements ViewBinding {
   public final ImageView notificationImage;
 
   @NonNull
-  public final Button settingEditBtn;
-
-  @NonNull
   public final ConstraintLayout settingLogOut;
 
   @NonNull
@@ -114,9 +110,9 @@ public final class SettingBinding implements ViewBinding {
       @NonNull ConstraintLayout lightMode, @NonNull ImageView lightModeImage,
       @NonNull SwitchCompat lightModeSwitch, @NonNull ImageView logOut,
       @NonNull ConstraintLayout logOutSetting, @NonNull ConstraintLayout notification,
-      @NonNull ImageView notificationImage, @NonNull Button settingEditBtn,
-      @NonNull ConstraintLayout settingLogOut, @NonNull ConstraintLayout textSize,
-      @NonNull ImageView textSizeImage, @NonNull TextView textView, @NonNull TextView textView3,
+      @NonNull ImageView notificationImage, @NonNull ConstraintLayout settingLogOut,
+      @NonNull ConstraintLayout textSize, @NonNull ImageView textSizeImage,
+      @NonNull TextView textView, @NonNull TextView textView3,
       @NonNull TextView usernameBottomAvatar) {
     this.rootView = rootView;
     this.FAQ = FAQ;
@@ -139,7 +135,6 @@ public final class SettingBinding implements ViewBinding {
     this.logOutSetting = logOutSetting;
     this.notification = notification;
     this.notificationImage = notificationImage;
-    this.settingEditBtn = settingEditBtn;
     this.settingLogOut = settingLogOut;
     this.textSize = textSize;
     this.textSizeImage = textSizeImage;
@@ -291,12 +286,6 @@ public final class SettingBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.setting_editBtn;
-      Button settingEditBtn = ViewBindings.findChildViewById(rootView, id);
-      if (settingEditBtn == null) {
-        break missingId;
-      }
-
       id = R.id.setting_log_out;
       ConstraintLayout settingLogOut = ViewBindings.findChildViewById(rootView, id);
       if (settingLogOut == null) {
@@ -337,8 +326,7 @@ public final class SettingBinding implements ViewBinding {
           ThirdPanelSetting, aboutUs, aboutUsImage, avatar, cancel, constraintLayout,
           containerSetting, faqImage, firstPanelSetting, languages, languagesImage, lightMode,
           lightModeImage, lightModeSwitch, logOut, logOutSetting, notification, notificationImage,
-          settingEditBtn, settingLogOut, textSize, textSizeImage, textView, textView3,
-          usernameBottomAvatar);
+          settingLogOut, textSize, textSizeImage, textView, textView3, usernameBottomAvatar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

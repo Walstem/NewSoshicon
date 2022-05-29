@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -43,7 +44,7 @@ public final class AccountBinding implements ViewBinding {
   public final ConstraintLayout containerAccount;
 
   @NonNull
-  public final ImageView deletePhoto;
+  public final TextView editText;
 
   @NonNull
   public final RecyclerView galleryImages;
@@ -52,17 +53,14 @@ public final class AccountBinding implements ViewBinding {
   public final CircleImageView profileAvatar;
 
   @NonNull
-  public final MaterialTextView userStatus;
-
-  @NonNull
   public final MaterialTextView usernameBottomAvatar;
 
   private AccountBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView accountEdit,
       @NonNull Toolbar accountToolbar, @NonNull ImageView addPhoto,
       @NonNull AppBarLayout appBarLayout, @NonNull ConstraintLayout constraintLayout2,
-      @NonNull ConstraintLayout containerAccount, @NonNull ImageView deletePhoto,
+      @NonNull ConstraintLayout containerAccount, @NonNull TextView editText,
       @NonNull RecyclerView galleryImages, @NonNull CircleImageView profileAvatar,
-      @NonNull MaterialTextView userStatus, @NonNull MaterialTextView usernameBottomAvatar) {
+      @NonNull MaterialTextView usernameBottomAvatar) {
     this.rootView = rootView;
     this.accountEdit = accountEdit;
     this.accountToolbar = accountToolbar;
@@ -70,10 +68,9 @@ public final class AccountBinding implements ViewBinding {
     this.appBarLayout = appBarLayout;
     this.constraintLayout2 = constraintLayout2;
     this.containerAccount = containerAccount;
-    this.deletePhoto = deletePhoto;
+    this.editText = editText;
     this.galleryImages = galleryImages;
     this.profileAvatar = profileAvatar;
-    this.userStatus = userStatus;
     this.usernameBottomAvatar = usernameBottomAvatar;
   }
 
@@ -136,9 +133,9 @@ public final class AccountBinding implements ViewBinding {
 
       ConstraintLayout containerAccount = (ConstraintLayout) rootView;
 
-      id = R.id.delete_photo;
-      ImageView deletePhoto = ViewBindings.findChildViewById(rootView, id);
-      if (deletePhoto == null) {
+      id = R.id.editText;
+      TextView editText = ViewBindings.findChildViewById(rootView, id);
+      if (editText == null) {
         break missingId;
       }
 
@@ -154,12 +151,6 @@ public final class AccountBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.user_status;
-      MaterialTextView userStatus = ViewBindings.findChildViewById(rootView, id);
-      if (userStatus == null) {
-        break missingId;
-      }
-
       id = R.id.username_bottom_avatar;
       MaterialTextView usernameBottomAvatar = ViewBindings.findChildViewById(rootView, id);
       if (usernameBottomAvatar == null) {
@@ -167,8 +158,8 @@ public final class AccountBinding implements ViewBinding {
       }
 
       return new AccountBinding((ConstraintLayout) rootView, accountEdit, accountToolbar, addPhoto,
-          appBarLayout, constraintLayout2, containerAccount, deletePhoto, galleryImages,
-          profileAvatar, userStatus, usernameBottomAvatar);
+          appBarLayout, constraintLayout2, containerAccount, editText, galleryImages, profileAvatar,
+          usernameBottomAvatar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

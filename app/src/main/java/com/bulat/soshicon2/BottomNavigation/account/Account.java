@@ -14,6 +14,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -33,13 +34,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-<<<<<<< HEAD
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.asynctasks.SendQuery;
 import com.bulat.soshicon2.checks.FragmentReplace;
-=======
-import com.bulat.soshicon2.R;;
->>>>>>> f3ee6c81f6351646016a8e0d156b512f99b2cd45
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -65,6 +62,7 @@ import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -75,10 +73,7 @@ public class Account extends Fragment {
     private static final int READ_PERMISSION = 101;
     CircleImageView profile;
     int numPhotoGal;
-<<<<<<< HEAD
     int countImages;
-=======
->>>>>>> f3ee6c81f6351646016a8e0d156b512f99b2cd45
 
     RecyclerView recyclerView;
     ImageView add_photo, delete_photo;
@@ -98,7 +93,6 @@ public class Account extends Fragment {
         sp = requireContext().getSharedPreferences(DATABASE, 0);
 
         add_photo = MainView.findViewById(R.id.add_photo);
-        delete_photo = MainView.findViewById(R.id.delete_photo);
 
         recyclerView = MainView.findViewById(R.id.gallery_images);
 
@@ -115,7 +109,8 @@ public class Account extends Fragment {
                 try {
                     Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(fileGallery));
                     System.out.println(bitmap.toString());
-                    Uri uri = getImageUri(requireContext(), bitmap, "compress_gallery_photo_" + i);
+                    String path = sp.getString("compress_gallery_photo_" + i, "");
+                    Uri uri = Uri.parse(path);
                     uriArr.add(uri);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
@@ -138,15 +133,9 @@ public class Account extends Fragment {
                         if (uriArr.size() < 9) {
                             Uri imageUri = result.getData().getClipData().getItemAt(i).getUri();
                             try {
-<<<<<<< HEAD
                                 String getUri = getRealPathFromUri(requireContext(), imageUri);
                                 byte[] img = ReadFileOrSaveInDeviceGallery(getUri, uriArr.size());
                                 numPhotoGal = uriArr.size();
-=======
-                                String getUri = getRealPathFromUri(getContext(), imageuri);
-                                byte[] img = ReadFileOrSaveInDeviceGallery(getUri, uri.size());
-                                numPhotoGal = uri.size();
->>>>>>> f3ee6c81f6351646016a8e0d156b512f99b2cd45
                                 UploadGallery UploadPhotoGallery = new UploadGallery(img, UPLOAD_GALLERY_PHP, numPhotoGal);
                                 UploadPhotoGallery.execute();
 
@@ -185,30 +174,12 @@ public class Account extends Fragment {
                 ActivityCompat.requestPermissions(requireActivity(),
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, READ_PERMISSION);
             }
-
-            Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-            activityResultLauncher.launch(intent);
-        });
-
-        //Кнопка удаления изображения из галереи
-        delete_photo.setOnClickListener(view -> {
-<<<<<<< HEAD
-            if(uriArr.size() == 0) {
-                Toast.makeText(requireContext(), "В галерее нет изображений", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(requireContext(), "Надо доделать", Toast.LENGTH_SHORT).show();
+            else{
+                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+                activityResultLauncher.launch(intent);
             }
         });
-=======
-            if(uri.size() == 0) {
-                Toast.makeText(getContext(), "В галерее нет изображений", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getContext(), "Надо доделать", Toast.LENGTH_SHORT).show();
-            }
-        });
-
->>>>>>> f3ee6c81f6351646016a8e0d156b512f99b2cd45
 
         TextView name = MainView.findViewById(R.id.username_bottom_avatar);
         ImageView account_setting = MainView.findViewById(R.id.account_edit);
@@ -228,13 +199,7 @@ public class Account extends Fragment {
         //чтение
         name.setText(sp.getString(U_NICKNAME, ""));
 
-<<<<<<< HEAD
         account_setting.setOnClickListener(view -> FragmentReplace.replaceFragmentParent(new Setting(), requireActivity()));
-=======
-        account_setting.setOnClickListener(view -> {
-            replaceFragmentParent(new Setting());
-        });
->>>>>>> f3ee6c81f6351646016a8e0d156b512f99b2cd45
 
         profile.setOnClickListener(view -> ImagePicker.with(Account.this)
                 .crop()	    			//Crop image(Optional), Check Customization for more option
@@ -245,12 +210,6 @@ public class Account extends Fragment {
         return MainView;
     }
 
-    public Uri getImageUri(Context inContext, Bitmap inImage, String filename) {
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, filename, null);
-        return Uri.parse(path);
-    }
 
     public static String getRealPathFromUri(Context context, Uri contentUri) {
         Cursor cursor = null;
@@ -465,4 +424,5 @@ public class Account extends Fragment {
         bitmap.recycle();
         return byteArray;
     }
+
 }

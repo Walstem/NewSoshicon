@@ -28,16 +28,41 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-light"
+                android:text="Профиль"
+                android:textColor="@color/text_color_primary"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="@+id/account_toolbar"
+                app:layout_constraintStart_toStartOf="@+id/account_toolbar"
+                app:layout_constraintTop_toTopOf="@+id/account_toolbar" />
+
+            <ImageView
+                android:id="@+id/add_photo"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/account_edit"
+                android:src="@drawable/ic_add"
+                app:layout_constraintBottom_toBottomOf="@+id/editText"
+                app:layout_constraintEnd_toStartOf="@+id/account_edit"
+                app:layout_constraintTop_toTopOf="@+id/editText" />
+
             <ImageView
                 android:id="@+id/account_edit"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:contentDescription="@string/account_edit"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/add_photo"
+                app:layout_constraintEnd_toEndOf="@+id/account_toolbar"
+                app:layout_constraintTop_toTopOf="@+id/add_photo"
                 app:srcCompat="@drawable/ic_account_setting" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -52,10 +77,10 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_avatar"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:src="@drawable/profile"
             app:layout_constraintEnd_toEndOf="parent"
@@ -69,7 +94,6 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:fontFamily="sans-serif-light"
             android:gravity="center"
             android:text="@string/username_hint"
             android:textColor="@color/text_color_primary"
@@ -79,47 +103,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profile_avatar" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/user_status"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="sans-serif-light"
-            android:gravity="left"
-            android:maxLength="30"
-            android:text="Статус"
-            android:textColor="@color/text_color_primary"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/username_bottom_avatar" />
-
-        <ImageView
-            android:id="@+id/add_photo"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:contentDescription="@string/account_edit"
-            android:src="@drawable/ic_add_plus"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/user_status" />
-
-        <ImageView
-            android:id="@+id/delete_photo"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginEnd="16dp"
-            android:contentDescription="@string/account_edit"
-            android:src="@drawable/ic_remove"
-            app:layout_constraintBottom_toBottomOf="@+id/add_photo"
-            app:layout_constraintEnd_toStartOf="@+id/add_photo"
-            app:layout_constraintTop_toTopOf="@+id/add_photo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -134,9 +117,15 @@
             android:id="@+id/gallery_images"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:scrollbarStyle="outsideInset"
             android:scrollbars="vertical"
-            android:layout_marginTop="5dp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

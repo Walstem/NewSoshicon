@@ -18,7 +18,7 @@
     <!--Создания имени-->
     <string name="login_headline">Создание имени пользователя</string>
     <string name="login_info">Выберите имя пользователя для своего нового аккаунта. Вы сможете изменить его позже.</string>
-    <string name="username_hint">Имя пользователя</string>
+    <string name="username_hint">Имя</string>
 
     <!--Создания пароля-->
     <string name="password_headline">Придумайте пароль</string>

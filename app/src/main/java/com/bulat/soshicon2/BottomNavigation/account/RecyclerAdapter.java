@@ -1,5 +1,6 @@
 package com.bulat.soshicon2.BottomNavigation.account;
 
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +17,15 @@ import java.util.ArrayList;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
     private ArrayList<Uri> uriArrayList;
+    private boolean FlagUri = true;
+    ArrayList<Bitmap> bitmaps = new ArrayList<>();
 
     public RecyclerAdapter(ArrayList<Uri> uriArrayList) {
         this.uriArrayList = uriArrayList;
+    }
+    public RecyclerAdapter(ArrayList<Bitmap> bitmaps, boolean FlagUri) {
+        this.bitmaps = bitmaps;
+        this.FlagUri = FlagUri;
     }
 
     @NonNull
@@ -33,18 +40,25 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.ViewHolder holder, int position) {
-        holder.imageView.setImageURI(uriArrayList.get(position));
+        if (FlagUri){
+            holder.imageView.setImageURI(uriArrayList.get(position));
+        }
+        else{
+            holder.imageView.setImageBitmap(bitmaps.get(position));
+        }
 
-        holder.delete.setOnClickListener(view -> {
-            uriArrayList.remove(uriArrayList.get(position));
-            notifyItemRemoved(position);
-            notifyItemRangeChanged(position, getItemCount());
-        });
     }
 
     @Override
     public int getItemCount() {
-        return uriArrayList.size();
+        int size;
+        if (FlagUri){
+            size = uriArrayList.size();
+        }
+        else{
+            size = bitmaps.size();
+        }
+        return size;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

@@ -44,6 +44,10 @@
         "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\account.xml"
     },
     {
+        "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\another_account.xml",
+        "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\another_account.xml"
+    },
+    {
         "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\setting.xml",
         "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\setting.xml"
     },
@@ -68,10 +72,6 @@
         "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_add_error.xml"
     },
     {
-        "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\account_setting.xml",
-        "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\account_setting.xml"
-    },
-    {
         "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\response.xml",
         "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\response.xml"
     },
@@ -90,6 +90,10 @@
     {
         "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\image_single.xml",
         "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\image_single.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\row_card_response.xml",
+        "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\row_card_response.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_add_error_two.xml",

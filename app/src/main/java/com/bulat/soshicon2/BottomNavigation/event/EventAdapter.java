@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,9 +20,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
+import com.bulat.soshicon2.BottomNavigation.account.Account;
+import com.bulat.soshicon2.BottomNavigation.anotherAccount.AnotherAccount;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.asynctasks.SendQuery;
+import com.bulat.soshicon2.checks.FragmentReplace;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
@@ -29,15 +38,18 @@ class EventAdapter extends ArrayAdapter<String> {
     public static final String INPUT_LIKED_EVENT_PHP = "input_liked_event.php";
     public static final String INPUT_UNLIKED_EVENT_PHP = "input_unliked_event.php";
     Context context;
+
+    ArrayList<String> CreatorId;
+    ArrayList<String> EventId;
     ArrayList<String> Title;
     ArrayList<String> Discription;
     ArrayList<String> Avatar;
     ArrayList<String> Time;
     ArrayList<String> Distance;
-    ArrayList<String> Id;
     ArrayList<Boolean> IsLiked;
+    FragmentActivity activity;
 
-    public EventAdapter(@NonNull Context context, ArrayList<String> Title, ArrayList<String> Discription, ArrayList<String> Avatars, ArrayList<String> Time, ArrayList<String> Distance, ArrayList<String> Id, ArrayList<Boolean> IsLiked) {
+    public EventAdapter(@NonNull Context context, ArrayList<String> Title, ArrayList<String> Discription, ArrayList<String> Avatars, ArrayList<String> Time, ArrayList<String> Distance, ArrayList<String> Id, ArrayList<Boolean> IsLiked,  ArrayList<String> CreatorId, FragmentActivity activity) {
         super(context, R.layout.row_card_event, R.id.NameMessage, Title);
         this.context = context;
         this.Title = Title;
@@ -45,8 +57,10 @@ class EventAdapter extends ArrayAdapter<String> {
         this.Avatar = Avatars;
         this.Time = Time;
         this.Distance = Distance;
-        this.Id = Id;
+        this.EventId = Id;
         this.IsLiked=IsLiked;
+        this.CreatorId = CreatorId;
+        this.activity = activity;
     }
 
     @NonNull
@@ -89,7 +103,30 @@ class EventAdapter extends ArrayAdapter<String> {
                         getContext().getColor(R.color.splash_screen_bg)
                 }
         );
+        avatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String id = sp.getString(ID,"");
+                String EventCreatorId = CreatorId.get(position);
+                if (!EventCreatorId.equals(id)){
+                    Fragment AnotherAccount = new AnotherAccount();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("CreatorId", CreatorId.get(position));
+                    bundle.putString("CreatorName", Title.get(position));
+                    AnotherAccount.setArguments(bundle);
 
+                    FragmentManager fragmentManager =  activity.getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, AnotherAccount);
+                    fragmentTransaction.commit();
+                }
+                else{
+                    BottomNavigationView navBar = activity.findViewById(R.id.bottom_navigation);
+                    navBar.setSelectedItemId(R.id.nav_account);
+                }
+
+            }
+        });
         like.setButtonTintList(colorStateList);
         like.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,7 +139,7 @@ class EventAdapter extends ArrayAdapter<String> {
                     if (!sp.getString(ID, "").equals(EventId.getText().toString())){
                         SendQuery query = new SendQuery(INPUT_LIKED_EVENT_PHP);
                         String UserID = sp.getString(ID,"");
-                        query.execute("?user_id="+UserID + "&event_id=" + Id.get(position));
+                        query.execute("?user_id="+UserID + "&event_id=" + EventAdapter.this.EventId.get(position));
                     }
                 }
                 else{
@@ -110,7 +147,7 @@ class EventAdapter extends ArrayAdapter<String> {
                     if (!sp.getString(ID, "").equals(EventId.getText().toString())){
                         SendQuery query = new SendQuery(INPUT_UNLIKED_EVENT_PHP);
                         String UserID = sp.getString(ID,"");
-                        query.execute("?user_id="+UserID + "&event_id=" + Id.get(position));
+                        query.execute("?user_id="+UserID + "&event_id=" + EventAdapter.this.EventId.get(position));
                     }
                 }
 

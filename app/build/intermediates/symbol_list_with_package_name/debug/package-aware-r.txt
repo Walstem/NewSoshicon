@@ -1297,6 +1297,7 @@ color black
 color border_text_error
 color bottom_nav_color
 color bottom_nav_item_color
+color bottom_nav_no_selector
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1922,6 +1923,7 @@ color ucrop_color_widget_text
 color ucrop_scale_text_view_selector
 color white
 color yellow
+color yellow_text
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -2661,6 +2663,7 @@ drawable ic_bottom_nav_account
 drawable ic_bottom_nav_article
 drawable ic_bottom_nav_chat
 drawable ic_bottom_nav_favorite
+drawable ic_check
 drawable ic_clear
 drawable ic_clock_black_24dp
 drawable ic_favorite
@@ -2692,17 +2695,6 @@ drawable ic_setting_notifications
 drawable ic_setting_text_size
 drawable ic_toast_error
 drawable ic_toast_success
-drawable im1
-drawable im2
-drawable im3
-drawable im4
-drawable im5
-drawable im6
-drawable im7
-drawable im8
-drawable im9
-drawable img
-drawable img_1
 drawable logo
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
@@ -2763,7 +2755,6 @@ drawable round_setting_back_notification
 drawable round_setting_back_text_size
 drawable round_setting_back_top
 drawable splash_screen
-drawable splash_screen_soshicon
 drawable test_custom_background
 drawable test_level_drawable
 drawable thumb_shape
@@ -2798,7 +2789,6 @@ id BOTTOM_START
 id CTRL
 id ContentMessage
 id FAQ
-id FAQ_image
 id FUNCTION
 id META
 id NO_DEBUG
@@ -2817,6 +2807,7 @@ id Time
 id aboutUs
 id aboutUs_image
 id accelerate
+id accept
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -2899,6 +2890,7 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id avatar
+id back
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -2912,7 +2904,6 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
-id button
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -2983,7 +2974,6 @@ id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
 id delete_image
-id delete_photo
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -3230,12 +3220,12 @@ id pin
 id position
 id postLayout
 id profile_avatar
-id profile_avatar_setting
 id progress_circular
 id progress_horizontal
 id radio
 id ratio
 id rectangles
+id refusal
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3270,7 +3260,6 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
-id setting_editBtn
 id setting_log_out
 id sharedValueSet
 id sharedValueUnset
@@ -3385,7 +3374,6 @@ id uniform
 id unlabeled
 id up
 id useLogo
-id user_status
 id username
 id username_bottom_avatar
 id vertical_only
@@ -3502,7 +3490,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout account
-layout account_setting
+layout another_account
 layout authorization
 layout bottomshit_add_event
 layout chat
@@ -3593,6 +3581,7 @@ layout registration_name
 layout registration_password
 layout response
 layout row_card_event
+layout row_card_response
 layout row_item_profile
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
