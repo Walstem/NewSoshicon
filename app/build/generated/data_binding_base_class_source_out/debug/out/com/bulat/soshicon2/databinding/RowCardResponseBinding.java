@@ -4,7 +4,6 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,33 +21,24 @@ public final class RowCardResponseBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final TextView ContentMessage;
+  public final TextView Content;
 
   @NonNull
-  public final TextView NameMessage;
+  public final TextView Name;
 
   @NonNull
   public final TextView Time;
 
   @NonNull
-  public final CheckBox accept;
-
-  @NonNull
   public final CircleImageView avatar;
 
-  @NonNull
-  public final CheckBox refusal;
-
-  private RowCardResponseBinding(@NonNull ConstraintLayout rootView,
-      @NonNull TextView ContentMessage, @NonNull TextView NameMessage, @NonNull TextView Time,
-      @NonNull CheckBox accept, @NonNull CircleImageView avatar, @NonNull CheckBox refusal) {
+  private RowCardResponseBinding(@NonNull ConstraintLayout rootView, @NonNull TextView Content,
+      @NonNull TextView Name, @NonNull TextView Time, @NonNull CircleImageView avatar) {
     this.rootView = rootView;
-    this.ContentMessage = ContentMessage;
-    this.NameMessage = NameMessage;
+    this.Content = Content;
+    this.Name = Name;
     this.Time = Time;
-    this.accept = accept;
     this.avatar = avatar;
-    this.refusal = refusal;
   }
 
   @Override
@@ -78,15 +68,15 @@ public final class RowCardResponseBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.ContentMessage;
-      TextView ContentMessage = ViewBindings.findChildViewById(rootView, id);
-      if (ContentMessage == null) {
+      id = R.id.Content;
+      TextView Content = ViewBindings.findChildViewById(rootView, id);
+      if (Content == null) {
         break missingId;
       }
 
-      id = R.id.NameMessage;
-      TextView NameMessage = ViewBindings.findChildViewById(rootView, id);
-      if (NameMessage == null) {
+      id = R.id.Name;
+      TextView Name = ViewBindings.findChildViewById(rootView, id);
+      if (Name == null) {
         break missingId;
       }
 
@@ -96,26 +86,13 @@ public final class RowCardResponseBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.accept;
-      CheckBox accept = ViewBindings.findChildViewById(rootView, id);
-      if (accept == null) {
-        break missingId;
-      }
-
       id = R.id.avatar;
       CircleImageView avatar = ViewBindings.findChildViewById(rootView, id);
       if (avatar == null) {
         break missingId;
       }
 
-      id = R.id.refusal;
-      CheckBox refusal = ViewBindings.findChildViewById(rootView, id);
-      if (refusal == null) {
-        break missingId;
-      }
-
-      return new RowCardResponseBinding((ConstraintLayout) rootView, ContentMessage, NameMessage,
-          Time, accept, avatar, refusal);
+      return new RowCardResponseBinding((ConstraintLayout) rootView, Content, Name, Time, avatar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

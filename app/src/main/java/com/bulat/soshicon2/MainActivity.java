@@ -15,7 +15,7 @@ import com.bulat.soshicon2.BottomNavigation.account.LanguageManager;
 import com.bulat.soshicon2.BottomNavigation.Chat;
 import com.bulat.soshicon2.BottomNavigation.account.ThemeManager;
 import com.bulat.soshicon2.BottomNavigation.event.Event;
-import com.bulat.soshicon2.BottomNavigation.Response;
+import com.bulat.soshicon2.BottomNavigation.response.Response;
 import com.bulat.soshicon2.Registration.Authorization;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;

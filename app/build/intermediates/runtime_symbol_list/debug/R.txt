@@ -2786,11 +2786,13 @@ int id ALT 0x7f090000
 int id BOTTOM_END 0x7f090001
 int id BOTTOM_START 0x7f090002
 int id CTRL 0x7f090003
+int id Content 0x7f09026a
 int id ContentMessage 0x7f090004
 int id FAQ 0x7f090005
 int id FUNCTION 0x7f090006
 int id META 0x7f090007
 int id NO_DEBUG 0x7f090008
+int id Name 0x7f09026b
 int id NameMessage 0x7f090009
 int id SHIFT 0x7f09000a
 int id SHOW_ALL 0x7f09000b
@@ -2806,7 +2808,6 @@ int id Time 0x7f090014
 int id aboutUs 0x7f090015
 int id aboutUs_image 0x7f090016
 int id accelerate 0x7f090017
-int id accept 0x7f090018
 int id accessibility_action_clickable_span 0x7f090019
 int id accessibility_custom_action_0 0x7f09001a
 int id accessibility_custom_action_1 0x7f09001b
@@ -3224,7 +3225,6 @@ int id progress_horizontal 0x7f0901b6
 int id radio 0x7f0901b7
 int id ratio 0x7f0901b8
 int id rectangles 0x7f0901b9
-int id refusal 0x7f0901ba
 int id reverseSawtooth 0x7f0901bb
 int id right 0x7f0901bc
 int id rightToLeft 0x7f0901bd

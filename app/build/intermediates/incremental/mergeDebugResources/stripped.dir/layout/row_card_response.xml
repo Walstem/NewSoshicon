@@ -9,80 +9,50 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/avatar"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
         android:src="@drawable/profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/NameMessage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
         android:fontFamily="sans-serif-light"
         android:text="три часа назад"
         android:textColor="@color/oval_color"
         android:textSize="13sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/ContentMessage"
-        app:layout_constraintTop_toBottomOf="@+id/ContentMessage" />
+        app:layout_constraintStart_toStartOf="@+id/Name"
+        app:layout_constraintTop_toBottomOf="@+id/Name" />
 
     <TextView
-        android:id="@+id/NameMessage"
+        android:id="@+id/Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="213dp"
+        android:layout_marginStart="16dp"
         android:fontFamily="sans-serif-light"
         android:text="Булат Камалов"
         android:textColor="@color/splash_screen_bg"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/avatar"
         app:layout_constraintTop_toTopOf="@+id/avatar" />
 
     <TextView
-        android:id="@+id/ContentMessage"
+        android:id="@+id/Content"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:text="Шаблон пностью реализован в Swipe Refresh Layout виджет Шаблон пностью реализован в Swipe Refresh Layout виджет"
         android:textColor="@color/text_color_primary"
         android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/avatar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/NameMessage"
-        app:layout_constraintTop_toBottomOf="@+id/NameMessage" />
-
-    <CheckBox
-        android:id="@+id/refusal"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:button="@drawable/ic_clear"
-        android:buttonTint="@color/text_color_primary"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/Time"
         app:layout_constraintTop_toBottomOf="@+id/Time" />
 
-    <CheckBox
-        android:id="@+id/accept"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="16dp"
-        android:button="@drawable/ic_check"
-        android:buttonTint="@color/text_color_primary"
-        app:layout_constraintStart_toEndOf="@+id/refusal"
-        app:layout_constraintTop_toTopOf="@+id/refusal" />
 </androidx.constraintlayout.widget.ConstraintLayout>

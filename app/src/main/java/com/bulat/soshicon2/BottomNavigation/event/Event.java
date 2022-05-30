@@ -191,6 +191,7 @@ public class Event extends Fragment {
         //????????? ?????? ? ???????
         for (int i = 0; i < Event_json.length(); i++) {
             JSONObject jo = new JSONObject((String) Event_json.get(i));
+            System.out.println(jo);
             CreatorId.add(jo.get("user_id").toString());
             EventId.add(jo.get("id").toString());
             Content.add(jo.get("content").toString());

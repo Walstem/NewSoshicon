@@ -32,7 +32,9 @@ import com.bulat.soshicon2.asynctasks.SendQuery;
 import com.bulat.soshicon2.checks.FragmentReplace;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 class EventAdapter extends ArrayAdapter<String> {
     public static final String INPUT_LIKED_EVENT_PHP = "input_liked_event.php";
@@ -137,9 +139,16 @@ class EventAdapter extends ArrayAdapter<String> {
                 if(like.isChecked()){
                     like.setButtonDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_favorite_liked));
                     if (!sp.getString(ID, "").equals(EventId.getText().toString())){
-                        SendQuery query = new SendQuery(INPUT_LIKED_EVENT_PHP);
+
                         String UserID = sp.getString(ID,"");
-                        query.execute("?user_id="+UserID + "&event_id=" + EventAdapter.this.EventId.get(position));
+                        String EventID =  EventAdapter.this.EventId.get(position);
+
+                        String pattern = "yyyy-MM-dd-HH-mm";
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+                        String time = simpleDateFormat.format(new Date());
+
+                        SendQuery query = new SendQuery(INPUT_LIKED_EVENT_PHP);
+                        query.execute("?user_id="+UserID + "&event_id=" + EventID + "&id_liked_user=" + CreatorId.get(position) + "&time=" + time);
                     }
                 }
                 else{

@@ -2787,11 +2787,13 @@ id ALT
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
+id Content
 id ContentMessage
 id FAQ
 id FUNCTION
 id META
 id NO_DEBUG
+id Name
 id NameMessage
 id SHIFT
 id SHOW_ALL
@@ -2807,7 +2809,6 @@ id Time
 id aboutUs
 id aboutUs_image
 id accelerate
-id accept
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -3225,7 +3226,6 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
-id refusal
 id reverseSawtooth
 id right
 id rightToLeft

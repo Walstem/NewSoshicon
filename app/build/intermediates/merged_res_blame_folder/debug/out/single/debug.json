@@ -40,12 +40,12 @@
         "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_setting_text_size.xml"
     },
     {
-        "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\anim_error_shake.xml.flat",
-        "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\anim\\error_shake.xml"
-    },
-    {
         "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_soshicon.png.flat",
         "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\mipmap-hdpi\\soshicon.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\anim_error_shake.xml.flat",
+        "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\anim\\error_shake.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_event_tape.xml.flat",
