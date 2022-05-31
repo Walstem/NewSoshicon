@@ -1,5 +1,6 @@
 package com.bulat.soshicon2.BottomNavigation.account;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bulat.soshicon2.R;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -19,9 +21,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     private ArrayList<Uri> uriArrayList;
     private boolean FlagUri = true;
     ArrayList<Bitmap> bitmaps = new ArrayList<>();
+    Context context;
 
-    public RecyclerAdapter(ArrayList<Uri> uriArrayList) {
+    public RecyclerAdapter(ArrayList<Uri> uriArrayList, Context context) {
         this.uriArrayList = uriArrayList;
+        this.context=context;
     }
     public RecyclerAdapter(ArrayList<Bitmap> bitmaps, boolean FlagUri) {
         this.bitmaps = bitmaps;
@@ -41,7 +45,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.ViewHolder holder, int position) {
         if (FlagUri){
-            holder.imageView.setImageURI(uriArrayList.get(position));
+            //holder.imageView.setImageURI(uriArrayList.get(position));
+            Glide.with(context)
+                    .load(uriArrayList.get(position))
+                    .into(holder.imageView);
         }
         else{
             holder.imageView.setImageBitmap(bitmaps.get(position));

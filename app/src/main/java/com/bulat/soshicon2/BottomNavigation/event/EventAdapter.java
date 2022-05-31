@@ -30,6 +30,7 @@ import com.bulat.soshicon2.BottomNavigation.anotherAccount.AnotherAccount;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.asynctasks.SendQuery;
 import com.bulat.soshicon2.checks.FragmentReplace;
+import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.text.SimpleDateFormat;
@@ -84,9 +85,11 @@ class EventAdapter extends ArrayAdapter<String> {
 
 
         if (!Avatar.get(position).equals("null")){
-            byte [] encodeByte = Base64.decode(Avatar.get(position),Base64.DEFAULT);
-            Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
-            avatar.setImageBitmap(bitmap);
+
+            Glide.with(context)
+                    .load(Avatar.get(position))
+                    .into(avatar);
+
         }
         if (Distance.get(position) != null){
             distance.setText(Distance.get(position));

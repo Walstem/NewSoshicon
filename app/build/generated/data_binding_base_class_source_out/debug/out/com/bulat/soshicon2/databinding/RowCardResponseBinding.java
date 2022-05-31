@@ -32,13 +32,18 @@ public final class RowCardResponseBinding implements ViewBinding {
   @NonNull
   public final CircleImageView avatar;
 
+  @NonNull
+  public final TextView textLike;
+
   private RowCardResponseBinding(@NonNull ConstraintLayout rootView, @NonNull TextView Content,
-      @NonNull TextView Name, @NonNull TextView Time, @NonNull CircleImageView avatar) {
+      @NonNull TextView Name, @NonNull TextView Time, @NonNull CircleImageView avatar,
+      @NonNull TextView textLike) {
     this.rootView = rootView;
     this.Content = Content;
     this.Name = Name;
     this.Time = Time;
     this.avatar = avatar;
+    this.textLike = textLike;
   }
 
   @Override
@@ -92,7 +97,14 @@ public final class RowCardResponseBinding implements ViewBinding {
         break missingId;
       }
 
-      return new RowCardResponseBinding((ConstraintLayout) rootView, Content, Name, Time, avatar);
+      id = R.id.textLike;
+      TextView textLike = ViewBindings.findChildViewById(rootView, id);
+      if (textLike == null) {
+        break missingId;
+      }
+
+      return new RowCardResponseBinding((ConstraintLayout) rootView, Content, Name, Time, avatar,
+          textLike);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

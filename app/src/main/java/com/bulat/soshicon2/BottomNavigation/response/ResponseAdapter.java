@@ -25,6 +25,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.BottomNavigation.anotherAccount.AnotherAccount;
 import com.bulat.soshicon2.R;
+import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -72,9 +73,11 @@ class ResponseAdapter extends ArrayAdapter<String> {
 
 
         if (!Avatar.get(position).equals("null")){
-            byte [] encodeByte = Base64.decode(Avatar.get(position),Base64.DEFAULT);
-            Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
-            avatar.setImageBitmap(bitmap);
+
+            Glide.with(context)
+                    .load(Avatar.get(position))
+                    .into(avatar);
+
         }
 
         NameMessage.setText(Title.get(position));

@@ -50,7 +50,7 @@ public class Authorization extends Fragment {
     private String CompressAvatar;
     private String UserId;
     private ArrayList<String> GalleryPhotos = new ArrayList<>();
-    public static final String GET_AVATAR_PHP = "get_avatar.php";
+    public static final String GET_AVATAR_PHP = "get_avatar_aut.php";
 
     @Nullable
     @Override

@@ -1,19 +1,19 @@
 [
     {
-        "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\setting_language.xml",
-        "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\setting_language.xml"
-    },
-    {
         "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\registration_email.xml",
         "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\registration_email.xml"
     },
     {
-        "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_eror_add_event.xml",
-        "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_eror_add_event.xml"
+        "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\setting_language.xml",
+        "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\setting_language.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\registration_password.xml",
         "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\registration_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\toast_eror_add_event.xml",
+        "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\toast_eror_add_event.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\authorization.xml",

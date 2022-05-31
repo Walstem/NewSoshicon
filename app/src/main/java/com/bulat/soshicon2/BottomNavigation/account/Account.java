@@ -14,7 +14,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -23,7 +22,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -101,26 +99,15 @@ public class Account extends Fragment {
         query.execute("?user_id=" + sp.getString(ID, ""));
         System.out.println("SP: " + sp.getString(ID, ""));
 
+
         try {
             countImages = Integer.parseInt(query.get());
-            System.out.println("!!!!!!! " + countImages);
-            for (int i = 0; i < countImages; i++) {
-                File fileGallery = new File(sp.getString("compress_gallery_photo_" + i, ""));
-                try {
-                    Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(fileGallery));
-                    System.out.println(bitmap.toString());
-                    String path = sp.getString("compress_gallery_photo_" + i, "");
-                    Uri uri = Uri.parse(path);
-                    uriArr.add(uri);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-            }
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
-
-        adapter = new RecyclerAdapter(uriArr);
+        //UploadGallerydwd uploadGallery = new UploadGallerydwd(countImages);
+        //uploadGallery.execute();
+        adapter = new RecyclerAdapter(uriArr,getContext());
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
         recyclerView.setAdapter(adapter);
 
@@ -236,7 +223,7 @@ public class Account extends Fragment {
 
             try {
                 byte[] img = ReadFileOrSaveInDevice(uri.getPath(), 100);
-                byte[] compress_img = ReadFileOrSaveInDevice(uri.getPath(), 10);
+                byte[] compress_img = ReadFileOrSaveInDevice(uri.getPath(), 40);
 
                 UploadAvatar UploadPhoto = new UploadAvatar(img, compress_img, UPLOAD_AVATAR_PHP);
                 UploadPhoto.execute();
@@ -406,9 +393,9 @@ public class Account extends Fragment {
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(file));
         //чтение
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 40, stream);
         //запись
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 40, out);
         out.close();
         //запись пути к сжатой фотографии
         SharedPreferences sp = requireContext().getSharedPreferences(DATABASE, 0);
@@ -424,5 +411,32 @@ public class Account extends Fragment {
         bitmap.recycle();
         return byteArray;
     }
+    public class UploadGallerydwd extends AsyncTask {
+        int countImages;
 
+        public UploadGallerydwd(int countImages){
+            this.countImages = countImages;
+        }
+        @Override
+        protected Void doInBackground(Object... objects) {
+
+            for (int i = 0; i < countImages; i++) {
+                File fileGallery = new File(sp.getString("compress_gallery_photo_" + i, ""));
+                try {
+                    Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(fileGallery));
+                    System.out.println(bitmap.toString());
+                    String path = sp.getString("compress_gallery_photo_" + i, "");
+                    Uri uri = Uri.parse(path);
+                    uriArr.add(uri);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+            adapter = new RecyclerAdapter(uriArr,getContext());
+            recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
+            recyclerView.setAdapter(adapter);
+
+            return null;
+        }
+    }
 }
