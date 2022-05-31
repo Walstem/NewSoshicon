@@ -21,6 +21,7 @@ import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -70,13 +71,19 @@ public class Account extends Fragment {
 
     public static final String UPLOAD_AVATAR_PHP = "upload_avatar.php";
     public static final String UPLOAD_GALLERY_PHP = "upload_gallery_image.php";
+    public static final String GET_COUNT_IMAGES_PHP = "getCountImages.php";
+    public static final String GET_STATUS = "getStatus.php";
     private static final int READ_PERMISSION = 101;
-    CircleImageView profile;
+
     int numPhotoGal;
     int countImages;
+    String status;
 
+    CircleImageView avatarProfile;
+    TextView usernameProfile, statusProfile;
     RecyclerView recyclerView;
-    ImageView add_photo, delete_photo;
+    ImageView addPhotoGalleryBtn, profileSetting;
+    Button editProfile;
     SharedPreferences sp;
 
     ArrayList<Uri> uriArr = new ArrayList<>();
@@ -86,29 +93,56 @@ public class Account extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View MainView = inflater.inflate(R.layout.account, container, false);
+        sp = requireContext().getSharedPreferences(DATABASE, 0);
         BottomNavigationView navBar = requireActivity().findViewById(R.id.bottom_navigation);
         navBar.setVisibility(View.VISIBLE);
 
-        View MainView = inflater.inflate(R.layout.account, container, false);
-        sp = requireContext().getSharedPreferences(DATABASE, 0);
+        usernameProfile = MainView.findViewById(R.id.usernameProfile);
+        statusProfile = MainView.findViewById(R.id.statusProfile);
+        profileSetting = MainView.findViewById(R.id.settingBtnProfile);
+        avatarProfile = MainView.findViewById(R.id.avatarProfile);
+        addPhotoGalleryBtn = MainView.findViewById(R.id.addPhotoGalleryBtn);
+        recyclerView = MainView.findViewById(R.id.galleryProfile);
+        editProfile = MainView.findViewById(R.id.editProfileBtn);
 
-        add_photo = MainView.findViewById(R.id.add_photo);
+        adapter = new RecyclerAdapter(uriArr);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
+        recyclerView.setAdapter(adapter);
 
-        recyclerView = MainView.findViewById(R.id.gallery_images);
+        //Отоброжение аватара
+        File file = new File(sp.getString(AVATAR, ""));
+        try {
+            Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(file));
+            avatarProfile.setImageBitmap(bitmap);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        //Отображения имени пользователя
+        usernameProfile.setText(sp.getString(U_NICKNAME, ""));
+
+        //Обновление статуса
+        SendQuery queryStatus = new SendQuery(GET_STATUS);
+        queryStatus.execute("?id=" + sp.getString(ID, ""));
+        try {
+            status = queryStatus.get();
+            System.out.println(queryStatus.get());
+            statusProfile.setText(status);
+        }
+        catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
 
         //Обновление галереи
-        SendQuery query = new SendQuery("getCountImages.php");
+        SendQuery query = new SendQuery(GET_COUNT_IMAGES_PHP);
         query.execute("?user_id=" + sp.getString(ID, ""));
-        System.out.println("SP: " + sp.getString(ID, ""));
-
         try {
             countImages = Integer.parseInt(query.get());
-            System.out.println("!!!!!!! " + countImages);
             for (int i = 0; i < countImages; i++) {
                 File fileGallery = new File(sp.getString("compress_gallery_photo_" + i, ""));
                 try {
                     Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(fileGallery));
-                    System.out.println(bitmap.toString());
                     String path = sp.getString("compress_gallery_photo_" + i, "");
                     Uri uri = Uri.parse(path);
                     uriArr.add(uri);
@@ -120,10 +154,6 @@ public class Account extends Fragment {
             e.printStackTrace();
         }
 
-        adapter = new RecyclerAdapter(uriArr);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
-        recyclerView.setAdapter(adapter);
-
         //Активность для выбора изображения в галерею
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
             if(result.getResultCode() == Activity.RESULT_OK && null != result.getData()) {
@@ -134,7 +164,7 @@ public class Account extends Fragment {
                             Uri imageUri = result.getData().getClipData().getItemAt(i).getUri();
                             try {
                                 String getUri = getRealPathFromUri(requireContext(), imageUri);
-                                byte[] img = ReadFileOrSaveInDeviceGallery(getUri, uriArr.size());
+                                byte[] img = UploadGallery.ReadFileOrSaveInDeviceGallery(requireContext(), getUri, uriArr.size());
                                 numPhotoGal = uriArr.size();
                                 UploadGallery UploadPhotoGallery = new UploadGallery(img, UPLOAD_GALLERY_PHP, numPhotoGal);
                                 UploadPhotoGallery.execute();
@@ -152,7 +182,7 @@ public class Account extends Fragment {
                         System.out.println(imageUri);
                         try {
                             String getUri = getRealPathFromUri(requireContext(), imageUri);
-                            byte[] img = ReadFileOrSaveInDeviceGallery(getUri, uriArr.size());
+                            byte[] img = UploadGallery.ReadFileOrSaveInDeviceGallery(requireContext(), getUri, uriArr.size());
                             numPhotoGal = uriArr.size();
                             UploadGallery UploadPhotoGallery = new UploadGallery(img, UPLOAD_GALLERY_PHP, numPhotoGal);
                             UploadPhotoGallery.execute();
@@ -168,7 +198,7 @@ public class Account extends Fragment {
         });
 
         //Кнопка добавления изображения в галерею
-        add_photo.setOnClickListener(view -> {
+        addPhotoGalleryBtn.setOnClickListener(view -> {
             if(ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
                     != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(requireActivity(),
@@ -181,31 +211,15 @@ public class Account extends Fragment {
             }
         });
 
-        TextView name = MainView.findViewById(R.id.username_bottom_avatar);
-        ImageView account_setting = MainView.findViewById(R.id.account_edit);
-        profile = (CircleImageView) MainView.findViewById(R.id.profile_avatar);
-
-        //Отоброжение фотографии в профиле
-        File file = new File(sp.getString(AVATAR, ""));
-        System.out.println(sp.getString(AVATAR, ""));
-
-        try {
-            Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(file));
-            profile.setImageBitmap(bitmap);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        //чтение
-        name.setText(sp.getString(U_NICKNAME, ""));
-
-        account_setting.setOnClickListener(view -> FragmentReplace.replaceFragmentParent(new Setting(), requireActivity()));
-
-        profile.setOnClickListener(view -> ImagePicker.with(Account.this)
-                .crop()	    			//Crop image(Optional), Check Customization for more option
-                .compress(1024)			//Final image size will be less than 1 MB(Optional)
-                .maxResultSize(600, 600)	//Final image resolution will be less than 1080 x 1080(Optional)
+        //Кнопка обновления аватара
+        avatarProfile.setOnClickListener(view -> ImagePicker.with(Account.this)
+                .crop()
+                .compress(1024)
+                .maxResultSize(600, 600)
                 .start());
+
+        profileSetting.setOnClickListener(view -> FragmentReplace.replaceFragmentParent(new Setting(), requireActivity()));
+        editProfile.setOnClickListener(view -> FragmentReplace.replaceFragmentParent(new Redactor(), requireActivity()));
 
         return MainView;
     }
@@ -232,197 +246,21 @@ public class Account extends Fragment {
             super.onActivityResult(requestCode, resultCode, data);
 
             Uri uri = data.getData();
-            profile.setImageURI(uri);
+            avatarProfile.setImageURI(uri);
 
             try {
-                byte[] img = ReadFileOrSaveInDevice(uri.getPath(), 100);
-                byte[] compress_img = ReadFileOrSaveInDevice(uri.getPath(), 10);
+                byte[] img = UploadAvatar.ReadFileOrSaveInDevice(requireContext(), uri.getPath(), 100);
+                byte[] compress_img = UploadAvatar.ReadFileOrSaveInDevice(requireContext(), uri.getPath(), 10);
 
-                UploadAvatar UploadPhoto = new UploadAvatar(img, compress_img, UPLOAD_AVATAR_PHP);
+                UploadAvatar UploadPhoto = new UploadAvatar(requireContext(), img, compress_img, UPLOAD_AVATAR_PHP);
                 UploadPhoto.execute();
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         }
-        catch (Exception e){
-
-        }
-
-    }
-
-    public byte[] ReadFileOrSaveInDevice(String filename, int compress) throws IOException {
-        boolean compressFlag;
-        compressFlag = compress != 100;
-        String compressPath = requireContext().getFilesDir() + "/avatar_compress_" + compressFlag + ".jpg";
-
-
-        //Создание объекта записи сжатой фографии на устройсвто
-        FileOutputStream out = new FileOutputStream(compressPath);
-        //Создание объекта чтения фото с устройства
-        File file = new File(filename);
-
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(file));
-        //чтение
-        bitmap.compress(Bitmap.CompressFormat.JPEG, compress, stream);
-        //запись
-        bitmap.compress(Bitmap.CompressFormat.JPEG, compress, out);
-        out.close();
-        //запись пути к сжатой фотографии
-        SharedPreferences sp = requireContext().getSharedPreferences(DATABASE, 0);
-        SharedPreferences.Editor ed = sp.edit();
-        ed.putString("compress_avatar_" + compressFlag, compressPath);
-        ed.apply();
-        System.out.println("1234" + compressPath);
-
-        //сохранение пути к картинке
-
-        byte[] byteArray = stream.toByteArray();
-        bitmap.recycle();
-        return byteArray;
-    }
-
-    class UploadAvatar extends AsyncTask<String, String, String> {
-        String filename;
-        byte[] imgArray;
-        byte[] CompressImgArray;
-        UploadAvatar(byte[] imgArray, byte[] CompressImgArray,String filename){
-            this.imgArray = imgArray;
-            this.filename = filename;
-            this.CompressImgArray = CompressImgArray;
-        }
-
-        @Override
-        protected String doInBackground(String... strings) {
-            HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost("http://j911147y.beget.tech/" + filename);
-            SharedPreferences sp = requireContext().getSharedPreferences(DATABASE, 0);
-
-            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
-            final String ConvertImage = Base64.encodeToString(imgArray, Base64.DEFAULT);
-            final String ConvertCompressImage = Base64.encodeToString(CompressImgArray, Base64.DEFAULT);
-
-            nameValuePairs.add(new BasicNameValuePair("avatar_img", ConvertImage));
-            nameValuePairs.add(new BasicNameValuePair("compress_img", ConvertCompressImage));
-            nameValuePairs.add(new BasicNameValuePair("id", sp.getString(ID, "")));
-            try {
-                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
-
-            //Execute and get the response.
-            HttpResponse response = null;
-            try {
-                response = httpclient.execute(httppost);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                assert response != null;
-                HttpEntity entity = response.getEntity();
-
-                int n = 0;
-                char[] buffer = new char[1024 * 4];
-                InputStreamReader reader = new InputStreamReader(entity.getContent(), StandardCharsets.UTF_8);
-                StringWriter writer = new StringWriter();
-                while (-1 != (n = reader.read(buffer))) writer.write(buffer, 0, n);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-
-            httpclient.getConnectionManager().shutdown();
-            return null;
+        catch (Exception e) {
+            e.printStackTrace();
         }
     }
-
-    class UploadGallery extends AsyncTask<String, String, String> {
-        String filename;
-        byte[] imgArray;
-        int numberPhotoGallery;
-        UploadGallery(byte[] imgArray, String filename, int numberPhotoGallery){
-            this.imgArray = imgArray;
-            this.filename = filename;
-            this.numberPhotoGallery = numberPhotoGallery;
-        }
-
-        @Override
-        protected String doInBackground(String... strings) {
-            HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost("http://j911147y.beget.tech/" + filename);
-            SharedPreferences sp = requireContext().getSharedPreferences(DATABASE, 0);
-
-            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
-            final String ConvertImage = Base64.encodeToString(imgArray, Base64.DEFAULT);
-
-            nameValuePairs.add(new BasicNameValuePair("gallery_image", ConvertImage));
-            nameValuePairs.add(new BasicNameValuePair("number_photo_gallery", Integer.toString(numberPhotoGallery)));
-            nameValuePairs.add(new BasicNameValuePair("id", sp.getString(ID, "")));
-            try {
-                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
-
-            //Execute and get the response.
-            HttpResponse response = null;
-            try {
-                response = httpclient.execute(httppost);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                assert response != null;
-                HttpEntity entity = response.getEntity();
-
-                int n = 0;
-                char[] buffer = new char[1024 * 4];
-                InputStreamReader reader = new InputStreamReader(entity.getContent(), StandardCharsets.UTF_8);
-                StringWriter writer = new StringWriter();
-                while (-1 != (n = reader.read(buffer))) writer.write(buffer, 0, n);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-
-            httpclient.getConnectionManager().shutdown();
-            return null;
-        }
-    }
-
-    public byte[] ReadFileOrSaveInDeviceGallery(String filename, int numberPhoto) throws IOException {
-        String compressPath = requireContext().getFilesDir() + "/compress_gallery_photo_" + numberPhoto + ".jpg";
-        System.out.println(compressPath);
-
-        //Создание объекта записи сжатой фографии на устройсвто
-        FileOutputStream out = new FileOutputStream(compressPath);
-        //Создание объекта чтения фото с устройства
-        File file = new File(filename);
-
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(file));
-        //чтение
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-        //запись
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
-        out.close();
-        //запись пути к сжатой фотографии
-        SharedPreferences sp = requireContext().getSharedPreferences(DATABASE, 0);
-        SharedPreferences.Editor ed = sp.edit();
-        ed.putString("compress_gallery_photo_" + numberPhoto, compressPath);
-        System.out.println("ЭТО ОНО2:" + sp.getString("compress_gallery_photo_" + numberPhoto, ""));
-        ed.apply();
-        System.out.println("1234" + compressPath);
-
-        //сохранение пути к картинке
-
-        byte[] byteArray = stream.toByteArray();
-        bitmap.recycle();
-        return byteArray;
-    }
-
 }

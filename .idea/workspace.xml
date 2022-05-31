@@ -161,8 +161,6 @@
       <option name="MODE" value="default_activity" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
@@ -230,14 +228,13 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-<<<<<<< HEAD
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-method">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/bulat/soshicon2/BottomNavigation/account/Account.java</url>
           <line>409</line>
-          <properties class="com.bulat.soshicon2.BottomNavigation.account.Account" method="ReadFileOrSaveInDeviceGallery" />
+          <properties class="com.bulat.soshicon2.BottomNavigation.account.Account" />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -248,6 +245,4 @@
       </breakpoints>
     </breakpoint-manager>
   </component>
-=======
->>>>>>> 7ee94d0503cdd2ab741dc4052aa814386bd195f7
 </project>

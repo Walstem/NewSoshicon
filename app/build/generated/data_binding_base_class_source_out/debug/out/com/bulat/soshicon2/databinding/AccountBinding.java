@@ -4,6 +4,7 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -26,52 +27,65 @@ public final class AccountBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ImageView accountEdit;
-
-  @NonNull
-  public final Toolbar accountToolbar;
-
-  @NonNull
-  public final ImageView addPhoto;
+  public final ImageView addPhotoGalleryBtn;
 
   @NonNull
   public final AppBarLayout appBarLayout;
 
   @NonNull
-  public final ConstraintLayout constraintLayout2;
+  public final CircleImageView avatarProfile;
 
   @NonNull
   public final ConstraintLayout containerAccount;
 
   @NonNull
-  public final TextView editText;
+  public final Button editProfileBtn;
 
   @NonNull
-  public final RecyclerView galleryImages;
+  public final RecyclerView galleryProfile;
 
   @NonNull
-  public final CircleImageView profileAvatar;
+  public final ConstraintLayout galleryProfileBox;
 
   @NonNull
-  public final MaterialTextView usernameBottomAvatar;
+  public final TextView nameTextProfile;
 
-  private AccountBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView accountEdit,
-      @NonNull Toolbar accountToolbar, @NonNull ImageView addPhoto,
-      @NonNull AppBarLayout appBarLayout, @NonNull ConstraintLayout constraintLayout2,
-      @NonNull ConstraintLayout containerAccount, @NonNull TextView editText,
-      @NonNull RecyclerView galleryImages, @NonNull CircleImageView profileAvatar,
-      @NonNull MaterialTextView usernameBottomAvatar) {
+  @NonNull
+  public final ImageView settingBtnProfile;
+
+  @NonNull
+  public final MaterialTextView statusProfile;
+
+  @NonNull
+  public final Toolbar toolbarProfile;
+
+  @NonNull
+  public final ConstraintLayout userProfileBox;
+
+  @NonNull
+  public final MaterialTextView usernameProfile;
+
+  private AccountBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView addPhotoGalleryBtn,
+      @NonNull AppBarLayout appBarLayout, @NonNull CircleImageView avatarProfile,
+      @NonNull ConstraintLayout containerAccount, @NonNull Button editProfileBtn,
+      @NonNull RecyclerView galleryProfile, @NonNull ConstraintLayout galleryProfileBox,
+      @NonNull TextView nameTextProfile, @NonNull ImageView settingBtnProfile,
+      @NonNull MaterialTextView statusProfile, @NonNull Toolbar toolbarProfile,
+      @NonNull ConstraintLayout userProfileBox, @NonNull MaterialTextView usernameProfile) {
     this.rootView = rootView;
-    this.accountEdit = accountEdit;
-    this.accountToolbar = accountToolbar;
-    this.addPhoto = addPhoto;
+    this.addPhotoGalleryBtn = addPhotoGalleryBtn;
     this.appBarLayout = appBarLayout;
-    this.constraintLayout2 = constraintLayout2;
+    this.avatarProfile = avatarProfile;
     this.containerAccount = containerAccount;
-    this.editText = editText;
-    this.galleryImages = galleryImages;
-    this.profileAvatar = profileAvatar;
-    this.usernameBottomAvatar = usernameBottomAvatar;
+    this.editProfileBtn = editProfileBtn;
+    this.galleryProfile = galleryProfile;
+    this.galleryProfileBox = galleryProfileBox;
+    this.nameTextProfile = nameTextProfile;
+    this.settingBtnProfile = settingBtnProfile;
+    this.statusProfile = statusProfile;
+    this.toolbarProfile = toolbarProfile;
+    this.userProfileBox = userProfileBox;
+    this.usernameProfile = usernameProfile;
   }
 
   @Override
@@ -101,21 +115,9 @@ public final class AccountBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.account_edit;
-      ImageView accountEdit = ViewBindings.findChildViewById(rootView, id);
-      if (accountEdit == null) {
-        break missingId;
-      }
-
-      id = R.id.account_toolbar;
-      Toolbar accountToolbar = ViewBindings.findChildViewById(rootView, id);
-      if (accountToolbar == null) {
-        break missingId;
-      }
-
-      id = R.id.add_photo;
-      ImageView addPhoto = ViewBindings.findChildViewById(rootView, id);
-      if (addPhoto == null) {
+      id = R.id.addPhotoGalleryBtn;
+      ImageView addPhotoGalleryBtn = ViewBindings.findChildViewById(rootView, id);
+      if (addPhotoGalleryBtn == null) {
         break missingId;
       }
 
@@ -125,41 +127,72 @@ public final class AccountBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.constraintLayout2;
-      ConstraintLayout constraintLayout2 = ViewBindings.findChildViewById(rootView, id);
-      if (constraintLayout2 == null) {
+      id = R.id.avatarProfile;
+      CircleImageView avatarProfile = ViewBindings.findChildViewById(rootView, id);
+      if (avatarProfile == null) {
         break missingId;
       }
 
       ConstraintLayout containerAccount = (ConstraintLayout) rootView;
 
-      id = R.id.editText;
-      TextView editText = ViewBindings.findChildViewById(rootView, id);
-      if (editText == null) {
+      id = R.id.editProfileBtn;
+      Button editProfileBtn = ViewBindings.findChildViewById(rootView, id);
+      if (editProfileBtn == null) {
         break missingId;
       }
 
-      id = R.id.gallery_images;
-      RecyclerView galleryImages = ViewBindings.findChildViewById(rootView, id);
-      if (galleryImages == null) {
+      id = R.id.galleryProfile;
+      RecyclerView galleryProfile = ViewBindings.findChildViewById(rootView, id);
+      if (galleryProfile == null) {
         break missingId;
       }
 
-      id = R.id.profile_avatar;
-      CircleImageView profileAvatar = ViewBindings.findChildViewById(rootView, id);
-      if (profileAvatar == null) {
+      id = R.id.galleryProfileBox;
+      ConstraintLayout galleryProfileBox = ViewBindings.findChildViewById(rootView, id);
+      if (galleryProfileBox == null) {
         break missingId;
       }
 
-      id = R.id.username_bottom_avatar;
-      MaterialTextView usernameBottomAvatar = ViewBindings.findChildViewById(rootView, id);
-      if (usernameBottomAvatar == null) {
+      id = R.id.nameTextProfile;
+      TextView nameTextProfile = ViewBindings.findChildViewById(rootView, id);
+      if (nameTextProfile == null) {
         break missingId;
       }
 
-      return new AccountBinding((ConstraintLayout) rootView, accountEdit, accountToolbar, addPhoto,
-          appBarLayout, constraintLayout2, containerAccount, editText, galleryImages, profileAvatar,
-          usernameBottomAvatar);
+      id = R.id.settingBtnProfile;
+      ImageView settingBtnProfile = ViewBindings.findChildViewById(rootView, id);
+      if (settingBtnProfile == null) {
+        break missingId;
+      }
+
+      id = R.id.statusProfile;
+      MaterialTextView statusProfile = ViewBindings.findChildViewById(rootView, id);
+      if (statusProfile == null) {
+        break missingId;
+      }
+
+      id = R.id.toolbarProfile;
+      Toolbar toolbarProfile = ViewBindings.findChildViewById(rootView, id);
+      if (toolbarProfile == null) {
+        break missingId;
+      }
+
+      id = R.id.userProfileBox;
+      ConstraintLayout userProfileBox = ViewBindings.findChildViewById(rootView, id);
+      if (userProfileBox == null) {
+        break missingId;
+      }
+
+      id = R.id.usernameProfile;
+      MaterialTextView usernameProfile = ViewBindings.findChildViewById(rootView, id);
+      if (usernameProfile == null) {
+        break missingId;
+      }
+
+      return new AccountBinding((ConstraintLayout) rootView, addPhotoGalleryBtn, appBarLayout,
+          avatarProfile, containerAccount, editProfileBtn, galleryProfile, galleryProfileBox,
+          nameTextProfile, settingBtnProfile, statusProfile, toolbarProfile, userProfileBox,
+          usernameProfile);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

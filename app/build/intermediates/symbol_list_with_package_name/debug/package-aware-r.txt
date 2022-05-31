@@ -2842,7 +2842,6 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
-id account_edit
 id account_toolbar
 id action0
 id actionDown
@@ -2868,7 +2867,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
-id add_photo
+id addPhotoGalleryBtn
 id adjust_height
 id adjust_width
 id alertTitle
@@ -2891,6 +2890,7 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id avatar
+id avatarProfile
 id back
 id barrier
 id baseline
@@ -2909,6 +2909,7 @@ id buttonPanel
 id cache_measures
 id callMeasure
 id cancel
+id cancelEditProfile
 id cancel_action
 id cancel_button
 id carryVelocity
@@ -3005,10 +3006,12 @@ id easeInOut
 id easeOut
 id east
 id ed_add
+id editProfileBtn
 id editText
 id edit_query
 id elastic
 id email
+id emailField
 id email_btn
 id end
 id endToStart
@@ -3037,6 +3040,8 @@ id floating
 id forever
 id fragment_container_view_tag
 id frost
+id galleryProfile
+id galleryProfileBox
 id gallery_images
 id ghost_view
 id ghost_view_holder
@@ -3171,6 +3176,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id nameTextProfile
 id nav_account
 id nav_chat
 id nav_controller_view_tag
@@ -3211,6 +3217,7 @@ id parentPanel
 id parentRelative
 id parent_matrix
 id password
+id passwordField
 id password_btn
 id password_toggle
 id path
@@ -3236,6 +3243,7 @@ id rounded
 id row_index_key
 id rtl
 id russian_radio
+id saveChangeBtn
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3260,6 +3268,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id settingBtnProfile
 id setting_log_out
 id sharedValueSet
 id sharedValueUnset
@@ -3299,6 +3308,8 @@ id state_rotate
 id state_scale
 id staticLayout
 id staticPostLayout
+id statusField
+id statusProfile
 id status_bar_latest_event_content
 id stop
 id stretch
@@ -3353,6 +3364,7 @@ id title_template
 id toast_layout_root
 id toggle
 id toolbar
+id toolbarProfile
 id toolbar_title
 id top
 id topPanel
@@ -3374,7 +3386,10 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id userProfileBox
 id username
+id usernameField
+id usernameProfile
 id username_bottom_avatar
 id vertical_only
 id view

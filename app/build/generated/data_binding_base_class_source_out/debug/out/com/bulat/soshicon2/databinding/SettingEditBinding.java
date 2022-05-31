@@ -4,6 +4,7 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,7 +22,7 @@ public final class SettingEditBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ImageView cancel;
+  public final ImageView cancelEditProfile;
 
   @NonNull
   public final ConstraintLayout constraintLayout;
@@ -30,25 +31,34 @@ public final class SettingEditBinding implements ViewBinding {
   public final ConstraintLayout containerSettingEdit;
 
   @NonNull
-  public final TextInputLayout email;
+  public final TextInputLayout emailField;
 
   @NonNull
-  public final TextInputLayout password;
+  public final TextInputLayout passwordField;
 
   @NonNull
-  public final TextInputLayout username;
+  public final Button saveChangeBtn;
 
-  private SettingEditBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView cancel,
-      @NonNull ConstraintLayout constraintLayout, @NonNull ConstraintLayout containerSettingEdit,
-      @NonNull TextInputLayout email, @NonNull TextInputLayout password,
-      @NonNull TextInputLayout username) {
+  @NonNull
+  public final TextInputLayout statusField;
+
+  @NonNull
+  public final TextInputLayout usernameField;
+
+  private SettingEditBinding(@NonNull ConstraintLayout rootView,
+      @NonNull ImageView cancelEditProfile, @NonNull ConstraintLayout constraintLayout,
+      @NonNull ConstraintLayout containerSettingEdit, @NonNull TextInputLayout emailField,
+      @NonNull TextInputLayout passwordField, @NonNull Button saveChangeBtn,
+      @NonNull TextInputLayout statusField, @NonNull TextInputLayout usernameField) {
     this.rootView = rootView;
-    this.cancel = cancel;
+    this.cancelEditProfile = cancelEditProfile;
     this.constraintLayout = constraintLayout;
     this.containerSettingEdit = containerSettingEdit;
-    this.email = email;
-    this.password = password;
-    this.username = username;
+    this.emailField = emailField;
+    this.passwordField = passwordField;
+    this.saveChangeBtn = saveChangeBtn;
+    this.statusField = statusField;
+    this.usernameField = usernameField;
   }
 
   @Override
@@ -78,9 +88,9 @@ public final class SettingEditBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.cancel;
-      ImageView cancel = ViewBindings.findChildViewById(rootView, id);
-      if (cancel == null) {
+      id = R.id.cancelEditProfile;
+      ImageView cancelEditProfile = ViewBindings.findChildViewById(rootView, id);
+      if (cancelEditProfile == null) {
         break missingId;
       }
 
@@ -92,26 +102,39 @@ public final class SettingEditBinding implements ViewBinding {
 
       ConstraintLayout containerSettingEdit = (ConstraintLayout) rootView;
 
-      id = R.id.email;
-      TextInputLayout email = ViewBindings.findChildViewById(rootView, id);
-      if (email == null) {
+      id = R.id.emailField;
+      TextInputLayout emailField = ViewBindings.findChildViewById(rootView, id);
+      if (emailField == null) {
         break missingId;
       }
 
-      id = R.id.password;
-      TextInputLayout password = ViewBindings.findChildViewById(rootView, id);
-      if (password == null) {
+      id = R.id.passwordField;
+      TextInputLayout passwordField = ViewBindings.findChildViewById(rootView, id);
+      if (passwordField == null) {
         break missingId;
       }
 
-      id = R.id.username;
-      TextInputLayout username = ViewBindings.findChildViewById(rootView, id);
-      if (username == null) {
+      id = R.id.saveChangeBtn;
+      Button saveChangeBtn = ViewBindings.findChildViewById(rootView, id);
+      if (saveChangeBtn == null) {
         break missingId;
       }
 
-      return new SettingEditBinding((ConstraintLayout) rootView, cancel, constraintLayout,
-          containerSettingEdit, email, password, username);
+      id = R.id.statusField;
+      TextInputLayout statusField = ViewBindings.findChildViewById(rootView, id);
+      if (statusField == null) {
+        break missingId;
+      }
+
+      id = R.id.usernameField;
+      TextInputLayout usernameField = ViewBindings.findChildViewById(rootView, id);
+      if (usernameField == null) {
+        break missingId;
+      }
+
+      return new SettingEditBinding((ConstraintLayout) rootView, cancelEditProfile,
+          constraintLayout, containerSettingEdit, emailField, passwordField, saveChangeBtn,
+          statusField, usernameField);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
