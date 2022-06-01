@@ -74,6 +74,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\littl\\.gradle\\caches\\transforms-3\\f2d08909fa7456652153ed9d618bed7a\\transformed\\jetified-ucrop-2.2.7\\res\\values-sk\\values-sk.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,182",
+                        "endColumns": "69,56,50",
+                        "endOffsets": "120,177,228"
+                    },
+                    "to": {
+                        "startLines": "111,112,113",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "10083,10153,10210",
+                        "endColumns": "69,56,50",
+                        "endOffsets": "10148,10205,10256"
+                    }
+                },
+                {
                     "source": "C:\\Users\\littl\\.gradle\\caches\\transforms-3\\95fe71d8b42322e63d12f26f25cff6ef\\transformed\\navigation-ui-2.4.2\\res\\values-sk\\values-sk.xml",
                     "from": {
                         "startLines": "2,3",
@@ -88,23 +105,6 @@
                         "startOffsets": "9587,9693",
                         "endColumns": "105,126",
                         "endOffsets": "9688,9815"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\littl\\.gradle\\caches\\transforms-3\\d12aba642c03d568a36488383a2f9481\\transformed\\jetified-ucrop-2.2.6\\res\\values-sk\\values-sk.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,125,182",
-                        "endColumns": "69,56,50",
-                        "endOffsets": "120,177,228"
-                    },
-                    "to": {
-                        "startLines": "111,112,113",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "10083,10153,10210",
-                        "endColumns": "69,56,50",
-                        "endOffsets": "10148,10205,10256"
                     }
                 },
                 {

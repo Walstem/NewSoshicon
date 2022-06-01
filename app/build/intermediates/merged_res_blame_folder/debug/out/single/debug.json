@@ -48,12 +48,12 @@
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\account.xml"
     },
     {
-        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_soshicon.png.flat",
-        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\mipmap-xxxhdpi\\soshicon.png"
-    },
-    {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_toast_success.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_toast_success.xml"
+    },
+    {
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_soshicon.png.flat",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\mipmap-xxxhdpi\\soshicon.png"
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_event_tape.xml.flat",
@@ -106,6 +106,10 @@
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_soshicon_round.png.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\mipmap-xxhdpi\\soshicon_round.png"
+    },
+    {
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_favorite_liked_24.xml.flat",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_favorite_liked_24.xml"
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_row_card_event.xml.flat",
@@ -230,6 +234,10 @@
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_round_setting_back_center.xml.flat",
         "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\round_setting_back_center.xml"
+    },
+    {
+        "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_oval_shape_like.xml.flat",
+        "source": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\oval_shape_like.xml"
     },
     {
         "merged": "C:\\Users\\littl\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_bottom_nav_favorite.xml.flat",

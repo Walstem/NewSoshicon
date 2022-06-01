@@ -114,6 +114,10 @@
     <string name="password_toggle_content_description">पासवर्ड दिखाएं</string>
     <string name="permission_camera_denied">
         <![CDATA[चित्र लेने के लिए संग्रहण अनुमति की आवश्यकता होती है। कृपया सेटिंग्स> अनुमतियों से भंडारण की अनुमति दें।]]></string>
+    <string name="permission_camera_extended_denied">
+        <![CDATA[तस्वीर लेने के लिए कैमरा और संग्रहण अनुमति की जरूरत होती है। कृपया सेटिंग> अनुमतियां से दोनों अनुरोधित अनुमतियों को अनुमति दें।]]></string>
+    <string name="permission_gallery_denied">
+        <![CDATA[गैलरी की छवि चुनने के लिए संग्रहण अनुमति की आवश्यकता होती है। कृपया सेटिंग्स> अनुमतियों से संग्रहण की अनुमति दें।]]></string>
     <string msgid="6264217191555673260" name="search_menu_title">"खोजें"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
     <string name="title_camera">कैमरा</string>

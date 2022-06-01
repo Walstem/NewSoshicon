@@ -114,6 +114,10 @@
     <string name="password_toggle_content_description">Passwort anzeigen</string>
     <string name="permission_camera_denied">
         <![CDATA[Die Berechtigung zum Zugriff auf den externen Speicher ist notwendig um ein Foto aufzunehmen. Bitte erlaube den Zugriff unter Einstellungen > Berechtigungen.]]></string>
+    <string name="permission_camera_extended_denied">
+        <![CDATA[Die Berechtigungen Kamera und Zugriff auf den externen Speicher sind notwendig um ein Foto aufzunehmen. Bitte erlaube alle angefordeten Berechtigungen unter Einstellungen > Berechtigungen.]]></string>
+    <string name="permission_gallery_denied">
+        <![CDATA[Die Berechtigung zum Lesen des Speichers ist notwendig um ein Bild auszuwählen. Bitte erlaube die entprechende Berechtigung unter Einstellungen > Berechtigungen.]]></string>
     <string msgid="6264217191555673260" name="search_menu_title">"Suche"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
     <string name="title_camera">Kamera</string>

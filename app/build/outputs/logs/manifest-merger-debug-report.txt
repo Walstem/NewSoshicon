@@ -10,7 +10,8 @@ MERGED from [androidx.navigation:navigation-ui:2.4.2] C:\Users\littl\.gradle\cac
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\littl\.gradle\caches\transforms-3\f4644d49845b47ba06b9572c54ce16a0\transformed\material-1.5.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\littl\.gradle\caches\transforms-3\aa44eb9e8d37a3439d636831a2be5455\transformed\constraintlayout-2.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:2:1-42:12
-MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\littl\.gradle\caches\transforms-3\d12aba642c03d568a36488383a2f9481\transformed\jetified-ucrop-2.2.6\AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:2:1-59:12
+MERGED from [com.github.yalantis:ucrop:2.2.7] C:\Users\littl\.gradle\caches\transforms-3\f2d08909fa7456652153ed9d618bed7a\transformed\jetified-ucrop-2.2.7\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.4.1] C:\Users\littl\.gradle\caches\transforms-3\914116008979e77bc79da871871e9f31\transformed\appcompat-1.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.4.1] C:\Users\littl\.gradle\caches\transforms-3\d94f90afd3d530bd4dda00f3fd97931a\transformed\jetified-lifecycle-livedata-ktx-2.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-fragment:2.4.2] C:\Users\littl\.gradle\caches\transforms-3\a6923b03a314092b7528f78cfa8f9749\transformed\navigation-fragment-2.4.2\AndroidManifest.xml:17:1-24:12
@@ -44,7 +45,7 @@ MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\littl\.gradle\ca
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\littl\.gradle\caches\transforms-3\05004be9d5f40db3a3f43ef3ca30f636\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.media:media:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\e815605bb395830277d015e0e19ca4b8\transformed\media-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\ea99aa67336d4d62f7f663b262956f65\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\littl\.gradle\caches\transforms-3\a0259706a5179253b70adbda5e8abc90\transformed\jetified-core-ktx-1.3.2\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.core:core-ktx:1.7.0] C:\Users\littl\.gradle\caches\transforms-3\ec766156d10e981399364ad0d2eb2197\transformed\jetified-core-ktx-1.7.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\e68bd84e89a1199c0e0bb7915ca54e8d\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.transition:transition:1.4.1] C:\Users\littl\.gradle\caches\transforms-3\15cb71aeabc755905366f214fab5121c\transformed\transition-1.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.window:window:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\4b67f92faa216683b9d05df11a75a1dd\transformed\jetified-window-1.0.0\AndroidManifest.xml:17:1-33:12
@@ -57,8 +58,8 @@ MERGED from [androidx.savedstate:savedstate-ktx:1.1.0] C:\Users\littl\.gradle\ca
 MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\littl\.gradle\caches\transforms-3\f08aa1569562031982a90915b0d403c6\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\5c5564f3c21f160b8593b6357f42704c\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.1] C:\Users\littl\.gradle\caches\transforms-3\0462999d532ea43ec1086a82e9d5a17f\transformed\lifecycle-viewmodel-2.4.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.exifinterface:exifinterface:1.3.2] C:\Users\littl\.gradle\caches\transforms-3\e32bc1f345956912369ae7e7834c1200\transformed\exifinterface-1.3.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.documentfile:documentfile:1.0.1] C:\Users\littl\.gradle\caches\transforms-3\69170994e1c2455375232312244bd8e2\transformed\documentfile-1.0.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] C:\Users\littl\.gradle\caches\transforms-3\e17df90ce5043fd64d9a4ed9229ebf09\transformed\exifinterface-1.3.3\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\littl\.gradle\caches\transforms-3\36325408cec9ed0dd0d5d908fc64e1b9\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\littl\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:17:1-37:12
 MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\3b6ee467fac90b27cde8f39b2bba82a2\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:17:1-33:12
@@ -106,10 +107,16 @@ MERGED from [com.parse:parse-android:1.16.3] C:\Users\littl\.gradle\caches\trans
 		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:9:22-64
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:10:5-81
+MERGED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:10:5-12:38
+MERGED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:10:5-12:38
+	android:maxSdkVersion
+		ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:12:9-35
 	android:name
 		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:10:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:11:5-80
+MERGED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:9:5-80
+MERGED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:9:5-80
 	android:name
 		ADDED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml:11:22-77
 uses-permission#android.permission.ACCESS_FINE_LOCATION
@@ -130,6 +137,8 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\littl\.g
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\littl\.gradle\caches\transforms-3\aa44eb9e8d37a3439d636831a2be5455\transformed\constraintlayout-2.1.3\AndroidManifest.xml:9:5-20
 MERGED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:21:5-40:19
 MERGED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:21:5-40:19
+MERGED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:38:5-57:19
+MERGED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:38:5-57:19
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\littl\.gradle\caches\transforms-3\c9249bf15903e236034c83bb12b3a106\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\littl\.gradle\caches\transforms-3\c9249bf15903e236034c83bb12b3a106\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
 MERGED from [com.parse:parse-android:1.16.3] C:\Users\littl\.gradle\caches\transforms-3\6873e9c41f53d1dee27627f1df287259\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:22:5-27:19
@@ -224,8 +233,10 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\littl\.g
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\littl\.gradle\caches\transforms-3\aa44eb9e8d37a3439d636831a2be5455\transformed\constraintlayout-2.1.3\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\littl\.gradle\caches\transforms-3\d12aba642c03d568a36488383a2f9481\transformed\jetified-ucrop-2.2.6\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\littl\.gradle\caches\transforms-3\d12aba642c03d568a36488383a2f9481\transformed\jetified-ucrop-2.2.6\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.yalantis:ucrop:2.2.7] C:\Users\littl\.gradle\caches\transforms-3\f2d08909fa7456652153ed9d618bed7a\transformed\jetified-ucrop-2.2.7\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.yalantis:ucrop:2.2.7] C:\Users\littl\.gradle\caches\transforms-3\f2d08909fa7456652153ed9d618bed7a\transformed\jetified-ucrop-2.2.7\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.4.1] C:\Users\littl\.gradle\caches\transforms-3\914116008979e77bc79da871871e9f31\transformed\appcompat-1.4.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.4.1] C:\Users\littl\.gradle\caches\transforms-3\914116008979e77bc79da871871e9f31\transformed\appcompat-1.4.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.4.1] C:\Users\littl\.gradle\caches\transforms-3\d94f90afd3d530bd4dda00f3fd97931a\transformed\jetified-lifecycle-livedata-ktx-2.4.1\AndroidManifest.xml:20:5-22:41
@@ -292,8 +303,8 @@ MERGED from [androidx.media:media:1.0.0] C:\Users\littl\.gradle\caches\transform
 MERGED from [androidx.media:media:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\e815605bb395830277d015e0e19ca4b8\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\ea99aa67336d4d62f7f663b262956f65\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\ea99aa67336d4d62f7f663b262956f65\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\littl\.gradle\caches\transforms-3\a0259706a5179253b70adbda5e8abc90\transformed\jetified-core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\littl\.gradle\caches\transforms-3\a0259706a5179253b70adbda5e8abc90\transformed\jetified-core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.7.0] C:\Users\littl\.gradle\caches\transforms-3\ec766156d10e981399364ad0d2eb2197\transformed\jetified-core-ktx-1.7.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.7.0] C:\Users\littl\.gradle\caches\transforms-3\ec766156d10e981399364ad0d2eb2197\transformed\jetified-core-ktx-1.7.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\e68bd84e89a1199c0e0bb7915ca54e8d\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\e68bd84e89a1199c0e0bb7915ca54e8d\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.transition:transition:1.4.1] C:\Users\littl\.gradle\caches\transforms-3\15cb71aeabc755905366f214fab5121c\transformed\transition-1.4.1\AndroidManifest.xml:20:5-22:41
@@ -318,10 +329,10 @@ MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\littl\.gradle\caches\tra
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\littl\.gradle\caches\transforms-3\5c5564f3c21f160b8593b6357f42704c\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.1] C:\Users\littl\.gradle\caches\transforms-3\0462999d532ea43ec1086a82e9d5a17f\transformed\lifecycle-viewmodel-2.4.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.1] C:\Users\littl\.gradle\caches\transforms-3\0462999d532ea43ec1086a82e9d5a17f\transformed\lifecycle-viewmodel-2.4.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.exifinterface:exifinterface:1.3.2] C:\Users\littl\.gradle\caches\transforms-3\e32bc1f345956912369ae7e7834c1200\transformed\exifinterface-1.3.2\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.exifinterface:exifinterface:1.3.2] C:\Users\littl\.gradle\caches\transforms-3\e32bc1f345956912369ae7e7834c1200\transformed\exifinterface-1.3.2\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.documentfile:documentfile:1.0.1] C:\Users\littl\.gradle\caches\transforms-3\69170994e1c2455375232312244bd8e2\transformed\documentfile-1.0.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.1] C:\Users\littl\.gradle\caches\transforms-3\69170994e1c2455375232312244bd8e2\transformed\documentfile-1.0.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] C:\Users\littl\.gradle\caches\transforms-3\e17df90ce5043fd64d9a4ed9229ebf09\transformed\exifinterface-1.3.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] C:\Users\littl\.gradle\caches\transforms-3\e17df90ce5043fd64d9a4ed9229ebf09\transformed\exifinterface-1.3.3\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\littl\.gradle\caches\transforms-3\36325408cec9ed0dd0d5d908fc64e1b9\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\littl\.gradle\caches\transforms-3\36325408cec9ed0dd0d5d908fc64e1b9\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\littl\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:21:5-23:41
@@ -362,6 +373,8 @@ INJECTED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xm
 		INJECTED from C:\Users\littl\Desktop\NewSoshicon\app\src\main\AndroidManifest.xml
 queries
 ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:9:5-19:15
+MERGED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:14:5-36:15
+MERGED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:14:5-36:15
 intent#action:name:android.media.action.IMAGE_CAPTURE
 ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:12:9-14:18
 action#android.media.action.IMAGE_CAPTURE
@@ -384,6 +397,8 @@ ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches
 		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:23:13-81
 activity#com.yalantis.ucrop.UCropActivity
 ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:26:9-29:72
+MERGED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:43:9-46:72
+MERGED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:43:9-46:72
 	android:screenOrientation
 		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:28:13-49
 	android:theme
@@ -406,6 +421,50 @@ ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches
 		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:38:17-68
 	android:name
 		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\littl\.gradle\caches\transforms-3\0e08f017d28d6a33b21b43deee91d5e0\transformed\jetified-imagepicker-2.1\AndroidManifest.xml:37:17-67
+intent#action:name:android.intent.action.GET_CONTENT+category:name:android.intent.category.OPENABLE+data:mimeType:image/*
+ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:17:9-23:18
+action#android.intent.action.GET_CONTENT
+ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:18:13-72
+	android:name
+		ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:18:21-69
+category#android.intent.category.OPENABLE
+ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:20:13-73
+	android:name
+		ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:20:23-70
+data
+ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:22:13-48
+	android:mimeType
+		ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:22:19-45
+intent#action:name:android.intent.action.PICK+data:mimeType:image/*
+ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:24:9-28:18
+action#android.intent.action.PICK
+ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:25:13-65
+	android:name
+		ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:25:21-62
+intent#action:name:android.intent.action.CHOOSER
+ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:29:9-31:18
+action#android.intent.action.CHOOSER
+ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:30:13-68
+	android:name
+		ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:30:21-65
+activity#com.github.drjacky.imagepicker.ImagePickerActivity
+ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:39:9-42:68
+	android:screenOrientation
+		ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:41:13-52
+	android:theme
+		ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:42:13-65
+	android:name
+		ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:40:13-78
+provider#com.github.drjacky.imagepicker.ImagePickerFileProvider
+ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:48:9-56:20
+	android:grantUriPermissions
+		ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:52:13-47
+	android:authorities
+		ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:50:13-72
+	android:exported
+		ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:51:13-37
+	android:name
+		ADDED from [com.github.Drjacky:ImagePicker:2.1.15] C:\Users\littl\.gradle\caches\transforms-3\0e568087eb688ab26e0e86d3617b8e03\transformed\jetified-ImagePicker-2.1.15\AndroidManifest.xml:49:13-82
 service#com.parse.PushServiceApi26
 ADDED from [com.parse:parse-android:1.16.3] C:\Users\littl\.gradle\caches\transforms-3\6873e9c41f53d1dee27627f1df287259\transformed\jetified-parse-android-1.16.3\AndroidManifest.xml:23:9-26:72
 	android:exported

@@ -114,6 +114,10 @@
     <string name="password_toggle_content_description">Mostrar contraseña</string>
     <string name="permission_camera_denied">
         <![CDATA[Se necesitan permisos de Almacenamiento para tomar imágenes. Por favor activa todos los permisos solicitados en Ajustes > Permisos.]]></string>
+    <string name="permission_camera_extended_denied">
+        <![CDATA[Se necesitan permisos de Cámara y Almacenamiento para tomar imágenes. Por favor activa todos los permisos solicitados en Ajustes > Permisos.]]></string>
+    <string name="permission_gallery_denied">
+        <![CDATA[Se necesita permiso de Almacenamiento para elegir galería de imágenes. Por favor activa todos los permisos solicitados en Ajustes > Permisos.]]></string>
     <string msgid="6264217191555673260" name="search_menu_title">"Buscar"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
     <string name="title_camera">Cámara</string>
