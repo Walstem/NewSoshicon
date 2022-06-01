@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/container_account"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nameTextProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-light"
+                android:text="Профиль"
+                android:textColor="@color/text_color_primary"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbarProfile"
+                app:layout_constraintStart_toStartOf="@+id/toolbarProfile"
+                app:layout_constraintTop_toTopOf="@+id/toolbarProfile" />
+
+            <ImageView
+                android:id="@+id/addPhotoGalleryBtn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/account_edit"
+                android:src="@drawable/ic_add"
+                app:layout_constraintBottom_toBottomOf="@+id/nameTextProfile"
+                app:layout_constraintEnd_toStartOf="@+id/settingBtnProfile"
+                app:layout_constraintTop_toTopOf="@+id/nameTextProfile" />
+
+            <ImageView
+                android:id="@+id/settingBtnProfile"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/account_edit"
+                app:layout_constraintBottom_toBottomOf="@+id/addPhotoGalleryBtn"
+                app:layout_constraintEnd_toEndOf="@+id/toolbarProfile"
+                app:layout_constraintTop_toTopOf="@+id/addPhotoGalleryBtn"
+                app:srcCompat="@drawable/ic_account_setting" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/userProfileBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/galleryProfileBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatarProfile"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/usernameProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/username_hint"
+            android:textColor="@color/splash_screen_bg"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/avatarProfile"
+            app:layout_constraintTop_toTopOf="@+id/avatarProfile" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/statusProfile"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            android:textColor="@color/text_color_primary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/avatarProfile"
+            app:layout_constraintEnd_toEndOf="@+id/usernameProfile"
+            app:layout_constraintStart_toStartOf="@+id/usernameProfile"
+            app:layout_constraintTop_toBottomOf="@+id/usernameProfile" />
+
+        <Button
+            android:id="@+id/editProfileBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="EDIT PROFILE"
+            android:textColor="@color/text_color_primary"
+            android:backgroundTint="@color/background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/statusProfile"
+            app:layout_constraintStart_toStartOf="@+id/avatarProfile"
+            app:layout_constraintTop_toBottomOf="@+id/avatarProfile" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/galleryProfileBox"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userProfileBox">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/galleryProfile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:scrollbarStyle="outsideInset"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

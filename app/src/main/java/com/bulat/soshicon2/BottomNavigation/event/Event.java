@@ -40,7 +40,7 @@ public class Event extends Fragment {
 
     private int countRowsEvent;
     public int start = 10;
-    public int end = 10;
+    public int end = 100;
     double logitude;
     double latitude;
     boolean ScrollStateChanged = false;
@@ -101,7 +101,7 @@ public class Event extends Fragment {
                     else {
                         try {
                             start = 10;
-                            end = 10;
+                            end = 100;
                             show(listView, start, end, false);
 
                         } catch (JSONException | ExecutionException | InterruptedException | ParseException e) {
@@ -128,15 +128,15 @@ public class Event extends Fragment {
                         InternetToast.ViewInterntEror(view);
                     } else if (ScrollStateChanged) {
                         try {
-                            if (firstVisibleItem > start - 8) {
+                            if (firstVisibleItem > (start + 90 )- 8) {
                                 if (countRowsEvent < 1) {
                                     return;
-                                } else if (countRowsEvent / 10 < 1) {
-                                    start += 10;
+                                } else if (countRowsEvent / 100 < 1) {
+                                    start += 100;
                                     end = countRowsEvent;
                                 } else {
-                                    end = 10;
-                                    start += 10;
+                                    end = 100;
+                                    start += 100;
                                 }
 
                                 show(listView, start, end, true);
@@ -196,7 +196,7 @@ public class Event extends Fragment {
             EventId.add(jo.get("id").toString());
             Content.add(jo.get("content").toString());
             Title.add(jo.get("nickname").toString());
-            Avatar.add(jo.get("img").toString());
+            Avatar.add("http://j911147y.beget.tech/"+jo.get("img").toString());
             IsLiked.add(jo.get("liked").toString().equals("true"));
 
             String eventTime = (String) jo.get("time");

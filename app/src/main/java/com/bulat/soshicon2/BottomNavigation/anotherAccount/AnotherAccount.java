@@ -40,7 +40,7 @@ public class AnotherAccount extends Fragment {
 
     private String Avatar;
     private ArrayList<String> GalleryPhotos = new ArrayList<>();
-    ArrayList<Bitmap> bitmaps = new ArrayList<>();
+    ArrayList<Uri> uris = new ArrayList<>();
     RecyclerAdapter adapter;
     RecyclerView recyclerView;
     JSONObject jo;
@@ -108,15 +108,15 @@ public class AnotherAccount extends Fragment {
                 GalleryPhotos.add(jo_Gallery.get("gallery_image").toString());
                 //добавляем данные фото в список
                 if (GalleryPhotos.get(i) != null){
-                    byte [] encodeByte = Base64.decode(GalleryPhotos.get(i),Base64.DEFAULT);
-                    Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
-                    bitmaps.add(bitmap);
+                    //byte [] encodeByte = Base64.decode(GalleryPhotos.get(i),Base64.DEFAULT);
+                    Uri bitmap =  Uri.parse ("http://j911147y.beget.tech/"+GalleryPhotos.get(i));
+                    uris.add(bitmap);
                 }
             }
 
             if (GalleryPhotos.size() != 0){
                 //устанавливаем фотографии галлерии
-                adapter = new RecyclerAdapter(bitmaps, false);
+                adapter = new RecyclerAdapter(uris,getContext());
                 recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
                 recyclerView.setAdapter(adapter);
             }

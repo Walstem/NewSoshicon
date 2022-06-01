@@ -180,19 +180,27 @@ public class Response extends Fragment {
         //уменьшаем количество записей оставшихся в таблице
         countRowsEvent -= 10;
         //????????? ?????? ? ???????
+        String textContent;
         for (int i = 0; i < Event_json.length(); i++) {
             JSONObject jo = new JSONObject((String) Event_json.get(i));
             System.out.println(jo);
             CreatorId.add(jo.get("user_id").toString());
             ResponceId.add(jo.get("res_id").toString());
-            Content.add(jo.get("content").toString());
             Title.add(jo.get("nickname").toString());
-            Avatar.add(jo.get("img").toString());
+            Avatar.add("http://j911147y.beget.tech/" + jo.get("img").toString());
             EventID.add(jo.get("event_id").toString());
 
             String eventTime = jo.get("time").toString();
             Time.add(new EventTime().handle(eventTime));
 
+            textContent = jo.get("content").toString();
+            if (textContent.length() > 83){
+                textContent = textContent.substring(0, 55);
+                Content.add(textContent + "...");
+            }
+            else{
+                Content.add(jo.get("content").toString());
+            }
 
 
             //если происходит загрузка при переходе на страницу прогружаем listview Заново
