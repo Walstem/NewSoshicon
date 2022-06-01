@@ -2668,6 +2668,7 @@ drawable ic_clear
 drawable ic_clock_black_24dp
 drawable ic_favorite
 drawable ic_favorite_liked
+drawable ic_favorite_liked_24
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -2739,6 +2740,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable oval_shape_add
 drawable oval_shape_cancel
+drawable oval_shape_like
 drawable profile
 drawable radius
 drawable radius_bottom
@@ -3032,6 +3034,7 @@ id finish
 id firstPanelSetting
 id fitToContents
 id fixed
+id fl
 id flip
 id floating
 id forever
@@ -3062,6 +3065,8 @@ id ignoreRequest
 id im
 id image
 id imageView
+id imageView2
+id imageView3
 id image_recycler
 id image_view_crop
 id image_view_logo

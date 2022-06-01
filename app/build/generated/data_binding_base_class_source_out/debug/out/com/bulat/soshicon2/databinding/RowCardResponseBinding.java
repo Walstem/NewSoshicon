@@ -4,6 +4,8 @@ package com.bulat.soshicon2.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,19 +32,36 @@ public final class RowCardResponseBinding implements ViewBinding {
   public final TextView Time;
 
   @NonNull
+  public final ImageView add;
+
+  @NonNull
   public final CircleImageView avatar;
+
+  @NonNull
+  public final FrameLayout fl;
+
+  @NonNull
+  public final ImageView imageView2;
+
+  @NonNull
+  public final ImageView imageView3;
 
   @NonNull
   public final TextView textLike;
 
   private RowCardResponseBinding(@NonNull ConstraintLayout rootView, @NonNull TextView Content,
-      @NonNull TextView Name, @NonNull TextView Time, @NonNull CircleImageView avatar,
-      @NonNull TextView textLike) {
+      @NonNull TextView Name, @NonNull TextView Time, @NonNull ImageView add,
+      @NonNull CircleImageView avatar, @NonNull FrameLayout fl, @NonNull ImageView imageView2,
+      @NonNull ImageView imageView3, @NonNull TextView textLike) {
     this.rootView = rootView;
     this.Content = Content;
     this.Name = Name;
     this.Time = Time;
+    this.add = add;
     this.avatar = avatar;
+    this.fl = fl;
+    this.imageView2 = imageView2;
+    this.imageView3 = imageView3;
     this.textLike = textLike;
   }
 
@@ -91,9 +110,33 @@ public final class RowCardResponseBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.add;
+      ImageView add = ViewBindings.findChildViewById(rootView, id);
+      if (add == null) {
+        break missingId;
+      }
+
       id = R.id.avatar;
       CircleImageView avatar = ViewBindings.findChildViewById(rootView, id);
       if (avatar == null) {
+        break missingId;
+      }
+
+      id = R.id.fl;
+      FrameLayout fl = ViewBindings.findChildViewById(rootView, id);
+      if (fl == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView2;
+      ImageView imageView2 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView2 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView3;
+      ImageView imageView3 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView3 == null) {
         break missingId;
       }
 
@@ -103,8 +146,8 @@ public final class RowCardResponseBinding implements ViewBinding {
         break missingId;
       }
 
-      return new RowCardResponseBinding((ConstraintLayout) rootView, Content, Name, Time, avatar,
-          textLike);
+      return new RowCardResponseBinding((ConstraintLayout) rootView, Content, Name, Time, add,
+          avatar, fl, imageView2, imageView3, textLike);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

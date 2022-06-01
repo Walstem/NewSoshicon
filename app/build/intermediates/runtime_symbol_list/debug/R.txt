@@ -2667,6 +2667,7 @@ int drawable ic_clear 0x7f080089
 int drawable ic_clock_black_24dp 0x7f08008a
 int drawable ic_favorite 0x7f08008b
 int drawable ic_favorite_liked 0x7f08008c
+int drawable ic_favorite_liked_24 0x7f080100
 int drawable ic_keyboard_black_24dp 0x7f08008d
 int drawable ic_launcher_background 0x7f08008e
 int drawable ic_launcher_foreground 0x7f08008f
@@ -2738,6 +2739,7 @@ int drawable notification_tile_bg 0x7f0800d0
 int drawable notify_panel_notification_icon_bg 0x7f0800d1
 int drawable oval_shape_add 0x7f0800d2
 int drawable oval_shape_cancel 0x7f0800d3
+int drawable oval_shape_like 0x7f080101
 int drawable profile 0x7f0800d4
 int drawable radius 0x7f0800d5
 int drawable radius_bottom 0x7f0800d6
@@ -3031,6 +3033,7 @@ int id finish 0x7f0900f5
 int id firstPanelSetting 0x7f0900f6
 int id fitToContents 0x7f0900f7
 int id fixed 0x7f0900f8
+int id fl 0x7f09026c
 int id flip 0x7f0900f9
 int id floating 0x7f0900fa
 int id forever 0x7f0900fb
@@ -3061,6 +3064,8 @@ int id ignoreRequest 0x7f090113
 int id im 0x7f090114
 int id image 0x7f090115
 int id imageView 0x7f090116
+int id imageView2 0x7f09026d
+int id imageView3 0x7f09026e
 int id image_recycler 0x7f090117
 int id image_view_crop 0x7f090118
 int id image_view_logo 0x7f090119
