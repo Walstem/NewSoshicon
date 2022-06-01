@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -25,16 +26,10 @@ public final class AnotherAccountBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Toolbar accountToolbar;
-
-  @NonNull
   public final AppBarLayout appBarLayout;
 
   @NonNull
   public final ImageView back;
-
-  @NonNull
-  public final ConstraintLayout constraintLayout2;
 
   @NonNull
   public final ConstraintLayout containerAccount;
@@ -43,24 +38,44 @@ public final class AnotherAccountBinding implements ViewBinding {
   public final RecyclerView galleryImages;
 
   @NonNull
+  public final ConstraintLayout galleryProfileBox;
+
+  @NonNull
   public final CircleImageView profileAvatar;
+
+  @NonNull
+  public final TextView status;
+
+  @NonNull
+  public final MaterialTextView statusProfile;
+
+  @NonNull
+  public final Toolbar toolbarProfile;
+
+  @NonNull
+  public final ConstraintLayout userProfileBox;
 
   @NonNull
   public final MaterialTextView username;
 
-  private AnotherAccountBinding(@NonNull ConstraintLayout rootView, @NonNull Toolbar accountToolbar,
+  private AnotherAccountBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppBarLayout appBarLayout, @NonNull ImageView back,
-      @NonNull ConstraintLayout constraintLayout2, @NonNull ConstraintLayout containerAccount,
-      @NonNull RecyclerView galleryImages, @NonNull CircleImageView profileAvatar,
+      @NonNull ConstraintLayout containerAccount, @NonNull RecyclerView galleryImages,
+      @NonNull ConstraintLayout galleryProfileBox, @NonNull CircleImageView profileAvatar,
+      @NonNull TextView status, @NonNull MaterialTextView statusProfile,
+      @NonNull Toolbar toolbarProfile, @NonNull ConstraintLayout userProfileBox,
       @NonNull MaterialTextView username) {
     this.rootView = rootView;
-    this.accountToolbar = accountToolbar;
     this.appBarLayout = appBarLayout;
     this.back = back;
-    this.constraintLayout2 = constraintLayout2;
     this.containerAccount = containerAccount;
     this.galleryImages = galleryImages;
+    this.galleryProfileBox = galleryProfileBox;
     this.profileAvatar = profileAvatar;
+    this.status = status;
+    this.statusProfile = statusProfile;
+    this.toolbarProfile = toolbarProfile;
+    this.userProfileBox = userProfileBox;
     this.username = username;
   }
 
@@ -91,12 +106,6 @@ public final class AnotherAccountBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.account_toolbar;
-      Toolbar accountToolbar = ViewBindings.findChildViewById(rootView, id);
-      if (accountToolbar == null) {
-        break missingId;
-      }
-
       id = R.id.appBarLayout;
       AppBarLayout appBarLayout = ViewBindings.findChildViewById(rootView, id);
       if (appBarLayout == null) {
@@ -109,17 +118,17 @@ public final class AnotherAccountBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.constraintLayout2;
-      ConstraintLayout constraintLayout2 = ViewBindings.findChildViewById(rootView, id);
-      if (constraintLayout2 == null) {
-        break missingId;
-      }
-
       ConstraintLayout containerAccount = (ConstraintLayout) rootView;
 
       id = R.id.gallery_images;
       RecyclerView galleryImages = ViewBindings.findChildViewById(rootView, id);
       if (galleryImages == null) {
+        break missingId;
+      }
+
+      id = R.id.galleryProfileBox;
+      ConstraintLayout galleryProfileBox = ViewBindings.findChildViewById(rootView, id);
+      if (galleryProfileBox == null) {
         break missingId;
       }
 
@@ -129,14 +138,39 @@ public final class AnotherAccountBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.status;
+      TextView status = ViewBindings.findChildViewById(rootView, id);
+      if (status == null) {
+        break missingId;
+      }
+
+      id = R.id.statusProfile;
+      MaterialTextView statusProfile = ViewBindings.findChildViewById(rootView, id);
+      if (statusProfile == null) {
+        break missingId;
+      }
+
+      id = R.id.toolbarProfile;
+      Toolbar toolbarProfile = ViewBindings.findChildViewById(rootView, id);
+      if (toolbarProfile == null) {
+        break missingId;
+      }
+
+      id = R.id.userProfileBox;
+      ConstraintLayout userProfileBox = ViewBindings.findChildViewById(rootView, id);
+      if (userProfileBox == null) {
+        break missingId;
+      }
+
       id = R.id.username;
       MaterialTextView username = ViewBindings.findChildViewById(rootView, id);
       if (username == null) {
         break missingId;
       }
 
-      return new AnotherAccountBinding((ConstraintLayout) rootView, accountToolbar, appBarLayout,
-          back, constraintLayout2, containerAccount, galleryImages, profileAvatar, username);
+      return new AnotherAccountBinding((ConstraintLayout) rootView, appBarLayout, back,
+          containerAccount, galleryImages, galleryProfileBox, profileAvatar, status, statusProfile,
+          toolbarProfile, userProfileBox, username);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

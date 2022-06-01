@@ -1,14 +1,12 @@
 package com.bulat.soshicon2.BottomNavigation.event;
 
-import static com.bulat.soshicon2.constants.constants.*;
+import static com.bulat.soshicon2.constants.constants.DATABASE;
+import static com.bulat.soshicon2.constants.constants.ID;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,11 +23,9 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.bulat.soshicon2.BottomNavigation.account.Account;
 import com.bulat.soshicon2.BottomNavigation.anotherAccount.AnotherAccount;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.asynctasks.SendQuery;
-import com.bulat.soshicon2.checks.FragmentReplace;
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -107,6 +103,7 @@ class EventAdapter extends ArrayAdapter<String> {
                         getContext().getColor(R.color.splash_screen_bg)
                 }
         );
+        //переход на профиль пользователя
         avatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,6 +114,7 @@ class EventAdapter extends ArrayAdapter<String> {
                     Bundle bundle = new Bundle();
                     bundle.putString("CreatorId", CreatorId.get(position));
                     bundle.putString("CreatorName", Title.get(position));
+                    bundle.putString("page", "Event");
                     AnotherAccount.setArguments(bundle);
 
                     FragmentManager fragmentManager =  activity.getSupportFragmentManager();

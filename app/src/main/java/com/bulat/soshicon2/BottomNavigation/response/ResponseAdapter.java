@@ -5,10 +5,7 @@ import static com.bulat.soshicon2.constants.constants.ID;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,29 +81,28 @@ class ResponseAdapter extends ArrayAdapter<String> {
         Content.setText(Discription.get(position));
         time.setText(Time.get(position));
 
-        avatar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String id = sp.getString(ID,"");
-                String EventCreatorId = CreatorId.get(position);
-                if (!EventCreatorId.equals(id)){
-                    Fragment AnotherAccount = new AnotherAccount();
-                    Bundle bundle = new Bundle();
-                    bundle.putString("CreatorId", CreatorId.get(position));
-                    bundle.putString("CreatorName", Title.get(position));
-                    AnotherAccount.setArguments(bundle);
+        //переход на профиль пользователя
+        avatar.setOnClickListener(v -> {
+            String id = sp.getString(ID,"");
+            String EventCreatorId = CreatorId.get(position);
+            if (!EventCreatorId.equals(id)){
+                Fragment AnotherAccount = new AnotherAccount();
+                Bundle bundle = new Bundle();
+                bundle.putString("CreatorId", CreatorId.get(position));
+                bundle.putString("CreatorName", Title.get(position));
+                bundle.putString("page", "Response");
+                AnotherAccount.setArguments(bundle);
 
-                    FragmentManager fragmentManager =  activity.getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, AnotherAccount);
-                    fragmentTransaction.commit();
-                }
-                else{
-                    BottomNavigationView navBar = activity.findViewById(R.id.bottom_navigation);
-                    navBar.setSelectedItemId(R.id.nav_account);
-                }
-
+                FragmentManager fragmentManager =  activity.getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, AnotherAccount);
+                fragmentTransaction.commit();
             }
+            else{
+                BottomNavigationView navBar = activity.findViewById(R.id.bottom_navigation);
+                navBar.setSelectedItemId(R.id.nav_account);
+            }
+
         });
         return row;
     }

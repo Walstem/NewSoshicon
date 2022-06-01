@@ -6,6 +6,7 @@ public class constants {
     //fields
     public static final String ID = "ID";
     public static final String U_NICKNAME = "U_NICKNAME";
+    public static final String U_STATUS = "U_STATUS";
     public static final String EMAIL = "email";
     public static final String PASSWORD = "password";
 

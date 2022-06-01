@@ -69,13 +69,13 @@ public class EventTime {
                 time = "вчера в " + eventTimeArr[3] + ":" + eventTimeArr[4] ;
             }
             if (day == 31 || day == 21){
-                time = day + " день назад в " +eventTimeArr[3] + ":" + eventTimeArr[4];
+                time = day + " день назад";
             }
             if (day > 1 && day < 5 ||  day > 21 && day < 25){
-                time = day + " дня назад в " +eventTimeArr[3] + ":" + eventTimeArr[4];
+                time = day + " дня назад";
             }
             if (day > 4 &&  day < 21 || day > 24 &&  day < 31 ){
-                time = day + " дней назад в " + eventTimeArr[3] + ":" + eventTimeArr[4];
+                time = day + " дней назад";
             }
         }
         System.out.println(time);

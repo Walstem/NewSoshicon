@@ -1,14 +1,10 @@
 package com.bulat.soshicon2.BottomNavigation.anotherAccount;
 
-import static com.bulat.soshicon2.constants.constants.*;
-import static com.bulat.soshicon2.constants.constants.ID;
+import static com.bulat.soshicon2.constants.constants.DATABASE;
 
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +15,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bulat.soshicon2.BottomNavigation.account.Account;
 import com.bulat.soshicon2.BottomNavigation.account.RecyclerAdapter;
 import com.bulat.soshicon2.BottomNavigation.event.Event;
 import com.bulat.soshicon2.BottomNavigation.event.receivingEvent;
+import com.bulat.soshicon2.BottomNavigation.response.Response;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.checks.FragmentReplace;
 import com.bumptech.glide.Glide;
@@ -31,7 +27,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -62,7 +57,13 @@ public class AnotherAccount extends Fragment {
         ImageView back = view.findViewById(R.id.back);
 
         back.setOnClickListener(v -> {
-            FragmentReplace.replaceFragmentParent(new Event(), requireActivity());
+            if (bundle.getString("page").equals("Event")){
+                FragmentReplace.replaceFragmentParent(new Event(), requireActivity());
+            }
+            else if (bundle.getString("page").equals("Response")) {
+                FragmentReplace.replaceFragmentParent(new Response(), requireActivity());
+
+            }
         });
 
 
@@ -97,7 +98,6 @@ public class AnotherAccount extends Fragment {
                     Glide.with(getContext())
                             .load(bitmap)
                             .into(AnotherAvatar);
-                    AnotherAvatar.setImageURI(bitmap);
                 }
             } catch (JSONException jsonException) {
                 jsonException.printStackTrace();

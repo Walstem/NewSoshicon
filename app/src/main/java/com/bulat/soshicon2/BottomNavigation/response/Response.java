@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
@@ -187,7 +186,7 @@ public class Response extends Fragment {
             CreatorId.add(jo.get("user_id").toString());
             ResponceId.add(jo.get("res_id").toString());
             Title.add(jo.get("nickname").toString());
-            Avatar.add("http://j911147y.beget.tech/" + jo.get("img").toString());
+            Avatar.add("http://j911147y.beget.tech/" + jo.get("img"));
             EventID.add(jo.get("event_id").toString());
 
             String eventTime = jo.get("time").toString();

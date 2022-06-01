@@ -58,7 +58,6 @@ public class Setting extends Fragment {
         ImageView cancel = MainView.findViewById(R.id.cancel);
         SwitchCompat lightMode = MainView.findViewById(R.id.lightModeSwitch);
         ThemeManager themeManager = new ThemeManager(requireContext());
-        //Button editBtn = MainView.findViewById(R.id.setting_editBtn);
 
         CircleImageView avatar = MainView.findViewById(R.id.avatar);
         TextView username = MainView.findViewById(R.id.username_bottom_avatar);
@@ -99,9 +98,6 @@ public class Setting extends Fragment {
 
         //Выключение bottom navigation
         navBar.setVisibility(View.GONE);
-
-        //Переход в редактирование данных
-//        editBtn.setOnClickListener(view -> FragmentReplace.replaceFragmentParent(new Redactor(), requireActivity()));
 
         //Переход в смену языка
         language.setOnClickListener(view -> FragmentReplace.replaceFragmentParent(new Language(), getActivity()));

@@ -40,12 +40,12 @@
         "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\radius_bottom_left.xml"
     },
     {
-        "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_row_item_profile.xml.flat",
-        "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\row_item_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_radius_bottom_right.xml.flat",
         "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\radius_bottom_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_row_item_profile.xml.flat",
+        "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\row_item_profile.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_setting_text_size.xml.flat",

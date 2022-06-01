@@ -20,6 +20,7 @@ import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,7 +40,6 @@ import com.bulat.soshicon2.checks.FragmentReplace;
 import com.bumptech.glide.Glide;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -73,17 +73,26 @@ public class Account extends Fragment {
 
     public static final String UPLOAD_AVATAR_PHP = "upload_avatar.php";
     public static final String UPLOAD_GALLERY_PHP = "upload_gallery_image.php";
+
+    public static final String GET_COUNT_IMAGES_PHP = "getCountImages.php";
+    public static final String GET_STATUS = "getStatus.php";
     public static final String GET_PHOTOS_GALLERY_PHP = "get_photos_gallery.php";
     public static final String GET_AVATAR_PHP = "get_avatar.php";
+
     private static final int READ_PERMISSION = 101;
-    CircleImageView profile;
-    Uri imageUri;
-    int numPhotoGal;
+
     private ArrayList<String> GalleryPhotos = new ArrayList<>();
     ArrayList<Uri> uris = new ArrayList<>();
 
+    int numPhotoGal;
+    String status;
+    Uri imageUri;
+
+    CircleImageView avatarProfile;
+    TextView usernameProfile, statusProfile;
     RecyclerView recyclerView;
-    ImageView add_photo, delete_photo;
+    ImageView addPhotoGalleryBtn, profileSetting;
+    Button editProfile;
     SharedPreferences sp;
 
     RecyclerAdapter adapter;
@@ -92,16 +101,42 @@ public class Account extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View MainView = inflater.inflate(R.layout.account, container, false);
+        sp = requireContext().getSharedPreferences(DATABASE, 0);
         BottomNavigationView navBar = requireActivity().findViewById(R.id.bottom_navigation);
         navBar.setVisibility(View.VISIBLE);
 
-        View MainView = inflater.inflate(R.layout.account, container, false);
-        sp = requireContext().getSharedPreferences(DATABASE, 0);
+        usernameProfile = MainView.findViewById(R.id.usernameProfile);
+        statusProfile = MainView.findViewById(R.id.statusProfile);
+        profileSetting = MainView.findViewById(R.id.settingBtnProfile);
+        avatarProfile = MainView.findViewById(R.id.avatarProfile);
+        addPhotoGalleryBtn = MainView.findViewById(R.id.addPhotoGalleryBtn);
+        recyclerView = MainView.findViewById(R.id.galleryProfile);
+        editProfile = MainView.findViewById(R.id.editProfileBtn);
 
-        add_photo = MainView.findViewById(R.id.add_photo);
-        recyclerView = MainView.findViewById(R.id.gallery_images);
-        TextView name = MainView.findViewById(R.id.username_bottom_avatar);
-        ImageView account_setting = MainView.findViewById(R.id.account_edit);
+        adapter = new RecyclerAdapter(uris,getContext());
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
+        recyclerView.setAdapter(adapter);
+
+        //Отображения имени пользователя
+        usernameProfile.setText(sp.getString(U_NICKNAME, ""));
+
+        //Обновление статуса
+        SendQuery queryStatus = new SendQuery(GET_STATUS);
+        queryStatus.execute("?id=" + sp.getString(ID, ""));
+        try {
+            status = queryStatus.get();
+            System.out.println(queryStatus.get());
+            statusProfile.setText(status);
+        }
+        catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+        //Обновление галереи
+        SendQuery query = new SendQuery(GET_COUNT_IMAGES_PHP);
+        query.execute("?user_id=" + sp.getString(ID, ""));
 
         String[] KeyArgs = {"id"};
         String[] Args = {sp.getString(ID, "")};
@@ -135,10 +170,6 @@ public class Account extends Fragment {
         }
 
         //загрузка аватара
-
-        profile = (CircleImageView) MainView.findViewById(R.id.profile_avatar);
-
-
         receivingEvent Query = new receivingEvent(GET_AVATAR_PHP, KeyArgs, Args);
         Query.execute();
         JSONArray Event_json = null;
@@ -148,9 +179,7 @@ public class Account extends Fragment {
             e.printStackTrace();
         }
         //добавляем данные из json в массив фотографий и в переменную аватар
-
         //парсим данные
-
         try
         {
             JSONObject jo = new JSONObject((String) Event_json.get(0));
@@ -162,13 +191,12 @@ public class Account extends Fragment {
 
                 Glide.with(getContext())
                         .load(bitmap)
-                        .into(profile);
+                        .into(avatarProfile);
                 
             }
         } catch (JSONException jsonException) {
             jsonException.printStackTrace();
         }
-
 
         //Активность для выбора изображения в галерею
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
@@ -193,9 +221,7 @@ public class Account extends Fragment {
                                 e.printStackTrace();
                             }
                         }
-
                     }
-
                 } else {
                     if (uris.size() < 9) {
                         Uri imageUri = result.getData().getData();
@@ -221,7 +247,7 @@ public class Account extends Fragment {
         });
 
         //Кнопка добавления изображения в галерею
-        add_photo.setOnClickListener(view -> {
+        addPhotoGalleryBtn.setOnClickListener(view -> {
             if(ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
                     != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(requireActivity(),
@@ -234,21 +260,21 @@ public class Account extends Fragment {
             }
         });
 
-        //чтение
-        name.setText(sp.getString(U_NICKNAME, ""));
-
-        account_setting.setOnClickListener(view -> FragmentReplace.replaceFragmentParent(new Setting(), requireActivity()));
-
-        profile.setOnClickListener(view -> ImagePicker.with(Account.this)
-                .crop()	    			//Crop image(Optional), Check Customization for more option
-                .compress(1024)			//Final image size will be less than 1 MB(Optional)
-                .maxResultSize(600, 600)	//Final image resolution will be less than 1080 x 1080(Optional)
+        //Кнопка обновления аватара
+        avatarProfile.setOnClickListener(view -> ImagePicker.with(Account.this)
+                .crop()
+                .compress(1024)
+                .maxResultSize(600, 600)
                 .start());
+
+        //Переходы
+        profileSetting.setOnClickListener(view -> FragmentReplace.replaceFragmentParent(new Setting(), requireActivity()));
+        editProfile.setOnClickListener(view -> FragmentReplace.replaceFragmentParent(new Redactor(), requireActivity()));
 
         return MainView;
     }
 
-
+    //Правильный путь Uri
     public static String getRealPathFromUri(Context context, Uri contentUri) {
         Cursor cursor = null;
         try {
@@ -270,7 +296,7 @@ public class Account extends Fragment {
             super.onActivityResult(requestCode, resultCode, data);
 
             Uri uri = data.getData();
-            profile.setImageURI(uri);
+            avatarProfile.setImageURI(uri);
 
             try {
                 byte[] img = ReadFileOrSaveInDevice(uri.getPath(), 100);
@@ -283,49 +309,17 @@ public class Account extends Fragment {
                 e.printStackTrace();
             }
         }
-        catch (Exception e){
-
+        catch (Exception e) {
+            e.printStackTrace();
         }
-
-    }
-
-    public byte[] ReadFileOrSaveInDevice(String filename, int compress) throws IOException {
-        boolean compressFlag;
-        compressFlag = compress != 100;
-        String compressPath = requireContext().getFilesDir() + "/avatar_compress_" + compressFlag + ".jpg";
-
-
-        //Создание объекта записи сжатой фографии на устройсвто
-        FileOutputStream out = new FileOutputStream(compressPath);
-        //Создание объекта чтения фото с устройства
-        File file = new File(filename);
-
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(file));
-        //чтение
-        bitmap.compress(Bitmap.CompressFormat.JPEG, compress, stream);
-        //запись
-        bitmap.compress(Bitmap.CompressFormat.JPEG, compress, out);
-        out.close();
-        //запись пути к сжатой фотографии
-        SharedPreferences sp = requireContext().getSharedPreferences(DATABASE, 0);
-        SharedPreferences.Editor ed = sp.edit();
-        ed.putString("compress_avatar_" + compressFlag, compressPath);
-        ed.apply();
-        System.out.println("1234" + compressPath);
-
-        //сохранение пути к картинке
-
-        byte[] byteArray = stream.toByteArray();
-        bitmap.recycle();
-        return byteArray;
     }
 
     class UploadAvatar extends AsyncTask<String, String, String> {
         String filename;
         byte[] imgArray;
         byte[] CompressImgArray;
-        UploadAvatar(byte[] imgArray, byte[] CompressImgArray,String filename){
+
+        UploadAvatar(byte[] imgArray, byte[] CompressImgArray, String filename) {
             this.imgArray = imgArray;
             this.filename = filename;
             this.CompressImgArray = CompressImgArray;
@@ -371,17 +365,47 @@ public class Account extends Fragment {
                 e.printStackTrace();
             }
 
-
             httpclient.getConnectionManager().shutdown();
             return null;
         }
+    }
+
+    public byte[] ReadFileOrSaveInDevice(String filename, int compress) throws IOException {
+        boolean compressFlag;
+        compressFlag = compress != 100;
+        String compressPath = requireContext().getFilesDir() + "/avatar_compress_" + compressFlag + ".jpg";
+
+        //???????? ??????? ?????? ?????? ???????? ?? ??????????
+        FileOutputStream out = new FileOutputStream(compressPath);
+        //???????? ??????? ?????? ???? ? ??????????
+        File file = new File(filename);
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(file));
+        //??????
+        bitmap.compress(Bitmap.CompressFormat.JPEG, compress, stream);
+        //??????
+        bitmap.compress(Bitmap.CompressFormat.JPEG, compress, out);
+        out.close();
+        //?????? ???? ? ?????? ??????????
+        SharedPreferences sp = requireContext().getSharedPreferences(DATABASE, 0);
+        SharedPreferences.Editor ed = sp.edit();
+        ed.putString("compress_avatar_" + compressFlag, compressPath);
+        ed.apply();
+        System.out.println("1234" + compressPath);
+
+        //?????????? ???? ? ????????
+        byte[] byteArray = stream.toByteArray();
+        bitmap.recycle();
+        return byteArray;
     }
 
     class UploadGallery extends AsyncTask<String, String, String> {
         String filename;
         byte[] imgArray;
         int numberPhotoGallery;
-        UploadGallery(byte[] imgArray, String filename, int numberPhotoGallery){
+
+        UploadGallery(byte[] imgArray, String filename, int numberPhotoGallery) {
             this.imgArray = imgArray;
             this.filename = filename;
             this.numberPhotoGallery = numberPhotoGallery;
@@ -436,27 +460,28 @@ public class Account extends Fragment {
         String compressPath = requireContext().getFilesDir() + "/compress_gallery_photo_" + numberPhoto + ".jpg";
         System.out.println(compressPath);
 
-        //Создание объекта записи сжатой фографии на устройсвто
+        //???????? ??????? ?????? ?????? ???????? ?? ??????????
         FileOutputStream out = new FileOutputStream(compressPath);
-        //Создание объекта чтения фото с устройства
+        //???????? ??????? ?????? ???? ? ??????????
         File file = new File(filename);
 
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(file));
-        //чтение
+        //??????
         bitmap.compress(Bitmap.CompressFormat.JPEG, 40, stream);
-        //запись
+        //??????
         bitmap.compress(Bitmap.CompressFormat.JPEG, 40, out);
         out.close();
-        //запись пути к сжатой фотографии
+        //?????? ???? ? ?????? ??????????
         SharedPreferences sp = requireContext().getSharedPreferences(DATABASE, 0);
         SharedPreferences.Editor ed = sp.edit();
         ed.putString("compress_gallery_photo_" + numberPhoto, compressPath);
+
+        System.out.println("??? ???2:" + sp.getString("compress_gallery_photo_" + numberPhoto, ""));
         ed.apply();
         System.out.println("1234" + compressPath);
 
-        //сохранение пути к картинке
-
+        //?????????? ???? ? ????????
         byte[] byteArray = stream.toByteArray();
         bitmap.recycle();
         return byteArray;
