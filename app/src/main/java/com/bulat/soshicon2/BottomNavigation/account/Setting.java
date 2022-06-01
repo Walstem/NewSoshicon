@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,21 +21,29 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 ;
+import com.bulat.soshicon2.BottomNavigation.event.receivingEvent;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.Registration.Authorization;
 import com.bulat.soshicon2.checks.FragmentReplace;
+import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.concurrent.ExecutionException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Setting extends Fragment {
 
     BottomNavigationView navBar;
+    public static final String GET_AVATAR_PHP = "get_avatar.php";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -54,14 +63,38 @@ public class Setting extends Fragment {
         CircleImageView avatar = MainView.findViewById(R.id.avatar);
         TextView username = MainView.findViewById(R.id.username_bottom_avatar);
         username.setText(sp.getString(U_NICKNAME, ""));
-        File file = new File(sp.getString(AVATAR, ""));
 
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        String[] KeyArgs = {"id"};
+        String[] Args = {sp.getString(ID, "")};
+
+        receivingEvent Query = new receivingEvent(GET_AVATAR_PHP, KeyArgs, Args);
+        Query.execute();
+        JSONArray Event_json = null;
         try {
-            Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(file));
-            avatar.setImageBitmap(bitmap);
-        } catch (FileNotFoundException e) {
+            Event_json = new JSONArray(Query.get());
+        } catch (JSONException | ExecutionException | InterruptedException e) {
             e.printStackTrace();
+        }
+        //добавляем данные из json в массив фотографий и в переменную аватар
+
+        //парсим данные
+
+        try
+        {
+            JSONObject jo = new JSONObject((String) Event_json.get(0));
+            String Avatar = (String) jo.get("avatar");
+
+            if (Avatar != null){
+                //byte [] encodeByte = Base64.decode(GalleryPhotos.get(i),Base64.DEFAULT);
+                Uri bitmap =  Uri.parse ("http://j911147y.beget.tech/"+Avatar);
+
+                Glide.with(getContext())
+                        .load(bitmap)
+                        .into(avatar);
+
+            }
+        } catch (JSONException jsonException) {
+            jsonException.printStackTrace();
         }
 
         //Выключение bottom navigation

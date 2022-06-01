@@ -27,10 +27,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         this.uriArrayList = uriArrayList;
         this.context=context;
     }
-    public RecyclerAdapter(ArrayList<Bitmap> bitmaps, boolean FlagUri) {
-        this.bitmaps = bitmaps;
-        this.FlagUri = FlagUri;
-    }
 
     @NonNull
     @Override
@@ -46,8 +42,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public void onBindViewHolder(@NonNull RecyclerAdapter.ViewHolder holder, int position) {
         if (FlagUri){
             //holder.imageView.setImageURI(uriArrayList.get(position));
+            Uri uri = uriArrayList.get(position);
             Glide.with(context)
-                    .load(uriArrayList.get(position))
+                    .load(uri)
                     .into(holder.imageView);
         }
         else{

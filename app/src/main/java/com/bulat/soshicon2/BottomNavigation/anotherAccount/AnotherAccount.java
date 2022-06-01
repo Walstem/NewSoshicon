@@ -25,6 +25,7 @@ import com.bulat.soshicon2.BottomNavigation.event.Event;
 import com.bulat.soshicon2.BottomNavigation.event.receivingEvent;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.checks.FragmentReplace;
+import com.bumptech.glide.Glide;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,6 +42,7 @@ public class AnotherAccount extends Fragment {
     private String Avatar;
     private ArrayList<String> GalleryPhotos = new ArrayList<>();
     ArrayList<Uri> uris = new ArrayList<>();
+    Uri uriAvatar;
     RecyclerAdapter adapter;
     RecyclerView recyclerView;
     JSONObject jo;
@@ -80,23 +82,30 @@ public class AnotherAccount extends Fragment {
             e.printStackTrace();
         }
         //добавляем данные из json в массив фотографий и в переменную аватар
-            try {
-                //парсим данные
+
+            //парсим данные
+
+            try
+            {
                 jo = new JSONObject((String) Event_json.get(0));
                 Avatar = (String) jo.get("avatar");
 
-                if (Avatar != null || !Avatar.equals("null")){
-                    //декодируем строку аватара в bitmap, устанавливаем аватар
-                    byte [] encodeByte = Base64.decode(Avatar,Base64.DEFAULT);
-                    Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
-                    AnotherAvatar.setImageBitmap(bitmap);
+                if (Avatar != null){
+                    //byte [] encodeByte = Base64.decode(GalleryPhotos.get(i),Base64.DEFAULT);
+                    Uri bitmap =  Uri.parse ("http://j911147y.beget.tech/"+Avatar);
+
+                    Glide.with(getContext())
+                            .load(bitmap)
+                            .into(AnotherAvatar);
+                    AnotherAvatar.setImageURI(bitmap);
                 }
-
-                //добавляем данные фото в список
-
-            } catch (JSONException e) {
-                e.printStackTrace();
+            } catch (JSONException jsonException) {
+                jsonException.printStackTrace();
             }
+
+
+
+
 
         receivingEvent QueryGallery = new receivingEvent(GET_PHOTOS_GALLERY_PHP, KeyArgs, Args);
         QueryGallery.execute();
