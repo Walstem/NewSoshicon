@@ -72,7 +72,6 @@ class EventAdapter extends ArrayAdapter<String> {
         LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View row = layoutInflater.inflate(R.layout.row_card_event, parent, false);
         SharedPreferences sp = getContext().getSharedPreferences(DATABASE, 0);
-        TextView EventId = row.findViewById(R.id.event_id);
         TextView NameMessage = row.findViewById(R.id.NameMessage);
         TextView Content = row.findViewById(R.id.ContentMessage);
         ImageView avatar = row.findViewById(R.id.avatar);
@@ -141,7 +140,7 @@ class EventAdapter extends ArrayAdapter<String> {
 
                 if(like.isChecked()){
                     like.setButtonDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_favorite_liked));
-                    if (!sp.getString(ID, "").equals(EventId.getText().toString())){
+                    if (!sp.getString(ID, "").equals(EventId.get(position))){
 
                         String UserID = sp.getString(ID,"");
                         String EventID =  EventAdapter.this.EventId.get(position);
@@ -156,7 +155,7 @@ class EventAdapter extends ArrayAdapter<String> {
                 }
                 else{
                     like.setButtonDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_favorite));
-                    if (!sp.getString(ID, "").equals(EventId.getText().toString())){
+                    if (!sp.getString(ID, "").equals(EventId.get(position))){
                         SendQuery query = new SendQuery(INPUT_UNLIKED_EVENT_PHP);
                         String UserID = sp.getString(ID,"");
                         query.execute("?user_id="+UserID + "&event_id=" + EventAdapter.this.EventId.get(position));

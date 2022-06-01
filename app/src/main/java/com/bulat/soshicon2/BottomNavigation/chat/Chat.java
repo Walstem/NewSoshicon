@@ -1,4 +1,4 @@
-package com.bulat.soshicon2.BottomNavigation;
+package com.bulat.soshicon2.BottomNavigation.chat;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

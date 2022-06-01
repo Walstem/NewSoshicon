@@ -12,7 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.BottomNavigation.account.Account;
 import com.bulat.soshicon2.BottomNavigation.account.LanguageManager;
-import com.bulat.soshicon2.BottomNavigation.Chat;
+import com.bulat.soshicon2.BottomNavigation.chat.Chat;
 import com.bulat.soshicon2.BottomNavigation.account.ThemeManager;
 import com.bulat.soshicon2.BottomNavigation.event.Event;
 import com.bulat.soshicon2.BottomNavigation.response.Response;

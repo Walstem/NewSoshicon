@@ -196,7 +196,7 @@ public class Event extends Fragment {
             EventId.add(jo.get("id").toString());
             Content.add(jo.get("content").toString());
             Title.add(jo.get("nickname").toString());
-            Avatar.add("http://j911147y.beget.tech/"+jo.get("img").toString());
+            Avatar.add("http://j911147y.beget.tech/"+jo.get("img"));
             IsLiked.add(jo.get("liked").toString().equals("true"));
 
             String eventTime = (String) jo.get("time");
