@@ -104,63 +104,57 @@ class EventAdapter extends ArrayAdapter<String> {
                 }
         );
         //переход на профиль пользователя
-        avatar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String id = sp.getString(ID,"");
-                String EventCreatorId = CreatorId.get(position);
-                if (!EventCreatorId.equals(id)){
-                    Fragment AnotherAccount = new AnotherAccount();
-                    Bundle bundle = new Bundle();
-                    bundle.putString("CreatorId", CreatorId.get(position));
-                    bundle.putString("CreatorName", Title.get(position));
-                    bundle.putString("page", "Event");
-                    AnotherAccount.setArguments(bundle);
+        avatar.setOnClickListener(v -> {
+            String id = sp.getString(ID,"");
+            String EventCreatorId = CreatorId.get(position);
+            if (!EventCreatorId.equals(id)){
+                Fragment AnotherAccount = new AnotherAccount();
+                Bundle bundle = new Bundle();
+                bundle.putString("CreatorId", CreatorId.get(position));
+                bundle.putString("CreatorName", Title.get(position));
+                bundle.putString("page", "Event");
+                AnotherAccount.setArguments(bundle);
 
-                    FragmentManager fragmentManager =  activity.getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, AnotherAccount);
-                    fragmentTransaction.commit();
-                }
-                else{
-                    BottomNavigationView navBar = activity.findViewById(R.id.bottom_navigation);
-                    navBar.setSelectedItemId(R.id.nav_account);
-                }
-
+                FragmentManager fragmentManager =  activity.getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, AnotherAccount);
+                fragmentTransaction.commit();
             }
+            else{
+                BottomNavigationView navBar = activity.findViewById(R.id.bottom_navigation);
+                navBar.setSelectedItemId(R.id.nav_account);
+            }
+
         });
         like.setButtonTintList(colorStateList);
-        like.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        like.setOnClickListener(v -> {
 
 
 
-                if(like.isChecked()){
-                    like.setButtonDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_favorite_liked));
-                    if (!sp.getString(ID, "").equals(EventId.get(position))){
+            if(like.isChecked()){
+                like.setButtonDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_favorite_liked));
+                if (!sp.getString(ID, "").equals(EventId.get(position))){
 
-                        String UserID = sp.getString(ID,"");
-                        String EventID =  EventAdapter.this.EventId.get(position);
+                    String UserID = sp.getString(ID,"");
+                    String EventID =  EventAdapter.this.EventId.get(position);
 
-                        String pattern = "yyyy-MM-dd-HH-mm";
-                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-                        String time = simpleDateFormat.format(new Date());
+                    String pattern = "yyyy-MM-dd-HH-mm";
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+                    String time1 = simpleDateFormat.format(new Date());
 
-                        SendQuery query = new SendQuery(INPUT_LIKED_EVENT_PHP);
-                        query.execute("?user_id="+UserID + "&event_id=" + EventID + "&id_liked_user=" + CreatorId.get(position) + "&time=" + time);
-                    }
+                    SendQuery query = new SendQuery(INPUT_LIKED_EVENT_PHP);
+                    query.execute("?user_id="+UserID + "&event_id=" + EventID + "&id_liked_user=" + CreatorId.get(position) + "&time=" + time1);
                 }
-                else{
-                    like.setButtonDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_favorite));
-                    if (!sp.getString(ID, "").equals(EventId.get(position))){
-                        SendQuery query = new SendQuery(INPUT_UNLIKED_EVENT_PHP);
-                        String UserID = sp.getString(ID,"");
-                        query.execute("?user_id="+UserID + "&event_id=" + EventAdapter.this.EventId.get(position));
-                    }
-                }
-
             }
+            else{
+                like.setButtonDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_favorite));
+                if (!sp.getString(ID, "").equals(EventId.get(position))){
+                    SendQuery query = new SendQuery(INPUT_UNLIKED_EVENT_PHP);
+                    String UserID = sp.getString(ID,"");
+                    query.execute("?user_id="+UserID + "&event_id=" + EventAdapter.this.EventId.get(position));
+                }
+            }
+
         });
 
         return row;
