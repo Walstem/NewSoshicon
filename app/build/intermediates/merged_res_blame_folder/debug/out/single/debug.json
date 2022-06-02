@@ -144,10 +144,6 @@
         "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\round_setting_back_language.xml"
     },
     {
-        "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_clear.xml.flat",
-        "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_clear.xml"
-    },
-    {
         "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_setting_invert_colors.xml.flat",
         "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_setting_invert_colors.xml"
     },
@@ -272,6 +268,10 @@
         "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\layout\\row_card_response.xml"
     },
     {
+        "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_clear_white.xml.flat",
+        "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_clear_white.xml"
+    },
+    {
         "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_setting_logout.xml.flat",
         "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_setting_logout.xml"
     },
@@ -366,6 +366,10 @@
     {
         "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_arrow_left.xml.flat",
         "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_arrow_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_clear_red.xml.flat",
+        "source": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\src\\main\\res\\drawable\\ic_clear_red.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\merged_res\\debug\\layout_main.xml.flat",

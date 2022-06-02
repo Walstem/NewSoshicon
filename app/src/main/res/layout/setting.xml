@@ -23,7 +23,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/oval_shape_cancel"
             android:padding="5dp"
-            android:src="@drawable/ic_clear"
+            android:src="@drawable/ic_clear_white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/circleImageView" />

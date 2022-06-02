@@ -89,26 +89,26 @@
         app:layout_constraintTop_toBottomOf="@+id/Content" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/cancel"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/radius_bottom_left"
         android:padding="8dp"
-        android:src="@drawable/ic_clear"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        android:src="@drawable/ic_clear_red"
+        app:layout_constraintEnd_toStartOf="@+id/accept"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Time" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/accept"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:background="@drawable/radius_bottom_right"
         android:padding="8dp"
         android:src="@drawable/ic_check"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintStart_toEndOf="@+id/cancel"
+        app:layout_constraintTop_toTopOf="@+id/cancel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

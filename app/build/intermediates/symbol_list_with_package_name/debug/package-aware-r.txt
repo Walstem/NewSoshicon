@@ -4414,7 +4414,8 @@ drawable ic_bottom_nav_article
 drawable ic_bottom_nav_chat
 drawable ic_bottom_nav_favorite
 drawable ic_check
-drawable ic_clear
+drawable ic_clear_red
+drawable ic_clear_white
 drawable ic_clock_black_24dp
 drawable ic_favorite
 drawable ic_favorite_liked
@@ -4563,6 +4564,7 @@ id Time
 id aboutUs
 id aboutUs_image
 id accelerate
+id accept
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -4822,8 +4824,6 @@ id ignoreRequest
 id im
 id image
 id imageView
-id imageView2
-id imageView3
 id image_recycler
 id image_view_crop
 id image_view_logo

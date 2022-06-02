@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,13 +23,17 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.bulat.soshicon2.BottomNavigation.anotherAccount.AnotherAccount;
 import com.bulat.soshicon2.R;
+import com.bulat.soshicon2.asynctasks.SendQuery;
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
 class ResponseAdapter extends ArrayAdapter<String> {
+    public static final String INPUT_CHAT_PHP = "input_chat.php";
+    public static final String DELETE_RESPONSE_PHP = "delete_response.php";
     Context context;
+    View view;
 
     private ArrayList<String> CreatorId;
     private ArrayList<String> ResponceId;
@@ -40,7 +45,9 @@ class ResponseAdapter extends ArrayAdapter<String> {
 
     FragmentActivity activity;
 
-    public ResponseAdapter(@NonNull Context context, ArrayList<String> CreatorId, ArrayList<String> ResponceId,  ArrayList<String> Discription, ArrayList<String> Title, ArrayList<String> Avatar, ArrayList<String> EventID, ArrayList<String> Time, FragmentActivity activity) {
+    String id;
+
+    public ResponseAdapter(@NonNull Context context,  View view, ArrayList<String> CreatorId, ArrayList<String> ResponceId,  ArrayList<String> Discription, ArrayList<String> Title, ArrayList<String> Avatar, ArrayList<String> EventID, ArrayList<String> Time, FragmentActivity activity) {
         super(context, R.layout.row_card_event, R.id.NameMessage, Title);
         this.context = context;
         this.CreatorId = CreatorId;
@@ -50,6 +57,7 @@ class ResponseAdapter extends ArrayAdapter<String> {
         this.Avatar = Avatar;
         this.EventID = EventID;
         this.Time = Time;
+        this.view = view;
 
         this.activity = activity;
     }
@@ -66,7 +74,10 @@ class ResponseAdapter extends ArrayAdapter<String> {
         TextView Content = row.findViewById(R.id.Content);
         ImageView avatar = row.findViewById(R.id.avatar);
         TextView time = row.findViewById(R.id.Time);
+        ImageView cancelBtn = row.findViewById(R.id.cancel);
+        ImageView acceptBtn = row.findViewById(R.id.accept);
 
+        id = sp.getString(ID,"");
 
 
         if (!Avatar.get(position).equals("null")){
@@ -83,7 +94,6 @@ class ResponseAdapter extends ArrayAdapter<String> {
 
         //переход на профиль пользователя
         avatar.setOnClickListener(v -> {
-            String id = sp.getString(ID,"");
             String EventCreatorId = CreatorId.get(position);
             if (!EventCreatorId.equals(id)){
                 Fragment AnotherAccount = new AnotherAccount();
@@ -103,6 +113,43 @@ class ResponseAdapter extends ArrayAdapter<String> {
                 navBar.setSelectedItemId(R.id.nav_account);
             }
 
+        });
+
+        //прослушиваем нажатие на кнопку принять запрос
+        acceptBtn.setOnClickListener(v ->{
+            SendQuery sendQuery = new SendQuery(INPUT_CHAT_PHP);
+            sendQuery.execute("?accepted_user_id=" + id + "&requesting_user_id=" + CreatorId.get(position) + "&res_id=" + ResponceId.get(position));
+
+            CreatorId.remove(position);
+            ResponceId.remove(position);
+            Discription.remove(position);
+            Title.remove(position);
+            Avatar.remove(position);
+            EventID.remove(position);
+            Time.remove(position);
+
+            ListView listView = view.findViewById(R.id.listView);
+            ResponseAdapter eventBlock = new ResponseAdapter(getContext(), view, CreatorId, ResponceId, Discription, Title, Avatar,EventID, Time, activity);
+            listView.setAdapter(eventBlock);
+
+        });
+
+        //прослушиваем нажатие на кнопку отклонить запрос
+        cancelBtn.setOnClickListener(v ->{
+            SendQuery sendQuery = new SendQuery(DELETE_RESPONSE_PHP);
+            sendQuery.execute("&res_id=" + ResponceId.get(position));
+
+            CreatorId.remove(position);
+            ResponceId.remove(position);
+            Discription.remove(position);
+            Title.remove(position);
+            Avatar.remove(position);
+            EventID.remove(position);
+            Time.remove(position);
+
+            ListView listView = view.findViewById(R.id.listView);
+            ResponseAdapter eventBlock = new ResponseAdapter(getContext(), view, CreatorId, ResponceId, Discription, Title, Avatar,EventID, Time, activity);
+            listView.setAdapter(eventBlock);
         });
         return row;
     }

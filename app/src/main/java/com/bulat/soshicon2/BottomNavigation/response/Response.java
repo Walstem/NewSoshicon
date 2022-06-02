@@ -207,7 +207,7 @@ public class Response extends Fragment {
         }
         if (!scroll)
         {
-            eventBlock = new ResponseAdapter(getContext(), CreatorId, ResponceId, Content, Title, Avatar,EventID, Time, getActivity());
+            eventBlock = new ResponseAdapter(getContext(),view,  CreatorId, ResponceId, Content, Title, Avatar,EventID, Time, getActivity());
             listView.setAdapter(eventBlock);
         }
         //если функция была вызванна свайпом, то обновляем Listview
