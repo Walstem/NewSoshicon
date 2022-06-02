@@ -137,7 +137,7 @@ class ResponseAdapter extends ArrayAdapter<String> {
         //прослушиваем нажатие на кнопку отклонить запрос
         cancelBtn.setOnClickListener(v ->{
             SendQuery sendQuery = new SendQuery(DELETE_RESPONSE_PHP);
-            sendQuery.execute("&res_id=" + ResponceId.get(position));
+            sendQuery.execute("?res_id=" + ResponceId.get(position));
 
             CreatorId.remove(position);
             ResponceId.remove(position);
