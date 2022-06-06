@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bulat.soshicon2.BottomNavigation.account.RecyclerAdapter;
+import com.bulat.soshicon2.BottomNavigation.chat.Chat;
 import com.bulat.soshicon2.BottomNavigation.event.Event;
 import com.bulat.soshicon2.BottomNavigation.event.receivingEvent;
 import com.bulat.soshicon2.BottomNavigation.response.Response;
@@ -62,6 +63,10 @@ public class AnotherAccount extends Fragment {
             }
             else if (bundle.getString("page").equals("Response")) {
                 FragmentReplace.replaceFragmentParent(new Response(), requireActivity());
+
+            }
+            else if (bundle.getString("page").equals("chat")) {
+                FragmentReplace.replaceFragmentParent(new Chat(), requireActivity());
 
             }
         });

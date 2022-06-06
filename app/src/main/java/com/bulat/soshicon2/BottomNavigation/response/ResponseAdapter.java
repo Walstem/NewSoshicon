@@ -27,8 +27,9 @@ import com.bulat.soshicon2.asynctasks.SendQuery;
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
+import java.util.Date;
 
 class ResponseAdapter extends ArrayAdapter<String> {
     public static final String INPUT_CHAT_PHP = "input_chat.php";
@@ -120,23 +121,14 @@ class ResponseAdapter extends ArrayAdapter<String> {
         //прослушиваем нажатие на кнопку прин€ть запрос
         acceptBtn.setOnClickListener(v ->{
 
-            SendQuery CountDublicateChat = new SendQuery(CHECK_FOR_DUPLICATES_CHAT_PHP);
-            CountDublicateChat.execute("?accepted_user_id=" + id + "&requesting_user_id=" + CreatorId.get(position));
-            String DublicateChat = "";
-            try {
-                DublicateChat = CountDublicateChat.get();
-            } catch (ExecutionException | InterruptedException e) {
-                e.printStackTrace();
-            }
 
-            if (DublicateChat.equals("0")){
-                SendQuery sendQuery = new SendQuery(INPUT_CHAT_PHP);
-                sendQuery.execute("?accepted_user_id=" + id + "&requesting_user_id=" + CreatorId.get(position) + "&res_id=" + ResponceId.get(position));
-            }
-            else{
-                SendQuery sendQuery = new SendQuery(DELETE_RESPONSE_PHP);
-                sendQuery.execute("?res_id=" + ResponceId.get(position));
-            }
+            String pattern = "yyyy-MM-dd-HH-mm";
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+            String timeChat = simpleDateFormat.format(new Date());
+
+            SendQuery sendQuery = new SendQuery(INPUT_CHAT_PHP);
+            sendQuery.execute("?user_id=" + id + "&another_user_id=" + CreatorId.get(position) + "&res_id=" + ResponceId.get(position) + "&time=" + timeChat);
+
 
             CreatorId.remove(position);
             ResponceId.remove(position);

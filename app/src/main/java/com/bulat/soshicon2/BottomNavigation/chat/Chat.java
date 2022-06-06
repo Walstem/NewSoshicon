@@ -15,12 +15,10 @@ import android.widget.ListView;
 import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.bulat.soshicon2.BottomNavigation.event.EventTime;
 import com.bulat.soshicon2.R;
 import com.bulat.soshicon2.Toasts.Toasts;
 import com.bulat.soshicon2.asynctasks.SendQuery;
 import com.bulat.soshicon2.checks.NetCheck;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,8 +30,8 @@ import java.util.concurrent.ExecutionException;
 
 public class Chat extends Fragment {
 
-    private static final String GET_COUNT_RESPONSE_PHP = "getCountImages.php";
-    private static final String GET_RESPONSE = "GetChats.php";
+    private static final String GET_COUNT_CHATS_PHP = "GetCountChats.php";
+    private static final String GET_CHATS = "get_chats.php";
 
     View view;
     ListView listView;
@@ -47,20 +45,18 @@ public class Chat extends Fragment {
 
     SharedPreferences sp;
 
-    private ArrayList<String> CreatorId = new ArrayList<>();
-    private ArrayList<String> ResponceId = new ArrayList<>();
-    private ArrayList<String> Title = new ArrayList<>();
-    private ArrayList<String> Content = new ArrayList<>();
+    private ArrayList<String> ChatsId = new ArrayList<>();
+    private ArrayList<String> User_Id = new ArrayList<>();
+    private ArrayList<String> AnotherUserId = new ArrayList<>();
+    private ArrayList<String> Nickname = new ArrayList<>();
+    private ArrayList<String> LastMessage = new ArrayList<>();
     private ArrayList<String> Avatar = new ArrayList<>();
-    private ArrayList<String> EventID = new ArrayList<>();
-    private ArrayList<String> Time = new ArrayList<>();
+    private ArrayList<String> TimeChat = new ArrayList<>();
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)  {
         // Inflate the layout for this fragment
-        BottomNavigationView navBar = getActivity().findViewById(R.id.nav_chat);
-        navBar.setVisibility(View.VISIBLE);
         view = inflater.inflate(R.layout.chat, container, false);
 
         sp = getContext().getSharedPreferences(DATABASE, 0);
@@ -148,16 +144,17 @@ public class Chat extends Fragment {
         //если происходит загрузка при переходе на страницу
         if (!scroll) {
             //опусташаем списки данных
-            CreatorId = new ArrayList<String>();
-            ResponceId = new ArrayList<String>();
-            Title = new ArrayList<>();
-            Content = new ArrayList<>();
-            Avatar = new ArrayList<String>();
-            EventID = new ArrayList<String>();
-            Time = new ArrayList<String>();
+            ChatsId = new ArrayList<>();
+            User_Id = new ArrayList<>();
+            AnotherUserId = new ArrayList<>();
+            LastMessage = new ArrayList<>();
+            Avatar = new ArrayList<>();
+            TimeChat = new ArrayList<>();
+            Nickname = new ArrayList<>();
+
 
             //вычисл€ем количество записей в таблице с событи€ми
-            SendQuery sendQuery = new SendQuery(GET_COUNT_RESPONSE_PHP);
+            SendQuery sendQuery = new SendQuery(GET_COUNT_CHATS_PHP);
             sendQuery.execute("?user_id=" + sp.getString(ID, ""));
             try {
                 countRowsEvent = Integer.parseInt(sendQuery.get());
@@ -172,7 +169,7 @@ public class Chat extends Fragment {
         String[] Args = {Integer.toString(start - 10), Integer.toString(end), UserId};
 
 
-        ChatReceiving Query = new ChatReceiving(GET_RESPONSE, KeyArgs, Args);
+        ChatReceiving Query = new ChatReceiving(GET_CHATS, KeyArgs, Args);
         Query.execute();
 
         JSONArray Event_json = new JSONArray(Query.get());
@@ -183,22 +180,25 @@ public class Chat extends Fragment {
         for (int i = 0; i < Event_json.length(); i++) {
             JSONObject jo = new JSONObject((String) Event_json.get(i));
             System.out.println(jo);
-            CreatorId.add(jo.get("user_id").toString());
-            ResponceId.add(jo.get("res_id").toString());
-            Title.add(jo.get("nickname").toString());
+            ChatsId.add(jo.get("chat_id").toString());
+            User_Id.add(jo.get("user_id").toString());
+            AnotherUserId.add(jo.get("another_user_id").toString());
+            Nickname.add(jo.get("nickname").toString());
             Avatar.add("http://j911147y.beget.tech/" + jo.get("img"));
-            EventID.add(jo.get("event_id").toString());
 
-            String eventTime = jo.get("time").toString();
-            Time.add(new EventTime().handle(eventTime));
+            String Time = jo.get("time").toString();
+            TimeChat.add(new ChatTime().handle(Time));
 
-            textContent = jo.get("content").toString();
-            if (textContent.length() > 83){
-                textContent = textContent.substring(0, 55);
-                Content.add(textContent + "...");
+            textContent = jo.get("last_message").toString();
+            if(textContent.equals("null")){
+                LastMessage.add("Ќачинайте общение");
+            }
+            else if (textContent.length() > 33){
+                textContent = textContent.substring(0, 33);
+                LastMessage.add(textContent + "...");
             }
             else{
-                Content.add(jo.get("content").toString());
+                LastMessage.add(textContent);
             }
 
 
@@ -207,7 +207,7 @@ public class Chat extends Fragment {
         }
         if (!scroll)
         {
-            eventBlock = new ChatAdapter(getContext(),view,  CreatorId, ResponceId, Content, Title, Avatar,EventID, Time, getActivity());
+            eventBlock = new ChatAdapter(getContext(),view,  ChatsId, User_Id, AnotherUserId, Nickname, Avatar,TimeChat, LastMessage, getActivity());
             listView.setAdapter(eventBlock);
         }
         //если функци€ была вызванна свайпом, то обновл€ем Listview

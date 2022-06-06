@@ -5364,6 +5364,7 @@ layout registration_password
 layout response
 layout row_card_event
 layout row_card_response
+layout row_chat
 layout row_item_profile
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
