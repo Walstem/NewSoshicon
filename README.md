@@ -1,35 +1,35 @@
 <h1 style="color:white">Soshicon (project under development, there may be many bags)</h1>
 <h3 style="color:white; background:#F61F5A">Soshicon - is a social network that provides a search for people with similar interests located nearby, helps to form social ties</h3> 
 
-___
-###Project modules:
 
-* ####Authorization
+### Project modules:
+
+* #### Authorization
   * ####the ability to log in
   * ####internet connection check
   * ####verification of the truth of the entered data
   * ####password hashing
-* ####Registration
+* #### Registration
     * ####internet connection check
     * ####enter name, password, email
     * ####password hashing
     * ####validation of input data
-* ####Event feed
+* #### Event feed
   * #### event feed
   * #### opportunity to like
   * #### switch to someone else's profile
   * #### sorting events by location, from closest to farthest
   * #### opportunity to create an event
   * #### event creation time
-* ####Response
+* #### Response
   * #### the ability to accept a person's request for communication
   * #### the ability to decline a person's request to communicate
   * #### switch to someone else's profile
-* ####Account
+* #### Account
   * #### option to choose a profile photo
   * #### the ability to add photos to the gallery
   * #### create profile status
-* ####Preferences
+* #### Preferences
   * #### switch language
   * #### change theme from light to dark
   * #### increase the font in the application
@@ -38,7 +38,7 @@ ___
 
 <h2 align="center" >Authorization and Registration</h2>
 
-___
+
 
 
  <p align="center">
@@ -48,11 +48,10 @@ ___
 
 </p>
 
-___
 
 <h2 align="center" >Event feed and Response</h2>
 
-___
+
 
  <p align="center">
 <img src="https://sun9-41.userapi.com/impf/hDkjnUjLSNs-65_wJ6NG0-X8yukGo6EOFopyxg/g4vLglV_2tc.jpg?size=384x848&quality=96&sign=98fd2ecec958fb7b44f9b90afa3fdfee&type=album" width="30%" height="30%"/>
@@ -61,11 +60,11 @@ ___
 
 </p>
 
-___
+
 
 <h2 align="center" >Account</h2>
 
-___
+
 
  <p align="center">
 <img src="https://psv4.vkuseraudio.net/s/v1/d/PfrO_nae9sZMzO4nXrI3u2NtY88uaxc8rTSrxedQAONdj2E6KVP6t4KbwAUy2f6k2BuTI5FQiZIuhRJlsvfwun5iBUR6CT5yJ2t2rRbpCsdtJLatESpIBg/SVID_20220628_020257_1.gif" width="30%" height="30%"/>
