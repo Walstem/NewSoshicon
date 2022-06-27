@@ -58,7 +58,7 @@
 
 
 
-<p align="center"><img src="https://psv4.vkuseraudio.net/s/v1/d/PfrO_nae9sZMzO4nXrI3u2NtY88uaxc8rTSrxedQAONdj2E6KVP6t4KbwAUy2f6k2BuTI5FQiZIuhRJlsvfwun5iBUR6CT5yJ2t2rRbpCsdtJLatESpIBg/SVID_20220628_020257_1.gif" width="30%" height="30%"/></p>
+<p align="center"><img src="https://sun9-41.userapi.com/impf/hDkjnUjLSNs-65_wJ6NG0-X8yukGo6EOFopyxg/g4vLglV_2tc.jpg?size=384x848&quality=96&sign=98fd2ecec958fb7b44f9b90afa3fdfee&type=album" width="30%" height="30%"/></p>
 
 ## Modules review
 * ### IDE Android Studio
