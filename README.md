@@ -5,15 +5,15 @@
 ### Project modules:
 
 * #### Authorization
-  * ####the ability to log in
-  * ####internet connection check
-  * ####verification of the truth of the entered data
-  * ####password hashing
+  * #### the ability to log in
+  * #### internet connection check
+  * #### verification of the truth of the entered data
+  * #### password hashing
 * #### Registration
-    * ####internet connection check
-    * ####enter name, password, email
-    * ####password hashing
-    * ####validation of input data
+    * #### internet connection check
+    * #### enter name, password, email
+    * #### password hashing
+    * #### validation of input data
 * #### Event feed
   * #### event feed
   * #### opportunity to like
