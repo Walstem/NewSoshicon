@@ -38,9 +38,6 @@
 
 <h2 align="center" >Authorization and Registration</h2>
 
-
-
-
  <p align="center">
 <img src="https://psv4.userapi.com/c237231/u435443603/docs/d49/23cde118da1d/AUTORIZATION_1.gif?extra=xcBCo1hQioS5NmCXCQ6rPefXHEH4WlA8T7o3Bg9ozfodt0pVA-Dmb3xvqBce0Bc267XHNFjlKuE_awDJ798mqw5SwxWPbxKOFhIdR8hRj6GyBzmqzAZ_oYP8SXCe3u6nvMDH4jBmzrzfsZzxk4-z8g" width="30%" height="30%"/>
 
@@ -48,10 +45,7 @@
 
 </p>
 
-
 <h2 align="center" >Event feed and Response</h2>
-
-
 
  <p align="center">
 <img src="https://sun9-41.userapi.com/impf/hDkjnUjLSNs-65_wJ6NG0-X8yukGo6EOFopyxg/g4vLglV_2tc.jpg?size=384x848&quality=96&sign=98fd2ecec958fb7b44f9b90afa3fdfee&type=album" width="30%" height="30%"/>
@@ -60,14 +54,14 @@
 
 </p>
 
-
-
 <h2 align="center" >Account</h2>
 
 
 
-<p align="center">
+ <p align="center">
 <img src="https://psv4.vkuseraudio.net/s/v1/d/PfrO_nae9sZMzO4nXrI3u2NtY88uaxc8rTSrxedQAONdj2E6KVP6t4KbwAUy2f6k2BuTI5FQiZIuhRJlsvfwun5iBUR6CT5yJ2t2rRbpCsdtJLatESpIBg/SVID_20220628_020257_1.gif" width="30%" height="30%"/>
+
+
 
 </p>
 
