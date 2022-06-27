@@ -4,6 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/c336b65b486dad7d9d6b0e6e4a388afc/transformed/jetified-emoji-one-0.5.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c336b65b486dad7d9d6b0e6e4a388afc/transformed/jetified-emoji-one-0.5.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c336b65b486dad7d9d6b0e6e4a388afc/transformed/jetified-emoji-one-0.5.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/df020eb7046be89f48241145cec4729d/transformed/jetified-emoji-one-0.5.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/df020eb7046be89f48241145cec4729d/transformed/jetified-emoji-one-0.5.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/df020eb7046be89f48241145cec4729d/transformed/jetified-emoji-one-0.5.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.vanniktech/emoji-one/0.5.0/5fa9f433897865311f7cecac45cebef7b58db26f/emoji-one-0.5.0-javadoc.jar!/" />

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Admin\\Desktop\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
+            "outputFile": "C:\\NewSoshicon\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-3\\841021dc610a3d4eab87732a76adce27\\transformed\\jetified-android-1.1.6\\res\\values-v14\\values-v14.xml",
+                    "source": "C:\\Users\\damas\\.gradle\\caches\\transforms-3\\d8724fb2f94e936a273384790392cd35\\transformed\\jetified-android-1.1.6\\res\\values-v14\\values-v14.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

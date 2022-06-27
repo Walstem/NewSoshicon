@@ -68,10 +68,13 @@ public class EventLocation implements LocationListener {
                         Manifest.permission.ACCESS_COARSE_LOCATION,
                         Manifest.permission.ACCESS_FINE_LOCATION}, 44);
             }
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
+            else{
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
 
-            location=locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+                location=locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+            }
+
         }
 
 
