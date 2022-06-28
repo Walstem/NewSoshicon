@@ -54,11 +54,12 @@
 
 </p>
 
-##Account
+<h2 align="center" >Account</h2>
 
 
 
-![alt text](https://psv4.vkuseraudio.net/s/v1/d/PfrO_nae9sZMzO4nXrI3u2NtY88uaxc8rTSrxedQAONdj2E6KVP6t4KbwAUy2f6k2BuTI5FQiZIuhRJlsvfwun5iBUR6CT5yJ2t2rRbpCsdtJLatESpIBg/SVID_20220628_020257_1.gif)
+<p align="center"><img src="https://media.tenor.com/images/34f3f8d2cd60f71eeda69c7a19c828da/tenor.gif" width="30%" height="30%"/>
+</p>
 
 ## Modules review
 * ### IDE Android Studio
