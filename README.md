@@ -45,21 +45,19 @@
 
 </p>
 
-<h2 align="center" >Event feed and Response</h2>
+<h2 align="center" >Event feed, Response, Account</h2>
 
  <p align="center">
 <img src="https://sun9-41.userapi.com/impf/hDkjnUjLSNs-65_wJ6NG0-X8yukGo6EOFopyxg/g4vLglV_2tc.jpg?size=384x848&quality=96&sign=98fd2ecec958fb7b44f9b90afa3fdfee&type=album" width="30%" height="30%"/>
 
 <img src="https://psv4.userapi.com/c237031/u435443603/docs/d9/eb92693cf669/SVID_20220628_020112_1.gif?extra=60Jz14_G-CqkQknK62s1xOs1zteu4n9fXl-ZnmKjgASRgvgScC8bq1nMhJxka5UL5xShVpuUj3Ig87XaEIowab6ScVFQPK1d692Blpkcm_oFrMVdV3CplnjuhT9w-AzIqbRffdcjdmuZlRxvV4twEw" width="30%" height="30%"/>
 
+<img src="https://media.tenor.com/images/34f3f8d2cd60f71eeda69c7a19c828da/tenor.gif" width="30%" height="30%"/>
 </p>
 
-<h2 align="center" >Account</h2>
 
 
 
-<p align="center"><img src="https://media.tenor.com/images/34f3f8d2cd60f71eeda69c7a19c828da/tenor.gif" width="30%" height="30%"/>
-</p>
 
 ## Modules review
 * ### IDE Android Studio
