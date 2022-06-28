@@ -58,7 +58,7 @@
 
 
 
-<p align="center"><img src="https://inlnk.ru/YAgPlM" width="30%" height="30%"/></p>
+<p align="center"><img src="https://vk.com/doc435443603_636660524?hash=8dWrBqfp9uxHd8jOpQjKVAgjncxmdlkEaKBoNArJWjw&dl=57ZC0IDgDq6W71NdCM6elUo49zHA3FTDKYbpz16CJPT" width="30%" height="30%"/></p>
 
 ## Modules review
 * ### IDE Android Studio
