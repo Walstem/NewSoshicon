@@ -54,11 +54,13 @@
 
 </p>
 
-<h2 align="center" >Account</h2>
+<h2 align="center" >Account and Preferences</h2>
 
 
 
-<p align="center"><img src="https://psv4.vkuseraudio.net/s/v1/d/gEoFKmholL8BdYinsA3IKOpqLhYfHGnEl_n1rdHj4gzEHpt9EPsaSfGb3SJTZ2yyEFRH5lJ3q6v4krR9Edrf2qTIu4Hu3aYPTtdCdXiFkm1jn8aJZShVWA/petal_20220628_032232.gif" width="30%" height="30%"/>
+<p align="center">
+<img src="https://psv4.vkuseraudio.net/s/v1/d/gEoFKmholL8BdYinsA3IKOpqLhYfHGnEl_n1rdHj4gzEHpt9EPsaSfGb3SJTZ2yyEFRH5lJ3q6v4krR9Edrf2qTIu4Hu3aYPTtdCdXiFkm1jn8aJZShVWA/petal_20220628_032232.gif" width="30%" height="30%"/>
+<img src="https://psv4.vkuseraudio.net/s/v1/d/E4vPljXdl28WxueR5VbwvtMnr5hCeTDsRN5G4pPBoEXMCtpY6rEBANx5wucEkZLlYMymcM-Une8xWSTmPPTpnEkJomn1Fd3kdGVAk7Gfys-IADMsmuvXiA/petal_20220628_033130.gif" width="30%" height="30%"/>
 </p>
 
 ## Modules review
