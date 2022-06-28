@@ -52,7 +52,7 @@
 
 <img src="https://psv4.userapi.com/c237031/u435443603/docs/d9/eb92693cf669/SVID_20220628_020112_1.gif?extra=60Jz14_G-CqkQknK62s1xOs1zteu4n9fXl-ZnmKjgASRgvgScC8bq1nMhJxka5UL5xShVpuUj3Ig87XaEIowab6ScVFQPK1d692Blpkcm_oFrMVdV3CplnjuhT9w-AzIqbRffdcjdmuZlRxvV4twEw" width="30%" height="30%"/>
 
-<img src="https://media.tenor.com/images/34f3f8d2cd60f71eeda69c7a19c828da/tenor.gif" width="30%" height="30%"/>
+<img src="https://psv4.userapi.com/c505536/u435443603/docs/d12/5eabb93e3c45/petal_20220628_031805.gif?extra=EV-wtVy8V11pvoDo1gjF1MlV5OZiznBtwY5HAh0In4E02OzSCYf96z4P8TK6cDTmw8zRMffn14zPoVrwxjDx6wmen5VHrEKqVaxINXjd3DQ_6gb5WtUwD_ZxSQxEPoXkAjptc-Hxpl_DZV1mcgQd2w" width="30%" height="30%"/>
 </p>
 
 
