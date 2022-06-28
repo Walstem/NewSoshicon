@@ -45,19 +45,21 @@
 
 </p>
 
-<h2 align="center" >Event feed, Response, Account</h2>
+<h2 align="center" >Event feed and Response</h2>
 
  <p align="center">
 <img src="https://sun9-41.userapi.com/impf/hDkjnUjLSNs-65_wJ6NG0-X8yukGo6EOFopyxg/g4vLglV_2tc.jpg?size=384x848&quality=96&sign=98fd2ecec958fb7b44f9b90afa3fdfee&type=album" width="30%" height="30%"/>
 
 <img src="https://psv4.userapi.com/c237031/u435443603/docs/d9/eb92693cf669/SVID_20220628_020112_1.gif?extra=60Jz14_G-CqkQknK62s1xOs1zteu4n9fXl-ZnmKjgASRgvgScC8bq1nMhJxka5UL5xShVpuUj3Ig87XaEIowab6ScVFQPK1d692Blpkcm_oFrMVdV3CplnjuhT9w-AzIqbRffdcjdmuZlRxvV4twEw" width="30%" height="30%"/>
 
-<img src="https://psv4.userapi.com/c505536/u435443603/docs/d12/5eabb93e3c45/petal_20220628_031805.gif?extra=EV-wtVy8V11pvoDo1gjF1MlV5OZiznBtwY5HAh0In4E02OzSCYf96z4P8TK6cDTmw8zRMffn14zPoVrwxjDx6wmen5VHrEKqVaxINXjd3DQ_6gb5WtUwD_ZxSQxEPoXkAjptc-Hxpl_DZV1mcgQd2w" width="30%" height="30%"/>
 </p>
 
+<h2 align="center" >Account</h2>
 
 
 
+<p align="center"><img src="https://psv4.vkuseraudio.net/s/v1/d/gEoFKmholL8BdYinsA3IKOpqLhYfHGnEl_n1rdHj4gzEHpt9EPsaSfGb3SJTZ2yyEFRH5lJ3q6v4krR9Edrf2qTIu4Hu3aYPTtdCdXiFkm1jn8aJZShVWA/petal_20220628_032232.gif" width="30%" height="30%"/>
+</p>
 
 ## Modules review
 * ### IDE Android Studio
